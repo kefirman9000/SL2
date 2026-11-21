@@ -1,0 +1,253 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 6,
+  "prob": 0.85,
+  "rate": 2
+ },
+ "bass": [
+  "R---------------",
+  "R-------R-------"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "808",
+ "bpm": [
+  118,
+  136
+ ],
+ "chord_center": 63,
+ "chord_rh": [
+  "x-------x-------",
+  "x---x---x-x-x---"
+ ],
+ "chord_size": 4,
+ "desc": "Hopecore (dreamy): the slower, softer side - warm 120-135 BPM bounce with a sub-heavy kick and soft claps, gentle major piano and guitar loops, airy pads, music-box and bell melodies, a hopeful lead floating in reverb",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "x...x...x.x.x..."
+  ],
+  "clap": [
+   "........X......."
+  ],
+  "kick": [
+   "X.........X.....",
+   "X.......X.X.....",
+   "X..X......X....."
+  ],
+  "shaker": [
+   "..x...x...x...x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "halftime",
+ "form_scale": 1,
+ "ghosts": false,
+ "gm_hint": "Soft kick + 808 sub; claps; warm piano and clean guitar loops; airy pad; music box / bells; soft lead",
+ "human": 0.0,
+ "id": "hopecore_dreamy",
+ "kit": "soft",
+ "kit_override": {},
+ "lead_rh": [
+  "x---x-x-x-------",
+  "x-x-x---x-x-----",
+  "..x-x-x-x-------",
+  "x-------x---x---"
+ ],
+ "master": {
+  "air": 1.4,
+  "low": 1.8,
+  "lufs": -11.0
+ },
+ "name": "hopecore_dreamy",
+ "progs": {
+  "lydian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ]
+  ],
+  "major": [
+   [
+    3,
+    4,
+    5,
+    0
+   ],
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    3,
+    0,
+    4,
+    5
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ]
+ },
+ "reverb": 3.0,
+ "sc_depth": 0.35,
+ "sc_release": 0.45,
+ "scales": [
+  "major",
+  "lydian",
+  "mixolydian"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "swing": 0.52,
+ "tracks": [
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "808",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.4
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.4
+  },
+  {
+   "chorus": 0.5,
+   "db": -26,
+   "dly": 0.0,
+   "double_of": "chords",
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "keep_inst": true,
+   "layer": "chords",
+   "name": "gtr",
+   "octave": 12,
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "celesta",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "softlead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  }
+ ],
+ "trap_hats": false,
+ "voicing": "close"
+}

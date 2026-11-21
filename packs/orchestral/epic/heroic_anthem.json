@@ -1,0 +1,329 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "rate": 1
+ },
+ "bass": [
+  "R.R.R.R.R.R.R.R.",
+  "R-R-R-R-R-R-R-R-",
+  "R---R---R---R---"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 26,
+ "bpm": [
+  92,
+  124
+ ],
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x.xx.xx.x.xx.xx.",
+  "xxxxxxxxxxxxxxxx"
+ ],
+ "chord_size": 3,
+ "desc": "Heroic anthem: a soaring major-key fanfare on horns and trumpets, sweeping violins, marching snare, cymbals and timpani over trombones, tuba and a rock-solid string bass - triumphant and huge",
+ "drums": {
+  "crash": [
+   "X...............",
+   "................"
+  ],
+  "snare": [
+   "x.xxx.x.x.xxx.x.",
+   "x.x.x.x.xxx.xxxx"
+  ],
+  "taiko": [
+   "X.......X.......",
+   "X.....x.X......."
+  ],
+  "timp": [
+   "X.......X.......",
+   "X...X...X.x.x.x."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "gm_hint": "",
+ "human": 0.006,
+ "id": "heroic_anthem",
+ "lead_oct": 5,
+ "lead_rh": [
+  "x--x-xx---x-x---",
+  "x-----x-x-x-----",
+  "x---x-x-x---x---",
+  "x-x-x-----x-----"
+ ],
+ "master": {
+  "air": 1.6,
+  "low": 2.0,
+  "lufs": -10.5
+ },
+ "name": "heroic_anthem",
+ "progs": {
+  "lydian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    4,
+    0
+   ]
+  ],
+  "major": [
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    0,
+    3,
+    0,
+    4
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ],
+   [
+    0,
+    6,
+    3,
+    4
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ],
+   [
+    0,
+    6,
+    0,
+    4
+   ]
+  ]
+ },
+ "repetition": 0.8,
+ "reverb": 3.6,
+ "scales": [
+  "major",
+  "lydian",
+  "mixolydian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "tracks": [
+  {
+   "db": -11,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "taiko",
+   "layer": "kick",
+   "name": "taiko",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "timp",
+   "layer": "snare",
+   "name": "timp",
+   "p": {},
+   "pan": 0.0,
+   "real": "timp",
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "crash",
+   "layer": "top",
+   "name": "crash",
+   "p": {},
+   "pan": 0.0,
+   "real": "orchcrash",
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "contrabass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "a": 0.02
+   },
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "double_of": "bass",
+   "drive": null,
+   "hp": null,
+   "inst": "cello",
+   "layer": "bass",
+   "name": "celli",
+   "octave": 12,
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "double_of": "pad",
+   "drive": null,
+   "hp": null,
+   "inst": "brass",
+   "layer": "pad",
+   "name": "lowbrass",
+   "octave": -12,
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "double_of": "pad",
+   "drive": null,
+   "hp": null,
+   "inst": "choir",
+   "layer": "pad",
+   "name": "choir",
+   "octave": 0,
+   "p": {
+    "vowel": "a"
+   },
+   "pan": 0.0,
+   "rev": 0.55,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "spiccato",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "horn",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "violins",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "trumpet",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "double_of": "lead",
+   "drive": null,
+   "hp": null,
+   "inst": "horn",
+   "layer": "lead",
+   "name": "lead_horns",
+   "octave": -12,
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "double_of": "lead",
+   "drive": null,
+   "hp": null,
+   "inst": "violins",
+   "layer": "lead",
+   "name": "lead_hi",
+   "octave": 12,
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "close"
+}

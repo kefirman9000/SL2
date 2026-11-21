@@ -1,0 +1,294 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R...R...F...R...",
+  "R...F...R...A..."
+ ],
+ "bass_gate": 0.8,
+ "bass_lo": 31,
+ "bass_mode": "walk",
+ "bpm": [
+  100,
+  120
+ ],
+ "chord_center": 60,
+ "chord_rh": [
+  "X.x...X.x...X...",
+  "..X.x...X.x.....",
+  "X-x-X-x-X-------"
+ ],
+ "desc": "Swing-era big band (hot, tom-tom drive): a fast 1930s flag-waver in a minor key driven by the floor-tom groove, riffing trumpets and trombones, the sax section answering, a hot clarinet lead, a drum break and a roaring shout chorus",
+ "drum_voice": {
+  "tom": {
+   "pitch": 92
+  }
+ },
+ "drums": {
+  "chat": [
+   "....x.......x..."
+  ],
+  "crash": [
+   "X...............",
+   "................"
+  ],
+  "kick": [
+   "o...o...o...o..."
+  ],
+  "ride": [
+   "x...x.x.x...x.x."
+  ],
+  "tom": [
+   "X.x.X.x.X.x.X.x.",
+   "X.x.X.xxX.x.X.x.",
+   "X.xxX.x.X.xxX.x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "hotswing",
+ "form_scale": 1,
+ "ghosts": false,
+ "gm_hint": "Floor tom groove; upright walking bass; trumpet & trombone riffs; sax section; clarinet lead; piano",
+ "human": 0.008,
+ "id": "swing_tomtom",
+ "kick_track": "tom",
+ "kit": "acoustic",
+ "lead_rh": [
+  "x.x.x.x.x-x.x---",
+  "x-x.x.x-x.x.x.x.",
+  "xxx.x.x-x---x.x.",
+  "x.x-x.x.x.x-x---"
+ ],
+ "master": {
+  "air": 0.6,
+  "low": 0.8,
+  "lufs": -13.0
+ },
+ "name": "swing_tomtom",
+ "no_rotation": true,
+ "progs": {
+  "dorian": [
+   [
+    0,
+    0,
+    3,
+    0
+   ]
+  ],
+  "harmonic_minor": [
+   [
+    0,
+    0,
+    4,
+    0
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    3,
+    3
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.75,
+ "reverb": 1.6,
+ "scales": [
+  "minor",
+  "dorian",
+  "harmonic_minor"
+ ],
+ "snare_tracks": [
+  "tom"
+ ],
+ "solos": [
+  "solo_tpt",
+  "lead"
+ ],
+ "swing": 0.64,
+ "swing_unit": 8,
+ "tracks": [
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tom",
+   "layer": "kick",
+   "name": "tom",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "crash",
+   "layer": "top",
+   "name": "crash",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "upright",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "brass",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "double_of": "chords",
+   "drive": null,
+   "hp": null,
+   "inst": "sax",
+   "keep_inst": true,
+   "layer": "chords",
+   "name": "saxes",
+   "octave": -12,
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sax",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clarinet",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "trumpet",
+   "layer": "lead",
+   "name": "solo_tpt",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  }
+ ]
+}

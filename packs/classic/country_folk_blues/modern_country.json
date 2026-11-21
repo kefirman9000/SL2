@@ -1,0 +1,240 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 4,
+  "prob": 0.55,
+  "rate": 2
+ },
+ "bass": [
+  "R.R.R.R.R.R.R.R.",
+  "R...R...R...F...",
+  "R.....R.R...F..."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  76,
+  108
+ ],
+ "chord_center": 57,
+ "chord_rh": [
+  "x.xxx.xxx.xxx.xx",
+  "x.x.x.xxx.x.x.xx"
+ ],
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "desc": "Modern country / Nashville pop: big clean drums, driving 16th acoustic strum, electric bass on the root, twangy Telecaster riffs and pedal-steel swells, a big singalong chorus",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "X.......X.X.....",
+   "X.....X.X......."
+  ],
+  "snare": [
+   "....X.......X..."
+  ],
+  "tamb": [
+   "....x.......x..."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "song",
+ "ghosts": false,
+ "gm_hint": "Acoustic steel guitar (16th strum); Telecaster; pedal steel; electric bass; big clean kit; piano / B3 pads",
+ "human": 0.006,
+ "id": "modern_country",
+ "kick_track": "kick",
+ "kit": "punchy",
+ "lead_oct": 5,
+ "lead_rh": [
+  "x-x-x---x-x-....",
+  "x---x-x-x---....",
+  "..x-x-x-x---x---",
+  "x---x---x-x-x---"
+ ],
+ "master": {
+  "air": 1.8,
+  "low": 1.4,
+  "lufs": -10.0
+ },
+ "name": "modern_country",
+ "progs": {
+  "major": [
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ],
+   [
+    0,
+    3,
+    5,
+    4
+   ],
+   [
+    3,
+    0,
+    4,
+    5
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "scales": [
+  "major",
+  "mixolydian"
+ ],
+ "slides": 0.4,
+ "snare_tracks": [
+  "snare"
+ ],
+ "strum": 0.01,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tamb",
+   "layer": "top",
+   "name": "tamb",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sf:fingerbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "acguitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "bright": 6000
+   },
+   "pan": -0.25,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "pedalsteel",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.15,
+   "drive": null,
+   "hp": null,
+   "inst": "twang",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.15,
+   "drive": null,
+   "hp": null,
+   "inst": "twang",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ]
+}

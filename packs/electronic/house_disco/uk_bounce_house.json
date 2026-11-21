@@ -1,0 +1,269 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.35,
+  "rate": 4
+ },
+ "bass": [
+  "..R.R..R..R.R...",
+  "R..R..R...R..R..",
+  "..R..R.R..R...R."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  122,
+  126
+ ],
+ "chord_center": 60,
+ "chord_rh": [
+  "..x.....x.......",
+  "...x......x.....",
+  "x.....x.....x..."
+ ],
+ "chord_size": 4,
+ "desc": "UK bounce house: a four-on-the-floor groove at 122-126 with busy, shuffling percussion and crisp claps, a rubbery, bouncing bassline doing most of the work, chopped vocal hooks answering it and short organ / piano stabs - radio-friendly, warm and made for dancing",
+ "drums": {
+  "chat": [
+   "..x...x...x...x.",
+   ".xx..xx..xx..xx."
+  ],
+  "clap": [
+   "....X.......X...",
+   "....X.......X..x"
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "ohat": [
+   "..x...x...x...x."
+  ],
+  "shaker": [
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "snare": [
+   "......x.......x.",
+   "...x......x....."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "bass_house",
+ "ghosts": true,
+ "gm_hint": "Four-on-the-floor kick, claps, shuffled hats and shakers; a rubbery, bouncing bassline (organ bass / moog); chopped vocal hooks; organ / piano stabs",
+ "human": 0.004,
+ "id": "uk_bounce_house",
+ "kit": "punchy",
+ "kit_override": {},
+ "lead_rh": [
+  "x.x.x...x.x.....",
+  "..x.x.x...x.x...",
+  "x..x..x.x......."
+ ],
+ "master": {
+  "air": 1.2,
+  "low": 2.0,
+  "lufs": -9.0,
+  "width": 1.0
+ },
+ "name": "uk_bounce_house",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    0,
+    3,
+    3
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    6,
+    4
+   ],
+   [
+    0,
+    0,
+    5,
+    6
+   ],
+   [
+    0,
+    3,
+    6,
+    5
+   ]
+  ]
+ },
+ "repetition": 0.85,
+ "reverb": 1.6,
+ "sc_depth": 0.5,
+ "sc_release": 0.45,
+ "scales": [
+  "minor",
+  "dorian"
+ ],
+ "snare_tracks": [
+  "clap",
+  "snare"
+ ],
+ "strum": 0.0,
+ "swing": 0.56,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -11,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": -0.15,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "organbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.55
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.7
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "chops": true,
+   "db": -18,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "stab",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ]
+}

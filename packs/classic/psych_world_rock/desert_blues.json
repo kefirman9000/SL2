@@ -1,0 +1,224 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.7,
+  "rate": 2
+ },
+ "bass": [
+  "R..R..R.R...R...",
+  "R.....R.R..R...."
+ ],
+ "bass_lo": 31,
+ "bpm": [
+  96,
+  116
+ ],
+ "build_family": [
+  "pickup",
+  "none"
+ ],
+ "chord_center": 58,
+ "chord_rh": [
+  "x..x..x.x..x..x.",
+  "x.x..x.xx.x..x.x"
+ ],
+ "desc": "Desert blues (Tuareg / Sahara): interlocking, hypnotic electric guitar loops on a pentatonic scale, a rolling bass, hand claps and hand drums, a lilting swung groove and long repetitions that slowly build - trance-like and dusty",
+ "drums": {
+  "claps": [
+   "....x.......x...",
+   "....x..x....x..."
+  ],
+  "conga": [
+   "..o.x..o..o.x..o",
+   "x.o.x.ox..o.x.o."
+  ],
+  "kick": [
+   "X.....x.X.....x.",
+   "X..x..x.X......."
+  ],
+  "shaker": [
+   "x.x.x.x.x.x.x.x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "song",
+ "gm_hint": "Electric guitars (clean, a little drive, interlocking); bass; hand claps; calabash / djembe; shaker; group voices",
+ "human": 0.008,
+ "id": "desert_blues",
+ "kit": "soft",
+ "lead_rh": [
+  "x.x.x.x.x-x-x---",
+  "x-x.x.x-x---x---"
+ ],
+ "master": {
+  "air": 1.0,
+  "low": 0.9,
+  "lufs": -11.5
+ },
+ "name": "desert_blues",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    3,
+    0,
+    0
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    6,
+    0
+   ],
+   [
+    0,
+    3,
+    0,
+    6
+   ]
+  ]
+ },
+ "repetition": 0.92,
+ "reverb": 1.6,
+ "scales": [
+  "minor",
+  "dorian"
+ ],
+ "slides": 0.35,
+ "snare_tracks": [
+  "claps"
+ ],
+ "swing": 0.55,
+ "tracks": [
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "claps",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "conga",
+   "layer": "top",
+   "name": "conga",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "amp": 4,
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "bright": 5500
+   },
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "twang",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "amp": 8,
+   "db": -14,
+   "dly": 0.15,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "bright": 6000
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "none"
+ ],
+ "voicing": "close"
+}

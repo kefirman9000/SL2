@@ -1,0 +1,225 @@
+{
+ "arp": {
+  "mode": "montuno",
+  "oct": 4,
+  "rate": 1,
+  "rh": [
+   "x.xx.x.xx.x.x.x.",
+   ".x.x.xx..x.x.xx."
+  ]
+ },
+ "bass": [
+  "......R.....R...",
+  "...R..R.....R...",
+  "......F.....R..."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bpm": [
+  88,
+  108
+ ],
+ "build_family": [
+  "pickup"
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "x.....x...x.....",
+  "..x...x..x..x..."
+ ],
+ "chord_size": 3,
+ "desc": "Son cubano: the tres guitar repeating its montuno, the son clave and maracas, the bongosero's martillo, an anticipated upright bass and a bright trumpet melody - the root of salsa, relaxed and swaying",
+ "drums": {
+  "bongo": [
+   "..x.x.xx..x.x.xx",
+   "x.x.x.xxx.x.x.xx"
+  ],
+  "bongo_lo": [
+   "x.....x.x.....x.",
+   "x...x...x.....x."
+  ],
+  "clave": [
+   "x..x..x...x.x..."
+  ],
+  "maracas": [
+   "x.x.x.x.x.x.x.x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "song",
+ "gm_hint": "Tres (montuno); guitar; trumpet; bongos; claves; maracas; upright bass",
+ "hand_drums": true,
+ "human": 0.007,
+ "id": "son_cubano",
+ "kick_track": "bongo_lo",
+ "kit": "soft",
+ "lead_rh": [
+  "x-x-x---x-x-x---",
+  "x.x.x.x.x---....",
+  "..x.x-x.x.x-...."
+ ],
+ "master": {
+  "air": 1.2,
+  "low": 0.8,
+  "lufs": -12.0
+ },
+ "name": "son_cubano",
+ "no_rotation": true,
+ "progs": {
+  "major": [
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    4,
+    0,
+    4
+   ],
+   [
+    1,
+    4,
+    0,
+    0
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ]
+  ]
+ },
+ "reverb": 1.5,
+ "sc_depth": 0.0,
+ "scales": [
+  "major",
+  "minor"
+ ],
+ "snare_tracks": [
+  "bongo"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "bongo_lo",
+   "layer": "kick",
+   "name": "bongo_lo",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "bongo",
+   "layer": "snare",
+   "name": "bongo",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "woodblock",
+   "layer": "top",
+   "name": "clave",
+   "p": {},
+   "pan": 0.25,
+   "real": "claves",
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "maracas",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "upright",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "acguitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tres",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "trumpet",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "none"
+ ]
+}

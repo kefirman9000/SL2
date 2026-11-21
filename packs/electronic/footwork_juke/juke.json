@@ -1,0 +1,198 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "prob": 0.4,
+  "rate": 4
+ },
+ "bass": [
+  "R...R...R..RR...",
+  "R...R...R...R...",
+  "R..R..R...R.R..."
+ ],
+ "bass_lo": 26,
+ "bass_mode": "808",
+ "bpm": [
+  148,
+  160
+ ],
+ "chord_center": 64,
+ "chord_rh": [
+  "x...x...x...x...",
+  "x.x...x.x.x...x."
+ ],
+ "chord_size": 3,
+ "desc": "Chicago juke / ghetto house: a faster, harder house cousin of footwork - a pounding 808 four-on-the-floor with extra kicks, claps, repeated chopped vocal phrases and a rumbling 808 bass, raw and hypnotic",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "xxxxxxxxxxxxxxxx"
+  ],
+  "clap": [
+   "....X.......X...",
+   "....X.......X..x"
+  ],
+  "kick": [
+   "X...X...X...X...",
+   "X...X...X..XX...",
+   "X...X..XX...X..."
+  ],
+  "ohat": [
+   "..x...x...x...x."
+  ],
+  "rim": [
+   "...x......x....."
+  ]
+ },
+ "extends": "_family",
+ "form": "groove",
+ "human": 0.002,
+ "id": "juke",
+ "lead_rh": [
+  "x.x.x.x.........",
+  "x...x...x.x.x...",
+  "xxxx....xxxx...."
+ ],
+ "master": {
+  "air": 1.2,
+  "low": 1.6,
+  "lufs": -8.5
+ },
+ "name": "juke",
+ "progs": {
+  "minor": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    5,
+    5
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ]
+  ]
+ },
+ "sc_depth": 0.2,
+ "scales": [
+  "minor",
+  "phrygian"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.1,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "rim",
+   "layer": "top",
+   "name": "rim",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "808",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "stab",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.15,
+   "drive": null,
+   "hp": null,
+   "inst": "vox",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  }
+ ]
+}

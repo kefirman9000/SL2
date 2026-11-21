@@ -1,0 +1,239 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R-------R-----..",
+  "R-----R---R-----",
+  "R---------------"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "pattern",
+ "bpm": [
+  170,
+  176
+ ],
+ "chord_center": 64,
+ "chord_rh": [
+  "x---------------"
+ ],
+ "chord_size": 4,
+ "desc": "Drum & bass: two-step breaks at 174, growling reese bass, wide pads",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "x.xxx.x.x.xxx.x."
+  ],
+  "kick": [
+   "X.........X.....",
+   "X.........X..x..",
+   "X.X.......X....."
+  ],
+  "ride": [
+   "x...x...x...x..."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "dnb",
+ "form_scale": 2,
+ "forms": [
+  "dnb",
+  "dnb_dj",
+  "dnb_roller",
+  "dnb_club"
+ ],
+ "forms_variants": true,
+ "ghosts": true,
+ "gm_hint": "",
+ "human": 0.0,
+ "id": "dnb",
+ "kit": "punchy",
+ "kit_override": {},
+ "lead_rh": [
+  "x---x---x-x-----",
+  "x-x---x-x---x---",
+  "x-------x---x---",
+  "x---------------"
+ ],
+ "master": {
+  "air": 1.5,
+  "low": 1.0,
+  "lufs": -8.5,
+  "tone": [
+   0.0,
+   -1.0,
+   -3.9,
+   -6.8,
+   -6.7,
+   -8.0,
+   -9.7,
+   -10.3,
+   -14.1
+  ]
+ },
+ "name": "dnb",
+ "progs": [
+  [
+   0,
+   5,
+   6,
+   4
+  ],
+  [
+   0,
+   3,
+   5,
+   6
+  ],
+  [
+   0,
+   0,
+   5,
+   6
+  ]
+ ],
+ "reverb": 2.0,
+ "sc_depth": 0.55,
+ "sc_release": 0.35,
+ "scales": [
+  "minor"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "sub_layer": true,
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -11,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "reese",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 850
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 1.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": 220,
+   "inst": "epiano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.6
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "supersaw",
+   "layer": "pad",
+   "name": "pad",
+   "p": {
+    "a": 0.5,
+    "cut": 2500
+   },
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.8
+  },
+  {
+   "db": -28,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "stab",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.3,
+   "sc": 0.6
+  },
+  {
+   "db": null,
+   "dly": 0.25,
+   "drive": null,
+   "hp": null,
+   "inst": "leadsaw",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "cut": 4000
+   },
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.5
+  }
+ ]
+}

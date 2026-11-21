@@ -1,0 +1,176 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R-------R-------",
+  "R---R---R---R---"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bpm": [
+  66,
+  96
+ ],
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 3,
+ "desc": "Classical / romantic orchestra: lyrical violin melody, string harmony, harp, horns",
+ "drums": {
+  "timp": [
+   "X..............."
+  ]
+ },
+ "extends": "_family",
+ "form": "orchestral",
+ "form_scale": 1,
+ "gm_hint": "Violin solo (melody); String ensemble; Cellos & basses; Harp arpeggios; French horns pad; Timpani",
+ "human": 0.012,
+ "id": "orchestral",
+ "kick_track": "timp",
+ "lead_rh": [
+  "x---x-x-x-------",
+  "x-----x-x---x---",
+  "x-x-x---x-------",
+  "x---------------"
+ ],
+ "master": {
+  "air": 1.0,
+  "low": 0.5,
+  "lufs": -16.0
+ },
+ "name": "orchestral",
+ "progs": {
+  "major": [
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    0,
+    4,
+    5,
+    3
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ]
+  ]
+ },
+ "reverb": 3.2,
+ "scales": [
+  "major",
+  "minor"
+ ],
+ "tracks": [
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "timp",
+   "layer": "kick",
+   "name": "timp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "cello",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "a": 0.15
+   },
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "a": 0.3,
+    "r": 0.6
+   },
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "horn",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "harp",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "violin",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "close"
+}

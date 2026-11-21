@@ -1,0 +1,318 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 4,
+  "prob": 1.0,
+  "rate": 1
+ },
+ "bass": [
+  "R.R.R.R.R.R.R.R.",
+  "R..R..R.R..R..R."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  122,
+  132
+ ],
+ "chord_bars": 2,
+ "chord_center": 60,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 4,
+ "delay_beats": 0.75,
+ "desc": "Analog arp drive: a glowing, driving synth piece around 122-132 - a 16th-note analog sequence pulsing and filtering through the whole track, pumping against a steady kick, huge swelling pads, a punchy live-sounding snare and bass guitar, a soaring synth melody and long builds where the sequence opens up; warm, saturated and euphoric without ever getting harsh",
+ "drums": {
+  "chat": [
+   "..x...x...x...x.",
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "X...X...X...X...",
+   "X...X...X...X.x."
+  ],
+  "ohat": [
+   "..x...x...x...x."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "arp_drive",
+ "ghosts": false,
+ "gm_hint": "A 16th-note analog sequence (saw / square through a resonant filter that opens over the builds), steady kick, sidechain-pumping pads, bass guitar, a soaring mono synth lead; warm saturation",
+ "human": 0.004,
+ "id": "analog_arp_drive",
+ "kit": "acoustic",
+ "kit_override": {},
+ "lead_rh": [
+  "x-------x---x---",
+  "x---x---x-------",
+  "x---------------"
+ ],
+ "master": {
+  "air": -1.5,
+  "lofi": true,
+  "low": 1.4,
+  "lufs": -10.0,
+  "vintage_lp": 10000,
+  "width": 1.3,
+  "wobble": 0.25
+ },
+ "name": "analog_arp_drive",
+ "no_rotation": true,
+ "own_progs": true,
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    6,
+    3,
+    3
+   ]
+  ],
+  "lydian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    5,
+    1
+   ]
+  ],
+  "major": [
+   [
+    3,
+    4,
+    0,
+    0
+   ],
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    0,
+    0,
+    3,
+    3
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    3,
+    6
+   ],
+   [
+    5,
+    3,
+    0,
+    6
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ],
+   [
+    0,
+    6,
+    0,
+    6
+   ]
+  ]
+ },
+ "repetition": 0.9,
+ "reverb": 2.6,
+ "sc_depth": 0.55,
+ "sc_release": 0.22,
+ "scales": [
+  "major",
+  "mixolydian",
+  "lydian",
+  "minor"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "strum": 0.0,
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sf:pickbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 1500
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.4
+  },
+  {
+   "chorus": 0.3,
+   "db": -19,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck_saw",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.6,
+   "sweep": [
+    700,
+    4200,
+    16
+   ]
+  },
+  {
+   "chorus": 0.6,
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "polysynth",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "a": 0.3,
+    "cut": 2200,
+    "r": 1.2
+   },
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.9
+  },
+  {
+   "chorus": 0.7,
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 1.0
+  },
+  {
+   "db": -19,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "leadsaw",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "cut": 3000
+   },
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -36,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "close"
+}

@@ -1,0 +1,216 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R...R...F...R...",
+  "R.......F...A..."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bpm": [
+  88,
+  132
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "x.x.x.x.x.x.x.x.",
+  "x...x...x...x...",
+  "x--.x--.x---x---"
+ ],
+ "chord_size": 4,
+ "desc": "Musical theatre / Broadway: a pit band and orchestra behind a big show tune - piano driving the harmony, strings and horns swelling into the chorus, light kit, a soaring melody, and the last chorus a key change up",
+ "drums": {
+  "crash": [
+   "X...............",
+   "................"
+  ],
+  "kick": [
+   "X.......X.......",
+   "X.....X.X......."
+  ],
+  "ride": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "song",
+ "gm_hint": "",
+ "human": 0.008,
+ "id": "musical_theatre",
+ "key_change": true,
+ "kit": "acoustic",
+ "lead_rh": [
+  "x---x-x-x-------",
+  "x-x-x---x-x-x---",
+  "x-------x---x---"
+ ],
+ "master": {
+  "air": 1.6,
+  "low": 0.9,
+  "lufs": -12.0
+ },
+ "name": "musical_theatre",
+ "progs": {
+  "major": [
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    0,
+    3,
+    1,
+    4
+   ],
+   [
+    0,
+    2,
+    3,
+    4
+   ],
+   [
+    3,
+    4,
+    2,
+    5
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "sc_depth": 0.0,
+ "scales": [
+  "major"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "crash",
+   "layer": "top",
+   "name": "crash",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "upright",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "horn",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "violins",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  }
+ ]
+}

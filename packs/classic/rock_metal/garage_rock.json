@@ -1,0 +1,304 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.8,
+  "rate": 2
+ },
+ "bass": [
+  "R.R.R.R.R.R.R.R.",
+  "R...R.R.R...R.R."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  128,
+  160
+ ],
+ "chord_bars": 1,
+ "chord_center": 52,
+ "chord_rh": [
+  "x.x.x.x.x.x.x.x.",
+  "x-.x-.x-x-.x-.x-"
+ ],
+ "chord_size": 3,
+ "desc": "Garage rock (60s): raw, loud and simple - fuzz guitars bashing three chords, a cheap combo organ riffing, a driving bass, tambourine on every beat and a slightly sloppy, pounding beat",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "crash": [
+   "X..............."
+  ],
+  "kick": [
+   "X.....X.X.......",
+   "X.X...X.X......."
+  ],
+  "snare": [
+   "....X.......X..."
+  ],
+  "tamb": [
+   "x...x...x...x...",
+   "x.x.x.x.x.x.x.x."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "song",
+ "ghosts": false,
+ "gm_hint": "Fuzz guitar; combo organ (Farfisa / Vox Continental); bass; drums; tambourine",
+ "human": 0.012,
+ "id": "garage_rock",
+ "kit": "acoustic",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x.x.x-x-x---x---",
+  "x-x-x-x-x-------"
+ ],
+ "master": {
+  "air": 0.6,
+  "low": 0.8,
+  "lufs": -10.0,
+  "vintage_lp": 9000
+ },
+ "name": "garage_rock",
+ "no_rotation": true,
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ]
+  ],
+  "major": [
+   [
+    0,
+    3,
+    4,
+    3
+   ],
+   [
+    0,
+    0,
+    3,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    6,
+    5,
+    6
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ],
+   [
+    0,
+    3,
+    6,
+    3
+   ]
+  ]
+ },
+ "reverb": 1.3,
+ "scales": [
+  "mixolydian",
+  "major",
+  "minor",
+  "dorian"
+ ],
+ "strum": 0.0,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tamb",
+   "layer": "top",
+   "name": "tamb",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "crash",
+   "layer": "top",
+   "name": "crash",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": 0.5,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "amp": 20,
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "bright": 4500,
+    "dist": 0
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "bars": [
+     [
+      1,
+      0.8
+     ],
+     [
+      2,
+      0.9
+     ],
+     [
+      3,
+      0.5
+     ],
+     [
+      4,
+      0.75
+     ],
+     [
+      6,
+      0.35
+     ],
+     [
+      8,
+      0.5
+     ]
+    ],
+    "leslie": 6.5
+   },
+   "pan": -0.25,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "bars": [
+     [
+      1,
+      0.8
+     ],
+     [
+      2,
+      0.9
+     ],
+     [
+      3,
+      0.5
+     ],
+     [
+      4,
+      0.75
+     ],
+     [
+      6,
+      0.35
+     ],
+     [
+      8,
+      0.5
+     ]
+    ],
+    "leslie": 6.5
+   },
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "power"
+}

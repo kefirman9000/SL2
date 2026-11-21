@@ -1,0 +1,271 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.45,
+  "rate": 2
+ },
+ "bass": [
+  "R..R....R.R.....",
+  "R.....R.R..R...."
+ ],
+ "bpm": [
+  92,
+  108
+ ],
+ "build_family": [
+  "pickup",
+  "swell"
+ ],
+ "chord_bars": 1,
+ "chord_center": 62,
+ "chord_rh": [
+  "x-------x-------",
+  "x---x---x---x---"
+ ],
+ "desc": "Arabic pop: a modern Egyptian / Lebanese pop song - the maqsum on darbuka over a pop kick and claps, a string section playing the hooks in unison, oud and qanun fills between the lines, a warm synth bass and a sung, ornamented melody in Nahawand, Hijaz or Kurd",
+ "drums": {
+  "claps": [
+   "....x.......x..."
+  ],
+  "darbuka": [
+   "X.......X.......",
+   "X.......X..X...."
+  ],
+  "darbuka_tek": [
+   "..X...X.....X...",
+   "..X.x.X.x...X.x."
+  ],
+  "kick": [
+   "X.......X.......",
+   "X.....X.X......."
+  ],
+  "riq": [
+   "x.x.x.x.x.x.x.x.",
+   "X.x.x.xxX.x.x.xx"
+  ]
+ },
+ "extends": "_family",
+ "form": "song",
+ "gm_hint": "Pop kick + darbuka (maqsum) + claps; string section unison hooks; oud and qanun fills; synth bass; voice",
+ "human": 0.006,
+ "id": "arab_pop",
+ "kick_track": "darbuka",
+ "lead_oct": 5,
+ "lead_rh": [
+  "x.x.x.x.x-x-x---",
+  "x-x-x.x.x---x---",
+  "..x.x.x.x-x-x---"
+ ],
+ "master": {
+  "air": 1.2,
+  "low": 1.0,
+  "lufs": -11.0
+ },
+ "name": "arab_pop",
+ "ornament": 0.45,
+ "progs": {
+  "hijaz": [
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    6,
+    1,
+    0
+   ],
+   [
+    3,
+    1,
+    0,
+    0
+   ]
+  ],
+  "kurd": [
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    6,
+    5,
+    1
+   ]
+  ],
+  "nahawand": [
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    6,
+    5,
+    4
+   ]
+  ]
+ },
+ "reverb": 1.7,
+ "scales": [
+  "nahawand",
+  "hijaz",
+  "kurd"
+ ],
+ "slides": 0.35,
+ "snare_tracks": [
+  "darbuka_tek"
+ ],
+ "tracks": [
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "darbuka",
+   "layer": "kick",
+   "name": "darbuka",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "darbuka_tek",
+   "layer": "snare",
+   "name": "darbuka_tek",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "claps",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "riq",
+   "layer": "top",
+   "name": "riq",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sinebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "oud",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.12,
+   "drive": null,
+   "hp": null,
+   "inst": "violin",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "double_of": "lead",
+   "drive": null,
+   "hp": null,
+   "inst": "qanun",
+   "keep_inst": true,
+   "layer": "lead",
+   "name": "lead_q",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "none",
+  "crash"
+ ]
+}

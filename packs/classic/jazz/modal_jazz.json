@@ -1,0 +1,213 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 36,
+ "bass_mode": "walk",
+ "bpm": [
+  110,
+  150
+ ],
+ "chord_bars": 2,
+ "chord_center": 60,
+ "chord_rh": [
+  "x-......x-......",
+  "...x-.......x-..",
+  "x-..........x-.."
+ ],
+ "chord_size": 4,
+ "comp_snare": true,
+ "desc": "Cool / modal jazz (late-50s): long stretches on one mode, medium tempo, lots of space, quartal-ish piano voicings, muted trumpet and tenor sax, brushes and ride, walking bass",
+ "drums": {
+  "chat": [
+   "....x.......x..."
+  ],
+  "kick": [
+   "o.......o......."
+  ],
+  "ride": [
+   "x...x.x.x...x.x."
+  ],
+  "snare": [
+   "................"
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "jazz",
+ "form_scale": 1,
+ "ghosts": false,
+ "gm_hint": "",
+ "human": 0.008,
+ "id": "modal_jazz",
+ "kick_track": "kick",
+ "kit": "default",
+ "lead_rh": [
+  "x---x-x-x-------",
+  "x-x-x---....x---",
+  "....x-x-x---x---",
+  "x-------x-x-x---"
+ ],
+ "master": {
+  "air": 1.0,
+  "low": 0.8,
+  "lufs": -15.0
+ },
+ "name": "modal_jazz",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    0,
+    0,
+    1
+   ]
+  ],
+  "lydian": [
+   [
+    0,
+    0,
+    1,
+    1
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    6,
+    6
+   ]
+  ]
+ },
+ "repetition": 0.6,
+ "reverb": 2.0,
+ "scales": [
+  "dorian",
+  "mixolydian",
+  "lydian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.6,
+ "swing_unit": 8,
+ "tracks": [
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "upright",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.15,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "trumpet",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "open"
+}

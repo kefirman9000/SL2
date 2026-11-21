@@ -1,0 +1,299 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.95,
+  "rate": 4
+ },
+ "bass": [
+  "R-------..R-....",
+  "R---..R-R-------"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 29,
+ "bass_mode": "pattern",
+ "bpm": [
+  116,
+  124
+ ],
+ "build_family": [
+  "filter",
+  "drumless",
+  "none",
+  "pickup"
+ ],
+ "chord_center": 60,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 4,
+ "desc": "Mallet-led melodic house / IDM-house: interlocking marimba, vibraphone and kalimba patterns in odd groupings over a deep, rolling four-on-the-floor around 120, a round sub bass, soft pads and a slowly unfolding melody - intricate, organic and hypnotic, with long beatless openings where the mallets build up one layer at a time",
+ "drums": {
+  "chat": [
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "clap": [
+   "........X.......",
+   "....X.......X..."
+  ],
+  "conga": [
+   "..o..x.o...o.x.."
+  ],
+  "kick": [
+   "X...X...X...X...",
+   "X...X...X...X..x"
+  ],
+  "ohat": [
+   "..x...x...x...x."
+  ],
+  "shaker": [
+   ".x.x.x.x.x.x.x.x"
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "mallet_house",
+ "ghosts": false,
+ "gm_hint": "Marimba / vibes / kalimba arpeggios in interlocking patterns; deep rolling house kick, shakers, congas; sub bass; soft pads; a slowly unfolding lead",
+ "human": 0.004,
+ "id": "mallet_house",
+ "kit": "soft",
+ "kit_override": {},
+ "lead_rh": [
+  "x---x-x-x-------",
+  "..x-x---x-x-....",
+  "x-------x---x---"
+ ],
+ "master": {
+  "air": 1.0,
+  "low": 1.6,
+  "lufs": -10.0,
+  "width": 1.2
+ },
+ "name": "mallet_house",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    6
+   ],
+   [
+    0,
+    1,
+    0,
+    3
+   ]
+  ],
+  "lydian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ]
+  ],
+  "major": [
+   [
+    0,
+    4,
+    5,
+    3
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    0,
+    6,
+    3,
+    4
+   ]
+  ]
+ },
+ "repetition": 0.8,
+ "reverb": 2.6,
+ "sc_depth": 0.35,
+ "sc_release": 0.45,
+ "scales": [
+  "minor",
+  "dorian",
+  "major",
+  "lydian"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "strum": 0.0,
+ "swing": 0.53,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -32,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "conga",
+   "layer": "top",
+   "name": "conga",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sinebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 400
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.4
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "glasspad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.25,
+   "drive": null,
+   "hp": null,
+   "inst": "marimba",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.3,
+   "double_of": "arp",
+   "drive": null,
+   "hp": null,
+   "inst": "vibes",
+   "layer": "arp",
+   "name": "arp2",
+   "octave": 12,
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "kalimba",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  }
+ ]
+}

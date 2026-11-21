@@ -1,0 +1,15 @@
+{
+ "bass_mode": "pattern",
+ "category": "Classic",
+ "chord_bars": 1,
+ "chord_size": 4,
+ "form_scale": 1,
+ "kick_track": "kick",
+ "kit_override": {},
+ "sc_release": 0.45,
+ "strum": 0.0,
+ "suggest": "",
+ "swing_unit": 16,
+ "trap_hats": false,
+ "voicing": "close"
+}

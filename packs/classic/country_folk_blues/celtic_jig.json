@@ -1,0 +1,250 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.5,
+  "rate": 1
+ },
+ "bass": [
+  "R.....F.....",
+  "R..F..R..F.."
+ ],
+ "bass_gate": 0.7,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  104,
+  124
+ ],
+ "chord_center": 58,
+ "chord_rh": [
+  "x.xx.xx.xx.x",
+  "x..x..x..x.."
+ ],
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "desc": "Celtic jig (6/8): fiddle and tin whistle in unison on an AABB tune, bodhrán, bouncing guitar, a soft pipe drone",
+ "drum_voice": {
+  "tip": {
+   "decay": 16,
+   "pitch": 140
+  }
+ },
+ "drums": {
+  "bodhran": [
+   "X.xX.xX.xX.x",
+   "X..X.xX..X.x",
+   "X.xx.xX.xX.x"
+  ],
+  "tip": [
+   "..x..x..x..x",
+   ".....x.....x"
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "jig",
+ "ghosts": false,
+ "gm_hint": "Fiddle / tin whistle (tune); Bodhran; Acoustic guitar or bouzouki; Upright bass",
+ "human": 0.008,
+ "id": "celtic_jig",
+ "kick_track": "bodhran",
+ "kit": "soft",
+ "lead_oct": 5,
+ "lead_rh": [
+  "xxxxxxxxxxxx",
+  "x-xx-xx-xx-x",
+  "xxx-xxxxx-x-",
+  "x-xxxxx-xx-x"
+ ],
+ "master": {
+  "air": 1.4,
+  "low": 0.8,
+  "lufs": -12.0
+ },
+ "meter": "6/8",
+ "name": "celtic_jig",
+ "no_rotation": true,
+ "pad_drone": true,
+ "progs": {
+  "dorian": [
+   [
+    0,
+    6,
+    0,
+    6
+   ],
+   [
+    0,
+    3,
+    0,
+    6
+   ]
+  ],
+  "major": [
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    4,
+    0,
+    4
+   ],
+   [
+    0,
+    0,
+    3,
+    4
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    0,
+    6
+   ],
+   [
+    0,
+    3,
+    6,
+    0
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "scales": [
+  "major",
+  "mixolydian",
+  "dorian"
+ ],
+ "snare_tracks": [
+  "tip"
+ ],
+ "strum": 0.0,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "bodhran",
+   "layer": "kick",
+   "name": "bodhran",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "bodhran",
+   "layer": "snare",
+   "name": "tip",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "upright",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "acguitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "bright": 5000
+   },
+   "pan": -0.25,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "drone",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "harp",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "violin",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "vib": 8
+   },
+   "pan": -0.1,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "double_of": "lead",
+   "drive": null,
+   "hp": null,
+   "inst": "tinwhistle",
+   "keep_inst": true,
+   "layer": "lead",
+   "name": "whistle",
+   "octave": 12,
+   "p": {},
+   "pan": 0.15,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ]
+}

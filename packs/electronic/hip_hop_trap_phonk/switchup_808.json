@@ -1,0 +1,390 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.3,
+  "rate": 2
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 23,
+ "bass_mode": "808",
+ "bpm": [
+  155,
+  168
+ ],
+ "build_family": [
+  "pause",
+  "stutter",
+  "none"
+ ],
+ "chord_bars": 1,
+ "chord_center": 58,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "desc": "Switch-up 808: a pitch-dark, almost mono trap beat at 155-168 BPM where the 808 never plays the same bar twice - grinding root and flat-2nd 8ths, leaping one or two octaves up and sliding back down, 16th rolls, dives and wobbles, bars of folded, buzzing 808 with the sub gone, chopped stabs, sudden gaps and dead stops where the drums cut out - over semitone-rub phrygian chords, a faint eerie melody and a lot of empty space",
+ "dj_fx": 0.35,
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "x.x.x.x.x.x.xxxx",
+   "x.x.x.x.x.xxx.x.",
+   "x.x.x.x.x.x.x..."
+  ],
+  "clap": [
+   "....X.......X...",
+   "........X......."
+  ],
+  "kick": [
+   "X...X.X...X.X.X.",
+   "X.....X...X...X.",
+   "X...X.X...X.....",
+   "X..X..X...X.X...",
+   "X.....X.X.X....."
+  ],
+  "ohat": [
+   "......x.......x.",
+   "................"
+  ],
+  "snare": [
+   "....X.......X...",
+   "....X.......X.x.",
+   "....X..x....X...",
+   "........X......."
+  ]
+ },
+ "extends": "_family",
+ "fifth808": 0.04,
+ "form": "switchup_808",
+ "form_scale": 1,
+ "glide808": 0.35,
+ "gm_hint": "Very low mono 808 (B0-E1) with slides, octave leaps, rolls, dives, wobble and folded / distorted bars, switching up every bar; sparse, crushed trap kit with hat rolls and dead stops; dark semitone-rub pad, faint bell / pluck melody drenched in reverb; almost nothing above 8 kHz",
+ "hi_bass": {
+  "at": 38,
+  "p": {
+   "cut": 1300
+  },
+  "pool": [
+   "midbass",
+   "midbass",
+   "reese"
+  ]
+ },
+ "human": 0.0,
+ "id": "switchup_808",
+ "keep_fx": [
+  "tapestop"
+ ],
+ "kit": "808",
+ "kit_override": {
+  "chat": {
+   "bits": 9,
+   "srate": 20000
+  },
+  "clap": {
+   "bits": 10
+  },
+  "kick": {
+   "decay": 14,
+   "drive": 1.8,
+   "len": 0.16,
+   "pitch": 44,
+   "punch": 90
+  },
+  "snare": {
+   "bits": 10,
+   "drive": 1.8
+  }
+ },
+ "lead_rh": [
+  "x-------........",
+  "x---....x---....",
+  "........x-------",
+  "x.......x.x....."
+ ],
+ "master": {
+  "air": -3.0,
+  "drive": 0.1,
+  "low": 5.0,
+  "lufs": -11.0,
+  "max_gr": 5.0,
+  "width": 0.85
+ },
+ "name": "switchup_808",
+ "no_layers": true,
+ "no_rotation": true,
+ "oct808": 0.06,
+ "own_progs": true,
+ "pitch_rolls": true,
+ "plain_drops": true,
+ "progs": {
+  "harmonic_minor": [
+   [
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    0,
+    4,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    0,
+    5,
+    5
+   ],
+   [
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    0,
+    2,
+    4
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    2,
+    1
+   ],
+   [
+    0,
+    2,
+    4,
+    1
+   ]
+  ]
+ },
+ "repetition": 0.8,
+ "reverb": 3.0,
+ "sc_depth": 0.45,
+ "sc_release": 0.1,
+ "scales": [
+  "phrygian",
+  "minor",
+  "harmonic_minor"
+ ],
+ "snare_tracks": [
+  "snare",
+  "clap"
+ ],
+ "swing": 0.5,
+ "switchups": {
+  "weights": {
+   "grind": 1.4,
+   "leap": 1.3,
+   "plain": 0.6
+  }
+ },
+ "tracks": [
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.1,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": -0.1,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -6,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "808",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "decay": 0.35,
+    "drive": 1.8,
+    "slide": 0.06
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.45
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "double_of": "bass",
+   "drive": null,
+   "hp": 220,
+   "inst": "808",
+   "keep_inst": true,
+   "layer": "bass",
+   "name": "bass_grit",
+   "octave": 0,
+   "p": {
+    "decay": 0.35,
+    "drive": 7.5,
+    "slide": 0.06
+   },
+   "pan": 0.0,
+   "presence": 3,
+   "rev": 0.0,
+   "sc": 0.9
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "cut": 900
+   },
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "choir",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.7,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.45,
+   "drive": null,
+   "hp": null,
+   "inst": "bell",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.7,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.4,
+   "drive": null,
+   "hp": null,
+   "inst": "phonkbell",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -37,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "gap",
+  "gap",
+  "tapestop",
+  "none"
+ ],
+ "trap_hats": false,
+ "voicing": "close",
+ "warp_808": 0.3
+}

@@ -1,0 +1,244 @@
+{
+ "accel": [
+  0.75,
+  1.45
+ ],
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.7,
+  "rate": 2
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bass_lo": 31,
+ "bpm": [
+  90,
+  100
+ ],
+ "call_response": true,
+ "chord_bars": 1,
+ "chord_rh": [
+  "x...x...x...x...",
+  "x.x.x.x.x.x.x.x."
+ ],
+ "desc": "Kirtan - drums & sitar: the dholak, bongos and kartal start it off alone, then the sitar calls each line and the group answers, over a harmonium and drone - speeding up chant by chant, with drum breaks between, until it is a wild, ecstatic drum-driven chant",
+ "drums": {
+  "bongo": [
+   "..x..x.x..x..x.x",
+   "..x.xx.x..x.xx.x"
+  ],
+  "bongo_lo": [
+   "x.......x.......",
+   "x.....x.x......."
+  ],
+  "dholak": [
+   "X.....x.X.......",
+   "X.....x.X...x..."
+  ],
+  "dholak_ta": [
+   "..x.x...x.x.x.x.",
+   "..x.x.x.x.x.x.x."
+  ],
+  "manjira": [
+   "x.x.x.x.x.x.x.x.",
+   "X.x.X.x.X.x.X.x."
+  ]
+ },
+ "extends": "_family",
+ "form": "drum_kirtan",
+ "gm_hint": "Dholak, bongos, kartal / manjira (drums first); sitar calls; group voices answer; harmonium; tanpura",
+ "human": 0.009,
+ "id": "drum_kirtan",
+ "kick_track": "dholak",
+ "master": {
+  "air": 0.8,
+  "low": 0.7,
+  "lufs": -12.0
+ },
+ "name": "drum_kirtan",
+ "progs": {
+  "bhairav": [
+   [
+    0,
+    0,
+    4,
+    0
+   ]
+  ],
+  "major": [
+   [
+    0,
+    0,
+    4,
+    4
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    0,
+    6,
+    0
+   ],
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.9,
+ "reverb": 2.0,
+ "scales": [
+  "mixolydian",
+  "major",
+  "bhairav"
+ ],
+ "slides": 0.4,
+ "snare_tracks": [
+  "dholak_ta"
+ ],
+ "tracks": [
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "dholak",
+   "layer": "kick",
+   "name": "dholak",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "dholak_ta",
+   "layer": "snare",
+   "name": "dholak_ta",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "bongo",
+   "layer": "top",
+   "name": "bongo",
+   "p": {},
+   "pan": 0.35,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "bongo_lo",
+   "layer": "top",
+   "name": "bongo_lo",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "manjira",
+   "layer": "top",
+   "name": "manjira",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tanpura",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "harmonium",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.15,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "santoor",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sitar",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "double_of": "lead",
+   "drive": null,
+   "hp": null,
+   "inst": "choir",
+   "keep_inst": true,
+   "layer": "lead",
+   "name": "group",
+   "p": {},
+   "pan": 0.15,
+   "rev": 0.5,
+   "sc": 0.0
+  }
+ ]
+}

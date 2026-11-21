@@ -1,0 +1,268 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "rate": 1
+ },
+ "bass": [
+  "RRRRRRRRRRRRRRRR",
+  "R.R.R.R.R.R.R.R."
+ ],
+ "bass_gate": 0.8,
+ "bass_lo": 26,
+ "bass_mode": "pattern",
+ "bpm": [
+  120,
+  170
+ ],
+ "chord_bars": 1,
+ "chord_center": 48,
+ "chord_rh": [
+  "x.xxx.xxx.xxx.xx",
+  "xxxxxxxxxxxxxxxx",
+  "x-x-x-x-x-x-x-x-"
+ ],
+ "chord_size": 3,
+ "desc": "Symphonic metal: double-kick drums and power chords under choir, string ostinatos and a soaring lead",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "XxXxXxXxXxXxXxXx",
+   "X.X.X.X.X.X.X.X.",
+   "XxXxXxXxX.X.XxXx",
+   "X.xxX.xxX.xxX.xx"
+  ],
+  "ride": [
+   "x...x...x...x..."
+  ],
+  "snare": [
+   "....X.......X...",
+   "........X......."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "song",
+ "ghosts": false,
+ "gm_hint": "Distorted guitars; Choir (pad); Strings spiccato (ostinato); Violin / guitar / horn lead; Organ",
+ "human": 0.003,
+ "id": "symphonic_metal",
+ "kit": "acoustic",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x---x-x-x-------",
+  "x-x-x---x---x---",
+  "x-------x---x---",
+  "x-.x-.x-x-------"
+ ],
+ "master": {
+  "air": 1.5,
+  "low": 1.0,
+  "lufs": -9.5
+ },
+ "name": "symphonic_metal",
+ "progs": {
+  "harmonic_minor": [
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    5,
+    0,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    2,
+    6
+   ],
+   [
+    0,
+    6,
+    5,
+    4
+   ],
+   [
+    0,
+    3,
+    6,
+    5
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    1,
+    0,
+    6
+   ],
+   [
+    0,
+    0,
+    1,
+    0
+   ]
+  ]
+ },
+ "reverb": 2.6,
+ "riff_chorus": 0.35,
+ "riff_lo": 38,
+ "riffs": [
+  "pp.pp.ppX-pp.pp.",
+  "p.ppp.ppb-p.ppm-",
+  "p.ppp.ppp.ppp.pp",
+  "X---pppppppppppp",
+  "pp.f-pp.m-pp.b--",
+  "ppppX-ppppm-ppb-",
+  "X-.pp.ppX-.pp.pp"
+ ],
+ "scales": [
+  "harmonic_minor",
+  "minor",
+  "phrygian"
+ ],
+ "strum": 0.0,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": 0.6,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "amp": 32,
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "bright": 4500,
+    "damp": 0.99,
+    "dist": 0
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "choir",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "spiccato",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "violin",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "power"
+}

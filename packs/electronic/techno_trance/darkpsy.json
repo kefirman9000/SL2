@@ -1,0 +1,320 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 4,
+  "prob": 0.55,
+  "rate": 1
+ },
+ "bass": [
+  ".RRR.RRR.RRR.RRR",
+  ".RRR.RRR.RRO.RRR"
+ ],
+ "bass_gate": 0.38,
+ "bass_lo": 27,
+ "bass_mode": "pattern",
+ "bpm": [
+  148,
+  158
+ ],
+ "chord_bars": 1,
+ "chord_center": 58,
+ "chord_rh": [
+  "......x........."
+ ],
+ "chord_size": 3,
+ "desc": "Dark psy / forest: 148-158 BPM, heavy and abstract - a hard, short kick and a gritty, growling rolling bass (K-B-B-B), laser zaps, twisted squelches and glitchy blips instead of melodies, eerie pads in short breaks, flangers and bit-crushed percussion; hypnotic, intense and strange",
+ "drum_crush": 0.25,
+ "drums": {
+  "chat": [
+   "xxxxxxxxxxxxxxxx",
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "clap": [
+   "....x.......x...",
+   "....x.......x..x"
+  ],
+  "crash": [
+   "X..............."
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "ohat": [
+   "..x...x...x...x."
+  ],
+  "rim": [
+   "..x....x..x...x."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "filter_arc": true,
+ "form": "darkpsy",
+ "form_scale": 1,
+ "gm_hint": "Hard short kick; growling rolling psy bass; laser zaps; twisted squelches; eerie pad; crushed percussion",
+ "human": 0.001,
+ "id": "darkpsy",
+ "kit": "techno",
+ "kit_override": {
+  "kick": {
+   "click": 0.65,
+   "decay": 18,
+   "drive": 3.4,
+   "hold": 0.015,
+   "len": 0.18,
+   "pitch": 46,
+   "punch": 230,
+   "sweep": 44
+  }
+ },
+ "lead_oct": 4,
+ "lead_rh": [
+  "x.x..x.x..x.x...",
+  "xx..x..xx..x..x.",
+  "x.......x.x.x..."
+ ],
+ "master": {
+  "air": 1.0,
+  "low": 1.2,
+  "lufs": -8.0,
+  "tone": [
+   0.0,
+   -1.5,
+   -7.5,
+   -12.0,
+   -15.0,
+   -16.5,
+   -19.0,
+   -22.5,
+   -26.0
+  ],
+  "width": 1.0
+ },
+ "name": "darkpsy",
+ "no_sounds": [
+  "supersaw",
+  "hypersaw",
+  "supersaw_lead",
+  "emolead",
+  "mhpluck",
+  "superpluck",
+  "lushpad",
+  "vocalchop",
+  "vox",
+  "jp_supersaw",
+  "futurechord",
+  "rumble"
+ ],
+ "own_progs": true,
+ "progs": {
+  "minor": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    6,
+    0
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.85,
+ "reverb": 2.2,
+ "sc_depth": 0.25,
+ "sc_release": 0.2,
+ "scales": [
+  "phrygian",
+  "minor"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -8,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "rim",
+   "layer": "top",
+   "name": "rim",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "crash",
+   "layer": "top",
+   "name": "crash",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -11,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "psyroll",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 2000,
+    "growl": 0.6,
+    "res": 0.45
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.2
+  },
+  {
+   "db": -28,
+   "dly": 0.3,
+   "drive": null,
+   "flanger": 0.3,
+   "hp": null,
+   "inst": "techstab",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "eeriepad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.35,
+   "dly_time": 0.75,
+   "drive": null,
+   "hp": null,
+   "inst": "psyzap",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.3,
+   "drive": null,
+   "flanger": 0.25,
+   "hp": null,
+   "inst": "psylead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "rate": 9.0
+   },
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -34,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ],
+ "tune_kick": true,
+ "voicing": "close"
+}

@@ -1,0 +1,194 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.6,
+  "rate": 2
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bass_lo": 31,
+ "bpm": [
+  76,
+  96
+ ],
+ "chord_bars": 4,
+ "chord_rh": [
+  "x---------------"
+ ],
+ "desc": "Carnatic kriti (South Indian devotional song): a free alapana on the veena over the tanpura, then the composed song - pallavi, anupallavi, charanam - with the mridangam's ringing strokes, kanjira and ghatam in an 8-beat adi tala, and the bansuri (venu) answering the melody",
+ "drum_voice": {
+  "ghatam": {
+   "pitch": 1100
+  }
+ },
+ "drums": {
+  "ghatam": [
+   "..x...x...x...xx",
+   "..x.x.x...x.x.x."
+  ],
+  "kanjira": [
+   "x...x.x.x...x.x.",
+   "x.x.x...x.x.x..."
+  ],
+  "mridangam": [
+   "x.x.xx.xx.x.xx.x",
+   "x.xxx.x.x.xx.x.x"
+  ],
+  "mridangam_lo": [
+   "X.......X...X...",
+   "X.....X.X......."
+  ]
+ },
+ "extends": "_family",
+ "form": "kriti",
+ "gm_hint": "Veena (or voice); venu / bansuri; tanpura; mridangam, kanjira, ghatam",
+ "human": 0.008,
+ "id": "carnatic_kriti",
+ "kick_track": "mridangam_lo",
+ "master": {
+  "air": 1.0,
+  "low": 0.6,
+  "lufs": -13.0
+ },
+ "name": "carnatic_kriti",
+ "progs": {
+  "bhairav": [
+   [
+    0,
+    0,
+    0,
+    0
+   ]
+  ],
+  "lydian": [
+   [
+    0,
+    0,
+    0,
+    0
+   ]
+  ],
+  "major": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    4,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.8,
+ "reverb": 2.1,
+ "scales": [
+  "bhairav",
+  "major",
+  "lydian"
+ ],
+ "slides": 0.5,
+ "snare_tracks": [
+  "mridangam"
+ ],
+ "tracks": [
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "mridangam_lo",
+   "layer": "kick",
+   "name": "mridangam_lo",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "mridangam",
+   "layer": "snare",
+   "name": "mridangam",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tamb",
+   "layer": "top",
+   "name": "kanjira",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "darbuka_tek",
+   "layer": "top",
+   "name": "ghatam",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tanpura",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "flute",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "vib": 25
+   },
+   "pan": 0.25,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "veena",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  }
+ ]
+}

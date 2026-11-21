@@ -1,0 +1,271 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "rate": 1
+ },
+ "bass": [
+  "R.RO.R.OR.R.O.RA",
+  "R..R.O.RR.R..O.R",
+  "R.R.O.R.R.R.O.RA"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  96,
+  140
+ ],
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x--.x--.x--.x--.",
+  ".x-..x-..x-..x-.",
+  "x-..x-..x-..x---"
+ ],
+ "chord_size": 4,
+ "desc": "Jazz fusion / jazz-rock: straight 16th-note grooves, electric bass, Rhodes and synth leads, overdriven guitar, extended chords and virtuosic unison lines over a rock / funk rhythm section",
+ "drums": {
+  "chat": [
+   "xxxxxxxxxxxxxxxx"
+  ],
+  "kick": [
+   "X..x..X...X..x..",
+   "X.x...X..x..X..."
+  ],
+  "ohat": [
+   "......x.......x."
+  ],
+  "ride": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "snare": [
+   "....X..o....X..o"
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "song",
+ "form_scale": 1,
+ "ghosts": true,
+ "gm_hint": "",
+ "human": 0.005,
+ "id": "fusion",
+ "kick_track": "kick",
+ "kit": "default",
+ "lead_rh": [
+  "x.x.x.x.x.x.x.x.",
+  "x.xxx.x.x.xxx.x.",
+  "x-x-x-x-x.x.x---"
+ ],
+ "master": {
+  "air": 1.6,
+  "low": 1.0,
+  "lufs": -12.0
+ },
+ "name": "fusion",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    6,
+    2
+   ],
+   [
+    0,
+    6,
+    3,
+    4
+   ]
+  ],
+  "lydian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    4,
+    5
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    0,
+    3,
+    6,
+    4
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ],
+   [
+    0,
+    3,
+    6,
+    6
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "scales": [
+  "dorian",
+  "mixolydian",
+  "lydian",
+  "minor"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "chorus": 0.5,
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "epiano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "polysynth",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": 0.4,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "leadsaw",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "drop2"
+}

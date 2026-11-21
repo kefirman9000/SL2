@@ -1,0 +1,18 @@
+{
+ "bass_mode": "pattern",
+ "category": "Orchestral",
+ "delay_beats": 0.75,
+ "fill": false,
+ "ghosts": false,
+ "kit": "default",
+ "kit_override": {},
+ "lead_oct": 5,
+ "sc_depth": 0.0,
+ "sc_release": 0.45,
+ "snare_tracks": [],
+ "strum": 0.0,
+ "suggest": "",
+ "swing": 0.5,
+ "swing_unit": 16,
+ "trap_hats": false
+}

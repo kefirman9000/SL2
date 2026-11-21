@@ -1,0 +1,305 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.35,
+  "rate": 2
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 26,
+ "bass_mode": "wobble",
+ "bpm": [
+  138,
+  142
+ ],
+ "chord_bars": 1,
+ "chord_center": 62,
+ "chord_rh": [
+  "x---------------"
+ ],
+ "chord_size": 3,
+ "desc": "Dark / UK dubstep: half-time at 140, deep clean sub with a slow wobbling mid-bass, sparse syncopated drums, lots of space, dark atmospheres",
+ "drums": {
+  "chat": [
+   "x...x...x...x.x.",
+   "..x...x...x...x."
+  ],
+  "kick": [
+   "X.........X.....",
+   "X.....X...X.....",
+   "X.......X.X....."
+  ],
+  "ohat": [
+   "..............x."
+  ],
+  "rim": [
+   ".....x.......x.."
+  ],
+  "snare": [
+   "........X......."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "halftime",
+ "form_scale": 1.75,
+ "forms": [
+  "halftime",
+  "dubstep_vip",
+  "dubstep_fake",
+  "dubstep_club"
+ ],
+ "forms_variants": true,
+ "ghosts": false,
+ "gm_hint": "Clean mono sine sub + LFO-wobbled mid-bass; sparse punchy drums; dark pads and drones",
+ "human": 0.0,
+ "id": "dubstep",
+ "kit": "punchy",
+ "kit_override": {
+  "kick": {
+   "decay": 6,
+   "drive": 2.0,
+   "punch": 200
+  },
+  "snare": {
+   "decay": 10,
+   "snap": 1.5
+  }
+ },
+ "lead_oct": 5,
+ "lead_rh": [
+  "x-------x-------",
+  "x---x---x-------",
+  "x---------------",
+  "........x-------"
+ ],
+ "master": {
+  "air": 1.2,
+  "low": 1.8,
+  "lufs": -8.0,
+  "tone": [
+   0.0,
+   -7.5,
+   -10.0,
+   -15.4,
+   -16.4,
+   -14.1,
+   -12.9,
+   -15.6,
+   -20.6
+  ]
+ },
+ "name": "dubstep",
+ "progs": {
+  "minor": [
+   [
+    0,
+    0,
+    5,
+    6
+   ],
+   [
+    0,
+    5,
+    0,
+    6
+   ],
+   [
+    0,
+    0,
+    0,
+    6
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    6
+   ],
+   [
+    0,
+    0,
+    0,
+    1
+   ]
+  ]
+ },
+ "reverb": 3.0,
+ "sc_depth": 0.5,
+ "sc_release": 0.3,
+ "scales": [
+  "minor",
+  "phrygian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "sub_layer": true,
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "rim",
+   "layer": "top",
+   "name": "rim",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "wobble",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "sub": 0.0
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.7
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "cut": 900
+   },
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.5
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "choir",
+   "layer": "pad",
+   "name": "pad",
+   "p": {
+    "vowel": "o"
+   },
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.5
+  },
+  {
+   "db": -27,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "bell",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.4,
+   "drive": null,
+   "hp": null,
+   "inst": "stab",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "cut": 1600
+   },
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.4
+  },
+  {
+   "db": -36,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  }
+ ],
+ "trap_hats": false,
+ "voicing": "close"
+}

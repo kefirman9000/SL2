@@ -1,0 +1,244 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.6,
+  "rate": 2
+ },
+ "bass": [
+  "R.R.R.R.R.R.R.R.",
+  "R...R.R.R...R.R.",
+  "R.R...R.R.R...R."
+ ],
+ "bass_gate": 0.6,
+ "bass_lo": 33,
+ "bpm": [
+  92,
+  118
+ ],
+ "build_family": [
+  "pickup",
+  "toms"
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "x-..x-....x-....",
+  "x---x---x---x---"
+ ],
+ "chord_size": 4,
+ "desc": "80s adult pop - gated drums & shakuhachi: a big drum machine with that huge gated-reverb snare and tom fills, a punchy synth bass, bright poly-synth stabs, a DX-style electric piano and lush pads, and the breathy sampled shakuhachi flute playing the hook - airy, dramatic, very mid-80s",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "X.......X.X.....",
+   "X.....X.X......."
+  ],
+  "snare": [
+   "....X.......X..."
+  ],
+  "tom": [
+   "................",
+   "............x.xx"
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "song",
+ "gated_snare": true,
+ "gm_hint": "Sampled shakuhachi (lead); drum machine with gated-reverb snare & toms; synth bass; poly-synth; DX electric piano; pads",
+ "human": 0.004,
+ "id": "shakuhachi_pop",
+ "kit": "linn",
+ "lead_rh": [
+  "x---x-x-x-------",
+  "x-x-x---x-x-....",
+  "..x-x-x-x-------"
+ ],
+ "master": {
+  "air": 1.4,
+  "low": 1.0,
+  "lufs": -11.0,
+  "width": 1.1
+ },
+ "name": "shakuhachi_pop",
+ "no_rotation": true,
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    6
+   ]
+  ],
+  "major": [
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ],
+   [
+    0,
+    3,
+    5,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    6,
+    4
+   ],
+   [
+    0,
+    3,
+    6,
+    5
+   ]
+  ]
+ },
+ "reverb": 2.4,
+ "sc_depth": 0.0,
+ "scales": [
+  "major",
+  "minor",
+  "dorian"
+ ],
+ "slides": 0.2,
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tom",
+   "layer": "top",
+   "name": "tom",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "moogbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "chorus": 0.3,
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "polysynth",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "chorus": 0.4,
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "epiano",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.22,
+   "drive": null,
+   "hp": null,
+   "inst": "shakuhachi",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  }
+ ]
+}

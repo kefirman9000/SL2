@@ -1,0 +1,24 @@
+{
+ "bass_gate": 0.92,
+ "category": "Electronic",
+ "chord_bars": 1,
+ "delay_beats": 0.75,
+ "fill": false,
+ "form_scale": 1,
+ "ghosts": false,
+ "gm_hint": "",
+ "kick_track": "kick",
+ "kit": "808",
+ "kit_override": {},
+ "lead_oct": 5,
+ "reverb": 2.0,
+ "sc_release": 0.45,
+ "snare_tracks": [
+  "clap"
+ ],
+ "strum": 0.0,
+ "suggest": "",
+ "swing_unit": 16,
+ "trap_hats": false,
+ "voicing": "close"
+}

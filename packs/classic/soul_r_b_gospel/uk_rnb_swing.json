@@ -1,0 +1,302 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.6,
+  "rate": 2
+ },
+ "bass": [
+  "R..R......R.R...",
+  "R.....R...R..R..",
+  "R..R..R...R....."
+ ],
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  92,
+  100
+ ],
+ "build_family": [
+  "pickup",
+  "stops",
+  "none"
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "x-----x---x-----",
+  "..x...x...x...x.",
+  "x---------x-----"
+ ],
+ "chord_size": 4,
+ "desc": "UK R&B / swingbeat (mid-90s): a laid-back, heavily swung 96 BPM groove from a sampled drum loop - a fat kick, a cracking snare and swung 16th hats - a deep, round bass, warm electric piano and organ chords with 7ths and 9ths, string swells and a smooth synth hook; mixed thick, warm and loud, the low end up front and the top end soft, nearly mono, the same energy from start to end",
+ "drums": {
+  "chat": [
+   "x.xxx.xxx.xxx.xx",
+   "x.x.x.x.x.x.x.xx"
+  ],
+  "kick": [
+   "X..X......X.X...",
+   "X.....X...X..X..",
+   "X..X..X...X....."
+  ],
+  "ohat": [
+   "......x........."
+  ],
+  "shaker": [
+   "..x...x...x...x."
+  ],
+  "snare": [
+   "....X.......X...",
+   "....X.......X..x"
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "uk_rnb_swing",
+ "form_scale": 1,
+ "ghosts": false,
+ "gm_hint": "Sampled swung drum loop (fat kick, cracking snare, swung 16th hats); deep round bass; warm e-piano and organ 7th / 9th chords; string swells; smooth synth hook",
+ "human": 0.006,
+ "id": "uk_rnb_swing",
+ "kit": "linn",
+ "kit_override": {
+  "kick": {
+   "click": 0.3,
+   "decay": 9,
+   "drive": 1.8,
+   "len": 0.4,
+   "pitch": 48,
+   "punch": 110
+  }
+ },
+ "lead_oct": 5,
+ "lead_rh": [
+  "x.x.x...x.x.....",
+  "x---x.x.x-------",
+  "..x.x.x.x---x---"
+ ],
+ "master": {
+  "air": -1.0,
+  "low": 2.5,
+  "lufs": -9.5,
+  "tone": [
+   -4.7,
+   0.0,
+   -5.0,
+   -14.5,
+   -11.0,
+   -8.0,
+   -10.6,
+   -13.7,
+   -17.4
+  ],
+  "width": 0.85
+ },
+ "name": "uk_rnb_swing",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    6,
+    3,
+    4
+   ]
+  ],
+  "major": [
+   [
+    0,
+    5,
+    1,
+    4
+   ],
+   [
+    0,
+    3,
+    4,
+    3
+   ],
+   [
+    0,
+    2,
+    3,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    0,
+    3,
+    6,
+    4
+   ],
+   [
+    0,
+    6,
+    5,
+    4
+   ]
+  ]
+ },
+ "repetition": 0.8,
+ "reverb": 2.0,
+ "sc_depth": 0.0,
+ "sc_release": 0.45,
+ "scales": [
+  "minor",
+  "dorian",
+  "major"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.6,
+ "tracks": [
+  {
+   "db": -11,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.15,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": -0.1,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "deepbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "rhodes",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "softlead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "crash",
+  "none"
+ ],
+ "voicing": "close"
+}

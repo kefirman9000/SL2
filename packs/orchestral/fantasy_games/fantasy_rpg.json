@@ -1,0 +1,247 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R-------R-------",
+  "R---R---R---R---"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 33,
+ "bass_mode": "pattern",
+ "bpm": [
+  84,
+  116
+ ],
+ "category": "Orchestral",
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------",
+  "x---x---x---x---"
+ ],
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "desc": "Fantasy RPG / video-game score: harp arpeggios, flute & oboe melody, warm strings, horn swells",
+ "drums": {
+  "shaker": [
+   "..x...x...x...x."
+  ],
+  "timp": [
+   "X...............",
+   "X.......X......."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "orchestral",
+ "form_scale": 1,
+ "ghosts": false,
+ "gm_hint": "Flute / oboe (melody); Harp (arpeggios); Strings; French horns; Timpani",
+ "human": 0.01,
+ "id": "fantasy_rpg",
+ "kick_track": "timp",
+ "kit": "default",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x---x-x-x-------",
+  "x-x-x---x---x---",
+  "x-----x-x-------",
+  "..x-x-x-x---x---"
+ ],
+ "master": {
+  "air": 1.2,
+  "low": 0.5,
+  "lufs": -14.0
+ },
+ "name": "fantasy_rpg",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    6,
+    3,
+    0
+   ],
+   [
+    0,
+    3,
+    6,
+    4
+   ]
+  ],
+  "lydian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    4,
+    0
+   ],
+   [
+    0,
+    1,
+    5,
+    4
+   ]
+  ],
+  "major": [
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    0,
+    3,
+    0,
+    4
+   ],
+   [
+    3,
+    4,
+    2,
+    5
+   ],
+   [
+    0,
+    2,
+    3,
+    4
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ]
+  ]
+ },
+ "reverb": 3.0,
+ "sc_depth": 0.0,
+ "sc_release": 0.45,
+ "scales": [
+  "major",
+  "lydian",
+  "dorian"
+ ],
+ "snare_tracks": [],
+ "strum": 0.0,
+ "suggest": "",
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "timp",
+   "layer": "kick",
+   "name": "timp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -34,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "cello",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "a": 0.25,
+    "r": 0.6
+   },
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "horn",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "harp",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "flute",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.15,
+   "rev": 0.4,
+   "sc": 0.0
+  }
+ ],
+ "trap_hats": false,
+ "voicing": "open"
+}

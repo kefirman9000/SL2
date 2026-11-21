@@ -1,0 +1,193 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 4,
+  "prob": 0.5,
+  "rate": 2
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "walk",
+ "bpm": [
+  156,
+  190
+ ],
+ "chord_bars": 1,
+ "chord_center": 58,
+ "chord_rh": [
+  "x.x.x.x.x.x.x.x.",
+  "..x...x...x...x."
+ ],
+ "chord_size": 3,
+ "desc": "Rockabilly (50s): a slapped upright bass clicking on every beat, a brushed snare shuffle, a strummed rhythm guitar and a twangy hollow-body lead with slapback echo - fast, swinging 12-bar rock and roll",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "X.......X......."
+  ],
+  "snare": [
+   "....x.......x...",
+   "....x..x....x..."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "song",
+ "ghosts": false,
+ "gm_hint": "Slap upright bass; hollow-body electric (twang, slapback echo); acoustic rhythm guitar; brushed drums",
+ "human": 0.007,
+ "id": "rockabilly",
+ "kit": "acoustic",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x.x.x-x-x---x---",
+  "x.xxx.x.x-x-x---",
+  "x-x.x-x.x---...."
+ ],
+ "master": {
+  "air": 0.8,
+  "low": 0.8,
+  "lufs": -11.0,
+  "vintage_lp": 9000
+ },
+ "name": "rockabilly",
+ "no_rotation": true,
+ "progs": [
+  [
+   0,
+   0,
+   0,
+   0,
+   3,
+   3,
+   0,
+   0,
+   4,
+   3,
+   0,
+   4
+  ],
+  [
+   0,
+   3,
+   0,
+   0,
+   3,
+   3,
+   0,
+   0,
+   4,
+   3,
+   0,
+   0
+  ]
+ ],
+ "reverb": 1.2,
+ "scales": [
+  "mixolydian"
+ ],
+ "slides": 0.3,
+ "strum": 0.0,
+ "swing": 0.64,
+ "swing_unit": 8,
+ "tracks": [
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "upright",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "acguitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.22,
+   "drive": null,
+   "hp": null,
+   "inst": "twang",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "close"
+}

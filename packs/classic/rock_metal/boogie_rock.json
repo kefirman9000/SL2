@@ -1,0 +1,224 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.6,
+  "rate": 2
+ },
+ "bass": [
+  "R...F...R...F...",
+  "R.R.F.F.R.R.F.F."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  164,
+  176
+ ],
+ "build_family": [
+  "pickup",
+  "lift",
+  "stops"
+ ],
+ "chord_bars": 1,
+ "chord_center": 64,
+ "chord_rh": [
+  "x.xxx.x.x.xxx.x.",
+  "x.x.xxx.x.x.xxx."
+ ],
+ "chord_size": 3,
+ "desc": "Mid-80s boogie rock: a fast, bouncing two-beat shuffle around 170 driven by a cheerful combo-organ riff, clean chorused electric guitar licks, a pumping root-fifth bass and a big, roomy kit with a backbeat snare - feel-good and radio-bright",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "X.....X.X.......",
+   "X.......X......."
+  ],
+  "snare": [
+   "....X.......X..."
+  ],
+  "tamb": [
+   "x.x.x.x.x.x.x.x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "boogie_rock",
+ "ghosts": false,
+ "gm_hint": "Combo organ / synth-organ riff (the hook); clean chorused Strat licks; root-fifth bass; big roomy kit",
+ "human": 0.006,
+ "id": "boogie_rock",
+ "kit": "acoustic",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x-x-x-x-x---x---",
+  "x---x-x-x-x-x---"
+ ],
+ "master": {
+  "air": 1.4,
+  "low": 0.8,
+  "lufs": -11.0,
+  "width": 1.0
+ },
+ "name": "boogie_rock",
+ "progs": {
+  "major": [
+   [
+    0,
+    0,
+    4,
+    3
+   ],
+   [
+    0,
+    3,
+    4,
+    3
+   ],
+   [
+    0,
+    4,
+    3,
+    4
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "scales": [
+  "major",
+  "mixolydian"
+ ],
+ "strum": 0.0,
+ "swing": 0.6,
+ "swing_unit": 8,
+ "tracks": [
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tamb",
+   "layer": "top",
+   "name": "tamb",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "bright": 4500,
+    "dist": 0
+   },
+   "pan": -0.3,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "bright": 5000,
+    "dist": 0
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "crash",
+  "none",
+  "none"
+ ],
+ "voicing": "close"
+}

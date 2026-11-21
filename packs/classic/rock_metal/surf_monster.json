@@ -1,0 +1,371 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 4,
+  "prob": 0.92,
+  "rate": 2
+ },
+ "bass": [
+  "R.R.u.R.d.R.R...",
+  "R.u.R.d.R.R.u.R.",
+  "R.R.R.u.R.d.R..."
+ ],
+ "bass_gate": 0.7,
+ "bass_lo": 36,
+ "bass_mode": "pattern",
+ "bpm": [
+  146,
+  158
+ ],
+ "build_family": [
+  "toms",
+  "pickup",
+  "stops"
+ ],
+ "chord_bars": 1,
+ "chord_center": 64,
+ "chord_rh": [
+  "x.....x...x.....",
+  "x.......x.x.....",
+  "..x...x...x...x."
+ ],
+ "chord_size": 3,
+ "desc": "Spooky surf - monster band: the 60s monster-sitcom surf band with better instruments - a baritone six-string and electric bass creeping through the chromatic riff (root, a half step up, back, a half step down) with the spring reverb dripping, a reedy transistor combo organ holding the chords and taking a creepy break, a horn section punching stabs, a bright surf guitar for the melody and its own break, and a small, hard-hit early-60s kit with a rattling snare and tom fills, at about 150 - campy, creepy and wet with reverb",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "X.......X.......",
+   "X.....X.X......."
+  ],
+  "ride": [
+   "x.x.x.x.x.x.x.x.",
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "snare": [
+   "....X.......X...",
+   "....X.......X.x."
+  ]
+ },
+ "exact_pools": true,
+ "extends": "_family",
+ "fill": true,
+ "form": "surf_monster",
+ "ghosts": true,
+ "gm_hint": "Baritone six-string guitar doubling an electric bass on a low chromatic riff (dripping spring reverb); a reedy transistor combo organ (Farfisa / Vox) on the chords and an organ break; a horn section for stabs; a bright surf guitar (offset guitar, spring reverb, a little tremolo) for the melody and a guitar break; a small early-60s kit played hard (rattling snare, ride, tom fills)",
+ "human": 0.008,
+ "id": "surf_monster",
+ "kit": "surf60s",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x-x-x---x-x-x---",
+  "x---x-x-x-------",
+  "x-x-x-x-x---x---"
+ ],
+ "master": {
+  "air": 0.0,
+  "low": 0.4,
+  "lufs": -11.0,
+  "vintage_lp": 9000,
+  "width": 1.2
+ },
+ "name": "surf_monster",
+ "no_fx_sounds": true,
+ "no_layers": true,
+ "no_rotation": true,
+ "own_progs": true,
+ "progs": {
+  "harmonic_minor": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    3,
+    5,
+    4
+   ],
+   [
+    5,
+    3,
+    4,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    5,
+    4
+   ],
+   [
+    2,
+    6,
+    5,
+    2
+   ]
+  ]
+ },
+ "repetition": 0.85,
+ "reverb": 2.0,
+ "riff_locked": true,
+ "scales": [
+  "minor",
+  "harmonic_minor"
+ ],
+ "section_progs": {
+  "alt": [
+   2,
+   6,
+   5,
+   2
+  ],
+  "main": [
+   0,
+   0,
+   5,
+   4
+  ],
+  "verse": [
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ "song_variations": {
+  "bpm": [
+   {
+    "bpm": [
+     146,
+     152
+    ],
+    "name": "driving"
+   },
+   {
+    "bpm": [
+     152,
+     158
+    ],
+    "name": "fast"
+   }
+  ],
+  "form": [
+   {
+    "form": "surf_monster",
+    "name": "full"
+   },
+   {
+    "form": "surf_monster_short",
+    "name": "short"
+   }
+  ],
+  "lead": [
+   {
+    "lead_rh": [
+     "x-x-x---x-x-x---",
+     "x---x-x-x-------",
+     "x-x-x-x-x---x---"
+    ],
+    "name": "surf melody"
+   },
+   {
+    "lead_rh": [
+     "xxxxxxxxx-------",
+     "xxxxxxxxxxxxx---",
+     "x-x-xxxxxxxx----"
+    ],
+    "name": "tremolo picking"
+   }
+  ],
+  "palette": [
+   {
+    "arp": "combo",
+    "chords": "brass",
+    "lead": "surfguitar",
+    "name": "guitar lead",
+    "pad": "combo"
+   },
+   {
+    "arp": "surfguitar",
+    "chords": "brass",
+    "lead": "brass",
+    "name": "horn lead",
+    "pad": "combo"
+   },
+   {
+    "arp": "surfguitar",
+    "chords": "brass",
+    "lead": "combo",
+    "name": "organ lead",
+    "pad": "combo"
+   },
+   {
+    "arp": "combo",
+    "chords": "brass",
+    "lead": "sax",
+    "name": "sax lead",
+    "pad": "combo"
+   }
+  ]
+ },
+ "spring": true,
+ "strum": 0.0,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -9,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sf:pickbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -11,
+   "dly": 0.0,
+   "double_of": "bass",
+   "drive": null,
+   "hp": null,
+   "inst": "baritwang",
+   "keep_inst": true,
+   "layer": "bass",
+   "name": "riff",
+   "octave": 12,
+   "p": {},
+   "pan": 0.0,
+   "poly": true,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "combo",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": 160,
+   "inst": "brass",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.08,
+   "drive": null,
+   "hp": null,
+   "inst": "combo",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.1,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.1,
+   "drive": null,
+   "hp": null,
+   "inst": "surfguitar",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "poly": true,
+   "rev": 0.15,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "crash",
+  "none",
+  "toms"
+ ],
+ "voicing": "close"
+}

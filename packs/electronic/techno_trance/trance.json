@@ -1,0 +1,272 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "rate": 1
+ },
+ "bass": [
+  "..RR..RR..RR..RR",
+  ".RRR.RRR.RRR.RRR"
+ ],
+ "bass_gate": 0.55,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  132,
+  140
+ ],
+ "chord_bars": 1,
+ "chord_center": 66,
+ "chord_rh": [
+  "xx.xx.xx.x.xx.x.",
+  "x.xx.xx.x.xx.xx.",
+  "x-x-x-x-x-x-x-x-"
+ ],
+ "chord_size": 3,
+ "desc": "Uplifting trance: gated supersaw chords, rolling offbeat bass, euphoric leads",
+ "drums": {
+  "chat": [
+   "oxoxoxoxoxoxoxox"
+  ],
+  "clap": [
+   "....X.......X..."
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "ohat": [
+   "..x...x...x...x."
+  ],
+  "ride": [
+   "..x...x...x...x."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "filter_arc": true,
+ "form": "trance",
+ "form_scale": 1,
+ "forms": [
+  "trance",
+  "trance_double",
+  "trance_prog",
+  "trance_club"
+ ],
+ "forms_variants": true,
+ "gm_hint": "",
+ "human": 0.0,
+ "id": "trance",
+ "kit": "909",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x-x-x-x-x-x-x---",
+  "x--x--x-x--x--x-",
+  "x---x---x-x-x---",
+  "x-------x-------"
+ ],
+ "master": {
+  "air": 2.5,
+  "low": 1.0,
+  "lufs": -8.5,
+  "tone": [
+   -0.5,
+   0,
+   -5.9,
+   -7.7,
+   -12.5,
+   -7.4,
+   -9.9,
+   -10.3,
+   -16.2
+  ]
+ },
+ "name": "trance",
+ "progs": [
+  [
+   0,
+   5,
+   2,
+   6
+  ],
+  [
+   5,
+   6,
+   0,
+   0
+  ],
+  [
+   0,
+   6,
+   5,
+   6
+  ],
+  [
+   5,
+   3,
+   0,
+   4
+  ]
+ ],
+ "rev_hp": 220,
+ "rev_predelay": 0.045,
+ "reverb": 3.0,
+ "sc_arc": true,
+ "sc_depth": 0.7,
+ "sc_release": 0.4,
+ "scales": [
+  "minor"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "rollbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 1400,
+    "d": 0.08,
+    "s": 0.3
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 1.0
+  },
+  {
+   "db": null,
+   "dly": 0.15,
+   "drive": null,
+   "hp": null,
+   "inst": "supersaw",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "a": 0.005,
+    "cut": 5000,
+    "r": 0.08
+   },
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.9
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "gate": "x.xx.x.xx.xx.x.x",
+   "hp": null,
+   "inst": "trancepad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {
+    "a": 0.05,
+    "cut": 2600
+   },
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.8,
+   "wide": 0.4
+  },
+  {
+   "db": -26,
+   "dly": 0.4,
+   "dly_time": 0.5,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck_saw",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.35,
+   "sc": 0.8
+  },
+  {
+   "db": null,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "supersaw_lead",
+   "layer": "lead",
+   "name": "lead",
+   "ott": 0.35,
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.55,
+   "sc": 0.5
+  }
+ ],
+ "voicing": "close"
+}

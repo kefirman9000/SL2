@@ -1,0 +1,244 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "rate": 1
+ },
+ "bass": [
+  "..R...R...R...R.",
+  ".RR..RR..RR..RR.",
+  "R.R...R...R...R.",
+  "R.O.R.O.R.O.R.F."
+ ],
+ "bass_gate": 0.6,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  128,
+  142
+ ],
+ "chord_center": 64,
+ "chord_rh": [
+  "x..x..x...x..x..",
+  "x.x...x.x.x...x."
+ ],
+ "chord_size": 3,
+ "desc": "90s eurodance: driving four-on-the-floor, offbeat bass, piano stabs, big anthemic leads",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "clap": [
+   "....X.......X..."
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "ohat": [
+   "..x...x...x...x."
+  ],
+  "tamb": [
+   "....x.......x...",
+   "..x...x...x...x."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "song",
+ "ghosts": false,
+ "gm_hint": "",
+ "human": 0.0,
+ "id": "eurodance",
+ "kit": "909",
+ "kit_override": {},
+ "lead_rh": [
+  "x-x-x-x-x---x-x-",
+  "x--x--x-x-------",
+  "x-x-x---x-x-x---",
+  "x-------x-------"
+ ],
+ "master": {
+  "air": 2.0,
+  "low": 1.0,
+  "lufs": -9.0
+ },
+ "name": "eurodance",
+ "progs": [
+  [
+   0,
+   5,
+   2,
+   6
+  ],
+  [
+   0,
+   5,
+   3,
+   4
+  ],
+  [
+   5,
+   3,
+   0,
+   4
+  ],
+  [
+   0,
+   2,
+   0,
+   2
+  ],
+  [
+   5,
+   2,
+   0,
+   6
+  ]
+ ],
+ "reverb": 2.0,
+ "sc_depth": 0.4,
+ "sc_release": 0.45,
+ "scales": [
+  "minor"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "strum": 0.0,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tamb",
+   "layer": "top",
+   "name": "tamb",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sawbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 1500
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.6
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.4
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.6
+  },
+  {
+   "db": -27,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck_saw",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "supersaw_lead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.4
+  }
+ ]
+}

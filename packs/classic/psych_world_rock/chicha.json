@@ -1,0 +1,276 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.4,
+  "rate": 2
+ },
+ "bass": [
+  "R...F...R...F...",
+  "R..RF...R..RF..."
+ ],
+ "bass_lo": 28,
+ "bpm": [
+  88,
+  104
+ ],
+ "build_family": [
+  "pickup",
+  "none"
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "..x...x...x...x."
+ ],
+ "desc": "Chicha (Peruvian psychedelic cumbia): the cumbia beat on timbales, guiro and congas, a rolling bass, a combo organ and a twangy, wobbly psychedelic guitar playing the melody - Andean tunes through surf and wah",
+ "drums": {
+  "conga": [
+   "..o...ox..o...ox",
+   "......ox......o."
+  ],
+  "cowbell808": [
+   "..x...x...x...x."
+  ],
+  "guiro": [
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "kick": [
+   "X.......X......."
+  ],
+  "timbale": [
+   "....x.......x...",
+   "....x..x....x.xx"
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "cumbia",
+ "gm_hint": "Psychedelic electric guitar (tremolo / wah); combo organ; timbales, guiro, congas, cowbell; bass",
+ "human": 0.008,
+ "id": "chicha",
+ "kit": "soft",
+ "lead_rh": [
+  "x-x-x---x-x-x---",
+  "x.x.x.x.x-x-x---",
+  "x---x-x-x-------"
+ ],
+ "master": {
+  "air": 1.1,
+  "low": 1.1,
+  "lufs": -11.0
+ },
+ "name": "chicha",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ]
+  ],
+  "harmonic_minor": [
+   [
+    0,
+    4,
+    4,
+    0
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    4,
+    4,
+    0
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    6,
+    5,
+    4
+   ]
+  ]
+ },
+ "reverb": 1.8,
+ "scales": [
+  "minor",
+  "harmonic_minor",
+  "dorian"
+ ],
+ "slides": 0.25,
+ "snare_tracks": [
+  "timbale"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "guiro",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "conga",
+   "layer": "top",
+   "name": "conga",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "timbale",
+   "layer": "snare",
+   "name": "timbale",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -32,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "cowbell808",
+   "layer": "top",
+   "name": "cowbell808",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "bars": [
+     [
+      1,
+      0.8
+     ],
+     [
+      2,
+      0.9
+     ],
+     [
+      3,
+      0.5
+     ],
+     [
+      4,
+      0.75
+     ],
+     [
+      6,
+      0.35
+     ],
+     [
+      8,
+      0.5
+     ]
+    ],
+    "leslie": 6.0
+   },
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "bright": 6000
+   },
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0,
+   "wah": 0.35
+  },
+  {
+   "db": -15,
+   "dly": 0.15,
+   "drive": null,
+   "hp": null,
+   "inst": "twang",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "trem": 7
+   },
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "none",
+  "none",
+  "crash"
+ ],
+ "voicing": "close"
+}

@@ -1,0 +1,268 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.7,
+  "rate": 2
+ },
+ "bass": [
+  "R-------R-------",
+  "R---R---R-R-R---",
+  "R-------R---R---"
+ ],
+ "bass_gate": 0.9,
+ "bass_lo": 26,
+ "bass_mode": "pattern",
+ "bpm": [
+  140,
+  150
+ ],
+ "chord_bars": 1,
+ "chord_center": 64,
+ "chord_rh": [
+  "x---------------",
+  "x.xx.x.xx.x.xx.x",
+  "x--x--x-x--x--x-"
+ ],
+ "chord_size": 4,
+ "desc": "Melodic dubstep: emotional chords and a big supersaw theme over half-time drums - the drop carries the melody, with piano, strings and vocal chops and a heavy but musical bass",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "clap": [
+   "........X......."
+  ],
+  "crash": [
+   "X..............."
+  ],
+  "kick": [
+   "X.........X.....",
+   "X.....X...X....."
+  ],
+  "snare": [
+   "........X......."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "halftime",
+ "form_scale": 1.75,
+ "forms": [
+  "halftime",
+  "dubstep_vip"
+ ],
+ "forms_variants": true,
+ "ghosts": false,
+ "gm_hint": "Supersaw chords + lead; Piano; Strings; Vocal chops; Reese / growl mid-bass over a sine sub",
+ "human": 0.0,
+ "id": "melodic_dubstep",
+ "kit": "hard",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x-x-x---x-x-x---",
+  "x--x--x-x-------",
+  "x-x-x-x-x---x---",
+  "x-------x---x---"
+ ],
+ "master": {
+  "air": 2.0,
+  "low": 1.5,
+  "lufs": -7.5
+ },
+ "name": "melodic_dubstep",
+ "progs": {
+  "major": [
+   [
+    3,
+    4,
+    5,
+    0
+   ],
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    5,
+    3,
+    0,
+    4
+   ],
+   [
+    0,
+    5,
+    2,
+    6
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ]
+  ]
+ },
+ "reverb": 2.6,
+ "sc_depth": 0.6,
+ "sc_release": 0.3,
+ "scales": [
+  "minor",
+  "major"
+ ],
+ "snare_tracks": [
+  "snare",
+  "clap"
+ ],
+ "sub_layer": true,
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "crash",
+   "layer": "top",
+   "name": "crash",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "reese",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 900
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.8
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "supersaw",
+   "layer": "chords",
+   "name": "chords",
+   "ott": 0.5,
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.9,
+   "wide": 0.35
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.6
+  },
+  {
+   "db": -25,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "vox",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.25,
+   "drive": null,
+   "hp": null,
+   "inst": "supersaw_lead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.5
+  }
+ ],
+ "trap_hats": false,
+ "voicing": "close"
+}

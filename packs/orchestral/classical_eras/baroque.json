@@ -1,0 +1,192 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "rate": 1
+ },
+ "bass": [
+  "R.R.R.R.R.R.R.R.",
+  "R.O.R.O.R.O.R.O.",
+  "R...F...R...F..."
+ ],
+ "bass_gate": 0.7,
+ "bass_lo": 36,
+ "bpm": [
+  96,
+  128
+ ],
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x.x.x.x.x.x.x.x.",
+  "x...x...x...x...",
+  "x.xxx.x.x.xxx.x."
+ ],
+ "chord_size": 3,
+ "desc": "Baroque: harpsichord continuo, running string lines, cello octave bass, circle-of-fifths harmony",
+ "drums": {},
+ "extends": "_family",
+ "form": "orchestral",
+ "form_scale": 1,
+ "forms": [
+  "binary",
+  "prelude",
+  "binary"
+ ],
+ "gm_hint": "Harpsichord (continuo); Violins (running 16ths); Cello + bass (octaves); Oboe / violin solo",
+ "human": 0.006,
+ "id": "baroque",
+ "kick_track": "kick",
+ "lead_rh": [
+  "x.x.x.x.x-x-x---",
+  "x-x-x-x-x.x.x---",
+  "x.x.x.x.x.x.x.x.",
+  "x---x.x.x---x---"
+ ],
+ "master": {
+  "air": 1.2,
+  "low": 0.5,
+  "lufs": -15.0
+ },
+ "name": "baroque",
+ "progs": {
+  "harmonic_minor": [
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    5,
+    3,
+    4,
+    0
+   ]
+  ],
+  "major": [
+   [
+    0,
+    3,
+    1,
+    4
+   ],
+   [
+    0,
+    5,
+    1,
+    4
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    5,
+    1,
+    4,
+    0
+   ],
+   [
+    0,
+    4,
+    5,
+    2,
+    3,
+    0,
+    1,
+    4
+   ]
+  ]
+ },
+ "reverb": 2.2,
+ "scales": [
+  "major",
+  "harmonic_minor"
+ ],
+ "tracks": [
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "cello",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "a": 0.03
+   },
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "harpsichord",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "pad",
+   "name": "pad",
+   "p": {
+    "a": 0.2,
+    "cut": 2400
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "spiccato",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "len": 0.14
+   },
+   "pan": 0.25,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "violin",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "vib": 3
+   },
+   "pan": 0.1,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "close"
+}

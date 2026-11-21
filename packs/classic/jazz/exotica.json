@@ -1,0 +1,242 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 6,
+  "prob": 0.25,
+  "rate": 1
+ },
+ "bass": [
+  "R...F...R...F...",
+  "R...A...F...O..."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  90,
+  118
+ ],
+ "build_family": [
+  "pickup",
+  "none"
+ ],
+ "chord_bars": 1,
+ "chord_center": 62,
+ "chord_rh": [
+  "x-------x-------",
+  "x.....x.....x..."
+ ],
+ "chord_size": 4,
+ "desc": "Exotica / tiki lounge (50s): a lush, dreamy island fantasy - vibraphone melodies, congas and bongos, a soft brushed ride, an upright bass, rich seventh chords on piano, sweeping strings and flute bird-call trills",
+ "drums": {
+  "bongo": [
+   "..x..x.x..x..x.x"
+  ],
+  "conga": [
+   "..o.x..o..o.x..o",
+   "x.o.x.ox..o.x.o."
+  ],
+  "ride": [
+   "x...x.x.x...x.x."
+  ],
+  "shaker": [
+   "x.x.x.x.x.x.x.x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "song",
+ "form_scale": 1,
+ "ghosts": false,
+ "gm_hint": "Vibraphone; piano; strings; flute (bird calls); congas, bongos, shaker; brushed ride; upright bass",
+ "human": 0.008,
+ "id": "exotica",
+ "kick_track": "conga",
+ "kit": "soft",
+ "lead_rh": [
+  "x-x-x---x-x-x---",
+  "x---x-x-x-------",
+  "x.x.x-x-x---...."
+ ],
+ "master": {
+  "air": 1.2,
+  "low": 0.7,
+  "lufs": -14.0
+ },
+ "name": "exotica",
+ "no_rotation": true,
+ "progs": {
+  "lydian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ]
+  ],
+  "major": [
+   [
+    0,
+    5,
+    1,
+    4
+   ],
+   [
+    0,
+    3,
+    2,
+    5
+   ],
+   [
+    0,
+    0,
+    3,
+    4
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ]
+ },
+ "reverb": 2.4,
+ "scales": [
+  "major",
+  "lydian",
+  "mixolydian"
+ ],
+ "snare_tracks": [
+  "bongo"
+ ],
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "conga",
+   "layer": "top",
+   "name": "conga",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "bongo",
+   "layer": "top",
+   "name": "bongo",
+   "p": {},
+   "pan": 0.35,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "upright",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.15,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "flute",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "vib": 40
+   },
+   "pan": 0.35,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.12,
+   "drive": null,
+   "hp": null,
+   "inst": "vibes",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "none"
+ ],
+ "voicing": "close"
+}

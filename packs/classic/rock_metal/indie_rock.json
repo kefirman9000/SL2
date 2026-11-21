@@ -1,0 +1,257 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.8,
+  "rate": 2
+ },
+ "bass": [
+  "R.R.R.R.R.R.R.R.",
+  "R...R.R.R...A...",
+  "R.......R.R.A..."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "pattern",
+ "bpm": [
+  108,
+  140
+ ],
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x.x.x.x.x.x.x.x.",
+  "x.xx.xx.x.xx.xx.",
+  "x---x---x---x---"
+ ],
+ "chord_size": 3,
+ "desc": "Indie rock: jangly clean guitars in 8ths, melodic bass, straight-ahead drums, a hooky guitar lead",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "X.......X.X.....",
+   "X...X...X..X...."
+  ],
+  "ride": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "song_b",
+ "ghosts": false,
+ "gm_hint": "Clean / chorus guitars (jangle); Arpeggiated lead guitar; Bass guitar; Drums; Synth or organ pad",
+ "human": 0.006,
+ "id": "indie_rock",
+ "kit": "punchy",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x-x-x---x-x-x---",
+  "x---x-x-x-------",
+  "..x-x-x-x---x---",
+  "x-x-x-x-x---...."
+ ],
+ "master": {
+  "air": 1.6,
+  "low": 1.0,
+  "lufs": -10.0
+ },
+ "name": "indie_rock",
+ "progs": {
+  "major": [
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    3,
+    0,
+    4,
+    5
+   ],
+   [
+    0,
+    3,
+    5,
+    4
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    2,
+    6
+   ],
+   [
+    0,
+    3,
+    5,
+    6
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "scales": [
+  "major",
+  "minor",
+  "mixolydian"
+ ],
+ "strum": 0.0,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -32,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.15,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "bright": 6500,
+    "damp": 0.992
+   },
+   "pan": -0.25,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "pad",
+   "leslie_fx": 0.9,
+   "name": "pad",
+   "overdrive": 0.2,
+   "p": {
+    "leslie": 0.0
+   },
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.25,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "bright": 7000
+   },
+   "pan": 0.3,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "bright": 5000,
+    "dist": 6
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "close"
+}

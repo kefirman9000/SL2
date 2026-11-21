@@ -1,0 +1,225 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "prob": 0.5,
+  "rate": 2
+ },
+ "bass": [
+  "R-..R-.OR-..R-.A",
+  "R...R.R.R...R...",
+  "R-R-..R-R-..R-O-"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "pattern",
+ "bpm": [
+  130,
+  136
+ ],
+ "chord_bars": 1,
+ "chord_center": 62,
+ "chord_rh": [
+  "..x...x...x...x.",
+  "...x..x....x..x."
+ ],
+ "chord_size": 4,
+ "desc": "Speed garage (late 90s UK): a fast, shuffled four-on-the-floor with garage snares and open hats, the huge warping, filtered bassline, organ stabs, ragga vocal chops and rewinds",
+ "drums": {
+  "chat": [
+   ".xox.xox.xox.xox",
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "ohat": [
+   "..x...x...x...x."
+  ],
+  "rim": [
+   "...x......x....."
+  ],
+  "snare": [
+   "....X.......X...",
+   "....X......X.X.."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "garage",
+ "form_scale": 1,
+ "ghosts": false,
+ "gm_hint": "",
+ "human": 0.002,
+ "id": "speed_garage",
+ "kit": "punchy",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x.x.x.....x.x...",
+  "x--.x--.x-x-....",
+  "..x-x-x---x-...."
+ ],
+ "master": {
+  "air": 1.4,
+  "low": 1.4,
+  "lufs": -9.0
+ },
+ "name": "speed_garage",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    0,
+    5,
+    6
+   ],
+   [
+    0,
+    3,
+    0,
+    6
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "sc_depth": 0.45,
+ "sc_release": 0.45,
+ "scales": [
+  "minor",
+  "dorian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.58,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "rim",
+   "layer": "top",
+   "name": "rim",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "reese",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.9
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.8
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.8
+  },
+  {
+   "db": -20,
+   "dly": 0.25,
+   "drive": null,
+   "hp": null,
+   "inst": "vox",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  }
+ ],
+ "trap_hats": false,
+ "voicing": "close"
+}

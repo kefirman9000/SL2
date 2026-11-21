@@ -1,0 +1,338 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 6,
+  "prob": 0.5,
+  "rate": 1
+ },
+ "bass": [
+  "R-------R-----..",
+  "R--R--R-R-----R-",
+  "R-R-..R-R---R-R-",
+  "R---R-R-R---R-.."
+ ],
+ "bass_gate": 0.9,
+ "bass_lo": 28,
+ "bass_mode": "pattern",
+ "bpm": [
+  172,
+  176
+ ],
+ "build_family": [
+  "roll",
+  "hats",
+  "drumless",
+  "wash"
+ ],
+ "chord_center": 63,
+ "chord_rh": [
+  "x-------x-------",
+  "x--x--x-x-------",
+  "x---x---x---x---",
+  "x-------x--x--x-"
+ ],
+ "chord_size": 4,
+ "desc": "Anthemic dancefloor drum & bass: a crisp, punchy 174 two-step with ghost snares and a 16th shaker, a round, bouncing mid-bass that kicks its filter open on every note over a clean sub, big bright chords of piano doubled by a wide supersaw, lush strings, a singing (vocal-like) lead and bleepy arps; a keys-and-vocal intro, two 64-bar drops that switch up halfway, a long emotional breakdown where the chords filter down and open again",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "x.xxx.x.x.xxx.x."
+  ],
+  "kick": [
+   "X.........X.....",
+   "X.........X..x..",
+   "X.x.......X....."
+  ],
+  "ride": [
+   "x...x...x...x..."
+  ],
+  "shaker": [
+   "xxxxxxxxxxxxxxxx"
+  ],
+  "snare": [
+   "....X.......X...",
+   "..x.X...x.x.X..o",
+   "....X..x.o..X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "filter_arc": true,
+ "form": "anthem_dnb",
+ "form_scale": 1,
+ "forms": [
+  "anthem_dnb",
+  "dnb_club"
+ ],
+ "forms_variants": true,
+ "ghosts": true,
+ "gm_hint": "Crisp punchy two-step breaks, ghost snares, 16th shaker, ride; round bouncing mid-bass + clean sub; bright piano doubled by a wide supersaw; lush strings; singing vocal-like lead; bleepy 16th arps",
+ "human": 0.002,
+ "id": "anthem_dnb",
+ "kit": "punchy",
+ "kit_override": {},
+ "lead_rh": [
+  "x---x-x-x-------",
+  "x-x-x---x-x-x---",
+  "x-------x---x-x-",
+  "..x-x-x-x---x---"
+ ],
+ "lead_runs": 0.45,
+ "master": {
+  "air": 0.3,
+  "low": 1.6,
+  "lufs": -7.8,
+  "max_gr": 6.0,
+  "tone": [
+   -0.5,
+   -1.9,
+   -5.2,
+   -9.1,
+   -6.8,
+   -8.5,
+   -10.5,
+   -9.6,
+   -16.0
+  ]
+ },
+ "name": "anthem_dnb",
+ "progs": {
+  "major": [
+   [
+    5,
+    5,
+    3,
+    3
+   ],
+   [
+    5,
+    5,
+    0,
+    4
+   ],
+   [
+    5,
+    0,
+    3,
+    6
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ],
+   [
+    3,
+    4,
+    5,
+    5
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    0,
+    5,
+    5
+   ],
+   [
+    0,
+    0,
+    4,
+    4
+   ],
+   [
+    0,
+    0,
+    2,
+    6
+   ],
+   [
+    0,
+    2,
+    6,
+    6
+   ],
+   [
+    0,
+    5,
+    2,
+    6
+   ],
+   [
+    5,
+    6,
+    0,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.8,
+ "rev_hp": 220,
+ "rev_predelay": 0.03,
+ "reverb": 2.6,
+ "sc_arc": true,
+ "sc_depth": 0.45,
+ "sc_release": 0.28,
+ "scales": [
+  "minor",
+  "major"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "sub_layer": false,
+ "swing": 0.51,
+ "tracks": [
+  {
+   "db": -11,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -10,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "bouncebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "lfo": 0.5,
+    "sweep": 4
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.7
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": 200,
+   "inst": "pianosaw",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.6,
+   "wide": 0.3
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.7
+  },
+  {
+   "db": -31,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "chip",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "pw": 0.25
+   },
+   "pan": 0.3,
+   "rev": 0.3,
+   "sc": 0.4
+  },
+  {
+   "db": -20,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "emolead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.35
+  },
+  {
+   "db": -38,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ]
+}

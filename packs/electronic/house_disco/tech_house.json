@@ -1,0 +1,291 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.5,
+  "rate": 1
+ },
+ "bass": [
+  "..RR..R...RO..R.",
+  "..R.R..R..R..RO.",
+  ".RR..R.R.RR..R.."
+ ],
+ "bass_gate": 0.55,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  124,
+  128
+ ],
+ "chord_center": 64,
+ "chord_rh": [
+  "......x.........",
+  "...x......x....."
+ ],
+ "chord_size": 3,
+ "desc": "Tech house: rolling, rubbery filtered bassline, 909 groove with congas, rims and shakers, percussive organ and synth stabs - minimal melody, all groove",
+ "drum_voice": {
+  "bongo": {
+   "pitch": 380
+  }
+ },
+ "drums": {
+  "bongo": [
+   ".x.x..x..x.x..xx",
+   "...x.x.x...x.xx.",
+   "x.x..x.x.x..x.x."
+  ],
+  "clap": [
+   "....X.......X..."
+  ],
+  "conga": [
+   "..o..x.o...o.x..",
+   "x..o.x...o.ox...",
+   "..o.x..o.o..x.o."
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "ohat": [
+   "..x...x...x...x."
+  ],
+  "rim": [
+   "...o.......o..o.",
+   ".o....o..o....o.",
+   "...o..o....o.o.."
+  ],
+  "shaker": [
+   "oxoxoxoxoxoxoxox",
+   "oxxoxxoxoxxoxxox"
+  ],
+  "tamb": [
+   "..x...x...x...x.",
+   "..x...x...x.x.x."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "groove",
+ "forms": [
+  "groove",
+  "house_dj"
+ ],
+ "forms_variants": true,
+ "ghosts": false,
+ "gm_hint": "",
+ "human": 0.0,
+ "id": "tech_house",
+ "kit": "punchy",
+ "kit_override": {},
+ "lead_rh": [
+  "x.x.....x.x.....",
+  "..x.x.....x.x...",
+  "x...x.x.........",
+  "x.x.x..........."
+ ],
+ "master": {
+  "air": 1.5,
+  "low": 1.5,
+  "lufs": -8.5
+ },
+ "name": "tech_house",
+ "polymeter": 0.35,
+ "progs": [
+  [
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   5,
+   6
+  ],
+  [
+   0,
+   3,
+   0,
+   3
+  ]
+ ],
+ "reverb": 1.6,
+ "sc_depth": 0.65,
+ "sc_release": 0.4,
+ "scales": [
+  "minor",
+  "dorian"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "strum": 0.0,
+ "swing": 0.56,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "conga",
+   "layer": "top",
+   "name": "conga",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "rim",
+   "layer": "top",
+   "name": "rim",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "techbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 900,
+    "d": 0.14,
+    "fdecay": 14,
+    "s": 0.0
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 1.0
+  },
+  {
+   "db": -24,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.8
+  },
+  {
+   "db": -29,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck_saw",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "cut": 3000
+   },
+   "pan": 0.25,
+   "rev": 0.0,
+   "sc": 0.6
+  },
+  {
+   "db": null,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "stab",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.5
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "conga",
+   "layer": "top",
+   "name": "bongo",
+   "p": {},
+   "pan": 0.4,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tamb",
+   "layer": "top",
+   "name": "tamb",
+   "p": {},
+   "pan": -0.35,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ]
+}

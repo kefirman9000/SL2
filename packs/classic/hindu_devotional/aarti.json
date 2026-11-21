@@ -1,0 +1,199 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 6,
+  "prob": 0.95,
+  "rate": 4
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bass_lo": 31,
+ "bpm": [
+  96,
+  116
+ ],
+ "chord_bars": 2,
+ "chord_rh": [
+  "x-------x-------"
+ ],
+ "desc": "Aarti (temple prayer with lamps): the evening worship song - temple bells ringing on every beat, bright manjira, a steady dholak, harmonium and a drone under a simple, joyful raga melody that everyone sings, verse after verse, ending in a ringing \"jai\" and the bells alone",
+ "drums": {
+  "dholak": [
+   "X.x.........x...",
+   "X.x.......x.X...",
+   "X.x..x......x.x."
+  ],
+  "dholak_ta": [
+   "....x.x.x.x...x.",
+   "..x.x.x.x.x.x.x.",
+   "....x.xxx.x...x."
+  ],
+  "manjira": [
+   "x...x...x...x...",
+   "x...x...x...x.x."
+  ]
+ },
+ "extends": "_family",
+ "form": "aarti",
+ "gm_hint": "Temple bells; voices or bansuri; harmonium; tanpura; dholak; manjira (conch to open, if you have one)",
+ "human": 0.009,
+ "id": "aarti",
+ "kick_track": "dholak",
+ "master": {
+  "air": 1.0,
+  "low": 0.5,
+  "lufs": -12.5
+ },
+ "name": "aarti",
+ "progs": {
+  "major": [
+   [
+    0,
+    0,
+    4,
+    0
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    0,
+    0
+   ],
+   [
+    0,
+    3,
+    6,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.9,
+ "reverb": 2.4,
+ "scales": [
+  "major",
+  "mixolydian"
+ ],
+ "slides": 0.3,
+ "snare_tracks": [
+  "dholak_ta"
+ ],
+ "tracks": [
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "dholak",
+   "layer": "kick",
+   "name": "dholak",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "dholak_ta",
+   "layer": "snare",
+   "name": "dholak_ta",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "manjira",
+   "layer": "top",
+   "name": "manjira",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tanpura",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "harmonium",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.15,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tubular",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.08,
+   "drive": null,
+   "hp": null,
+   "inst": "flute",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "vib": 25
+   },
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "double_of": "lead",
+   "drive": null,
+   "hp": null,
+   "inst": "harmonium",
+   "keep_inst": true,
+   "layer": "lead",
+   "name": "harm",
+   "p": {},
+   "pan": 0.1,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ]
+}

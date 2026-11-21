@@ -1,0 +1,266 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 4,
+  "prob": 0.7,
+  "rate": 2
+ },
+ "bass": [
+  "R...R.R.R...R.R.",
+  "R..R..R.R..R....",
+  "R-..R...R-..R..."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  94,
+  108
+ ],
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 4,
+ "delay_beats": 0.75,
+ "desc": "Balearic chill: a sunset groove around 95-108 - a soft four-on-the-floor kick, shakers and congas, a warm round bass, a nylon-string guitar picking under warm pads and Rhodes, a gentle melody drifting in the delay - mellow, golden and soft, nothing sharp on top",
+ "drums": {
+  "chat": [
+   "..x...x...x...x."
+  ],
+  "conga": [
+   "..x..x....x..x.x",
+   "...x..x...x..x.."
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "shaker": [
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "snare": [
+   "....x.......x...",
+   "................"
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "ambient",
+ "ghosts": false,
+ "gm_hint": "Soft kick four to the floor; shakers, congas; warm bass; nylon-string guitar picking; warm pads; Rhodes; a gentle flute / synth melody in the delay; muffled top",
+ "human": 0.008,
+ "id": "balearic_chill",
+ "kit": "soft",
+ "kit_override": {},
+ "lead_rh": [
+  "x---x-....x-....",
+  "x-------x---x---",
+  "..x-x---x-------"
+ ],
+ "master": {
+  "air": -2.5,
+  "low": 1.2,
+  "lufs": -13.0,
+  "vintage_lp": 8000,
+  "width": 1.2
+ },
+ "name": "balearic_chill",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ]
+  ],
+  "lydian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ]
+  ],
+  "major": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    3,
+    4,
+    0,
+    0
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.85,
+ "reverb": 2.6,
+ "sc_depth": 0.15,
+ "sc_release": 0.45,
+ "scales": [
+  "major",
+  "dorian",
+  "mixolydian",
+  "lydian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "strum": 0.0,
+ "swing": 0.54,
+ "tracks": [
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "conga",
+   "layer": "top",
+   "name": "conga",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.15,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sinebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 500
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "epiano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "acguitar",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.4,
+   "drive": null,
+   "hp": null,
+   "inst": "flute",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "close"
+}

@@ -1,0 +1,281 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.5,
+  "rate": 2
+ },
+ "bass": [
+  "R-------R-------",
+  "R-----..R---....",
+  "R-------F-------"
+ ],
+ "bass_lo": 31,
+ "bpm": [
+  78,
+  90
+ ],
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 4,
+ "desc": "Hauntology - wobbly melody, slow beat: a dusty 80-90 BPM hip-hop beat under a simple, sad-happy detuned synth melody that drifts in and out of tune on old tape, a round warm bass, faded analog pads and very little top end",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "..x...x...x...x."
+  ],
+  "clap": [
+   "....x.......x..."
+  ],
+  "kick": [
+   "X.......X.x.....",
+   "X.....x.X.......",
+   "X.......X...x..."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "form": "lofi",
+ "gm_hint": "Detuned mono synth melody (pitch drifting on tape); warm sub; faded string-machine pad; dusty soft kit",
+ "human": 0.006,
+ "id": "hauntology_melody",
+ "lead_rh": [
+  "x-------x---x---",
+  "x---x---x-------",
+  "x---x-x-x-------",
+  "x-------x-------"
+ ],
+ "master": {
+  "air": -3.0,
+  "lofi": true,
+  "low": 1.6,
+  "lufs": -13.0,
+  "wobble": 4.5
+ },
+ "name": "hauntology_melody",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    6,
+    3,
+    0
+   ],
+   [
+    0,
+    3,
+    6,
+    0
+   ]
+  ],
+  "major": [
+   [
+    0,
+    3,
+    0,
+    4
+   ],
+   [
+    3,
+    0,
+    3,
+    4
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    0,
+    6
+   ],
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.9,
+ "reverb": 2.6,
+ "sampler": true,
+ "scales": [
+  "dorian",
+  "major",
+  "mixolydian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "strum": 0.0,
+ "swing": 0.55,
+ "tracks": [
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "moogbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 500
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "solina",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "cut": 1400
+   },
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {
+    "cut": 900
+   },
+   "pan": 0.0,
+   "rev": 0.55,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "vibes",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "chorus": 0.6,
+   "db": -18,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "polysynth",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "a": 0.02,
+    "cut": 1800
+   },
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -39,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -40,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "vinyl",
+   "layer": "fx",
+   "name": "vinyl",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "close"
+}

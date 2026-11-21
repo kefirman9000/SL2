@@ -1,0 +1,239 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.6,
+  "rate": 4
+ },
+ "bass": [
+  "R...F...R...F...",
+  "R...A...F...R.A.",
+  "R.....R.R.....F."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "walk",
+ "bpm": [
+  100,
+  116
+ ],
+ "build_family": [
+  "pickup",
+  "none"
+ ],
+ "chord_center": 60,
+ "chord_rh": [
+  "x.x.xxx.x.x.xxx.",
+  "x--x--x-x--x--x-"
+ ],
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "desc": "Laid-back acoustic folk-rock jam (early-70s American style): strummed acoustic guitars and mandolin, a melodic walking bass, brushes-and-tambourine drums, a gentle singing lead and harmonies feel - one long warm groove that slowly fills out, no breakdowns",
+ "drums": {
+  "kick": [
+   "X.......X.......",
+   "X.....X.X......."
+  ],
+  "shaker": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "snare": [
+   "....X.......X..."
+  ],
+  "tamb": [
+   "..x...x...x...x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "folk_jam",
+ "ghosts": false,
+ "gm_hint": "Strummed acoustic guitars + mandolin; melodic bass; brushed drums + tambourine; a gentle lead (organ / guitar)",
+ "human": 0.012,
+ "id": "folk_jam",
+ "kick_track": "kick",
+ "kit": "soft",
+ "lead_oct": 5,
+ "lead_rh": [
+  "x---x-x-x---....",
+  "x-x-x---x-------"
+ ],
+ "master": {
+  "air": 1.0,
+  "gentle": true,
+  "low": 0.6,
+  "lufs": -12.5,
+  "width": 1.0
+ },
+ "name": "folk_jam",
+ "progs": {
+  "major": [
+   [
+    0,
+    3,
+    0,
+    4
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    4,
+    3,
+    0
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ]
+ },
+ "reverb": 1.8,
+ "scales": [
+  "major",
+  "mixolydian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "strum": 0.014,
+ "swing": 0.54,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tamb",
+   "layer": "top",
+   "name": "tamb",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "acguitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "bright": 5200
+   },
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "mandolin",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "bright": 3800,
+    "dist": 0
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "none",
+  "none",
+  "crash"
+ ]
+}

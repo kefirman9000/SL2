@@ -1,0 +1,236 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 4,
+  "rate": 1
+ },
+ "bass": [
+  "RRRRRRRRRRRRRRRR",
+  "R.R.R.R.R.R.R.R."
+ ],
+ "bass_gate": 0.8,
+ "bass_lo": 26,
+ "bass_mode": "pattern",
+ "bpm": [
+  140,
+  180
+ ],
+ "chord_bars": 1,
+ "chord_center": 48,
+ "chord_rh": [
+  "xxxxxxxxxxxxxxxx",
+  "x.xxx.xxx.xxx.xx",
+  "x-x-xxx-x-x-xxx-"
+ ],
+ "chord_size": 3,
+ "desc": "Metal: palm-muted power chords, double-kick drums, shredding lead guitar",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "XxXxXxXxXxXxXxXx",
+   "X.X.X.X.X.X.X.X.",
+   "XxXxXxXxX.X.XxXx",
+   "X.xxX.xxX.xxX.xx"
+  ],
+  "ride": [
+   "x...x...x...x..."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "song",
+ "ghosts": false,
+ "gm_hint": "",
+ "human": 0.003,
+ "id": "metal",
+ "kit": "acoustic",
+ "kit_override": {
+  "kick": {
+   "click": 0.9,
+   "decay": 14,
+   "drive": 2.0,
+   "len": 0.25,
+   "pitch": 60,
+   "punch": 200,
+   "sweep": 60
+  }
+ },
+ "lead_oct": 4,
+ "lead_rh": [
+  "xxxxx.x.x-x-x---",
+  "x-x-x-x-xxxx----",
+  "x.x.x.x.x-------",
+  "x-------x-------"
+ ],
+ "master": {
+  "air": 1.5,
+  "low": 1.0,
+  "lufs": -9.0
+ },
+ "name": "metal",
+ "progs": [
+  [
+   0,
+   0,
+   1,
+   0
+  ],
+  [
+   0,
+   5,
+   6,
+   0
+  ],
+  [
+   0,
+   6,
+   5,
+   4
+  ]
+ ],
+ "reverb": 2.0,
+ "riff_chorus": 0.35,
+ "riff_lo": 38,
+ "riffs": [
+  "pp.pp.ppX-pp.pp.",
+  "p.ppp.ppb-p.ppm-",
+  "p.ppp.ppp.ppp.pp",
+  "X---pppppppppppp",
+  "pp.f-pp.m-pp.b--",
+  "ppppX-ppppm-ppb-",
+  "X-.pp.ppX-.pp.pp"
+ ],
+ "scales": [
+  "phrygian",
+  "minor",
+  "harmonic_minor"
+ ],
+ "strum": 0.0,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": 0.6,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "amp": 32,
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "bright": 4500,
+    "damp": 0.99,
+    "dist": 0
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "amp": 26,
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "dist": 0
+   },
+   "pan": 0.4,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "amp": 18,
+   "db": null,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "bright": 6000,
+    "damp": 0.999,
+    "dist": 0
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "power"
+}

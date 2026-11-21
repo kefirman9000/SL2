@@ -1,0 +1,289 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 4,
+  "prob": 0.8,
+  "rate": 2
+ },
+ "bass": [
+  "R-------R-------",
+  "R-----R-O-------"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "pattern",
+ "bpm": [
+  66,
+  88
+ ],
+ "chord_bars": 2,
+ "chord_center": 50,
+ "chord_rh": [
+  "x-------x-------",
+  "x-----x-x-------",
+  "x---------------"
+ ],
+ "chord_size": 3,
+ "desc": "Stoner rock - raga / psych: slow, heavy fuzz-guitar riffs and a fuzzed bass locked together over a lumbering beat, a tanpura drone humming underneath, tabla rolling on top of the drum kit and a sitar singing raga phrases that climb, hold and slide back down - opening on the drone and sitar alone, a tabla-and-sitar breakdown, then a heavy psychedelic jam",
+ "drums": {
+  "bayan": [
+   "X.....X.X.....X.",
+   "X.....X.......X."
+  ],
+  "kick": [
+   "X.......X.......",
+   "X.....X.X......."
+  ],
+  "ride": [
+   "x...x...x...x...",
+   "x.x.x.x.x.x.x.x."
+  ],
+  "snare": [
+   "........X.......",
+   "....X.......X..."
+  ],
+  "tabla": [
+   "X.x.x.X.X.x.x.X.",
+   "X.xxx.X.X.x.x.Xx"
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "stoner_raga",
+ "ghosts": false,
+ "gm_hint": "Fuzz guitars (down-tuned); fuzz bass; sitar lead; tanpura drone; tabla over a rock kit with a big ride",
+ "human": 0.007,
+ "id": "stoner_raga",
+ "kit": "acoustic",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x-x-x-x-x-x-x---"
+ ],
+ "master": {
+  "air": 0.8,
+  "low": 1.4,
+  "lufs": -10.0
+ },
+ "name": "stoner_raga",
+ "no_layers": true,
+ "no_rotation": true,
+ "own_progs": true,
+ "progs": {
+  "bhairav": [
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0
+   ]
+  ],
+  "dorian": [
+   [
+    0,
+    0,
+    3,
+    0
+   ],
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    1,
+    0,
+    6
+   ],
+   [
+    0,
+    0,
+    1,
+    1
+   ]
+  ],
+  "phrygian_dominant": [
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    6
+   ]
+  ]
+ },
+ "repetition": 0.75,
+ "reverb": 2.2,
+ "riffs": [
+  "X-------p.p.b---",
+  "X-----X-m---b---",
+  "X---p.p.q---f---",
+  "X.X.p---X---b.p."
+ ],
+ "scales": [
+  "phrygian_dominant",
+  "phrygian",
+  "bhairav",
+  "dorian"
+ ],
+ "slides": 0.45,
+ "strum": 0.0,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tabla",
+   "layer": "top",
+   "name": "tabla",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "bayan",
+   "layer": "top",
+   "name": "bayan",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": 0.8,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "amp": 36,
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "bright": 3500,
+    "damp": 0.99,
+    "dist": 0
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tanpura",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "amp": 30,
+   "db": -26,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "dist": 0
+   },
+   "pan": 0.35,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.12,
+   "drive": null,
+   "hp": null,
+   "inst": "sitar",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "power"
+}

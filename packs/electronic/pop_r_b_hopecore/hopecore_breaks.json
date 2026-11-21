@@ -1,0 +1,277 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 6,
+  "rate": 1
+ },
+ "bass": [
+  "R-------R---R---",
+  "R-----R---R-R---",
+  "R-------R-------"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 29,
+ "bass_mode": "808",
+ "bpm": [
+  150,
+  172
+ ],
+ "chord_center": 64,
+ "chord_rh": [
+  "x-------x-------",
+  "x---x---x---x---",
+  "x-x---x-x---x---"
+ ],
+ "chord_size": 4,
+ "desc": "Hopecore breaks (fast): the loud breakbeat side - bright, uplifting internet-core - fast chopped breakbeats and jersey-club kicks under big major chords on piano and supersaws, sparkling chiptune and bell arps, a soaring lead, stutter edits into emotional drops - nostalgic, hopeful and loud",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "xxxxxxxxxxxxxxxx"
+  ],
+  "clap": [
+   "....x.......x..."
+  ],
+  "crash": [
+   "X..............."
+  ],
+  "kick": [
+   "X.........X.....",
+   "X.X.......X..X..",
+   "X..X..X...X....."
+  ],
+  "snare": [
+   "....X.......X...",
+   "....X..x....X.x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "edm_b",
+ "form_scale": 1,
+ "ghosts": false,
+ "gm_hint": "Chopped Amen / Think break + punchy kick; 808; bright piano and supersaw chords; chiptune and bell arps; soaring saw or square lead; stutter / glitch edits",
+ "human": 0.0,
+ "id": "hopecore_breaks",
+ "kit": "punchy",
+ "kit_override": {},
+ "lead_rh": [
+  "x-x-x-x-x---x---",
+  "x---x-x-x-x-x---",
+  "x-xxx-x-x-------",
+  "x-x-x-x-x-x-x-x-"
+ ],
+ "master": {
+  "air": 2.0,
+  "low": 1.4,
+  "lufs": -9.0,
+  "width": 1.2
+ },
+ "name": "hopecore_breaks",
+ "progs": {
+  "lydian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    5,
+    1
+   ]
+  ],
+  "major": [
+   [
+    3,
+    4,
+    5,
+    0
+   ],
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    3,
+    4,
+    2,
+    5
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ]
+  ]
+ },
+ "reverb": 2.4,
+ "sc_depth": 0.45,
+ "sc_release": 0.35,
+ "scales": [
+  "major",
+  "lydian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "crash",
+   "layer": "top",
+   "name": "crash",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "808",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.5
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.5
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "double_of": "chords",
+   "drive": null,
+   "hp": null,
+   "inst": "supersaw",
+   "keep_inst": true,
+   "layer": "chords",
+   "name": "saws",
+   "p": {
+    "cut": 6000
+   },
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.8
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "glasspad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.7
+  },
+  {
+   "db": -26,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "chip",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "pw": 0.25
+   },
+   "pan": -0.25,
+   "rev": 0.3,
+   "sc": 0.6
+  },
+  {
+   "db": -19,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "supersaw_lead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.3
+  }
+ ],
+ "trap_hats": false,
+ "voicing": "close"
+}

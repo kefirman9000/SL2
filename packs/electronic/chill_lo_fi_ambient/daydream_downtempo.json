@@ -1,0 +1,583 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 1e-06,
+  "rate": 2
+ },
+ "arps2": [
+  {
+   "center": 64,
+   "mode": "updown",
+   "prob": 0.9,
+   "span": 7,
+   "step": 0.5,
+   "track": "arp",
+   "vel": 0.7
+  }
+ ],
+ "bass": [
+  "R-------R---R---",
+  "R-----------R-R-"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "pattern",
+ "bpm": [
+  74,
+  95
+ ],
+ "build_family": [
+  "swell",
+  "none",
+  "filter"
+ ],
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 4,
+ "delay_beats": 0.75,
+ "desc": "Daydream downtempo: dusty, sun-faded electronica at 74-95 - a soft hip-hop break (a syncopated kick, the snare on 2 and 4, quiet swung hats) under warm analog pads, a guitar frozen into the reverb, tape-worn keys, a clean guitar figure in the delay and a round mono bass on long notes; one or two coloured chords swaying for minutes (IVmaj7 - ii7, vi7 - I, a single-chord vamp), a long bass-less intro, short breakdowns that drop the low end, a soft gliding synth or wordless voice on top - hazy, wide and warm, nothing bright",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "x.xxx.x.x.xxx.x.",
+   "xxxxxxxxxxxxxxxx"
+  ],
+  "kick": [
+   "X.....xX..X.....",
+   "X..x....X.x..x..",
+   "X......xX.x....."
+  ],
+  "shaker": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "snare": [
+   "....X.......X...",
+   "....X..x....X..."
+  ]
+ },
+ "exact_pools": true,
+ "extends": "_family",
+ "fill": true,
+ "form": "daydream",
+ "ghosts": true,
+ "gm_hint": "A dusty, soft hip-hop break (syncopated kick, snare 2 and 4 with ghosts, quiet swung hats); warm analog pads; a clean guitar run into a huge reverb as a pad; worn tape keys; a clean guitar figure in a dotted-8th delay; a round mono bass on long notes; a gliding mono synth or wordless voice; tape hiss and a dark, rolled-off top",
+ "human": 0.01,
+ "id": "daydream_downtempo",
+ "kit": "sunroom",
+ "kit_override": {},
+ "lead_glide": true,
+ "lead_rh": [
+  "x-------x-------",
+  "x---------------",
+  "........x---x---"
+ ],
+ "master": {
+  "air": -0.5,
+  "lofi": true,
+  "low": 0.6,
+  "lufs": -8.6,
+  "tone": [
+   -3.2,
+   0.0,
+   -2.4,
+   -7.9,
+   -11.2,
+   -11.9,
+   -16.2,
+   -16.8,
+   -23.0
+  ],
+  "vintage_lp": 12000,
+  "width": 1.15,
+  "wobble": 0.35
+ },
+ "name": "daydream_downtempo",
+ "no_layers": true,
+ "no_rotation": true,
+ "own_progs": true,
+ "phrase_evolve": true,
+ "progs": {
+  "major": [
+   [
+    3,
+    1,
+    3,
+    1
+   ],
+   [
+    5,
+    0,
+    5,
+    0
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    2,
+    3
+   ]
+  ]
+ },
+ "repetition": 0.88,
+ "reverb": 3.0,
+ "sc_depth": 0.1,
+ "sc_release": 0.35,
+ "scales": [
+  "major",
+  "major",
+  "minor"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "song_variations": {
+  "bass": [
+   {
+    "bass": [
+     "R-------R---R---",
+     "R-----------R-R-"
+    ],
+    "name": "long notes"
+   },
+   {
+    "bass": [
+     "R-----R-..R-....",
+     "R--.......R-R---"
+    ],
+    "name": "boom-bap"
+   },
+   {
+    "bass": [
+     "R---R---R---R-R-"
+    ],
+    "name": "rolling"
+   }
+  ],
+  "bpm": [
+   {
+    "bpm": [
+     74,
+     80
+    ],
+    "name": "slow"
+   },
+   {
+    "bpm": [
+     76,
+     82
+    ],
+    "name": "slow"
+   },
+   {
+    "bpm": [
+     86,
+     95
+    ],
+    "name": "mid"
+   }
+  ],
+  "form": [
+   {
+    "form": "daydream",
+    "name": "swaying"
+   },
+   {
+    "form": "daydream_vamp",
+    "name": "long vamp"
+   }
+  ],
+  "harmony": [
+   {
+    "chord_bars": 1,
+    "name": "IV - ii sway",
+    "progs": {
+     "major": [
+      [
+       3,
+       1,
+       3,
+       1
+      ],
+      [
+       3,
+       1,
+       5,
+       1
+      ]
+     ]
+    },
+    "scales": [
+     "major"
+    ]
+   },
+   {
+    "chord_bars": 1,
+    "name": "vi - I sway",
+    "progs": {
+     "major": [
+      [
+       5,
+       0,
+       5,
+       0
+      ],
+      [
+       5,
+       0,
+       0,
+       5
+      ]
+     ]
+    },
+    "scales": [
+     "major"
+    ]
+   },
+   {
+    "chord_bars": 1,
+    "name": "IV - V - I - ii",
+    "progs": {
+     "major": [
+      [
+       3,
+       4,
+       0,
+       1
+      ],
+      [
+       3,
+       4,
+       0,
+       5
+      ]
+     ]
+    },
+    "scales": [
+     "major"
+    ]
+   },
+   {
+    "chord_bars": 4,
+    "name": "one-chord vamp",
+    "progs": {
+     "major": [
+      [
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       5,
+       0
+      ]
+     ]
+    },
+    "scales": [
+     "major"
+    ]
+   },
+   {
+    "chord_bars": 2,
+    "name": "vi - I - iii",
+    "progs": {
+     "major": [
+      [
+       5,
+       0,
+       2,
+       0
+      ],
+      [
+       5,
+       5,
+       0,
+       2
+      ]
+     ]
+    },
+    "scales": [
+     "major"
+    ]
+   },
+   {
+    "chord_bars": 2,
+    "name": "minor drift",
+    "progs": {
+     "minor": [
+      [
+       0,
+       5,
+       2,
+       3
+      ],
+      [
+       0,
+       5,
+       0,
+       5
+      ]
+     ]
+    },
+    "scales": [
+     "minor"
+    ]
+   }
+  ],
+  "lead": [
+   {
+    "lead_rh": [
+     "x-------x-------",
+     "x---------------",
+     "........x---x---"
+    ],
+    "name": "sparse"
+   },
+   {
+    "lead_rh": [
+     "x-----x-x-------",
+     "x---x---x-------"
+    ],
+    "name": "singing"
+   }
+  ],
+  "palette": [
+   {
+    "arp": "cleanguitar",
+    "bass": "roundmoog",
+    "chords": "tapekeys",
+    "lead": "softmoog",
+    "name": "guitar haze",
+    "pad": "spaceguitar"
+   },
+   {
+    "arp": "cleanguitar",
+    "bass": "roundmoog",
+    "chords": "sunpad",
+    "lead": "softmoog",
+    "name": "analog pads",
+    "pad": "warmpad"
+   },
+   {
+    "arp": "rhodes",
+    "bass": "roundmoog",
+    "chords": "sunpad",
+    "lead": "dreamlead",
+    "name": "voices",
+    "pad": "vocalpad"
+   },
+   {
+    "arp": "glasskeys",
+    "bass": "sf:fingerbass",
+    "chords": "rhodes",
+    "lead": "softmoog",
+    "name": "keys",
+    "pad": "spaceguitar"
+   },
+   {
+    "arp": "cleanguitar",
+    "bass": "roundmoog",
+    "chords": "tapekeys",
+    "lead": "tapeflute",
+    "name": "tape",
+    "pad": "warblepad"
+   }
+  ],
+  "pulse": [
+   {
+    "center": 64,
+    "mode": "updown",
+    "name": "guitar 8ths",
+    "prob": 0.9,
+    "span": 7,
+    "step": 0.5,
+    "track": "arp",
+    "vel": 0.7
+   },
+   {
+    "center": 66,
+    "mode": "up",
+    "name": "slow arp",
+    "prob": 1.0,
+    "span": 7,
+    "step": 1.0,
+    "track": "arp",
+    "vel": 0.7
+   },
+   {
+    "center": 69,
+    "mode": "updown",
+    "name": "16th sparkle",
+    "prob": 0.7,
+    "span": 5,
+    "step": 0.25,
+    "track": "arp",
+    "vel": 0.55
+   },
+   {
+    "center": 67,
+    "mode": "down",
+    "name": "dotted",
+    "prob": 1.0,
+    "span": 7,
+    "step": 0.75,
+    "track": "arp",
+    "vel": 0.7
+   }
+  ]
+ },
+ "strum": 0.0,
+ "swing": 0.56,
+ "tracks": [
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -33,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": 30,
+   "inst": "roundmoog",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 320
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tapekeys",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.4
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "spaceguitar",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.1,
+   "rev": 0.75,
+   "sc": 0.5
+  },
+  {
+   "chorus": 0.5,
+   "db": -18,
+   "dly": 0.45,
+   "dly_time": 0.75,
+   "drive": null,
+   "hp": 120,
+   "inst": "cleanguitar",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "softmoog",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.55,
+   "sc": 0.0
+  },
+  {
+   "db": -36,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "none",
+  "swell",
+  "none",
+  "tapestop"
+ ],
+ "voicing": "open"
+}

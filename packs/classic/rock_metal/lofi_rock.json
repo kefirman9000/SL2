@@ -1,0 +1,216 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R.R.R.R.R.R.R.R.",
+  "R...R...R.R.R..."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  100,
+  116
+ ],
+ "build_family": [
+  "pickup",
+  "none"
+ ],
+ "chord_bars": 1,
+ "chord_center": 55,
+ "chord_rh": [
+  "x.x.x.x.x.x.x.x.",
+  "x-x-x-x-x-x-x-x-",
+  "x---x---x-x-x---"
+ ],
+ "chord_size": 3,
+ "desc": "Lo-fi bedroom rock: a raw, mono, home-recorded rock song - a fuzzy overdriven rhythm guitar playing a simple chord riff, a plain driving bass, a dry boxy kit, a wobbly lead guitar line, all a bit too loud for the tape; short, direct, sincere",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "crash": [
+   "................"
+  ],
+  "kick": [
+   "X.......X.X.....",
+   "X.....X.X......."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "lofi_rock",
+ "ghosts": false,
+ "gm_hint": "Overdriven / fuzzy rhythm guitar, plain bass on 8ths, dry boxy drums, a wobbly lead guitar, mono, tape saturation",
+ "human": 0.012,
+ "id": "lofi_rock",
+ "kit": "acoustic",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x---x-x-x-------",
+  "x-x-x---x---x---"
+ ],
+ "master": {
+  "air": -2.0,
+  "lofi": true,
+  "low": 1.0,
+  "lufs": -10.0,
+  "width": 0.3,
+  "wobble": 1.2
+ },
+ "name": "lofi_rock",
+ "progs": {
+  "major": [
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    0,
+    3,
+    0,
+    4
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    6,
+    3,
+    4
+   ],
+   [
+    0,
+    3,
+    6,
+    5
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ]
+ },
+ "reverb": 1.0,
+ "scales": [
+  "major",
+  "mixolydian",
+  "minor"
+ ],
+ "strum": 0.0,
+ "swing": 0.52,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.12,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": 0.5,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "amp": 34,
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "bright": 3600,
+    "dist": 1
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "amp": 22,
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "bright": 4200,
+    "dist": 1
+   },
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "crash",
+  "none",
+  "none"
+ ],
+ "voicing": "power"
+}

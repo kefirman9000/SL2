@@ -1,0 +1,300 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "rate": 1
+ },
+ "bass": [
+  ".RRR.RRR.RRR.RRR",
+  "..R...R...R...R.",
+  "R.....R.....R...",
+  "..R.....R.....R."
+ ],
+ "bass_gate": 0.6,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  128,
+  136
+ ],
+ "chord_bars": 1,
+ "chord_center": 64,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 3,
+ "desc": "Emotional progressive trance / melodic progressive house: simple emotive chords, a big singable lead, long builds, a piano breakdown and a clean, wide drop - melody over complexity",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "clap": [
+   "....X.......X..."
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "ohat": [
+   "..x...x...x...x."
+  ],
+  "ride": [
+   "....x.......x...",
+   ""
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "filter_arc": true,
+ "form": "trance",
+ "form_scale": 1.0,
+ "forms": [
+  "trance",
+  "trance_prog",
+  "trance_club"
+ ],
+ "forms_variants": true,
+ "gm_hint": "Supersaw or clean pluck lead; grand piano (breakdown); wide strings / pads; rolling off-beat bass",
+ "human": 0.0,
+ "id": "progressive_trance",
+ "kit": "909",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x---x---x-x-x---",
+  "x-------x---x---",
+  "x---x-x-x-------",
+  "x-x-x---x-------"
+ ],
+ "master": {
+  "air": 2.0,
+  "low": 1.0,
+  "lufs": -8.5,
+  "tone": [
+   0,
+   -4.6,
+   -9.3,
+   -6.2,
+   -9.9,
+   -13.5,
+   -13.1,
+   -13.5,
+   -17.8
+  ]
+ },
+ "name": "progressive_trance",
+ "progs": {
+  "major": [
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ],
+   [
+    3,
+    4,
+    5,
+    5
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    2,
+    6
+   ],
+   [
+    5,
+    6,
+    0,
+    0
+   ],
+   [
+    0,
+    3,
+    5,
+    6
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    0,
+    0,
+    2,
+    3
+   ]
+  ]
+ },
+ "repetition": 0.8,
+ "rev_hp": 220,
+ "rev_predelay": 0.045,
+ "reverb": 3.0,
+ "sc_arc": true,
+ "sc_depth": 0.45,
+ "sc_release": 0.45,
+ "scales": [
+  "minor",
+  "major"
+ ],
+ "simplicity": 0.35,
+ "slow_chords": 0.35,
+ "snare_tracks": [
+  "clap"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": 0.15,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "rollbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 900
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 1.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "supersaw",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "cut": 5000
+   },
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.9
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "gate": "xx.x.xx.xx.x.xx.",
+   "hp": null,
+   "inst": "trancepad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {
+    "a": 0.05,
+    "cut": 2600
+   },
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.6,
+   "wide": 0.4
+  },
+  {
+   "db": -27,
+   "dly": 0.4,
+   "dly_time": 0.5,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck_saw",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.35,
+   "sc": 0.7
+  },
+  {
+   "db": -19,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "supersaw_lead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.55,
+   "sc": 0.4
+  }
+ ],
+ "voicing": "close"
+}

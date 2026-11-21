@@ -1,0 +1,225 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.45,
+  "rate": 1
+ },
+ "bass": [
+  "R---------------",
+  "........R-------"
+ ],
+ "bpm": [
+  96,
+  108
+ ],
+ "chord_center": 55,
+ "chord_rh": [
+  "x---------------"
+ ],
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "desc": "Experimental field-recording ambient (Japanese style): no steady beat - knocks of wood, bells, plucked koto, breathy flute, low drones and the sound of the room and outdoors, each appearing for a few bars and leaving again; very wide, quiet and patient",
+ "drums": {
+  "kick": [
+   "X...............",
+   "........x......."
+  ],
+  "rim": [
+   "....x.........x.",
+   "..........x....."
+  ],
+  "shaker": [
+   "..x.....x..x...."
+  ],
+  "woodblock": [
+   "x.....x....x....",
+   "...x......x..x..",
+   "x..x...........x"
+  ]
+ },
+ "extends": "_family",
+ "form": "field_ambient",
+ "gm_hint": "Wood blocks / knocks, temple bells, koto, shakuhachi-like flute, low drone, field recordings (birds, room, water); sparse, very wide",
+ "human": 0.03,
+ "id": "field_ambient",
+ "kit": "default",
+ "lead_rh": [
+  "x-------........",
+  "........x---....",
+  "x---....x-......"
+ ],
+ "master": {
+  "air": 0.4,
+  "gentle": true,
+  "low": 0.6,
+  "lufs": -17.0,
+  "width": 1.8
+ },
+ "name": "field_ambient",
+ "no_transition_fx": true,
+ "progs": {
+  "minor": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    6,
+    0
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    1,
+    0,
+    0
+   ]
+  ]
+ },
+ "scales": [
+  "minor",
+  "phrygian"
+ ],
+ "slow_chords": 0.35,
+ "snare_tracks": [
+  "rim"
+ ],
+ "tracks": [
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "woodblock",
+   "layer": "top",
+   "name": "woodblock",
+   "p": {},
+   "pan": 0.4,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "rim",
+   "layer": "top",
+   "name": "rim",
+   "p": {},
+   "pan": -0.4,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -32,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": 0.6,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "drone",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "koto",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "glasspad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.7,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "koto",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.5,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "flute",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": -0.4,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ]
+}

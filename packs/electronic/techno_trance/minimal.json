@@ -1,0 +1,218 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.35,
+  "rate": 1
+ },
+ "bass": [
+  "R.....R...R.....",
+  "..R.....R..R...."
+ ],
+ "bass_gate": 0.5,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  124,
+  128
+ ],
+ "chord_bars": 1,
+ "chord_center": 62,
+ "chord_rh": [
+  "......x.........",
+  "...........x...."
+ ],
+ "chord_size": 3,
+ "desc": "Minimal techno: sparse clicks and blips, deep sub, lots of space and delay",
+ "drums": {
+  "chat": [
+   "..x...x...x...x."
+  ],
+  "clap": [
+   "....o.......o..."
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "rim": [
+   "..o..o.....o..o.",
+   "...o..o...o..o.."
+  ],
+  "shaker": [
+   "o.o.o.o.o.o.o.o."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "groove",
+ "form_scale": 1,
+ "gm_hint": "",
+ "human": 0.0,
+ "id": "minimal",
+ "kit": "soft",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x.......x.......",
+  "..x.......x.....",
+  "x...x...........",
+  "....x.......x..."
+ ],
+ "master": {
+  "air": 1.0,
+  "low": 1.5,
+  "lufs": -9.5
+ },
+ "name": "minimal",
+ "polymeter": 0.6,
+ "progs": [
+  [
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   6,
+   6
+  ]
+ ],
+ "reverb": 2.5,
+ "sc_depth": 0.5,
+ "sc_release": 0.45,
+ "scales": [
+  "minor"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "rim",
+   "layer": "top",
+   "name": "rim",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sinebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 400
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.7
+  },
+  {
+   "db": -26,
+   "dly": 0.6,
+   "drive": null,
+   "hp": null,
+   "inst": "stab",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "cut": 1800
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.5,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck_saw",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "cut": 2500
+   },
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.5,
+   "drive": null,
+   "hp": null,
+   "inst": "stab",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "close"
+}

@@ -1,0 +1,211 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "prob": 0.4,
+  "rate": 4
+ },
+ "bass": [
+  "R...R...R.R.R...",
+  "R.......R.R....."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 26,
+ "bass_mode": "808",
+ "bpm": [
+  128,
+  136
+ ],
+ "chord_bars": 1,
+ "chord_center": 64,
+ "chord_rh": [
+  "x...x...x.x.x...",
+  "..x...x...x...x."
+ ],
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "desc": "Baltimore club: 130 BPM breakbeat dance music - a chopped classic funk break over a pounding kick pattern with the famous 1-2-3-and-4 bounce, repeated vocal chops, stabs and sirens",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "clap": [
+   "....X.......X..."
+  ],
+  "kick": [
+   "X...X...X.X.X...",
+   "X...X...X..XX...",
+   "X...X..XX.X.X..."
+  ],
+  "snare": [
+   ".......x.x....x.",
+   ".......x......x."
+  ],
+  "tom": [
+   "..........x.x...",
+   "................"
+  ]
+ },
+ "extends": "_family",
+ "form": "groove",
+ "form_scale": 1,
+ "gm_hint": "",
+ "human": 0.002,
+ "id": "baltimore_club",
+ "kit": "808",
+ "kit_override": {},
+ "lead_rh": [
+  "x.x.x.x.........",
+  "x...x...x.x.x...",
+  "xxxx....x......."
+ ],
+ "master": {
+  "air": 1.3,
+  "low": 1.5,
+  "lufs": -8.5
+ },
+ "name": "baltimore_club",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    5,
+    6
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "sc_depth": 0.2,
+ "sc_release": 0.45,
+ "scales": [
+  "minor",
+  "dorian"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tom",
+   "layer": "top",
+   "name": "tom",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "808",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "stab",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.15,
+   "drive": null,
+   "hp": null,
+   "inst": "vox",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  }
+ ],
+ "trap_hats": false,
+ "voicing": "close"
+}

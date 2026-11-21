@@ -1,0 +1,309 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 4,
+  "rate": 2
+ },
+ "bass": [
+  "R.R.R.R.R.R.R.R.",
+  "R.R.R.R.R.R.F.F.",
+  "R...R.R.R...R.R."
+ ],
+ "bass_gate": 0.85,
+ "bass_lo": 33,
+ "bass_mode": "pattern",
+ "bpm": [
+  104,
+  132
+ ],
+ "chord_bars": 1,
+ "chord_center": 55,
+ "chord_rh": [
+  "x-x-x-x-x-x-x-x-",
+  "X---x-x-X---x-x-",
+  "x.x.x.x.x.x.x.x."
+ ],
+ "chord_size": 3,
+ "desc": "90s alternative rock: jangly clean arpeggios in the verses, crunchy distorted power chords that explode in the choruses, an eighth-note pick bass, a big dry room kit - catchy, major-key and a little melancholy, mastered with 90s dynamics",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "crash": [
+   "X...............",
+   "................"
+  ],
+  "kick": [
+   "X.....X.X.......",
+   "X.......X.X.....",
+   "X.....X...X..X..",
+   "X...X.......X..."
+  ],
+  "ride": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "snare": [
+   "....X.......X..."
+  ],
+  "tamb": [
+   "....x.......x..."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "alt90",
+ "ghosts": true,
+ "gm_hint": "Clean jangly guitar (Rickenbacker-ish, chorus); distorted power chords in the chorus; pick bass; big room kit; a little organ or lead guitar",
+ "human": 0.008,
+ "id": "alt_rock_90s",
+ "kit": "acoustic",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x-x-x---x-x-----",
+  "x---x-x-x-x-x---",
+  "..x-x-x-x-------",
+  "x-x-x-x-x-------"
+ ],
+ "master": {
+  "air": 1.2,
+  "low": 1.0,
+  "lufs": -12.0
+ },
+ "name": "alt_rock_90s",
+ "no_rotation": true,
+ "progs": {
+  "major": [
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    0,
+    3,
+    0,
+    4
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ],
+   [
+    0,
+    6,
+    3,
+    0
+   ],
+   [
+    4,
+    1,
+    1,
+    0
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ],
+   [
+    0,
+    3,
+    6,
+    3
+   ]
+  ]
+ },
+ "reverb": 1.6,
+ "scales": [
+  "major",
+  "mixolydian"
+ ],
+ "strum": 0.0,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "crash",
+   "layer": "top",
+   "name": "crash",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tamb",
+   "layer": "top",
+   "name": "tamb",
+   "p": {},
+   "pan": 0.35,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "amp": 22,
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "dist": 0
+   },
+   "pan": -0.35,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "amp": 20,
+   "db": -18,
+   "dly": 0.0,
+   "double_of": "chords",
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "keep_inst": true,
+   "layer": "chords",
+   "name": "chords_r",
+   "p": {
+    "dist": 0
+   },
+   "pan": 0.35,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "chorus": 0.6,
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "bright": 7500
+   },
+   "pan": 0.3,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "pad",
+   "leslie_fx": 0.9,
+   "name": "pad",
+   "overdrive": 0.2,
+   "p": {
+    "leslie": 0.0
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "amp": 12,
+   "db": -19,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "bright": 6000
+   },
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "power"
+}

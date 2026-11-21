@@ -1,0 +1,35 @@
+/* Studio Lab 2 look: black & neon green, Space Grotesk. Every colour the UI uses comes from these variables. */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("fonts/SpaceGrotesk.ttf") format("truetype");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #000000;
+  --panel: #0b0b0b;
+  --panel2: #131313;
+  --line: #212121;
+  --chip: #181818;
+  --chipon: #104706;
+  --text: #e9ebf1;
+  --muted: #87888c;
+  --acc: #39ff14;        /* neon green: main actions, playhead, selection */
+  --acc2: #00e5ff;       /* cyan: second accent, links, waveforms */
+  --onacc: #06080c;      /* text on the green */
+  --onacc2: #06100c;
+  --warn: #ffb547;
+  --bad: #ff5d6c;
+  --r: 12px;
+  --font: "Space Grotesk", "Inter", "Segoe UI Variable Text", system-ui, sans-serif;
+  --mono: ui-monospace, "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
+}
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.45 var(--font);
+}

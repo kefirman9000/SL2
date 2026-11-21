@@ -1,0 +1,16 @@
+{
+ "bass_mode": "pattern",
+ "category": "Classic",
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "form_scale": 1,
+ "ghosts": false,
+ "kit_override": {},
+ "sc_depth": 0.0,
+ "sc_release": 0.45,
+ "strum": 0.0,
+ "suggest": "",
+ "swing_unit": 16,
+ "trap_hats": false,
+ "voicing": "close"
+}

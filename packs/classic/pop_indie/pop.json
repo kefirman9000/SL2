@@ -1,0 +1,218 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R.......R...R...",
+  "R...R...R.R.R...",
+  "R-..R-..R-..A..."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 33,
+ "bpm": [
+  95,
+  122
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "x---x---x---x---",
+  "x-.x-.x-x-.x-.x-"
+ ],
+ "chord_size": 3,
+ "desc": "Pop: four-chord hooks, piano & guitar, punchy drums, sing-along lead line",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "clap": [
+   "....X.......X..."
+  ],
+  "kick": [
+   "X.......X.X.....",
+   "X...X...X...X..."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "song",
+ "gm_hint": "",
+ "human": 0.0,
+ "id": "pop",
+ "kit": "punchy",
+ "lead_rh": [
+  "x-x-x---x-x-x---",
+  "x---x-x-x-------",
+  "x-x-x-x-x---x---",
+  "x-------x-------"
+ ],
+ "master": {
+  "air": 2.0,
+  "low": 1.0,
+  "lufs": -9.5
+ },
+ "name": "pop",
+ "progs": [
+  [
+   0,
+   4,
+   5,
+   3
+  ],
+  [
+   5,
+   3,
+   0,
+   4
+  ],
+  [
+   0,
+   5,
+   3,
+   4
+  ],
+  [
+   3,
+   4,
+   0,
+   5
+  ]
+ ],
+ "reverb": 2.0,
+ "sc_depth": 0.2,
+ "scales": [
+  "major"
+ ],
+ "snare_tracks": [
+  "snare",
+  "clap"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sawbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 1200
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.3
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.25,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "bright": 6000
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ]
+}

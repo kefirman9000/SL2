@@ -1,0 +1,266 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R...R...R...R..."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "walk",
+ "bpm": [
+  118,
+  130
+ ],
+ "chord_center": 64,
+ "chord_rh": [
+  "x..x....x..x....",
+  "..x...x...x...x.",
+  "x...x...x...x..."
+ ],
+ "chord_size": 4,
+ "desc": "Electro swing: 1930s-40s swing on a house beat - a swung four-on-the-floor, walking upright bass, punchy brass section and clarinet hooks, stride piano and crackle, all sidechained to the kick",
+ "drums": {
+  "chat": [
+   "..x...x...x...x."
+  ],
+  "clap": [
+   "....X.......X..."
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "ride": [
+   "x...x.x.x...x.x."
+  ],
+  "snare": [
+   "................",
+   ".......x......x."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "edm",
+ "ghosts": false,
+ "gm_hint": "",
+ "human": 0.004,
+ "id": "electro_swing",
+ "kit": "punchy",
+ "kit_override": {},
+ "lead_rh": [
+  "x-x-x---x-x-x---",
+  "x--x--x-x-------",
+  "x-x-x-x-x---x---"
+ ],
+ "master": {
+  "air": 1.6,
+  "low": 1.1,
+  "lufs": -9.0
+ },
+ "name": "electro_swing",
+ "progs": {
+  "harmonic_minor": [
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    1,
+    4,
+    0
+   ]
+  ],
+  "major": [
+   [
+    0,
+    5,
+    1,
+    4
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    5,
+    1,
+    4
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "sc_depth": 0.4,
+ "sc_release": 0.45,
+ "scales": [
+  "minor",
+  "harmonic_minor",
+  "major"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "strum": 0.0,
+ "swing": 0.63,
+ "swing_unit": 8,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "upright",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.7
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "brass",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.7
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sax",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.7
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.5
+  },
+  {
+   "db": -17,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "clarinet",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.4
+  },
+  {
+   "db": -42,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "vinyl",
+   "layer": "fx",
+   "name": "vinyl",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ]
+}

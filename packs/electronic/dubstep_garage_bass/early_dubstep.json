@@ -1,0 +1,293 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 4,
+  "prob": 0.3,
+  "rate": 4
+ },
+ "bass": [
+  "R-.R-...R-..O-..",
+  "R---R-..F---R-..",
+  "R-------R-.R-..."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "wobble",
+ "bpm": [
+  138,
+  142
+ ],
+ "build_family": [
+  "pause",
+  "none"
+ ],
+ "chord_bars": 1,
+ "chord_center": 58,
+ "chord_rh": [
+  "....x.......x...",
+  "x.......x......."
+ ],
+ "chord_size": 3,
+ "desc": "Early dubstep (2005-07 \"stepper\" era): half-time 140 with a kick on 1, snare on 3 and busy, swung 2-step hats and shakers, a rolling sub with a mid-range bass that steps between a few notes, eerie synth stabs and sirens - darker than garage, cleaner than brostep, long DJ sections and a 16-bar breakdown",
+ "drums": {
+  "chat": [
+   "x.xxx.xxx.xxx.xx",
+   "..x.x.x...x.x.x."
+  ],
+  "kick": [
+   "X.........X.....",
+   "X.....X...X....."
+  ],
+  "rim": [
+   "......x.......x."
+  ],
+  "shaker": [
+   ".x.x.x.x.x.x.x.x"
+  ],
+  "snare": [
+   "........X......."
+  ]
+ },
+ "dub": 0.4,
+ "dub_beats": 0.75,
+ "exact_pools": true,
+ "extends": "_family",
+ "fill": false,
+ "form": "early_dubstep",
+ "form_scale": 1,
+ "ghosts": false,
+ "gm_hint": "Half-time 140 kit, swung 2-step hats + shakers; sine sub + stepping mid-bass (square / wobble); eerie stabs, sirens, dub delays",
+ "human": 0.004,
+ "id": "early_dubstep",
+ "kit": "punchy",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x-------........",
+  "x---....x---...."
+ ],
+ "master": {
+  "air": 0.6,
+  "low": 2.2,
+  "lufs": -11.0,
+  "tone": [
+   0.0,
+   -4.7,
+   -8.0,
+   -14.7,
+   -15.7,
+   -15.0,
+   -14.9,
+   -16.4,
+   -19.3
+  ],
+  "width": 0.4
+ },
+ "name": "early_dubstep",
+ "own_progs": true,
+ "plain_drops": true,
+ "progs": {
+  "minor": [
+   [
+    0,
+    0,
+    5,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    6
+   ],
+   [
+    0,
+    6,
+    5,
+    6
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    1,
+    0,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.9,
+ "reverb": 2.4,
+ "sc_depth": 0.2,
+ "sc_release": 0.45,
+ "scales": [
+  "minor",
+  "phrygian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.56,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0,
+   "throw": 0.5
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "rim",
+   "layer": "top",
+   "name": "rim",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.0,
+   "sc": 0.0,
+   "throw": 0.8
+  },
+  {
+   "db": -11,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "squarewob",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 900,
+    "sub": 1.2
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.3
+  },
+  {
+   "db": -26,
+   "dly": 0.4,
+   "drive": null,
+   "hp": null,
+   "inst": "stab",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.4,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.4,
+   "drive": null,
+   "hp": null,
+   "inst": "grimesquare",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "cut": 2200
+   },
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "gap",
+  "none"
+ ],
+ "trap_hats": false,
+ "voicing": "close",
+ "wobble_lens": [
+  4,
+  8,
+  4,
+  2
+ ],
+ "wobble_rates": [
+  1,
+  2,
+  0.5,
+  1
+ ],
+ "wobble_rates_alt": [
+  0.5,
+  0.3333333333333333,
+  0.5
+ ]
+}

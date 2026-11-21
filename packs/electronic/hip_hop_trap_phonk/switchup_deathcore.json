@@ -1,0 +1,316 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.3,
+  "rate": 2
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 23,
+ "bass_mode": "808",
+ "bpm": [
+  150,
+  162
+ ],
+ "build_family": [
+  "pause",
+  "stutter",
+  "none"
+ ],
+ "chord_bars": 1,
+ "chord_center": 45,
+ "chord_rh": [
+  "xxxxxxxxxxxxxxxx",
+  "x.xxx.xxx.xxx.xx"
+ ],
+ "chord_size": 2,
+ "delay_beats": 0.75,
+ "desc": "Switch-up deathcore: crushing deathcore breakdowns where the down-tuned guitars chug locked to the kick, over a blown-out 808 that never plays the same bar twice - grinds, octave leaps, rolls, dives, folded buzz and dead stops - with machine-gun blast bursts, crushed trap hats, a squealing lead and an eerie choir; phrygian, dark, mono and slammed",
+ "dj_fx": 0.25,
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "x...x...x...x..."
+  ],
+  "kick": [
+   "X..X..X...X.X...",
+   "X..X......X..X..",
+   "X.....X.X...X..."
+  ],
+  "snare": [
+   "........X......."
+  ]
+ },
+ "extends": "_family",
+ "fifth808": 0.04,
+ "form": "switchup_deathcore",
+ "form_scale": 1,
+ "glide808": 0.35,
+ "gm_hint": "Blown-out mono 808 switching up every bar (grind, leap, roll, dive, fold); down-tuned quad-tracked guitars chugging with the kick; machine-gun blast bursts; crushed hats; squealing lead; eerie choir",
+ "human": 0.0,
+ "id": "switchup_deathcore",
+ "keep_fx": [
+  "tapestop"
+ ],
+ "kit": "808",
+ "kit_override": {
+  "chat": {
+   "bits": 9,
+   "srate": 20000
+  },
+  "kick": {
+   "click": 0.8,
+   "decay": 16,
+   "drive": 2.4,
+   "len": 0.18,
+   "pitch": 46,
+   "punch": 150
+  },
+  "snare": {
+   "crack": 0.5,
+   "drive": 1.8
+  }
+ },
+ "lead_rh": [
+  "x-------........",
+  "x---....x---....",
+  "x.x.x.x.x-------"
+ ],
+ "master": {
+  "air": -2.0,
+  "drive": 0.2,
+  "low": 4.0,
+  "lufs": -8.0,
+  "max_gr": 5.0,
+  "width": 0.85
+ },
+ "name": "switchup_deathcore",
+ "no_layers": true,
+ "no_rotation": true,
+ "oct808": 0.06,
+ "own_progs": true,
+ "pitch_rolls": true,
+ "plain_drops": true,
+ "progs": {
+  "harmonic_minor": [
+   [
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    0,
+    4,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    0,
+    5,
+    5
+   ],
+   [
+    0,
+    0,
+    1,
+    1
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.8,
+ "reverb": 2.2,
+ "riff_chorus": 0.9,
+ "riff_lo": 33,
+ "riffs": [
+  "pp.pp.p...p.p...",
+  "pp....p...pp....",
+  "p..p..p...p.p...",
+  "pppp..p...p..p..",
+  "pppppppppppppppp"
+ ],
+ "sc_depth": 0.3,
+ "sc_release": 0.1,
+ "scales": [
+  "phrygian",
+  "harmonic_minor",
+  "minor"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.5,
+ "switchups": {
+  "weights": {
+   "grind": 1.5,
+   "leap": 1.2,
+   "plain": 0.5
+  }
+ },
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.1,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -7,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "808",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "decay": 0.35,
+    "drive": 2.2,
+    "slide": 0.06
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.3
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "double_of": "bass",
+   "drive": null,
+   "hp": 220,
+   "inst": "808",
+   "keep_inst": true,
+   "layer": "bass",
+   "name": "bass_grit",
+   "octave": 0,
+   "p": {
+    "decay": 0.35,
+    "drive": 7.5,
+    "slide": 0.06
+   },
+   "pan": 0.0,
+   "presence": 3,
+   "rev": 0.0,
+   "sc": 0.9
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chuggtr",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "choir",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.25,
+   "drive": null,
+   "hp": null,
+   "inst": "screech",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -36,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "gap",
+  "gap",
+  "tapestop",
+  "none"
+ ],
+ "trap_hats": false,
+ "voicing": "power",
+ "warp_808": 0.3
+}

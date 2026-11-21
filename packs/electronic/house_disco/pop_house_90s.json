@@ -1,0 +1,312 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.75,
+  "rate": 2
+ },
+ "bass": [
+  "R.O.R.O.R.O.R.O.",
+  "..R...R...R...R.",
+  "R..R..R.R..R..R."
+ ],
+ "bass_gate": 0.6,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  122,
+  134
+ ],
+ "build_family": [
+  "filter",
+  "hats",
+  "pickup",
+  "drumless"
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "..x..x....x..x..",
+  "x..x..x...x..x..",
+  "x---....x---...."
+ ],
+ "chord_size": 4,
+ "desc": "Late-90s pop house / dance-pop: a radio song at house tempo (122-134) - a punchy four-on-the-floor with a clap backbeat, shuffled 16th hats and open hats on the off-beats, a bouncing octave synth bass, sidechained string pads, syncopated chord stabs and plucked guitar-like arps, a catchy synth hook for the chorus; no EDM build-ups, one breakdown where the bass drops out, a hard stop",
+ "drums": {
+  "chat": [
+   "x.xxx.xxx.xxx.xx",
+   "xxxxxxxxxxxxxxxx"
+  ],
+  "clap": [
+   "....X.......X..."
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "ohat": [
+   "..x...x...x...x."
+  ],
+  "snare": [
+   "....X.......X..."
+  ],
+  "tamb": [
+   "....x.......x...",
+   "..x...x...x...x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "pop_house_90s",
+ "ghosts": false,
+ "gm_hint": "909 / sampled kick + clap; shuffled 16th hats, off-beat open hat, tambourine; octave synth bass; sidechained string pad; syncopated piano / synth chord stabs; plucked guitar or synth arp; synth hook lead",
+ "human": 0.002,
+ "id": "pop_house_90s",
+ "kit": "909",
+ "kit_override": {
+  "kick": {
+   "click": 0.5,
+   "decay": 9,
+   "drive": 2.0,
+   "pitch": 54,
+   "punch": 140
+  }
+ },
+ "lead_rh": [
+  "x-x-x---x-x-x---",
+  "x---x-x-x-------",
+  "..x-x-x-x---x---",
+  "x-x-x-x-x-------"
+ ],
+ "master": {
+  "air": 1.6,
+  "low": 1.3,
+  "lufs": -9.0
+ },
+ "name": "pop_house_90s",
+ "plain_drops": true,
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ],
+  "major": [
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    3,
+    4,
+    0,
+    5
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    6,
+    5,
+    6
+   ],
+   [
+    0,
+    5,
+    6,
+    0
+   ],
+   [
+    5,
+    6,
+    0,
+    0
+   ],
+   [
+    0,
+    3,
+    6,
+    5
+   ]
+  ]
+ },
+ "repetition": 0.8,
+ "reverb": 1.8,
+ "sc_depth": 0.45,
+ "sc_release": 0.4,
+ "scales": [
+  "minor",
+  "major",
+  "dorian"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "strum": 0.0,
+ "swing": 0.53,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": 50,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": 0.15,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tamb",
+   "layer": "top",
+   "name": "tamb",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -10,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "moogbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 900
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.7
+  },
+  {
+   "db": -20,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "stab",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "cut": 2400
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.6
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.8
+  },
+  {
+   "db": -25,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.3,
+   "sc": 0.5
+  },
+  {
+   "db": -20,
+   "dly": 0.25,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck_saw",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.4
+  }
+ ]
+}

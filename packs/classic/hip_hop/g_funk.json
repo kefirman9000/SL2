@@ -1,0 +1,240 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R-----..R-.R....",
+  "R---..R-..R-F...",
+  "R-----R-..R-A..."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "pattern",
+ "bpm": [
+  88,
+  100
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "x-------x-------",
+  "x-----..x-------"
+ ],
+ "chord_size": 4,
+ "desc": "G-funk (West Coast, early 90s): laid-back swung 16ths, fat Moog bass, Rhodes and string-pad chords, and the whiny high portamento synth lead floating over everything",
+ "drums": {
+  "chat": [
+   "x.xxx.xxx.xxx.xx",
+   "xxxxxxxxxxxxxxxx"
+  ],
+  "clap": [
+   "....X.......X..."
+  ],
+  "kick": [
+   "X......X..X.....",
+   "X.....X...X..X..",
+   "X......XX.X....."
+  ],
+  "shaker": [
+   "..x...x...x...x."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "form": "song_b",
+ "ghosts": false,
+ "gm_hint": "Minimoog bass; Rhodes; string pad; high sine/saw portamento lead (\"G-funk whistle\"); talkbox; claps + 16th hats",
+ "human": 0.008,
+ "id": "g_funk",
+ "kit": "punchy",
+ "lead_glide": true,
+ "lead_oct": 6,
+ "lead_rh": [
+  "x-------x---x---",
+  "x---x---x-------",
+  "x-----x-x-------",
+  "x-------x-x-x---"
+ ],
+ "master": {
+  "air": 1.0,
+  "low": 2.0,
+  "lufs": -10.0
+ },
+ "name": "g_funk",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    1,
+    0,
+    3
+   ],
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    0,
+    6,
+    5,
+    6
+   ]
+  ]
+ },
+ "repetition": 0.85,
+ "reverb": 2.0,
+ "sc_depth": 0.0,
+ "scales": [
+  "minor",
+  "dorian"
+ ],
+ "snare_tracks": [
+  "snare",
+  "clap"
+ ],
+ "swing": 0.57,
+ "tracks": [
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.15,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "moogpluck",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "epiano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "solina",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.25,
+   "drive": null,
+   "hp": null,
+   "inst": "whine",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.1,
+   "rev": 0.35,
+   "sc": 0.0
+  }
+ ]
+}

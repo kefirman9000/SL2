@@ -1,0 +1,204 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "prob": 0.3,
+  "rate": 2
+ },
+ "bass": [
+  "R..R..R...R.....",
+  "R.........R....."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 26,
+ "bass_mode": "pattern",
+ "bpm": [
+  120,
+  128
+ ],
+ "chord_center": 58,
+ "chord_rh": [
+  "x...............",
+  "x.......x......."
+ ],
+ "chord_size": 3,
+ "desc": "Gqom (Durban): dark, raw and broken - no four-on-the-floor, but syncopated kicks and booming toms in a hypnotic loop, sparse claps, shakers, a menacing sub and chanted vocal stabs over a minimal drone",
+ "drums": {
+  "clap": [
+   "....x.......x...",
+   "............x..."
+  ],
+  "kick": [
+   "X..X..X...X.....",
+   "X..X......X..X..",
+   "X.....X...X..X.."
+  ],
+  "rim": [
+   "...x.......x...."
+  ],
+  "shaker": [
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "tom": [
+   "......x...x..x..",
+   "..x...x.....x..."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "groove",
+ "gm_hint": "",
+ "human": 0.003,
+ "id": "gqom",
+ "kit": "soft",
+ "lead_rh": [
+  "x...x.......x...",
+  "x.x.....x.......",
+  "....x.......x..."
+ ],
+ "master": {
+  "air": 0.9,
+  "low": 1.6,
+  "lufs": -9.5
+ },
+ "name": "gqom",
+ "progs": {
+  "minor": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    6,
+    6
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    1,
+    0,
+    0
+   ]
+  ]
+ },
+ "sc_depth": 0.1,
+ "scales": [
+  "minor",
+  "phrygian"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tom",
+   "layer": "top",
+   "name": "tom",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "rim",
+   "layer": "top",
+   "name": "rim",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sinebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "drone",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.25,
+   "drive": null,
+   "hp": null,
+   "inst": "vox",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ]
+}

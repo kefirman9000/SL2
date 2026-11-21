@@ -1,0 +1,252 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 3,
+  "prob": 0.6,
+  "rate": 1
+ },
+ "bass": [
+  "R-------........",
+  "R-------....R---",
+  "R-----..R-------"
+ ],
+ "bass_gate": 0.95,
+ "bass_lo": 26,
+ "bass_mode": "pattern",
+ "bpm": [
+  138,
+  142
+ ],
+ "chord_bars": 1,
+ "chord_center": 58,
+ "chord_rh": [
+  "....x...........",
+  "........x......."
+ ],
+ "chord_size": 3,
+ "desc": "Steppy halftime / acid step: deep, techy half-time at 140 - a steady stepping kick pulse, the snare on 3, tight shuffled percussion - with a heavy, clean sub carrying the track and, often, a squelching acid line twisting over it; minimal, dark, mono and pressured, almost nothing on top",
+ "drums": {
+  "chat": [
+   "..x...x...x...x.",
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "X.......X.......",
+   "X.......X.....x.",
+   "X.....x.X......."
+  ],
+  "rim": [
+   "...x...x...x...x",
+   "..x...x...x..x.."
+  ],
+  "shaker": [
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "snare": [
+   "........X.......",
+   "........X.....x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "deep_dubstep_minimal",
+ "form_scale": 1,
+ "ghosts": false,
+ "gm_hint": "Clean sine sub; a 303 acid line (resonant squelch) on the arp; stepping half-time kick, snare on 3; rims, shakers; dark minimal stabs; mono, little top",
+ "human": 0.004,
+ "id": "steppy_halftime",
+ "kit": "punchy",
+ "kit_override": {
+  "kick": {
+   "decay": 8,
+   "drive": 1.5,
+   "pitch": 46
+  },
+  "snare": {
+   "decay": 7,
+   "snap": 1.5,
+   "tone": 200
+  }
+ },
+ "lead_oct": 5,
+ "lead_rh": [
+  "x-------........",
+  "........x---...."
+ ],
+ "master": {
+  "air": -1.0,
+  "low": 2.6,
+  "lufs": -10.0,
+  "width": 0.6
+ },
+ "name": "steppy_halftime",
+ "progs": {
+  "minor": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    5,
+    5
+   ],
+   [
+    0,
+    0,
+    0,
+    6
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    0,
+    1,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.9,
+ "reverb": 2.4,
+ "sc_depth": 0.15,
+ "sc_release": 0.45,
+ "scales": [
+  "minor",
+  "phrygian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.55,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.12,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "rim",
+   "layer": "top",
+   "name": "rim",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -11,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sinebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 240
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "acid",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.55,
+   "drive": null,
+   "hp": null,
+   "inst": "stab",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "cut": 1300
+   },
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.5,
+   "drive": null,
+   "hp": null,
+   "inst": "stab",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "cut": 1600
+   },
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  }
+ ],
+ "trap_hats": false,
+ "voicing": "close"
+}

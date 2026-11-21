@@ -1,0 +1,268 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.35,
+  "rate": 2
+ },
+ "bass": [
+  "R---------------",
+  "R-------R-------"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "808",
+ "bpm": [
+  140,
+  150
+ ],
+ "chord_bars": 2,
+ "chord_center": 62,
+ "chord_rh": [
+  "x---------------"
+ ],
+ "chord_size": 4,
+ "delay_beats": 0.75,
+ "desc": "Ambient beat (dark, sub-heavy, airy): slow half-time drums tucked under washed-out pads, a long sustained 808 sub doing most of the work, soft ticking hats, reversed swells and distant bells - wide, dark and weightless",
+ "drums": {
+  "chat": [
+   "x...x...x...x...",
+   "x.x...x.x...x.x.",
+   "..x...x...x...x."
+  ],
+  "kick": [
+   "X.........X.....",
+   "X.......X.....x.",
+   "X..........X...."
+  ],
+  "rim": [
+   "......x.......x.",
+   "...x.......x...."
+  ],
+  "snare": [
+   "........X......."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "halftime",
+ "ghosts": false,
+ "gm_hint": "Long 808 sub; quiet half-time kit; huge reverb pads (Juno / glass); reversed swells; bells far away",
+ "human": 0.0,
+ "id": "ambient_beat",
+ "kit": "808",
+ "kit_override": {},
+ "lead_rh": [
+  "x-------........",
+  "........x-------",
+  "x---....x-------"
+ ],
+ "master": {
+  "air": -2.0,
+  "low": 2.4,
+  "lufs": -12.0,
+  "width": 1.4
+ },
+ "name": "ambient_beat",
+ "progs": {
+  "lydian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ]
+  ],
+  "major": [
+   [
+    0,
+    3,
+    5,
+    4
+   ],
+   [
+    3,
+    0,
+    4,
+    5
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    3,
+    6
+   ],
+   [
+    0,
+    3,
+    5,
+    4
+   ],
+   [
+    5,
+    3,
+    0,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.85,
+ "reverb": 4.0,
+ "sc_depth": 0.25,
+ "sc_release": 0.5,
+ "scales": [
+  "minor",
+  "major",
+  "lydian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "strum": 0.0,
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -32,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "rim",
+   "layer": "top",
+   "name": "rim",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -11,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "808",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "slide": 0.12
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "glasspad",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "cut": 2200
+   },
+   "pan": 0.0,
+   "rev": 0.7,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {
+    "a": 2.0,
+    "cut": 1200,
+    "r": 3.0
+   },
+   "pan": 0.0,
+   "rev": 0.8,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.5,
+   "drive": null,
+   "hp": null,
+   "inst": "bell",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.8,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.4,
+   "drive": null,
+   "hp": null,
+   "inst": "softlead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "cut": 2000
+   },
+   "pan": 0.2,
+   "rev": 0.7,
+   "sc": 0.0
+  },
+  {
+   "db": -34,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "close"
+}

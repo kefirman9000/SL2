@@ -1,0 +1,221 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "rate": 1
+ },
+ "bass": [
+  "R..R..R.R..R..R.",
+  "R...R.R...R.R..."
+ ],
+ "bass_gate": 0.6,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  106,
+  112
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "x..x..x.x..x..x."
+ ],
+ "chord_size": 3,
+ "desc": "Moombahton: dembow groove at 110 with big-room synths and heavy drops",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "clap": [
+   "....X.......X..."
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "snare": [
+   "...X..X....X..X."
+  ],
+  "tamb": [
+   "..x...x...x...x."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "edm",
+ "gm_hint": "",
+ "human": 0.0,
+ "id": "moombahton",
+ "kit": "punchy",
+ "lead_rh": [
+  "x.x...x.x.x...x.",
+  "x..x..x.x.......",
+  "x.x.x.x.x.x.x.x.",
+  "x---x---x-------"
+ ],
+ "master": {
+  "air": 1.5,
+  "low": 1.5,
+  "lufs": -8.5
+ },
+ "name": "moombahton",
+ "progs": [
+  [
+   0,
+   5,
+   2,
+   6
+  ],
+  [
+   0,
+   6,
+   5,
+   6
+  ],
+  [
+   0,
+   5,
+   3,
+   4
+  ]
+ ],
+ "sc_depth": 0.5,
+ "scales": [
+  "minor"
+ ],
+ "snare_tracks": [
+  "snare",
+  "clap"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tamb",
+   "layer": "top",
+   "name": "tamb",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "fmbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.8
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "stab",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.7
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "supersaw",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.8
+  },
+  {
+   "db": -27,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck_saw",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.5
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "hoover",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.5
+  }
+ ]
+}

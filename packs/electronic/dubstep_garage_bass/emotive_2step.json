@@ -1,0 +1,259 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.4,
+  "rate": 2
+ },
+ "bass": [
+  "R..R....R.....R.",
+  "R.....R...R.R...",
+  "R-..R...R-......"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "pattern",
+ "bpm": [
+  120,
+  128
+ ],
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x-----x---x-----",
+  "..x.....x.......",
+  "x-------x-------"
+ ],
+ "chord_size": 4,
+ "desc": "Emotive 2-step house: a warm, swung UK groove around 120-126 - skippy 2-step kicks, a crisp backbeat and shuffled hats - with a deep, rounded sub, wistful chopped vocal hooks, warm Rhodes / organ chords and soft pads; melancholic and euphoric at once, late-night and close",
+ "drums": {
+  "chat": [
+   "..x...x...x...x.",
+   ".xx..xx..xx..x.x"
+  ],
+  "kick": [
+   "X......x..x.....",
+   "X.....x...X.....",
+   "X......x..X..x.."
+  ],
+  "rim": [
+   "......x.......x."
+  ],
+  "shaker": [
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "snare": [
+   "....X.......X...",
+   "....X......xX..."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "garage",
+ "form_scale": 1,
+ "ghosts": true,
+ "gm_hint": "Swung 2-step kit; deep round sub; chopped, pitched vocal hooks; Rhodes / organ chords; soft pads",
+ "human": 0.004,
+ "id": "emotive_2step",
+ "kit": "punchy",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x.x.xx.x..x.x...",
+  "xx.x.x..x.xx.x..",
+  "x---x.x.x-x-...."
+ ],
+ "master": {
+  "air": 0.6,
+  "low": 2.2,
+  "lufs": -9.5,
+  "width": 1.1
+ },
+ "name": "emotive_2step",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    2,
+    6
+   ],
+   [
+    5,
+    6,
+    0,
+    0
+   ],
+   [
+    0,
+    6,
+    5,
+    3
+   ]
+  ]
+ },
+ "repetition": 0.85,
+ "reverb": 2.2,
+ "sc_depth": 0.45,
+ "sc_release": 0.45,
+ "scales": [
+  "minor",
+  "dorian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.58,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "rim",
+   "layer": "top",
+   "name": "rim",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sinebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 280
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.5
+  },
+  {
+   "chorus": 0.3,
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "epiano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.6
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.8
+  },
+  {
+   "db": -27,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "chops": true,
+   "db": -17,
+   "dly": 0.25,
+   "drive": null,
+   "hp": null,
+   "inst": "softlead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  }
+ ],
+ "trap_hats": false,
+ "voicing": "close"
+}

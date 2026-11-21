@@ -1,0 +1,319 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.85,
+  "rate": 4
+ },
+ "bass": [
+  "R.R.u.R.d.R.R...",
+  "R.u.R.d.R.R.u.R.",
+  "R.R.R.u.R.d.R..."
+ ],
+ "bass_gate": 0.7,
+ "bass_lo": 36,
+ "bpm": [
+  146,
+  156
+ ],
+ "build_family": [
+  "snare_roll",
+  "pickup",
+  "stops"
+ ],
+ "chord_bars": 1,
+ "chord_center": 62,
+ "chord_rh": [
+  "..x...x...x...x.",
+  "x.......x.x.....",
+  "x.....x...x....."
+ ],
+ "chord_size": 3,
+ "desc": "Spooky surf - modern monster theme: the 60s monster-sitcom theme rebuilt with modern synths - a fuzz baritone synth and a driven saw bass lock together on the creeping chromatic riff (root, a half step up, back, a half step down), wide synth-brass stabs, a detuned creep organ, a harpsichord arp and a sliding theremin-style lead, over tight, punchy modern drums at about 150 - a ghostly organ breakdown, a riser build and a big last riff - campy, creepy and hard-hitting",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "x.xxx.x.x.xxx.x."
+  ],
+  "clap": [
+   "....X.......X..."
+  ],
+  "kick": [
+   "X.......X.......",
+   "X.....X.X.......",
+   "X.......X.....x."
+  ],
+  "ride": [
+   "..x...x...x...x."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "monster_synth",
+ "gm_hint": "Fuzz baritone synth doubling a driven saw bass on a low chromatic riff; synth-brass stabs; detuned combo organ; harpsichord arp; theremin lead with slides; punchy modern drums (kick, snare + clap, 16th hats)",
+ "human": 0.004,
+ "id": "monster_synth",
+ "kick_track": "kick",
+ "kit": "punchy",
+ "kit_override": {},
+ "lead_rh": [
+  "x-x-x---x-x-x---",
+  "x---x-x-x-------",
+  "x-------x---x---"
+ ],
+ "master": {
+  "air": 0.5,
+  "low": 1.2,
+  "lufs": -9.5,
+  "width": 1.25
+ },
+ "name": "monster_synth",
+ "no_fx_sounds": true,
+ "no_layers": true,
+ "no_rotation": true,
+ "own_progs": true,
+ "progs": {
+  "harmonic_minor": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    3,
+    5,
+    4
+   ],
+   [
+    5,
+    3,
+    4,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    5,
+    4
+   ],
+   [
+    2,
+    6,
+    5,
+    2
+   ]
+  ]
+ },
+ "repetition": 0.85,
+ "reverb": 2.0,
+ "riff_locked": true,
+ "sc_depth": 0.25,
+ "sc_release": 0.45,
+ "scales": [
+  "minor",
+  "harmonic_minor"
+ ],
+ "section_progs": {
+  "alt": [
+   2,
+   6,
+   5,
+   2
+  ],
+  "main": [
+   0,
+   0,
+   5,
+   4
+  ],
+  "verse": [
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ "snare_tracks": [
+  "snare",
+  "clap"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -11,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sawbass_driven",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -13,
+   "dly": 0.0,
+   "double_of": "bass",
+   "drive": null,
+   "hp": null,
+   "inst": "fuzzbari",
+   "keep_inst": true,
+   "layer": "bass",
+   "name": "riff",
+   "octave": 12,
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": 150,
+   "inst": "creeporgan",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": -0.1,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": 180,
+   "inst": "synthbrass_wide",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.15,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "harpsichord",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "theremin",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -34,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "crash",
+  "none"
+ ]
+}

@@ -1,0 +1,210 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.7,
+  "rate": 4
+ },
+ "bass": [
+  "R..R..F.R..A..F.",
+  "R.....F.R...A...",
+  "R..O..F.R..F.A.."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "pattern",
+ "bpm": [
+  96,
+  124
+ ],
+ "chord_center": 58,
+ "chord_rh": [
+  "x..x..x...x..x..",
+  "..x...x...x...x."
+ ],
+ "desc": "New Orleans brass band / second line: a strutting, swung street parade - the bass drum and cymbal, a snare full of rolls and ghost notes, a sousaphone bassline, trombone riffs, trumpet melody and a clarinet weaving around it, Dixieland-style",
+ "drums": {
+  "crash": [
+   "X...............",
+   "................"
+  ],
+  "kick": [
+   "X.....X.X.......",
+   "X.....X.X.....x."
+  ],
+  "ride": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "snare": [
+   "..x.x.oxx.x.o.x.",
+   "o.x.x.oxo.x.x.xx"
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "song",
+ "form_scale": 1,
+ "ghosts": true,
+ "gm_hint": "",
+ "human": 0.008,
+ "id": "nola_brass",
+ "kick_track": "kick",
+ "kit": "acoustic",
+ "lead_rh": [
+  "x-x-x---x-x-x---",
+  "x--x--x-x-------",
+  "x-x-x-x-x---x---"
+ ],
+ "master": {
+  "air": 1.5,
+  "low": 1.0,
+  "lufs": -11.0
+ },
+ "name": "nola_brass",
+ "progs": {
+  "major": [
+   [
+    0,
+    3,
+    0,
+    4
+   ],
+   [
+    0,
+    0,
+    4,
+    4
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "scales": [
+  "major",
+  "mixolydian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.6,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "crash",
+   "layer": "top",
+   "name": "crash",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tuba",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "trombone",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clarinet",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "trumpet",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  }
+ ]
+}

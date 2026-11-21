@@ -1,0 +1,274 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 4,
+  "rate": 1
+ },
+ "bass": [
+  "RRRRRRRRRRRRRRRR",
+  "R.R.R.R.R.R.R.R."
+ ],
+ "bass_gate": 0.7,
+ "bass_lo": 23,
+ "bass_mode": "pattern",
+ "bpm": [
+  240,
+  262
+ ],
+ "build_family": [
+  "none",
+  "stops"
+ ],
+ "chord_bars": 1,
+ "chord_center": 45,
+ "chord_rh": [
+  "xxxxxxxxxxxxxxxx",
+  "x.xxx.xxx.xxx.xx"
+ ],
+ "chord_size": 2,
+ "desc": "Drum-machine deathgrind / cybergrind: songs about a minute long that never let up - inhumanly fast programmed blast beats and machine-gun double kick (16ths at ~250 BPM), crashes on every beat, then sudden, crushing half-time breakdowns where the down-tuned, quad-tracked guitars chug locked to the kick with dead silence between the hits; dissonant tremolo riffs and squealing pinch harmonics on top; mixed huge, low and saturated",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "crash": [
+   "x...x...x...x..."
+  ],
+  "kick": [
+   "XXXXXXXXXXXXXXXX"
+  ],
+  "snare": [
+   "x.x.x.x.x.x.x.x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "cybergrind",
+ "ghosts": false,
+ "gm_hint": "Programmed blast beats and 16th double kick (very clicky triggered kick), crashes / china on the beat; down-tuned 7/8-string guitars quad-tracked, gated chugs; a distorted bass doubling the riffs; squealing pinch harmonics / screeching lead",
+ "human": 0.0,
+ "id": "cybergrind",
+ "kit": "hard",
+ "kit_override": {
+  "kick": {
+   "click": 1.0,
+   "decay": 26,
+   "drive": 2.4,
+   "len": 0.12,
+   "pitch": 62,
+   "punch": 240,
+   "sweep": 80
+  },
+  "snare": {
+   "crack": 0.6,
+   "drive": 1.6
+  }
+ },
+ "lead_oct": 5,
+ "lead_rh": [
+  "xxxxxxxxxxxxxxxx",
+  "x-x-x-x-x-x-x-x-",
+  "x---x---x---x---"
+ ],
+ "master": {
+  "air": -1.5,
+  "drive": 0.25,
+  "low": 2.5,
+  "lufs": -7.5,
+  "max_gr": 4.0,
+  "tone": [
+   -1.5,
+   0.0,
+   -8.9,
+   -9.0,
+   -10.1,
+   -10.3,
+   -12.2,
+   -10.2,
+   -16.8
+  ],
+  "width": 0.95
+ },
+ "name": "cybergrind",
+ "no_layers": true,
+ "own_progs": true,
+ "progs": {
+  "harmonic_minor": [
+   [
+    0,
+    1,
+    0,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    0,
+    5,
+    6
+   ],
+   [
+    0,
+    6,
+    5,
+    0
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    6
+   ]
+  ]
+ },
+ "reverb": 1.2,
+ "riff_chorus": 0.6,
+ "riff_lo": 33,
+ "riffs": [
+  "pppppppppppppppp",
+  "pp.pp.ppX-pp.pp.",
+  "p.ppp.ppp.ppp.pp",
+  "ppppX-ppppm-ppb-"
+ ],
+ "scales": [
+  "phrygian",
+  "minor",
+  "harmonic_minor"
+ ],
+ "strum": 0.0,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "crash",
+   "layer": "top",
+   "name": "crash",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": 0.7,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chuggtr",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chuggtr",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "screech",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -34,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "gap",
+  "none"
+ ],
+ "voicing": "power"
+}

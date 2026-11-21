@@ -1,0 +1,220 @@
+{
+ "arp": {
+  "mode": "roll",
+  "oct": 4,
+  "rate": 1
+ },
+ "bass": [
+  "R...F...R...F...",
+  "R...F...R...A...",
+  "R.......F......."
+ ],
+ "bass_gate": 0.6,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  112,
+  150
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "....x.......x...",
+  "....x.......x..x"
+ ],
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "desc": "Bluegrass: Scruggs banjo rolls, the mandolin chop on 2 and 4, boom-chick guitar with G-runs, fiddle and the band taking breaks in turn",
+ "drums": {},
+ "extends": "_family",
+ "fill": false,
+ "form": "bluegrass",
+ "g_run": true,
+ "ghosts": false,
+ "gm_hint": "Banjo (rolls); Fiddle (lead); Mandolin chop; Acoustic guitar; Upright bass",
+ "human": 0.006,
+ "id": "bluegrass",
+ "kick_track": "kick",
+ "kit": "default",
+ "lead_oct": 5,
+ "lead_rh": [
+  "x.x.x.x.x.x.x.x.",
+  "x.x.x-x.x.x.x---",
+  "xx.x.x.xx.x.x.x.",
+  "x-x-x-x-x.x.x---"
+ ],
+ "master": {
+  "air": 1.5,
+  "low": 0.6,
+  "lufs": -12.0
+ },
+ "name": "bluegrass",
+ "no_rotation": true,
+ "progs": {
+  "major": [
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    0,
+    3,
+    0
+   ],
+   [
+    0,
+    4,
+    0,
+    4
+   ],
+   [
+    0,
+    3,
+    0,
+    4
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    0,
+    0
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "scales": [
+  "major",
+  "mixolydian"
+ ],
+ "snare_tracks": [],
+ "solos": [
+  "solo_banjo",
+  "solo_mando",
+  "lead",
+  "solo_gtr"
+ ],
+ "strum": 0.0,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "upright",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "mandolin",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "chop": true
+   },
+   "pan": 0.3,
+   "rev": 0.12,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "double_of": "chords",
+   "drive": null,
+   "hp": null,
+   "inst": "acguitar",
+   "keep_inst": true,
+   "layer": "chords",
+   "name": "gtr",
+   "p": {
+    "bright": 7000,
+    "damp": 0.985
+   },
+   "pan": -0.3,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "banjo",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": -0.15,
+   "rev": 0.12,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "violin",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "vib": 8
+   },
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "banjo",
+   "layer": "lead",
+   "name": "solo_banjo",
+   "p": {},
+   "pan": -0.15,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "mandolin",
+   "layer": "lead",
+   "name": "solo_mando",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "acguitar",
+   "layer": "lead",
+   "name": "solo_gtr",
+   "p": {
+    "bright": 8000
+   },
+   "pan": -0.2,
+   "rev": 0.15,
+   "sc": 0.0
+  }
+ ]
+}

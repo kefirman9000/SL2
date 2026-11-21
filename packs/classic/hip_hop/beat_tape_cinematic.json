@@ -1,0 +1,241 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.55,
+  "rate": 2
+ },
+ "bass": [
+  "R-------R---....",
+  "R-----..R-.R....",
+  "R---..R-R-------"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "pattern",
+ "bpm": [
+  84,
+  96
+ ],
+ "chord_center": 58,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 4,
+ "desc": "Cinematic beat tape: instrumental hip hop around 86-96 BPM built like a film score from dusty samples - a head-nodding boom-bap break, a warm, round bass, and layer after layer of sampled strings, horns, choir and piano piling up into a big, swirling climax; warm and muffled, nothing harsh on top",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "x.x.x.xxx.x.x.x."
+  ],
+  "kick": [
+   "X.X.....X.xx....",
+   "X.....X.X.......",
+   "X.X.....X..X...."
+  ],
+  "snare": [
+   "....X.......X...",
+   "....X.......X..x"
+  ]
+ },
+ "extends": "_family",
+ "form": "lofi",
+ "ghosts": false,
+ "gm_hint": "Dusty boom-bap break; round bass; sampled strings, horn section, choir and piano layered like a film score; vinyl and tape; muffled top end",
+ "human": 0.01,
+ "id": "beat_tape_cinematic",
+ "kit": "soft",
+ "lead_oct": 5,
+ "lead_rh": [
+  "x-------x---x---",
+  "x---x---x-------",
+  "x-----x-x-------"
+ ],
+ "master": {
+  "air": -3.5,
+  "lofi": true,
+  "low": 2.0,
+  "lufs": -11.0,
+  "vintage_lp": 6000,
+  "wobble": 0.6
+ },
+ "name": "beat_tape_cinematic",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    6
+   ]
+  ],
+  "harmonic_minor": [
+   [
+    0,
+    5,
+    4,
+    4
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    0,
+    6,
+    5,
+    4
+   ],
+   [
+    0,
+    3,
+    6,
+    5
+   ]
+  ]
+ },
+ "repetition": 0.85,
+ "reverb": 2.6,
+ "sc_depth": 0.15,
+ "scales": [
+  "minor",
+  "dorian",
+  "harmonic_minor"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.56,
+ "tracks": [
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sinebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 400
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "choir",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "brass",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -38,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "vinyl",
+   "layer": "fx",
+   "name": "vinyl",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ]
+}

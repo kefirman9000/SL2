@@ -1,0 +1,244 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 4,
+  "prob": 0.3,
+  "rate": 2
+ },
+ "bass": [
+  "R-------R---F---",
+  "R-----..R-F-....",
+  "R---..R-R---A---"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "pattern",
+ "bpm": [
+  64,
+  92
+ ],
+ "chord_bars": 1,
+ "chord_center": 64,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------",
+  "x-----..x-------"
+ ],
+ "chord_size": 5,
+ "desc": "Smooth jazz, soprano-sax ballad style: a soprano sax soaring up high in long held notes with wide vibrato, scooping into every phrase, over lush 80s DX electric piano and pads, a warm fretless bass and soft, reverb-washed drums - romantic, slow and polished, with a key change for the last chorus",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "X.........X.....",
+   "X......X..X....."
+  ],
+  "shaker": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "song_b",
+ "form_scale": 1,
+ "ghosts": false,
+ "gm_hint": "Soprano sax (lots of vibrato); DX7 \"E.Piano 1\"; lush poly pads / strings; fretless bass; soft drum machine + big reverb snare",
+ "human": 0.006,
+ "id": "smooth_jazz",
+ "kick_track": "kick",
+ "kit": "soft",
+ "lead_rh": [
+  "x---------x-x-x-",
+  "x-------x---x---",
+  "....x-x-x-------",
+  "x-----x-x-------",
+  "x---------------"
+ ],
+ "master": {
+  "air": 1.8,
+  "low": 1.0,
+  "lufs": -12.5
+ },
+ "name": "smooth_jazz",
+ "own_progs": true,
+ "progs": {
+  "major": [
+   [
+    0,
+    3,
+    1,
+    4
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    3,
+    4,
+    2,
+    5
+   ],
+   [
+    0,
+    2,
+    3,
+    4
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ],
+   [
+    1,
+    4,
+    0,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.8,
+ "reverb": 3.0,
+ "scales": [
+  "major"
+ ],
+ "slides": 0.55,
+ "snare_tracks": [
+  "snare"
+ ],
+ "solo_lead": true,
+ "swing": 0.52,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sf:fingerbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 800
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.12,
+   "drive": null,
+   "hp": null,
+   "inst": "epiano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.1,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "glasspad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0,
+   "swell": 0.3
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "acguitar",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.18,
+   "drive": null,
+   "hp": null,
+   "inst": "sopsax",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.55,
+   "sc": 0.0,
+   "vibfx": 1.0
+  }
+ ],
+ "voicing": "close"
+}

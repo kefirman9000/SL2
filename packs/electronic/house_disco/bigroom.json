@@ -1,0 +1,221 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "rate": 1
+ },
+ "bass": [
+  "..R...R...R...R."
+ ],
+ "bass_gate": 0.5,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  126,
+  130
+ ],
+ "chord_center": 64,
+ "chord_rh": [
+  "x---------------"
+ ],
+ "chord_size": 3,
+ "desc": "Big room / festival EDM: huge kicks, massive drops, stabby supersaw leads",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "clap": [
+   "....X.......X..."
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "ohat": [
+   "..x...x...x...x."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "edm",
+ "ghosts": false,
+ "gm_hint": "",
+ "human": 0.0,
+ "id": "bigroom",
+ "kit": "hard",
+ "kit_override": {
+  "kick": {
+   "decay": 5,
+   "drive": 4.0
+  }
+ },
+ "lead_rh": [
+  "x.x...x.x.x...x.",
+  "x..x..x.x.......",
+  "x.x.x.x.x.x.x.x.",
+  "x...x...x-------"
+ ],
+ "master": {
+  "air": 2.0,
+  "low": 1.5,
+  "lufs": -7.5
+ },
+ "name": "bigroom",
+ "progs": [
+  [
+   0,
+   5,
+   2,
+   6
+  ],
+  [
+   0,
+   0,
+   5,
+   6
+  ],
+  [
+   5,
+   6,
+   0,
+   0
+  ]
+ ],
+ "reverb": 2.8,
+ "sc_depth": 0.9,
+ "sc_release": 0.45,
+ "scales": [
+  "minor"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "strum": 0.0,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "fmbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "drive": 2.0,
+    "index": 2.0
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 1.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "supersaw",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "a": 0.1,
+    "cut": 4000
+   },
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 1.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 1.0
+  },
+  {
+   "db": -27,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck_saw",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.0,
+   "sc": 0.8
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "hoover",
+   "layer": "lead",
+   "name": "lead",
+   "ott": 0.5,
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.6
+  }
+ ]
+}

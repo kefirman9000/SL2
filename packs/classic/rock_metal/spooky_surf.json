@@ -1,0 +1,249 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.6,
+  "rate": 2
+ },
+ "bass": [
+  "R.F.R.F.O.F.R.A.",
+  "R...F...R...A..."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 38,
+ "bass_mode": "walk",
+ "bpm": [
+  144,
+  160
+ ],
+ "build_family": [
+  "pickup",
+  "stops"
+ ],
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x...x...x...x...",
+  "x.x.....x.x....."
+ ],
+ "chord_size": 3,
+ "desc": "Spooky 60s surf / TV-theme rock: a fast, driving beat around 150 with a twangy, heavily reverbed electric guitar melody, a walking / chromatic bass line, stabbing brass and a cheesy combo organ - campy, creepy and fun",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "X.......X.......",
+   "X.....X.X......."
+  ],
+  "ride": [
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "spooky_surf",
+ "ghosts": false,
+ "gm_hint": "Twangy reverb-drenched guitar melody (low strings); walking bass; brass stabs; combo organ; fast straight beat",
+ "human": 0.008,
+ "id": "spooky_surf",
+ "kit": "acoustic",
+ "kit_override": {},
+ "lead_oct": 4,
+ "lead_rh": [
+  "x-x-x-x-x---x---",
+  "x---x-x-x-x-x---",
+  "x-x-x---x-x-x---"
+ ],
+ "master": {
+  "air": -0.5,
+  "low": 0.5,
+  "lufs": -11.0,
+  "vintage_lp": 7500,
+  "width": 1.25
+ },
+ "name": "spooky_surf",
+ "no_fx_sounds": true,
+ "progs": {
+  "harmonic_minor": [
+   [
+    0,
+    5,
+    1,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    0,
+    5,
+    4
+   ],
+   [
+    0,
+    3,
+    0,
+    4
+   ]
+  ],
+  "phrygian_dominant": [
+   [
+    0,
+    1,
+    0,
+    1
+   ]
+  ]
+ },
+ "reverb": 2.4,
+ "scales": [
+  "minor",
+  "harmonic_minor",
+  "phrygian_dominant"
+ ],
+ "spring": true,
+ "strum": 0.0,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -9,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "double_of": "bass",
+   "drive": null,
+   "hp": null,
+   "inst": "twang",
+   "keep_inst": true,
+   "layer": "bass",
+   "name": "rumble",
+   "octave": 12,
+   "p": {
+    "bright": 5000,
+    "trem": 15
+   },
+   "pan": -0.15,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "brass",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.15,
+   "drive": null,
+   "hp": null,
+   "inst": "twang",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "bright": 6000
+   },
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0,
+   "trem": {
+    "depth": 0.35,
+    "rate": 0.5
+   }
+  }
+ ],
+ "transition_moves": [
+  "crash",
+  "none",
+  "none"
+ ],
+ "voicing": "close"
+}

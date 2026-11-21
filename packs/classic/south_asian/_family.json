@@ -1,0 +1,26 @@
+{
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "build_family": [
+  "pickup"
+ ],
+ "category": "Classic",
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "fill": false,
+ "form_scale": 1,
+ "ghosts": false,
+ "hand_drums": true,
+ "kit": "soft",
+ "kit_override": {},
+ "lead_oct": 5,
+ "no_rotation": true,
+ "sc_depth": 0.0,
+ "sc_release": 0.45,
+ "strum": 0.0,
+ "suggest": "",
+ "swing_unit": 16,
+ "trap_hats": false,
+ "voicing": "close"
+}

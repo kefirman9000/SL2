@@ -1,0 +1,216 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "808",
+ "bpm": [
+  130,
+  142
+ ],
+ "build_family": [
+  "pause",
+  "stops"
+ ],
+ "chord_bars": 1,
+ "chord_center": 62,
+ "chord_rh": [
+  "x---------------",
+  "x..x..x........."
+ ],
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "desc": "Jersey club: kick triplets and bed-squeak bounce, chopped vocal hooks, sliding 808s",
+ "drums": {
+  "chat": [
+   "..x...x...x...x."
+  ],
+  "clap": [
+   "........X.......",
+   "....X.......X..."
+  ],
+  "kick": [
+   "X...X...X..X..X.",
+   "X...X.X.X.X.....",
+   "X...X...X..X..X.",
+   "X..X..X...X.X..."
+  ],
+  "snap": [
+   "......x.......x."
+  ],
+  "squeak": [
+   "..x.x.....x.x...",
+   "......x.x.....x."
+  ]
+ },
+ "extends": "_family",
+ "form": "halftime",
+ "form_scale": 1.25,
+ "gm_hint": "808 kick & slides; Vocal chops (lead); Bed-squeak / snaps; Dark pad",
+ "human": 0.0,
+ "id": "jersey_club",
+ "kit": "808",
+ "kit_override": {},
+ "lead_rh": [
+  "x.x.x..x.x.x....",
+  "x..x..x.x..x..x.",
+  "xx.xx.x.x.x.....",
+  "x-x-x---x-------"
+ ],
+ "master": {
+  "air": 1.6,
+  "low": 1.8,
+  "lufs": -8.5
+ },
+ "name": "jersey_club",
+ "progs": [
+  [
+   0,
+   5,
+   2,
+   6
+  ],
+  [
+   0,
+   6,
+   5,
+   6
+  ],
+  [
+   0,
+   3,
+   5,
+   4
+  ]
+ ],
+ "reverb": 2.0,
+ "sc_depth": 0.3,
+ "sc_release": 0.45,
+ "scales": [
+  "minor"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "woodblock",
+   "layer": "top",
+   "name": "squeak",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snap",
+   "layer": "top",
+   "name": "snap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "808",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "decay": 0.5
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "vox",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "gap",
+  "none"
+ ],
+ "trap_hats": false,
+ "voicing": "close"
+}

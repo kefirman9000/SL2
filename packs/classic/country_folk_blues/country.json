@@ -1,0 +1,245 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 4,
+  "prob": 0.5,
+  "rate": 2
+ },
+ "bass": [
+  "R...F...R...F...",
+  "R...F...R.F.A...",
+  "R...F...R...A.F."
+ ],
+ "bass_gate": 0.55,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  92,
+  132
+ ],
+ "chord_center": 57,
+ "chord_rh": [
+  "x.x.x.x.x.x.x.x.",
+  "x...x.x.x...x.x.",
+  "x---x---x---x---"
+ ],
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "desc": "Classic country / honky-tonk (Nashville, Bakersfield): boom-chick upright bass with walk-ups, strummed acoustic, chicken-pickin' Telecaster, honky-tonk piano fills, fiddle melody and pedal-steel swells and slides",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "X.......X.......",
+   "X...X...X...X..."
+  ],
+  "snare": [
+   "....X.......X...",
+   "oxoxXxoxoxoxXxox"
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "song",
+ "ghosts": false,
+ "gm_hint": "Acoustic steel guitar (strum); Telecaster licks; Fiddle; Pedal steel; Upright / electric bass; Pedal steel swells",
+ "human": 0.008,
+ "id": "country",
+ "kick_track": "kick",
+ "kit": "soft",
+ "lead_oct": 5,
+ "lead_rh": [
+  "x-x-x---x-x-....",
+  "x---x-x-x---....",
+  "x-x-x-x-x---x...",
+  "..x-x-x-x---...."
+ ],
+ "master": {
+  "air": 1.5,
+  "low": 0.9,
+  "lufs": -11.0
+ },
+ "name": "country",
+ "progs": {
+  "major": [
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    4,
+    3,
+    0
+   ],
+   [
+    0,
+    0,
+    3,
+    4
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    3,
+    0,
+    4,
+    0
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "scales": [
+  "major",
+  "mixolydian"
+ ],
+ "slides": 0.45,
+ "snare_tracks": [
+  "snare"
+ ],
+ "strum": 0.012,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "upright",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "acguitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "bright": 5500
+   },
+   "pan": -0.25,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.12,
+   "drive": null,
+   "hp": null,
+   "inst": "twang",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "chorus": 0.35,
+   "db": -26,
+   "dly": 0.0,
+   "double_of": "chords",
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "keep_inst": true,
+   "layer": "chords",
+   "name": "keys",
+   "octave": 12,
+   "p": {},
+   "pan": 0.15,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "pedalsteel",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "violin",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "vib": 12
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ]
+}

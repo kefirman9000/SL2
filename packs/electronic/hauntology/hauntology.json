@@ -1,0 +1,284 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.6,
+  "rate": 2
+ },
+ "bass": [
+  "R-------R---....",
+  "R-----..R-......",
+  "R-------F-------"
+ ],
+ "bass_lo": 31,
+ "bpm": [
+  78,
+  96
+ ],
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 4,
+ "desc": "Hauntology: warped-tape analog synths, slow dusty hip-hop breaks, nostalgic melodies and string-machine haze, all drifting like an old cassette",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "x...x...x...x..."
+  ],
+  "kick": [
+   "X.......X.x.....",
+   "X......XX.......",
+   "X.....x...X....."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "form": "lofi",
+ "gm_hint": "Detuned analog poly (Prophet / Juno); String machine; Sine lead or vocal sample; Dusty drum break; tape + vinyl",
+ "human": 0.012,
+ "id": "hauntology",
+ "lead_rh": [
+  "x-------x---x---",
+  "x---x---x-------",
+  "x-----x-x-------",
+  "x---------------"
+ ],
+ "master": {
+  "air": -1.5,
+  "lofi": true,
+  "low": 1.5,
+  "lufs": -13.0,
+  "tone": [
+   -2.5,
+   0.0,
+   -5.8,
+   -7.7,
+   -5.9,
+   -7.6,
+   -12.3,
+   -14.6,
+   -24.3
+  ],
+  "wobble": 3.0
+ },
+ "name": "hauntology",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ],
+  "major": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    3,
+    0,
+    3,
+    0
+   ],
+   [
+    0,
+    2,
+    3,
+    0
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    6,
+    0
+   ],
+   [
+    0,
+    3,
+    0,
+    3
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    0,
+    6
+   ],
+   [
+    0,
+    3,
+    6,
+    0
+   ]
+  ]
+ },
+ "reverb": 3.4,
+ "scales": [
+  "major",
+  "dorian",
+  "mixolydian",
+  "minor"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "strum": 0.0,
+ "swing": 0.56,
+ "tracks": [
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sinebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 450
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.15,
+   "drive": null,
+   "hp": null,
+   "inst": "polysynth",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "a": 0.3,
+    "cut": 1200,
+    "r": 1.0
+   },
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "solina",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "polysynth",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "a": 0.004,
+    "cut": 2200,
+    "d": 0.3,
+    "r": 0.4,
+    "s": 0.15
+   },
+   "pan": 0.25,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "softlead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -40,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "vinyl",
+   "layer": "fx",
+   "name": "vinyl",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "open"
+}

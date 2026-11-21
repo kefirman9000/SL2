@@ -1,0 +1,309 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 6,
+  "prob": 0.5,
+  "rate": 1
+ },
+ "bass": [
+  "R.RR.R..R.R.RR..",
+  "R..R.RR.R..R.R.R",
+  "R-.R..R-R.R..R..",
+  "R.R.R..R.R.RR.R."
+ ],
+ "bass_gate": 0.8,
+ "bass_lo": 28,
+ "bass_mode": "pattern",
+ "bpm": [
+  172,
+  190
+ ],
+ "calm_lead": 1.5,
+ "chord_center": 62,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------",
+  "x-----x---------"
+ ],
+ "chord_size": 4,
+ "desc": "Drill & bass - spacey: hyper-detailed breakbeats at 172-190 that never sit still (32nd-note ratchets, ghost notes, snare rushes, reversed hits, half-bar edits) under bright, spacious jazz-fusion harmony - floating Rhodes and vibes, a soft, singing lead drifting through long delays and reverb, a wide, airy mix - and a busy, melodic bass guitar; it opens on the synths alone and drops the drums out for a floating breakdown",
+ "drums": {
+  "chat": [
+   "xxxxxxxxxxxxxxxx",
+   "x.xxx.xxx.xxxxx.",
+   "xxx.xxx.x.xxxx.x"
+  ],
+  "kick": [
+   "X.X.......X.....",
+   "X..X......X..X..",
+   "X.X...X...X.....",
+   "XX........X..X.."
+  ],
+  "ohat": [
+   "..x.......x.....",
+   "......x.......x."
+  ],
+  "snap": [
+   "...x.....x..x...",
+   ".x.....x...x..x."
+  ],
+  "snare": [
+   "....X..x.x.xX..x",
+   "..x.X.x...xxX.xx",
+   "....X..x.xx.X.x.",
+   ".x..X..xx..xX.xX"
+  ]
+ },
+ "edit_any": 0.55,
+ "extends": "_family",
+ "fill": true,
+ "form": "drill_space",
+ "form_scale": 1,
+ "ghosts": true,
+ "gm_hint": "Chopped breaks edited to the 32nd note (ratchets, ghost notes, reverses); Rhodes and vibes; a soft, airy synth or flute lead in long delays; a fast, melodic fingered bass guitar; wide reverb, bright and spacey",
+ "granular": 0.9,
+ "human": 0.003,
+ "id": "drill_space",
+ "kit": "acoustic",
+ "kit_override": {},
+ "lead_rh": [
+  "x---------------",
+  "x-------x-------",
+  "....x-----------",
+  "x-----------x---"
+ ],
+ "master": {
+  "air": 1.6,
+  "low": 1.0,
+  "lufs": -11.0,
+  "width": 1.7
+ },
+ "name": "drill_space",
+ "own_progs": true,
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    6,
+    3,
+    4
+   ]
+  ],
+  "lydian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    4,
+    3
+   ]
+  ],
+  "major": [
+   [
+    0,
+    3,
+    1,
+    4
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    3,
+    4,
+    2,
+    5
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ],
+   [
+    0,
+    3,
+    6,
+    4
+   ]
+  ]
+ },
+ "repetition": 0.9,
+ "reverb": 3.4,
+ "sc_depth": 0.1,
+ "sc_release": 0.45,
+ "scales": [
+  "major",
+  "lydian",
+  "mixolydian",
+  "dorian"
+ ],
+ "snare_tracks": [
+  "snare",
+  "snap"
+ ],
+ "swing": 0.52,
+ "tracks": [
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snap",
+   "layer": "snare",
+   "name": "snap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sf:fingerbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 2200
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "epiano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.55,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "glasspad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.7,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.45,
+   "drive": null,
+   "hp": null,
+   "inst": "vibes",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.35,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.45,
+   "drive": null,
+   "hp": null,
+   "inst": "softlead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.65,
+   "sc": 0.0
+  },
+  {
+   "db": -37,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  }
+ ]
+}

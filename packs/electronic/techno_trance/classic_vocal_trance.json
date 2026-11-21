@@ -1,0 +1,283 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "rate": 1
+ },
+ "bass": [
+  "..RR..RR..RR..RR",
+  ".RRR.RRR.RRR.RRR",
+  "..R...R...R...R."
+ ],
+ "bass_gate": 0.55,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  136,
+  140
+ ],
+ "chord_bars": 1,
+ "chord_center": 64,
+ "chord_rh": [
+  "x---------------",
+  "x-x-x-x-x-x-x-x-"
+ ],
+ "chord_size": 4,
+ "desc": "Classic vocal trance (2004-09): 136-140 BPM in a minor key, a rolling off-beat bass ducking hard under the kick, constant 16th hats, a bright singing lead with glide, gated supersaw chords, airy pads and a piano-led breakdown in the middle that rises into the last, biggest drop; long, wide and emotional",
+ "drums": {
+  "chat": [
+   "xxxxxxxxxxxxxxxx",
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "clap": [
+   "....X.......X..."
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "ohat": [
+   "..x...x...x...x."
+  ],
+  "ride": [
+   "x.x.x.x.x.x.x.x."
+  ]
+ },
+ "exact_pools": true,
+ "extends": "_family",
+ "fill": true,
+ "filter_arc": true,
+ "form": "trance",
+ "form_scale": 1.5,
+ "forms": [
+  "trance",
+  "trance_double",
+  "trance_club"
+ ],
+ "forms_variants": true,
+ "gm_hint": "Rolling off-beat bass ducked under the kick; 16th hats; bright singing lead with glide and vibrato; gated supersaw chords; airy pads; piano breakdown; vocal",
+ "human": 0.0,
+ "id": "classic_vocal_trance",
+ "kit": "trance",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x---x-x-x---x---",
+  "x-------x-x-x---",
+  "x---x---x-x-x-x-",
+  "x-----x-----x---"
+ ],
+ "master": {
+  "air": 1.5,
+  "low": 1.0,
+  "lufs": -9.0,
+  "tone": [
+   0.0,
+   -1.9,
+   -7.5,
+   -10.4,
+   -12.3,
+   -13.9,
+   -14.3,
+   -13.7,
+   -16.8
+  ],
+  "width": 1.4
+ },
+ "name": "classic_vocal_trance",
+ "progs": [
+  [
+   5,
+   3,
+   0,
+   4
+  ],
+  [
+   0,
+   5,
+   3,
+   4
+  ],
+  [
+   0,
+   3,
+   5,
+   4
+  ],
+  [
+   5,
+   6,
+   0,
+   4
+  ],
+  [
+   0,
+   6,
+   5,
+   6
+  ]
+ ],
+ "rev_hp": 220,
+ "rev_predelay": 0.045,
+ "reverb": 3.2,
+ "sc_arc": true,
+ "sc_depth": 0.75,
+ "sc_release": 0.45,
+ "scales": [
+  "minor"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.15,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -33,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "rollbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 1000,
+    "d": 0.1,
+    "s": 0.3
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.85
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "gatepad",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.7
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "dreampad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.5,
+   "wide": 0.4
+  },
+  {
+   "db": -24,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.3
+  },
+  {
+   "db": -18,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "classiclead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.4
+  },
+  {
+   "db": -36,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "close"
+}

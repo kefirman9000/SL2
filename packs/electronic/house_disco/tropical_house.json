@@ -1,0 +1,237 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R.....R...R.....",
+  "R...R...R.....O."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  100,
+  115
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "x..x..x...x..x..",
+  "x--x--x---x-----"
+ ],
+ "chord_size": 3,
+ "desc": "Tropical house: a relaxed four-on-the-floor around 105, soft snaps and shakers, warm piano chords, marimba and steel-pan plucks, a pan-flute or sax hook - sunny, laid-back and summery",
+ "drums": {
+  "chat": [
+   "..x...x...x...x."
+  ],
+  "conga": [
+   "......o.......o."
+  ],
+  "kick": [
+   "X...X...X...X..."
+  ],
+  "shaker": [
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "snap": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "edm",
+ "ghosts": false,
+ "gm_hint": "",
+ "human": 0.004,
+ "id": "tropical_house",
+ "kit": "soft",
+ "kit_override": {},
+ "lead_rh": [
+  "x-x-x---x-x-....",
+  "x--x--x-x-------",
+  "..x-x-x---x-x---"
+ ],
+ "master": {
+  "air": 1.8,
+  "low": 1.1,
+  "lufs": -10.0
+ },
+ "name": "tropical_house",
+ "progs": {
+  "major": [
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ],
+   [
+    3,
+    0,
+    4,
+    5
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    2,
+    6
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "sc_depth": 0.4,
+ "sc_release": 0.45,
+ "scales": [
+  "major",
+  "minor"
+ ],
+ "snare_tracks": [
+  "snap"
+ ],
+ "strum": 0.0,
+ "swing": 0.52,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snap",
+   "layer": "snare",
+   "name": "snap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "conga",
+   "layer": "top",
+   "name": "conga",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sinebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.8
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.6
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.8
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "marimba",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.25,
+   "drive": null,
+   "hp": null,
+   "inst": "flute",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  }
+ ]
+}

@@ -1,0 +1,240 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.35,
+  "rate": 2
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "808",
+ "bpm": [
+  146,
+  156
+ ],
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "desc": "UK road rap: a dark, half-time London rap beat around 150 BPM - a huge mono 808 sub sliding between the root, its leading tone and the fifth, steady ticking 8th hats with the odd roll, a hard snare on the half-time backbeat, sparse kicks, and a moody harmonic-minor piano line over low strings and choir - roomy for the bars",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "x.x.x.x.x.x.xxx.",
+   "x.x.x.x.x.xxx.x."
+  ],
+  "kick": [
+   "X.........X.....",
+   "X.......X.....x.",
+   "X..........X...."
+  ],
+  "ohat": [
+   "......x........."
+  ],
+  "snare": [
+   "........X.......",
+   "........X......x"
+  ]
+ },
+ "extends": "_family",
+ "form": "trap",
+ "form_scale": 1,
+ "gm_hint": "808 kick + long sliding 808 sub (mono, root / leading tone / fifth); half-time snare; 8th hats with short rolls; dark harmonic-minor piano melody; low strings and choir pad; plenty of space for vocals",
+ "human": 0.0,
+ "id": "uk_road_rap",
+ "kit": "808",
+ "kit_override": {},
+ "lead_rh": [
+  "x---x---x-x-----",
+  "x-------x---x---",
+  "x---x-x-x-------",
+  "x-------x-------"
+ ],
+ "master": {
+  "air": 0.0,
+  "low": 3.0,
+  "lufs": -9.0,
+  "width": 0.4
+ },
+ "name": "uk_road_rap",
+ "progs": {
+  "harmonic_minor": [
+   [
+    0,
+    0,
+    5,
+    4
+   ],
+   [
+    0,
+    5,
+    0,
+    4
+   ],
+   [
+    0,
+    0,
+    3,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    0,
+    5,
+    6
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ]
+  ]
+ },
+ "repetition": 0.8,
+ "reverb": 2.0,
+ "sc_depth": 0.15,
+ "sc_release": 0.45,
+ "scales": [
+  "harmonic_minor",
+  "minor"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.1,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": -0.1,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -10,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "808",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "decay": 0.9
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.3
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "cut": 2400
+   },
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "choir",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.25,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  }
+ ],
+ "trap_hats": false,
+ "voicing": "close"
+}

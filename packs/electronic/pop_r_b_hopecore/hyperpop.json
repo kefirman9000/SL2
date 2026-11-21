@@ -1,0 +1,230 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 6,
+  "rate": 0.5
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "808",
+ "bpm": [
+  150,
+  170
+ ],
+ "chord_center": 66,
+ "chord_rh": [
+  "x.xx.x.xx.x.xx.x",
+  "x-x-x-x-x-x-x-x-"
+ ],
+ "chord_size": 4,
+ "desc": "Hyperpop: maximal, bright and glitchy - distorted 808s, supersaws, chiptune sparkle",
+ "drums": {
+  "clap": [
+   "........X......."
+  ],
+  "kick": [
+   "X.....X...X.....",
+   "X..X......X..X.."
+  ],
+  "snare": [
+   "........X......."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "halftime",
+ "form_scale": 1.25,
+ "ghosts": false,
+ "gm_hint": "",
+ "human": 0.0,
+ "id": "hyperpop",
+ "kit": "hard",
+ "kit_override": {},
+ "lead_rh": [
+  "x.x.xx.x.x.xx.x.",
+  "xx.xx.x.x.xx.x..",
+  "x.x.x.x.x-x-x---",
+  "x-x-x-x-x-------"
+ ],
+ "master": {
+  "air": 3.0,
+  "low": 1.0,
+  "lufs": -7.5
+ },
+ "name": "hyperpop",
+ "progs": {
+  "major": [
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    3,
+    4,
+    5,
+    0
+   ]
+  ],
+  "minor": [
+   [
+    5,
+    6,
+    0,
+    0
+   ],
+   [
+    0,
+    5,
+    2,
+    6
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "sc_depth": 0.6,
+ "sc_release": 0.45,
+ "scales": [
+  "major",
+  "minor"
+ ],
+ "snare_tracks": [
+  "snare",
+  "clap"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "808",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "drive": 6.0
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.6
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "supersaw",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "a": 0.005,
+    "cut": 7000,
+    "detune": 1.6,
+    "r": 0.08
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 1.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "vox",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.8
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chip",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "pw": 0.25
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": 0.4,
+   "hp": null,
+   "inst": "supersaw_lead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.5
+  }
+ ],
+ "trap_hats": true,
+ "voicing": "close"
+}

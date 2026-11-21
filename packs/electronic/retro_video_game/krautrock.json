@@ -1,0 +1,223 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 4,
+  "prob": 1.0,
+  "rate": 1
+ },
+ "bass": [
+  "R.R.R.R.R.R.R.R."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 33,
+ "bpm": [
+  120,
+  140
+ ],
+ "build_family": [
+  "none"
+ ],
+ "chord_bars": 4,
+ "chord_center": 58,
+ "chord_rh": [
+  "x.x.x.x.x.x.x.x."
+ ],
+ "chord_size": 3,
+ "desc": "Krautrock / motorik (70s Germany): the endless, straight motorik beat that never changes, a bass pulsing eighth notes on one chord, drones and sequenced synths fading in layer by layer, a distant guitar - hypnotic, forward-moving repetition",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "X.....X.X......."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "motorik",
+ "gm_hint": "Drums (motorik); bass; organ / string-machine drones; analog sequencer synth; guitar",
+ "human": 0.004,
+ "id": "krautrock",
+ "kick_track": "kick",
+ "kit": "acoustic",
+ "kit_override": {},
+ "lead_rh": [
+  "x-------x-------",
+  "x---x---x-------"
+ ],
+ "master": {
+  "air": 0.9,
+  "low": 0.8,
+  "lufs": -12.0
+ },
+ "name": "krautrock",
+ "no_layers": true,
+ "no_rotation": true,
+ "progs": {
+  "dorian": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    6,
+    0
+   ]
+  ],
+  "major": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    3,
+    0
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    0,
+    6,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.95,
+ "reverb": 1.8,
+ "sc_depth": 0.0,
+ "sc_release": 0.45,
+ "scales": [
+  "dorian",
+  "major",
+  "mixolydian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "amp": 6,
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "bright": 5000
+   },
+   "pan": -0.3,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "solina",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "phaser": 0.45,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "polysynth",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "softlead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "none"
+ ]
+}

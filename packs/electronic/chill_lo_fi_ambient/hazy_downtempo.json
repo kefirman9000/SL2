@@ -1,0 +1,301 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.8,
+  "rate": 1
+ },
+ "bass": [
+  "R-------R-......",
+  "R---..R-R---....",
+  "R-------R---R---"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "pattern",
+ "bpm": [
+  74,
+  90
+ ],
+ "chord_bars": 2,
+ "chord_center": 60,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 4,
+ "delay_beats": 0.75,
+ "desc": "Hazy downtempo: a slow, dusty beat at 75-90 - a soft hip-hop break with busy, quiet 16th hats - under deep, pumping analog pads that swell and breathe with the kick, a round synth bass, wordless vocal pads, a gentle plucked arpeggio and a guitar or synth melody floating far away in the reverb; a huge, wide, dreamy stereo field and a warm, tape-soft top",
+ "drums": {
+  "chat": [
+   "xxxxxxxxxxxxxxxx",
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "kick": [
+   "X......xX.x.....",
+   "X.....x.X.......",
+   "X..x....X..x...."
+  ],
+  "shaker": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "snare": [
+   "....X.......X...",
+   "....X.......X..x"
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "hazy_downtempo",
+ "ghosts": true,
+ "gm_hint": "Dusty, soft break with quiet 16th hats; deep analog pads heavily sidechained; a round synth bass; wordless vocal / choir pads; plucked arp in the delay; a distant guitar or synth melody; very wide",
+ "human": 0.009,
+ "id": "hazy_downtempo",
+ "kit": "soft",
+ "kit_override": {},
+ "lead_rh": [
+  "x-------x-------",
+  "x---------------",
+  "x---x---x-------"
+ ],
+ "master": {
+  "air": -3.0,
+  "lofi": true,
+  "low": 1.6,
+  "lufs": -12.0,
+  "vintage_lp": 8000,
+  "width": 1.7,
+  "wobble": 0.5
+ },
+ "name": "hazy_downtempo",
+ "no_rotation": true,
+ "own_progs": true,
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    6,
+    3,
+    3
+   ]
+  ],
+  "lydian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    5,
+    1
+   ]
+  ],
+  "major": [
+   [
+    3,
+    4,
+    0,
+    0
+   ],
+   [
+    0,
+    4,
+    5,
+    3
+   ],
+   [
+    0,
+    0,
+    3,
+    3
+   ],
+   [
+    5,
+    3,
+    0,
+    4
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ],
+   [
+    0,
+    6,
+    0,
+    6
+   ]
+  ]
+ },
+ "repetition": 0.9,
+ "reverb": 3.4,
+ "sc_depth": 0.5,
+ "sc_release": 0.35,
+ "scales": [
+  "major",
+  "mixolydian",
+  "lydian",
+  "dorian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "strum": 0.0,
+ "swing": 0.55,
+ "tracks": [
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "shaker",
+   "layer": "top",
+   "name": "shaker",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "moogbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 500
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "chorus": 0.7,
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "polysynth",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "a": 0.4,
+    "cut": 1800,
+    "r": 1.4
+   },
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 1.0
+  },
+  {
+   "chorus": 0.5,
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "choir",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.7,
+   "sc": 1.0
+  },
+  {
+   "chorus": 0.3,
+   "db": -25,
+   "dly": 0.45,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.35,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "chorus": 0.6,
+   "db": -21,
+   "dly": 0.5,
+   "drive": null,
+   "hp": null,
+   "inst": "sf:cleanguitar",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.7,
+   "sc": 0.0
+  },
+  {
+   "db": -34,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "close"
+}

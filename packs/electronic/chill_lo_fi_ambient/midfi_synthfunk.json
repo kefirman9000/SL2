@@ -1,0 +1,261 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.85,
+  "rate": 4
+ },
+ "bass": [
+  "R--.R-.O..R-.R..",
+  "R-..R-R-..R-..O."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  80,
+  100
+ ],
+ "build_family": [
+  "filter",
+  "pause",
+  "none"
+ ],
+ "chord_bars": 1,
+ "chord_center": 62,
+ "chord_rh": [
+  "x---..x-..x-....",
+  "x-------x-------"
+ ],
+ "chord_size": 4,
+ "delay_beats": 0.75,
+ "desc": "Mid-fi synth-funk / chillwave: a slow, crunchy drum-machine groove around 80-100 with a fat gated snare, a rubbery analog bass, detuned, warbly poly-synth chords and arps soaked in tape wobble and chorus, a warm square lead - nostalgic, hazy and funky, like a worn 80s VHS",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "x.xxx.x.x.xxx.x."
+  ],
+  "kick": [
+   "X.......X.X.....",
+   "X..X....X.......",
+   "X.....X.X......."
+  ],
+  "snare": [
+   "....X.......X..."
+  ],
+  "tamb": [
+   "......x.......x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "midfi_synthfunk",
+ "ghosts": false,
+ "gm_hint": "LinnDrum-style kit with gated snare; Juno / Moog bass; detuned poly-synth chords; bright arps; square lead; tape wobble + chorus on everything",
+ "human": 0.003,
+ "id": "midfi_synthfunk",
+ "kit": "linn",
+ "kit_override": {},
+ "lead_rh": [
+  "x---x-x-x-------",
+  "x-x-x---x-x-x---"
+ ],
+ "master": {
+  "air": 0.2,
+  "lofi": true,
+  "low": 1.8,
+  "lufs": -10.0,
+  "width": 1.1,
+  "wobble": 2.5
+ },
+ "name": "midfi_synthfunk",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ],
+  "lydian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ]
+  ],
+  "major": [
+   [
+    3,
+    4,
+    2,
+    5
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    3,
+    6
+   ]
+  ]
+ },
+ "reverb": 2.6,
+ "sc_depth": 0.3,
+ "sc_release": 0.45,
+ "scales": [
+  "major",
+  "dorian",
+  "minor",
+  "lydian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "strum": 0.0,
+ "swing": 0.52,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tamb",
+   "layer": "top",
+   "name": "tamb",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "moogpluck",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 1200
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.3
+  },
+  {
+   "chorus": 0.6,
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "polysynth",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "solina",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck_saw",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "softlead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "none",
+  "none",
+  "tapestop",
+  "gap"
+ ],
+ "voicing": "close"
+}

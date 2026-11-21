@@ -1,0 +1,22 @@
+{
+ "bass_mode": "pattern",
+ "category": "Orchestral",
+ "chord_bars": 1,
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "ghosts": false,
+ "kick_track": "timp",
+ "kit": "default",
+ "kit_override": {},
+ "no_layers": true,
+ "no_rotation": true,
+ "repetition": 0.8,
+ "sc_depth": 0.0,
+ "sc_release": 0.45,
+ "strum": 0.0,
+ "suggest": "",
+ "swing": 0.5,
+ "swing_unit": 16,
+ "trap_hats": false,
+ "voicing": "close"
+}

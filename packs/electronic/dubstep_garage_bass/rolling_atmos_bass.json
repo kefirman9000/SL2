@@ -1,0 +1,274 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.35,
+  "rate": 2
+ },
+ "bass": [
+  "R.RR.R..R.R.R..R",
+  "R..R.RR..R.R.RR.",
+  "R-.R..R.R..RR.R."
+ ],
+ "bass_gate": 0.9,
+ "bass_lo": 26,
+ "bass_mode": "pattern",
+ "bpm": [
+  118,
+  130
+ ],
+ "chord_bars": 1,
+ "chord_center": 58,
+ "chord_rh": [
+  "x---------------",
+  "x-------..x-...."
+ ],
+ "chord_size": 4,
+ "desc": "Rolling atmospheric bass: a wonky, swung beat around 120-130 with a lazy, drunk snare on 2 and 4 and shuffled hats, a deep bassline that rolls and slides under everything, wide, hazy pads and smeared chords, glitchy, pitched vocal fragments and tape wobble - heavy at the bottom, dreamy and spacious on top",
+ "drums": {
+  "chat": [
+   "x.x.x.X.X.x.x.X.",
+   ".xx.x.xx.x..xx.x",
+   "x.xx.x.xx.x.x.xx"
+  ],
+  "kick": [
+   "X.x......xX.....",
+   "X.X.....x.X..x..",
+   "X......X..X....."
+  ],
+  "rim": [
+   "......x.......x.",
+   "...x......x....."
+  ],
+  "snare": [
+   "....X.......X...",
+   "....X.....x.X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "lofi",
+ "form_scale": 1,
+ "ghosts": true,
+ "gm_hint": "Drunk, swung drums (lazy snare, shuffled hats, rims); a deep, rolling, sliding sub / reese bassline; wide hazy pads; smeared Rhodes; glitchy pitched vocal chops; tape wobble",
+ "groove": "dilla",
+ "human": 0.012,
+ "id": "rolling_atmos_bass",
+ "kit": "soft",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x---x-....x-....",
+  "..x-x---x-......",
+  "x-------x---x---"
+ ],
+ "master": {
+  "air": -0.5,
+  "lofi": true,
+  "low": 3.0,
+  "lufs": -10.5,
+  "width": 1.5,
+  "wobble": 0.6
+ },
+ "name": "rolling_atmos_bass",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ],
+  "lydian": [
+   [
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    4,
+    3
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    2,
+    6
+   ],
+   [
+    0,
+    0,
+    5,
+    3
+   ],
+   [
+    0,
+    6,
+    5,
+    6
+   ]
+  ]
+ },
+ "repetition": 0.85,
+ "reverb": 3.2,
+ "sc_depth": 0.35,
+ "sc_release": 0.45,
+ "scales": [
+  "minor",
+  "dorian",
+  "lydian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.58,
+ "tracks": [
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "rim",
+   "layer": "top",
+   "name": "rim",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "reese",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 600
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.4
+  },
+  {
+   "db": -23,
+   "dly": 0.25,
+   "drive": null,
+   "hp": null,
+   "inst": "epiano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.55,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "glasspad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.7,
+   "sc": 0.0
+  },
+  {
+   "chops": true,
+   "db": -27,
+   "dly": 0.4,
+   "drive": null,
+   "hp": null,
+   "inst": "pluck",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.4,
+   "drive": null,
+   "hp": null,
+   "inst": "softlead",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -36,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ],
+ "trap_hats": false,
+ "voicing": "close"
+}

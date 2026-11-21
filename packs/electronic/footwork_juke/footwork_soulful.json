@@ -1,0 +1,240 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.4,
+  "rate": 4
+ },
+ "bass": [
+  "R..R..R...R..R..",
+  "R-....R..R..R..."
+ ],
+ "bass_lo": 26,
+ "bass_mode": "808",
+ "bpm": [
+  156,
+  162
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "x-.x-.x---x-....",
+  "x--x--x---x--x--",
+  "x-------x-..x---"
+ ],
+ "chord_size": 4,
+ "desc": "Soulful footwork: the 160 triplet-kick rhythm under warm, jazzy chopped soul and R&B - Rhodes 7th chords, string and sax snippets, a pitched-up vocal hook and a round 808 - dreamy and fast at once",
+ "drums": {
+  "chat": [
+   "x.xxx.xxx.xxx.xx"
+  ],
+  "clap": [
+   "....X.......X...",
+   "........X......."
+  ],
+  "kick": [
+   "X..X..X...X..X..",
+   "X..X..X..X..X...",
+   "X.....X..X..X...",
+   "X..X......X..X.."
+  ],
+  "snap": [
+   "......x.......x."
+  ],
+  "tom": [
+   "..........x.x.x.",
+   "................"
+  ]
+ },
+ "extends": "_family",
+ "form": "trap",
+ "human": 0.004,
+ "id": "footwork_soulful",
+ "lead_rh": [
+  "x-x-x---x-......",
+  "x..x..x---x-....",
+  "x-------x-x-x---"
+ ],
+ "master": {
+  "air": 1.4,
+  "low": 1.5,
+  "lufs": -9.5
+ },
+ "name": "footwork_soulful",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    6,
+    3,
+    4
+   ]
+  ],
+  "major": [
+   [
+    3,
+    4,
+    2,
+    5
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    3,
+    6
+   ]
+  ]
+ },
+ "sc_depth": 0.2,
+ "scales": [
+  "dorian",
+  "major",
+  "minor"
+ ],
+ "swing": 0.52,
+ "tracks": [
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tom",
+   "layer": "top",
+   "name": "tom",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snap",
+   "layer": "top",
+   "name": "snap",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "808",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.15,
+   "drive": null,
+   "hp": null,
+   "inst": "epiano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "vox",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "sax",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ]
+}

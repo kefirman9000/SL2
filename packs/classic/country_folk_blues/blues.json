@@ -1,0 +1,229 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 4,
+  "prob": 0.6,
+  "rate": 2
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bass_mode": "walk",
+ "bpm": [
+  80,
+  120
+ ],
+ "chord_center": 60,
+ "chord_rh": [
+  "x-.x-.x-.x-.x-.x",
+  "x---x---x---x---"
+ ],
+ "chord_size": 4,
+ "delay_beats": 0.75,
+ "desc": "Blues shuffle: 12-bar form, swung grooves, piano, organ and expressive lead guitar",
+ "drums": {
+  "chat": [
+   "....x.......x..."
+  ],
+  "kick": [
+   "X.......X......."
+  ],
+  "ride": [
+   "x...x.x.x...x.x."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "song",
+ "ghosts": true,
+ "gm_hint": "",
+ "human": 0.008,
+ "id": "blues",
+ "kick_track": "kick",
+ "kit": "acoustic",
+ "lead_oct": 4,
+ "lead_rh": [
+  "x.x.x-....x.x---",
+  "..x-x-x-x-------",
+  "x-.xx-x.x---....",
+  "x---x-x-x-------"
+ ],
+ "master": {
+  "air": 1.0,
+  "low": 1.0,
+  "lufs": -12.0
+ },
+ "name": "blues",
+ "progs": [
+  [
+   0,
+   0,
+   0,
+   0,
+   3,
+   3,
+   0,
+   0,
+   4,
+   3,
+   0,
+   4
+  ],
+  [
+   0,
+   3,
+   0,
+   0,
+   3,
+   3,
+   0,
+   0,
+   4,
+   3,
+   0,
+   4
+  ]
+ ],
+ "reverb": 2.0,
+ "scales": [
+  "mixolydian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "strum": 0.0,
+ "swing": 0.66,
+ "swing_unit": 8,
+ "tracks": [
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "pad",
+   "leslie_fx": 0.9,
+   "name": "pad",
+   "overdrive": 0.2,
+   "p": {
+    "leslie": 0.0
+   },
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "bright": 5000,
+    "damp": 0.999,
+    "dist": 10
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ]
+}

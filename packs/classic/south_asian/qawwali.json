@@ -1,0 +1,244 @@
+{
+ "accel": [
+  0.72,
+  1.4
+ ],
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.6,
+  "rate": 2
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bpm": [
+  88,
+  100
+ ],
+ "call_response": true,
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x...x...x...x...",
+  "x.x.x.x.x.x.x.x."
+ ],
+ "desc": "Qawwali (Sufi devotional): the lead singer's line answered by the chorus of the party, over a pumping harmonium, tabla and dholak and the group's hand claps - a slow, free opening, then the same lines repeated and repeated, faster and faster, towards ecstasy",
+ "drums": {
+  "bayan": [
+   "X.....X.X.....X.",
+   "X..X..X.X.....X."
+  ],
+  "claps": [
+   "....x.......x...",
+   "....x..x....x..."
+  ],
+  "dholak": [
+   "X.x.........x...",
+   "X.x.......x.X..."
+  ],
+  "tabla": [
+   "X.x.x.X.X.x.x.X.",
+   "X.xxx.X.X.x.x.Xx"
+  ]
+ },
+ "extends": "_family",
+ "form": "qawwali",
+ "gm_hint": "Lead voice + chorus (call and response); harmonium; tabla; dholak; hand claps",
+ "human": 0.009,
+ "id": "qawwali",
+ "kick_track": "bayan",
+ "lead_rh": [
+  "x-x-x-x-x-x-x---"
+ ],
+ "master": {
+  "air": 0.8,
+  "low": 0.7,
+  "lufs": -12.0
+ },
+ "name": "qawwali",
+ "no_fx_sounds": true,
+ "no_layers": true,
+ "own_progs": true,
+ "pad_drone": true,
+ "progs": {
+  "bhairav": [
+   [
+    0,
+    0,
+    4,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ]
+  ],
+  "harmonic_minor": [
+   [
+    0,
+    0,
+    4,
+    0
+   ],
+   [
+    0,
+    3,
+    4,
+    0
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    0,
+    0
+   ],
+   [
+    0,
+    3,
+    6,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.9,
+ "reverb": 1.9,
+ "scales": [
+  "harmonic_minor",
+  "bhairav",
+  "mixolydian"
+ ],
+ "slides": 0.45,
+ "snare_tracks": [
+  "tabla"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "bayan",
+   "layer": "kick",
+   "name": "bayan",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tabla",
+   "layer": "snare",
+   "name": "tabla",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "dholak",
+   "layer": "top",
+   "name": "dholak",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "top",
+   "name": "claps",
+   "p": {},
+   "pan": 0.15,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tanpura",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "harmonium",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.15,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "harmonium",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "harmonium",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "double_of": "lead",
+   "drive": null,
+   "hp": null,
+   "inst": "choir",
+   "keep_inst": true,
+   "layer": "lead",
+   "name": "group",
+   "p": {},
+   "pan": 0.15,
+   "rev": 0.5,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "none"
+ ]
+}

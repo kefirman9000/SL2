@@ -1,0 +1,201 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 4,
+  "prob": 0.6,
+  "rate": 2
+ },
+ "bass": [
+  "R...F...R...F...",
+  "R...F...R.F.A..."
+ ],
+ "bass_gate": 0.5,
+ "bass_lo": 28,
+ "bass_mode": "pattern",
+ "bpm": [
+  100,
+  140
+ ],
+ "chord_center": 55,
+ "chord_rh": [
+  "x.x.x.x.x.x.x.x.",
+  "xxxxxxxxxxxxxxxx"
+ ],
+ "chord_size": 3,
+ "delay_beats": 0.25,
+ "desc": "Outlaw country: the freight-train boom-chicka-boom - palm-muted guitar on every 8th, slapback twang and a low baritone guitar melody, steady upright bass, brushed snare, harmonica",
+ "drums": {
+  "kick": [
+   "X.......X.......",
+   "X...X...X...X..."
+  ],
+  "snare": [
+   "oxoxXxoxoxoxXxox",
+   "x.x.X.x.x.x.X.x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "song",
+ "ghosts": false,
+ "gm_hint": "Palm-muted acoustic (\"boom-chicka\"); baritone / Telecaster with slapback; upright bass; brushes; harmonica",
+ "human": 0.008,
+ "id": "outlaw_country",
+ "kick_track": "kick",
+ "kit": "soft",
+ "lead_oct": 4,
+ "lead_rh": [
+  "x---x-x-x---....",
+  "x-x-x---x-------",
+  "x---x---x-x-...."
+ ],
+ "master": {
+  "air": 1.0,
+  "low": 1.0,
+  "lufs": -11.0
+ },
+ "name": "outlaw_country",
+ "progs": {
+  "major": [
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    0,
+    3,
+    4
+   ],
+   [
+    0,
+    4,
+    0,
+    4
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    5,
+    0,
+    4
+   ],
+   [
+    0,
+    3,
+    0,
+    4
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    0,
+    3
+   ],
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "scales": [
+  "major",
+  "mixolydian",
+  "minor"
+ ],
+ "slides": 0.4,
+ "snare_tracks": [
+  "snare"
+ ],
+ "strum": 0.0,
+ "swing": 0.5,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "upright",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "mutedgtr",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "harmonica",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.12,
+   "drive": null,
+   "hp": null,
+   "inst": "twang",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  }
+ ]
+}

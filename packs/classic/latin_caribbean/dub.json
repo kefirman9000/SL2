@@ -1,0 +1,220 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "prob": 0.4,
+  "rate": 2
+ },
+ "bass": [
+  "R...R.O.....R...",
+  "R-..R...O-..R.A.",
+  "R-....R.R-..O..."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 28,
+ "bpm": [
+  66,
+  84
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "....x.......x..."
+ ],
+ "chord_size": 3,
+ "desc": "Dub reggae: the reggae rhythm stripped to drum and bass and remixed live - a deep, round bassline up front, one-drop drums, organ and guitar skanks thrown into long echoes and spring reverb, parts dropping in and out",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "x.xxx.x.x.xxx.x."
+  ],
+  "kick": [
+   "........X......."
+  ],
+  "rim": [
+   "........X.......",
+   "....x.......x..."
+  ],
+  "snare": [
+   "................",
+   "..............x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "groove",
+ "gm_hint": "",
+ "human": 0.008,
+ "id": "dub",
+ "kick_track": "kick",
+ "kit": "acoustic",
+ "lead_rh": [
+  "x---x---x-------",
+  "x-------........",
+  "..x-x-x-x-------"
+ ],
+ "master": {
+  "air": 0.8,
+  "low": 1.8,
+  "lufs": -11.0
+ },
+ "name": "dub",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    0,
+    3
+   ],
+   [
+    0,
+    0,
+    6,
+    6
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    0,
+    6,
+    6
+   ],
+   [
+    0,
+    3,
+    0,
+    3
+   ]
+  ]
+ },
+ "reverb": 3.0,
+ "sc_depth": 0.0,
+ "scales": [
+  "minor",
+  "dorian"
+ ],
+ "snare_tracks": [
+  "rim"
+ ],
+ "swing": 0.56,
+ "tracks": [
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.5,
+   "drive": null,
+   "hp": null,
+   "inst": "rim",
+   "layer": "snare",
+   "name": "rim",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.6,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -11,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sinebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.6,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.6,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.5,
+   "drive": null,
+   "hp": null,
+   "inst": "harmonica",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -38,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  }
+ ]
+}

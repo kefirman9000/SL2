@@ -1,0 +1,316 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R-------F-------",
+  "R---R---F---F---",
+  "R-------R---F---"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bpm": [
+  76,
+  104
+ ],
+ "chord_center": 60,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 4,
+ "desc": "Festive cinematic Christmas: a warm, nostalgic carol-like theme for full orchestra - celesta and glockenspiel sparkle doubling the melody, sleigh bells, harp arpeggios, pizzicato, horns on a counter-melody and a choir on the big statements; rich maj7 / add9 harmony with smooth, stepwise bass lines; it starts with high, glittering textures and grows to the full orchestra",
+ "drums": {
+  "crash": [
+   "X..............."
+  ],
+  "sleigh": [
+   "x.x.x.x.x.x.x.x.",
+   "xxxxxxxxxxxxxxxx"
+  ],
+  "timp": [
+   "X...............",
+   "X.......X......."
+  ],
+  "triangle": [
+   "x.......x.......",
+   "........x......."
+  ],
+  "windchime": [
+   "X...............",
+   "................"
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "festive_cinematic",
+ "gm_hint": "Flute / strings theme doubled by celesta + glockenspiel; harp arpeggios; warm strings; horns counter-melody; choir; pizzicato bass; sleigh bells; timpani",
+ "human": 0.012,
+ "id": "festive_cinematic",
+ "kick_track": "timp",
+ "lead_oct": 5,
+ "lead_rh": [
+  "x---x-x-x-------",
+  "x-x-x---x---x---",
+  "x-----x-x---x---",
+  "x---x---x---x---"
+ ],
+ "master": {
+  "air": 1.0,
+  "gentle": true,
+  "low": 0.5,
+  "lufs": -17.0,
+  "tone": [
+   -18.0,
+   -10.0,
+   -6.0,
+   -0.4,
+   0.0,
+   -6.5,
+   -11.4,
+   -20.5,
+   -29.0
+  ],
+  "width": 1.05
+ },
+ "name": "festive_cinematic",
+ "own_progs": true,
+ "progs": {
+  "major": [
+   [
+    0,
+    0,
+    3,
+    0
+   ],
+   [
+    0,
+    2,
+    3,
+    4
+   ],
+   [
+    0,
+    5,
+    1,
+    4
+   ],
+   [
+    3,
+    4,
+    2,
+    5
+   ],
+   [
+    0,
+    3,
+    1,
+    4
+   ],
+   [
+    0,
+    4,
+    5,
+    3
+   ]
+  ]
+ },
+ "reverb": 3.3,
+ "scales": [
+  "major"
+ ],
+ "sec_vel": [
+  0.5,
+  0.62,
+  0.78,
+  0.9,
+  0.58,
+  1.0,
+  0.5
+ ],
+ "snare_tracks": [],
+ "tracks": [
+  {
+   "db": -24,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "timp",
+   "layer": "kick",
+   "name": "timp",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sleigh",
+   "layer": "top",
+   "name": "sleigh",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "crash",
+   "layer": "top",
+   "name": "crash",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -33,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "triangle",
+   "layer": "top",
+   "name": "triangle",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "windchime",
+   "layer": "top",
+   "name": "windchime",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "contrabass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "a": 0.08
+   },
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "strings",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "a": 0.25,
+    "r": 0.6
+   },
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "choir",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.55,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "harp",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "flute",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.0,
+   "double_of": "lead",
+   "drive": null,
+   "hp": null,
+   "inst": "celesta",
+   "layer": "lead",
+   "name": "lead_cel",
+   "octave": 12,
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "double_of": "lead",
+   "drive": null,
+   "hp": null,
+   "inst": "glock",
+   "layer": "lead",
+   "name": "lead_glock",
+   "octave": 12,
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "double_of": "bass",
+   "drive": null,
+   "hp": null,
+   "inst": "pizz",
+   "layer": "bass",
+   "name": "bass_pizz",
+   "octave": 12,
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.35,
+   "sc": 0.0
+  }
+ ]
+}

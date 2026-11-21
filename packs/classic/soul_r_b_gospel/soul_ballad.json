@@ -1,0 +1,212 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R.....R..F..",
+  "R..R..F..A..",
+  "R.....F....."
+ ],
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  48,
+  66
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "xxxxxxxxxxxx",
+  "x..x..x..x..",
+  "x.xx.xx.xx.x"
+ ],
+ "chord_size": 4,
+ "desc": "Soul / doo-wop ballad (12/8): triplet piano, slow backbeat, organ and strings, a big vocal-style lead",
+ "drums": {
+  "chat": [
+   "xxxxxxxxxxxx"
+  ],
+  "kick": [
+   "X.....X..X..",
+   "X.....X....."
+  ],
+  "ride": [
+   "x..x..x..x.."
+  ],
+  "snare": [
+   "...X.....X.."
+  ]
+ },
+ "extends": "_family",
+ "fill": true,
+ "form": "song",
+ "form_scale": 0.5,
+ "ghosts": false,
+ "gm_hint": "Piano (triplets); Hammond organ; Strings; Saxophone or vocal lead; Bass guitar",
+ "human": 0.01,
+ "id": "soul_ballad",
+ "kit": "soft",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x--x--x--...",
+  "x-xx-xx-x...",
+  "x-----x-xx..",
+  "x--x-xx-...."
+ ],
+ "master": {
+  "air": 1.2,
+  "low": 1.0,
+  "lufs": -12.0
+ },
+ "meter": "12/8",
+ "name": "soul_ballad",
+ "progs": [
+  [
+   0,
+   5,
+   3,
+   4
+  ],
+  [
+   0,
+   5,
+   1,
+   4
+  ],
+  [
+   0,
+   3,
+   4,
+   0
+  ],
+  [
+   0,
+   2,
+   3,
+   4
+  ]
+ ],
+ "reverb": 2.6,
+ "sc_depth": 0.0,
+ "sc_release": 0.45,
+ "scales": [
+  "major"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -31,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "organ",
+   "layer": "pad",
+   "leslie_fx": 0.8,
+   "name": "pad",
+   "overdrive": 0.1,
+   "p": {
+    "leslie": 0.0
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sax",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "close"
+}

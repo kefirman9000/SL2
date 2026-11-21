@@ -1,0 +1,217 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.45,
+  "rate": 2
+ },
+ "bass": [
+  "R...F...A...O...",
+  "R...A...F...O..."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  110,
+  160
+ ],
+ "chord_center": 60,
+ "chord_rh": [
+  "....x.......x...",
+  "..x...x...x...x."
+ ],
+ "desc": "Western swing / Texas swing: swung country dance band - twin fiddles, pedal steel, sixth-chord piano and guitar comping, walking upright bass, brushed swing drums",
+ "drums": {
+  "kick": [
+   "X.......X......."
+  ],
+  "ride": [
+   "x...x.x.x...x.x."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "song",
+ "form_scale": 1,
+ "ghosts": false,
+ "gm_hint": "Twin fiddles (harmony); pedal steel; piano; rhythm guitar; upright bass; brushes / ride",
+ "human": 0.008,
+ "id": "western_swing",
+ "kick_track": "kick",
+ "kit": "soft",
+ "lead_rh": [
+  "x-x-x-x-x---....",
+  "x.x.x.x.x-x-x---",
+  "x---x-x-x-x-x---",
+  "x-x-x---x-x-x---"
+ ],
+ "master": {
+  "air": 1.2,
+  "low": 0.8,
+  "lufs": -12.0
+ },
+ "name": "western_swing",
+ "progs": {
+  "major": [
+   [
+    0,
+    5,
+    1,
+    4
+   ],
+   [
+    0,
+    3,
+    0,
+    4
+   ],
+   [
+    0,
+    0,
+    1,
+    4
+   ],
+   [
+    2,
+    5,
+    1,
+    4
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    3,
+    0
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "scales": [
+  "major",
+  "mixolydian"
+ ],
+ "slides": 0.35,
+ "snare_tracks": [
+  "snare"
+ ],
+ "swing": 0.66,
+ "swing_unit": 8,
+ "tracks": [
+  {
+   "db": -20,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ride",
+   "layer": "top",
+   "name": "ride",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "upright",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "pedalsteel",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": -0.25,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "violin",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "vib": 10
+   },
+   "pan": -0.1,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "double_of": "lead",
+   "drive": null,
+   "hp": null,
+   "inst": "violin",
+   "layer": "lead",
+   "name": "lead2",
+   "octave": -12,
+   "p": {
+    "vib": 10
+   },
+   "pan": 0.15,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ]
+}

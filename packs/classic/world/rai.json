@@ -1,0 +1,239 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.5,
+  "rate": 2
+ },
+ "bass": [
+  "R..R..R.R...R...",
+  "R.....R.R..R..R."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bpm": [
+  96,
+  116
+ ],
+ "build_family": [
+  "pickup"
+ ],
+ "chord_bars": 1,
+ "chord_center": 62,
+ "chord_rh": [
+  "..x...x...x...x.",
+  "..xx..xx..xx..xx"
+ ],
+ "desc": "Rai (Algeria / North Africa): the darbuka in a rolling maqsum rhythm with tambourine and claps, a punchy synth bass, accordion or synth off-beats, the oud filling between lines and a wailing lead in the Hijaz mode - danceable, emotional, Mediterranean",
+ "drums": {
+  "claps": [
+   "....x.......x..."
+  ],
+  "darbuka": [
+   "X.......X.......",
+   "X.......X..X...."
+  ],
+  "darbuka_tek": [
+   "..X...X.....X...",
+   "..X.x.X.x.x.X.x."
+  ],
+  "tamb": [
+   "x.x.x.x.x.x.x.x."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "song",
+ "gm_hint": "Darbuka, tambourine, claps; synth bass; accordion / synth; oud; lead synth or gasba flute",
+ "hand_drums": true,
+ "human": 0.007,
+ "id": "rai",
+ "kick_track": "darbuka",
+ "kit": "soft",
+ "lead_oct": 5,
+ "lead_rh": [
+  "x.x.x.x.x-x-x---",
+  "x-x-x.x.x---x---",
+  "x.xxx.x.x---x---"
+ ],
+ "master": {
+  "air": 1.0,
+  "low": 1.0,
+  "lufs": -11.0
+ },
+ "name": "rai",
+ "no_rotation": true,
+ "progs": {
+  "bhairav": [
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    3,
+    1,
+    0
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    6,
+    5,
+    4
+   ],
+   [
+    0,
+    3,
+    6,
+    4
+   ]
+  ],
+  "phrygian_dominant": [
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    6,
+    1,
+    0
+   ],
+   [
+    3,
+    1,
+    0,
+    0
+   ]
+  ]
+ },
+ "reverb": 1.7,
+ "scales": [
+  "phrygian_dominant",
+  "bhairav",
+  "minor"
+ ],
+ "slides": 0.45,
+ "snare_tracks": [
+  "darbuka_tek"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -16,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "darbuka",
+   "layer": "kick",
+   "name": "darbuka",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "darbuka_tek",
+   "layer": "snare",
+   "name": "darbuka_tek",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -26,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tamb",
+   "layer": "top",
+   "name": "tamb",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "top",
+   "name": "claps",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sawbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "cut": 1200
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "accordion",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -22,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "oud",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.15,
+   "drive": null,
+   "hp": null,
+   "inst": "leadsaw",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "none",
+  "crash"
+ ]
+}

@@ -1,0 +1,211 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.7,
+  "rate": 2
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bass_lo": 31,
+ "bpm": [
+  80,
+  100
+ ],
+ "chord_bars": 2,
+ "chord_rh": [
+  "x-------x-------",
+  "x---x---x---x---"
+ ],
+ "desc": "Bhajan - sitar & tabla: opens on the sitar alone over the tanpura drone, slowly unfolding the raga; then the tabla plays the cycle by itself for a moment before the devotional song begins - the sitar carrying the melody in rising and falling raga phrases, harmonium chords and manjira underneath",
+ "drums": {
+  "bayan": [
+   "X.....X.X.....X.",
+   "X.....X.......X."
+  ],
+  "manjira": [
+   "x...x...x...x..."
+  ],
+  "tabla": [
+   "X.x.x.X.X.x.x.X.",
+   "X.xxx.X.X.x.x.Xx",
+   "X.x.x.x.X.x.xxX."
+  ]
+ },
+ "extends": "_family",
+ "form": "sitar_bhajan",
+ "gm_hint": "Sitar (lead, alap intro); tabla; tanpura drone; harmonium; manjira",
+ "human": 0.009,
+ "id": "sitar_bhajan",
+ "kick_track": "bayan",
+ "master": {
+  "air": 0.9,
+  "low": 0.6,
+  "lufs": -13.0
+ },
+ "name": "sitar_bhajan",
+ "progs": {
+  "bhairav": [
+   [
+    0,
+    0,
+    3,
+    0
+   ],
+   [
+    0,
+    5,
+    4,
+    0
+   ]
+  ],
+  "major": [
+   [
+    0,
+    0,
+    3,
+    4
+   ],
+   [
+    0,
+    3,
+    0,
+    4
+   ]
+  ],
+  "mixolydian": [
+   [
+    0,
+    6,
+    0,
+    0
+   ],
+   [
+    0,
+    3,
+    6,
+    0
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    6,
+    1,
+    0
+   ]
+  ]
+ },
+ "repetition": 0.8,
+ "reverb": 2.2,
+ "scales": [
+  "bhairav",
+  "mixolydian",
+  "major",
+  "phrygian"
+ ],
+ "slides": 0.45,
+ "snare_tracks": [
+  "tabla"
+ ],
+ "tracks": [
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "bayan",
+   "layer": "kick",
+   "name": "bayan",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tabla",
+   "layer": "snare",
+   "name": "tabla",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "manjira",
+   "layer": "top",
+   "name": "manjira",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "tanpura",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "harmonium",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": -0.15,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "santoor",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.4,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.08,
+   "drive": null,
+   "hp": null,
+   "inst": "sitar",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.4,
+   "sc": 0.0
+  }
+ ]
+}

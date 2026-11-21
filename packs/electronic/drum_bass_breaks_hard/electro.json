@@ -1,0 +1,206 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.6,
+  "rate": 1
+ },
+ "bass": [
+  "R..R..R...R..RO.",
+  "R.R...RR..R.R..."
+ ],
+ "bass_gate": 0.6,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  125,
+  132
+ ],
+ "chord_center": 62,
+ "chord_rh": [
+  "x.....x........."
+ ],
+ "chord_size": 3,
+ "desc": "Electro: robotic 808 funk, FM bass grit, zappy leads",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x.",
+   "xxx.x.x.xxx.x.x."
+  ],
+  "clap": [
+   "....X.......X..."
+  ],
+  "cowbell808": [
+   "......x.......x.",
+   "................"
+  ],
+  "kick": [
+   "X..X......X..X..",
+   "X......X..X....."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "edm",
+ "form_scale": 1,
+ "ghosts": false,
+ "gm_hint": "",
+ "human": 0.0,
+ "id": "electro",
+ "kit": "808",
+ "kit_override": {},
+ "lead_rh": [
+  "x.x.x...x.x.....",
+  "x..x..x.x..x....",
+  "xxx.x...x.......",
+  "x---x---........"
+ ],
+ "master": {
+  "air": 1.5,
+  "low": 1.0,
+  "lufs": -9.0
+ },
+ "name": "electro",
+ "progs": [
+  [
+   0,
+   0,
+   5,
+   6
+  ],
+  [
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   6,
+   5,
+   6
+  ]
+ ],
+ "reverb": 2.0,
+ "sc_depth": 0.4,
+ "sc_release": 0.45,
+ "scales": [
+  "minor",
+  "phrygian"
+ ],
+ "snare_tracks": [
+  "clap"
+ ],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "cowbell808",
+   "layer": "top",
+   "name": "cowbell808",
+   "p": {},
+   "pan": -0.3,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "fmbass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "drive": 3.0,
+    "index": 3.5
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.7
+  },
+  {
+   "db": -25,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "stab",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "chip",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "pw": 0.25
+   },
+   "pan": 0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "leadsaw",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  }
+ ]
+}

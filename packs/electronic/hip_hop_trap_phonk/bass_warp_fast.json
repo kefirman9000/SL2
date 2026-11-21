@@ -1,0 +1,384 @@
+{
+ "arp": {
+  "mode": "random",
+  "oct": 5,
+  "prob": 0.4,
+  "rate": 2
+ },
+ "bass": [
+  "R.......R......."
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 21,
+ "bass_mode": "808",
+ "bpm": [
+  155,
+  165
+ ],
+ "build_family": [
+  "stutter",
+  "tapestop",
+  "drumless",
+  "halftime"
+ ],
+ "chord_bars": 1,
+ "chord_center": 60,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 3,
+ "delay_beats": 0.75,
+ "desc": "Bass-warp trap, fast: the same monstrous warping 808 at full speed (155-170 BPM, not half-time) - dotted 3-3-2 kicks with the 808 bouncing on them in short, sliding, diving and wobbling notes, a hard snare and clap backbeat with pickups, rolling 8th and 16th hats, a sinister bell or synth riff; switch-ups every few bars (drums out, the 808 leaping up with the sub gone, kick and 808 alone), a long stretch of distorted, growling 808 before the clean sub slams back, and an eerie no-sub break",
+ "drums": {
+  "clap": [
+   "....X.......X..."
+  ],
+  "cowbell808": [
+   "..........x.....",
+   "......x.......x.",
+   "................"
+  ],
+  "kick": [
+   "X..X..X.X..X..X.",
+   "X..X..X...X.....",
+   "X.....X.X..X....",
+   "X..X......X..X.."
+  ],
+  "ohat": [
+   "..x...x...x...x.",
+   "................"
+  ],
+  "snare": [
+   "....X.......X...",
+   "....X.......X.x.",
+   "....X..x....X...",
+   "x...X...x...X..."
+  ]
+ },
+ "extends": "_family",
+ "fifth808": 0.05,
+ "form": "bass_warp_fast",
+ "form_scale": 1,
+ "glide808": 0.3,
+ "gm_hint": "Hard bass: a clean mono 808 sub (root notes, octave jumps, glides) + a parallel, heavily driven copy for the mid growl, both sidechained hard to the kick; dotted 3-3-2 kicks; gritty sampled Memphis snare / clap (bit-crushed); velocity-shaped 16th trap hats with pitched-up 32nd rolls into the snare; a cowbell now and then; sinister bell or horror stab riff; stutters, tape stops and abrupt switch-ups; crushed tops, solid bottom",
+ "hi_bass": {
+  "at": 38,
+  "pool": [
+   "midbass",
+   "midbass",
+   "reese"
+  ]
+ },
+ "human": 0.0,
+ "id": "bass_warp_fast",
+ "keep_fx": [
+  "tapestop"
+ ],
+ "kit": "808",
+ "kit_override": {
+  "chat": {
+   "bits": 9,
+   "srate": 22050
+  },
+  "clap": {
+   "bits": 11
+  },
+  "kick": {
+   "decay": 16,
+   "drive": 2.6,
+   "len": 0.22,
+   "pitch": 50,
+   "punch": 120
+  },
+  "snare": {
+   "bits": 11,
+   "drive": 2.0
+  }
+ },
+ "lead_rh": [
+  "x..x..x.x..x..x.",
+  "x.x.x...x.x.x...",
+  "x---x---x-x-x---",
+  "x..x..x........."
+ ],
+ "master": {
+  "air": -0.3,
+  "drive": 0.18,
+  "low": 4.0,
+  "lufs": -8.5,
+  "max_gr": 5.0
+ },
+ "name": "bass_warp_fast",
+ "no_layers": true,
+ "no_rotation": true,
+ "oct808": 0.08,
+ "own_progs": true,
+ "pitch_rolls": true,
+ "plain_drops": true,
+ "progs": {
+  "harmonic_minor": [
+   [
+    0,
+    0,
+    4,
+    4
+   ],
+   [
+    0,
+    0,
+    5,
+    5
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    0,
+    3,
+    3
+   ],
+   [
+    0,
+    0,
+    2,
+    2
+   ],
+   [
+    0,
+    0,
+    5,
+    5
+   ],
+   [
+    0,
+    0,
+    6,
+    6
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    1
+   ]
+  ]
+ },
+ "repetition": 0.85,
+ "reverb": 2.2,
+ "sc_depth": 0.5,
+ "sc_release": 0.1,
+ "scales": [
+  "minor",
+  "phrygian",
+  "harmonic_minor"
+ ],
+ "snare_tracks": [
+  "snare",
+  "clap"
+ ],
+ "swing": 0.52,
+ "tracks": [
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -15,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "clap",
+   "layer": "snare",
+   "name": "clap",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.2,
+   "sc": 0.0
+  },
+  {
+   "db": -25,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.15,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "ohat",
+   "layer": "top",
+   "name": "ohat",
+   "p": {},
+   "pan": -0.2,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -7,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "808",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "decay": 0.6,
+    "drive": 1.6,
+    "slide": 0.05
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.55
+  },
+  {
+   "db": -19,
+   "dly": 0.0,
+   "double_of": "bass",
+   "drive": null,
+   "hp": 170,
+   "inst": "808",
+   "keep_inst": true,
+   "layer": "bass",
+   "name": "bass_grit",
+   "octave": 0,
+   "p": {
+    "decay": 0.6,
+    "drive": 8.0,
+    "slide": 0.05
+   },
+   "pan": 0.0,
+   "presence": 5,
+   "rev": 0.0,
+   "sc": 0.9
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "cowbell808",
+   "layer": "top",
+   "name": "cowbell808",
+   "p": {},
+   "pan": 0.25,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "cut": 1200
+   },
+   "pan": 0.0,
+   "rev": 0.45,
+   "sc": 0.0
+  },
+  {
+   "db": -29,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "choir",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.55,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.4,
+   "drive": null,
+   "hp": null,
+   "inst": "bell",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.35,
+   "drive": null,
+   "hp": null,
+   "inst": "phonkbell",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.55,
+   "sc": 0.0
+  },
+  {
+   "db": -36,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "texture",
+   "layer": "fx",
+   "name": "texture",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "gap",
+  "tapestop",
+  "gap",
+  "none"
+ ],
+ "trap_hats": true,
+ "voicing": "close",
+ "warp_808": 0.5,
+ "warp_min": 3
+}

@@ -1,0 +1,239 @@
+{
+ "arp": {
+  "mode": "updown",
+  "oct": 5,
+  "prob": 0.5,
+  "rate": 2
+ },
+ "bass": [
+  "RRR.R.....R.R...",
+  "R.RR......R.RR.."
+ ],
+ "bass_gate": 0.7,
+ "bass_lo": 26,
+ "bass_mode": "pattern",
+ "bpm": [
+  94,
+  106
+ ],
+ "build_family": [
+  "stops",
+  "pickup"
+ ],
+ "chord_bars": 1,
+ "chord_center": 46,
+ "chord_rh": [
+  "xxx.x.....x.x...",
+  "x.xx......x.xx..",
+  "xx.xx.xx..x....."
+ ],
+ "chord_size": 2,
+ "desc": "Nu-metal / alt-metal (late 90s - early 2000s): down-tuned, chugging power-chord riffs with lots of rests and syncopation around 95-105, a slapping, clanky bass, a groovy half-hip-hop beat with hard snares, scratchy turntable-ish noises and eerie clean guitar lines in the gaps",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "crash": [
+   "X..............."
+  ],
+  "kick": [
+   "X..X......X.X...",
+   "X.XX......X.....",
+   "X..X..X...X..X.."
+  ],
+  "snare": [
+   "....X.......X...",
+   "....X.......X..x"
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "nu_metal",
+ "ghosts": false,
+ "gm_hint": "Down-tuned 7-string chug riffs with rests; clanky slap bass; hip-hop-ish hard drums; eerie clean guitar; scratch noises",
+ "human": 0.004,
+ "id": "nu_metal",
+ "kit": "acoustic",
+ "kit_override": {},
+ "lead_oct": 5,
+ "lead_rh": [
+  "x---x---x-------",
+  "x-x-x---x---x---"
+ ],
+ "master": {
+  "air": 1.2,
+  "low": 1.4,
+  "lufs": -8.5,
+  "width": 1.0
+ },
+ "name": "nu_metal",
+ "own_progs": true,
+ "progs": {
+  "minor": [
+   [
+    0,
+    0,
+    6,
+    5
+   ],
+   [
+    0,
+    0,
+    3,
+    1
+   ]
+  ],
+  "phrygian": [
+   [
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    6
+   ]
+  ]
+ },
+ "reverb": 1.2,
+ "riff_chorus": 0.6,
+ "riff_lo": 33,
+ "riffs": [
+  "ppp.p.....X-p...",
+  "p.pp......X-pp..",
+  "pp.pp.pp..X-...."
+ ],
+ "scales": [
+  "phrygian",
+  "minor"
+ ],
+ "strum": 0.0,
+ "swing": 0.52,
+ "swing_unit": 16,
+ "tracks": [
+  {
+   "db": -12,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -13,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.15,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -28,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "crash",
+   "layer": "top",
+   "name": "crash",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -14,
+   "dly": 0.0,
+   "drive": 0.7,
+   "hp": null,
+   "inst": "ebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "amp": 40,
+   "db": -14,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "chords",
+   "name": "chords",
+   "p": {
+    "bright": 4000,
+    "dist": 1
+   },
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": -24,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "arp",
+   "name": "arp",
+   "p": {
+    "bright": 5000,
+    "dist": 0
+   },
+   "pan": 0.4,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "amp": 26,
+   "db": -18,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "guitar",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "bright": 5000,
+    "dist": 1
+   },
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  }
+ ],
+ "transition_moves": [
+  "crash",
+  "gap",
+  "none"
+ ],
+ "voicing": "power"
+}

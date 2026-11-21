@@ -1,0 +1,165 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "prob": 0.4,
+  "rate": 2
+ },
+ "bass": [
+  "R...R...R...R...",
+  "R..R..R.R...R...",
+  "R..R..R.R..R..R."
+ ],
+ "bass_gate": 0.45,
+ "bass_lo": 28,
+ "bpm": [
+  108,
+  132
+ ],
+ "chord_center": 60,
+ "chord_rh": [
+  "X...x...X...x...",
+  "X..X..X.X...x...",
+  "X..X..X.X..X..X.",
+  "X...x...X..x.x.."
+ ],
+ "chord_size": 3,
+ "desc": "Tango: the marcato four and the 3-3-2 síncopa, bandoneon, dramatic violin, staccato piano and double bass, A-B-A with the chan-chan ending",
+ "drums": {},
+ "extends": "_family",
+ "fill": false,
+ "form": "tango",
+ "gm_hint": "Bandoneon; Violins; Piano (marcato); Double bass",
+ "human": 0.01,
+ "id": "tango",
+ "kick_track": "kick",
+ "kit": "default",
+ "lead_rh": [
+  "x---x-x-x---x---",
+  "x-x-x-x-x-------",
+  "x-----x-x-x-x---",
+  "x--x--x-x-------"
+ ],
+ "master": {
+  "air": 1.2,
+  "low": 0.7,
+  "lufs": -13.0
+ },
+ "name": "tango",
+ "no_rotation": true,
+ "progs": {
+  "harmonic_minor": [
+   [
+    0,
+    3,
+    4,
+    0
+   ],
+   [
+    0,
+    5,
+    3,
+    4
+   ],
+   [
+    0,
+    4,
+    0,
+    4
+   ],
+   [
+    3,
+    4,
+    0,
+    0
+   ]
+  ],
+  "minor": [
+   [
+    0,
+    3,
+    6,
+    2
+   ]
+  ]
+ },
+ "reverb": 2.0,
+ "sc_depth": 0.0,
+ "scales": [
+  "harmonic_minor",
+  "minor"
+ ],
+ "snare_tracks": [],
+ "swing": 0.5,
+ "tracks": [
+  {
+   "db": -18,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "cello",
+   "layer": "bass",
+   "name": "bass",
+   "p": {
+    "a": 0.02
+   },
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -21,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "piano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -23,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "bandoneon",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.3,
+   "sc": 0.0
+  },
+  {
+   "db": -27,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "pizz",
+   "layer": "arp",
+   "name": "arp",
+   "p": {},
+   "pan": 0.3,
+   "rev": 0.25,
+   "sc": 0.0
+  },
+  {
+   "db": -17,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "violin",
+   "layer": "lead",
+   "name": "lead",
+   "p": {
+    "vib": 16
+   },
+   "pan": 0.0,
+   "rev": 0.35,
+   "sc": 0.0
+  }
+ ]
+}

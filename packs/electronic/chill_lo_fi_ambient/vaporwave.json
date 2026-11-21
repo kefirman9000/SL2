@@ -1,0 +1,213 @@
+{
+ "arp": {
+  "mode": "up",
+  "oct": 5,
+  "rate": 2
+ },
+ "bass": [
+  "R-----..R-..F...",
+  "R-------A-------"
+ ],
+ "bass_gate": 0.92,
+ "bass_lo": 31,
+ "bass_mode": "pattern",
+ "bpm": [
+  58,
+  74
+ ],
+ "chord_bars": 1,
+ "chord_center": 62,
+ "chord_rh": [
+  "x---------------",
+  "x-------x-------"
+ ],
+ "chord_size": 5,
+ "delay_beats": 0.75,
+ "desc": "Vaporwave: slowed 80s nostalgia - lush Rhodes, sax, chorused pads, tape haze",
+ "drums": {
+  "chat": [
+   "x.x.x.x.x.x.x.x."
+  ],
+  "kick": [
+   "X.......X.x....."
+  ],
+  "snare": [
+   "....X.......X..."
+  ]
+ },
+ "extends": "_family",
+ "fill": false,
+ "form": "lofi",
+ "ghosts": false,
+ "gm_hint": "",
+ "human": 0.01,
+ "id": "vaporwave",
+ "kit": "soft",
+ "kit_override": {},
+ "lead_rh": [
+  "x-----x-x-------",
+  "....x---x---x---",
+  "x---x---x-------",
+  "x---------------"
+ ],
+ "master": {
+  "air": -3.0,
+  "lofi": true,
+  "low": 1.4,
+  "lufs": -12.0,
+  "wobble": 1.8
+ },
+ "name": "vaporwave",
+ "progs": {
+  "dorian": [
+   [
+    0,
+    3,
+    6,
+    2
+   ]
+  ],
+  "major": [
+   [
+    3,
+    2,
+    1,
+    4
+   ],
+   [
+    1,
+    4,
+    0,
+    5
+   ],
+   [
+    3,
+    4,
+    2,
+    5
+   ]
+  ]
+ },
+ "reverb": 4.0,
+ "sampler": true,
+ "sc_depth": 0.0,
+ "sc_release": 0.45,
+ "scales": [
+  "major",
+  "dorian"
+ ],
+ "snare_tracks": [
+  "snare"
+ ],
+ "strum": 0.02,
+ "swing": 0.52,
+ "tracks": [
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "kick",
+   "layer": "kick",
+   "name": "kick",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "snare",
+   "layer": "snare",
+   "name": "snare",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -30,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "chat",
+   "layer": "top",
+   "name": "chat",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "sinebass",
+   "layer": "bass",
+   "name": "bass",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  },
+  {
+   "chorus": 0.6,
+   "db": null,
+   "dly": 0.2,
+   "drive": null,
+   "hp": null,
+   "inst": "epiano",
+   "layer": "chords",
+   "name": "chords",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "chorus": 0.5,
+   "db": null,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "warmpad",
+   "layer": "pad",
+   "name": "pad",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.6,
+   "sc": 0.0
+  },
+  {
+   "db": null,
+   "dly": 0.3,
+   "drive": null,
+   "hp": null,
+   "inst": "sax",
+   "layer": "lead",
+   "name": "lead",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.5,
+   "sc": 0.0
+  },
+  {
+   "db": -42,
+   "dly": 0.0,
+   "drive": null,
+   "hp": null,
+   "inst": "vinyl",
+   "layer": "fx",
+   "name": "vinyl",
+   "p": {},
+   "pan": 0.0,
+   "rev": 0.0,
+   "sc": 0.0
+  }
+ ],
+ "voicing": "close"
+}
