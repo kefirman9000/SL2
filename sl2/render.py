@@ -9,12 +9,16 @@ Smart parts:
   ref master   the master EQ, stereo width, low-end mono and loudness are steered toward the genre's
                fingerprint (measured from the reference tracks the genre was modelled on)
 """
+import atexit
 import functools
 import hashlib
 import json
 import os
+import threading
+import time
 import wave
 from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures.process import BrokenProcessPool
 
 import numpy as np
 from scipy import signal
@@ -27,7 +31,8 @@ from .analyze import BANDS, lufs
 SR = synth.SR
 ENGINE = 'sl2-engine-1'
 ROLE_TARGET = {'kick': -14, 'snare': -17.5, 'clap': -19, 'hat': -28, 'ohat': -28, 'ride': -30, 'shaker': -31, 'perc': -26,
-               'rim': -27, 'cowbell': -26, 'bass': -15.5, 'riff': -18, 'chords': -21, 'pad': -25, 'lead': -19, 'arp': -24, 'fx': -28}
+               'rim': -27, 'cowbell': -26, 'bass': -15.5, 'riff': -18, 'chords': -21, 'pad': -25, 'lead': -19, 'arp': -24, 'answer': -24,
+               'fx': -28}
 MONO_ROLES = {'bass', 'riff'}
 DRUMS = {'kick', 'snare', 'clap', 'hat', 'ohat', 'ride', 'shaker', 'perc', 'rim', 'cowbell'}
 
@@ -72,12 +77,21 @@ def track_specs(song):
     for t in song.tracks:
         notes = [(round(n.beat * bs, 5), round(n.length * bs, 5), n.pitch, round(n.velocity, 3), n.p) for n in song.notes_of(t.id)]
         pr = t.params
+        auto = {k: [[round(a * bs, 5), round(b * bs, 5), float(f0), float(f1)] for a, b, f0, f1 in v]
+                for k, v in (t.automation or {}).items() if k in ('lp', 'hp') and v}
         spec = dict(engine=ENGINE, id=t.id, role=t.role, inst=t.instrument, notes=notes, total=round(total, 4),
                     rev=float(pr.get('rev', 0)), dly=float(pr.get('dly', 0)), level=float(pr.get('level', 0)),
                     width=float(pr.get('width', 0)), pan=float(t.pan), space=g.get('space', 'plate'),
                     beat=round(bs, 6), sc=float(pr.get('sc', 1.0 if t.role in ('bass', 'chords', 'pad', 'arp', 'riff') else 0)),
                     sc_depth=float(sc.get('depth', 0)), sc_release=float(sc.get('release', 0.45)),
                     kicks=kick if t.role != 'kick' and sc.get('depth', 0) > 0 else [])
+        if auto:
+            spec['auto'] = auto
+        chain = pr.get('fx') or []
+        if chain:
+            spec['fx'] = chain
+            if any(c[0] in ('stutter', 'reverse') for c in chain):
+                spec['secs'] = [[round(x.start_bar * 4 * bs, 5), round((x.start_bar + x.bars) * 4 * bs, 5)] for x in song.sections]
         spec['hash'] = hashlib.sha1(json.dumps(spec, sort_keys=True).encode()).hexdigest()[:20]
         specs.append(spec)
     return specs
@@ -105,7 +119,10 @@ def render_track(spec):
     notes = sorted(spec['notes'], key=lambda n: n[0])
     mono = spec['role'] in MONO_ROLES
     fade = int(0.006 * SR)
+    synced = spec['inst'] in synth.TEMPO_SYNCED
     for i, (st, dur, midi, vel, p) in enumerate(notes):
+        if synced:
+            p = dict(p, spb=round(spec['beat'], 4))
         x = synth.play(spec['inst'], midi, dur, vel, p)
         s0 = int(st * SR)
         if s0 >= n_total:
@@ -120,9 +137,16 @@ def render_track(spec):
     role = spec['role']
     # tidy the low end: only kick, bass, riff and fx keep their sub
     if role not in ('kick', 'bass', 'riff', 'fx'):
-        hpf = {'pad': 220, 'chords': 160, 'lead': 180, 'arp': 200, 'hat': 3000, 'ohat': 3000, 'ride': 2500, 'shaker': 4000,
+        hpf = {'pad': 220, 'chords': 160, 'lead': 180, 'arp': 200, 'answer': 220, 'hat': 3000, 'ohat': 3000, 'ride': 2500, 'shaker': 4000,
                'snare': 110, 'clap': 200, 'perc': 90, 'rim': 300, 'cowbell': 300}.get(role, 120)
         buf = signal.sosfilt(signal.butter(2, hpf / (SR / 2), 'high', output='sos'), buf, axis=1).astype(np.float32)
+    # the part's effects chain (drive, chorus, gate, OTT, echo ...)
+    if spec.get('fx'):
+        from .fx import apply_chain
+        buf = apply_chain(buf, spec['fx'], spec['beat'], spec.get('secs'))
+    # filter sweeps (automation)
+    if spec.get('auto'):
+        buf = apply_sweeps(buf, spec['auto'])
     # auto-gain to the role's target level
     measured = _krms_db(buf)
     gain_db = 0.0 if measured < -100 else float(np.clip(ROLE_TARGET.get(role, -22) + spec['level'] - measured, -36, 24))
@@ -171,6 +195,30 @@ def render_track(spec):
     return wet.astype(np.float32), dict(gain_db=round(gain_db, 1), level_db=round(measured, 1))
 
 
+def apply_sweeps(buf, auto):
+    """auto: {'lp' | 'hp': [[start_s, end_s, from_hz, to_hz], ...]} - exponential ramps; outside them the filter is off.
+    Each ramp ends with a 15 ms crossfade back to the dry sound, so the filter lets go without a click."""
+    n_total = buf.shape[1]
+    fade = int(0.015 * SR)
+    out = buf.copy()
+    for kind, ramps in auto.items():
+        for s0, s1, f0, f1 in ramps:
+            a, b = int(s0 * SR), min(n_total, int(s1 * SR))
+            if b - a < 256:
+                continue
+            e = min(n_total, b + fade)
+            t = np.linspace(0.0, 1.0, b - a)
+            cut = np.concatenate([f0 * (f1 / f0) ** t, np.full(e - b, f1)])
+            for ch in range(out.shape[0]):
+                seg = out[ch, a:e].astype(np.float64)
+                y = synth.sweep(seg, cut, kind)
+                if e > b:
+                    r = np.linspace(0.0, 1.0, e - b)
+                    y[b - a:] = y[b - a:] * (1 - r) + seg[b - a:] * r
+                out[ch, a:e] = y.astype(np.float32)
+    return out
+
+
 def reverb(src, ir, n_out):
     """Stereo convolution reverb: one forward FFT of the send, one inverse per channel (float32)."""
     from scipy import fft as sfft
@@ -185,12 +233,58 @@ def reverb(src, ir, n_out):
 def _worker(args):
     spec, path = args
     x, info = render_track(spec)
-    tmp = path + '.tmp.npy'
+    tmp = path + f'.{os.getpid()}.tmp.npy'
     np.save(tmp, x)
-    os.replace(tmp, path)
-    with open(path[:-4] + '.json', 'w') as f:
+    with open(path[:-4] + '.json', 'w', encoding='utf-8') as f:
         json.dump(info, f)
+    replace_file(tmp, path)
     return spec['id'], path, info
+
+
+_POOL = None
+_POOL_N = 0
+_POOL_LOCK = threading.Lock()
+
+
+def _pool(n):
+    """One worker pool for the life of the app: starting worker processes costs a second or more each on Windows
+    (they re-import numpy and scipy), so they are started once and reused for every render."""
+    global _POOL, _POOL_N
+    with _POOL_LOCK:
+        if _POOL is None or _POOL_N < n:
+            if _POOL is not None:
+                _POOL.shutdown(wait=False, cancel_futures=True)
+            _POOL = ProcessPoolExecutor(max_workers=n)
+            _POOL_N = n
+        return _POOL
+
+
+def _reset_pool():
+    global _POOL, _POOL_N
+    with _POOL_LOCK:
+        if _POOL is not None:
+            _POOL.shutdown(wait=False, cancel_futures=True)
+        _POOL, _POOL_N = None, 0
+
+
+atexit.register(_reset_pool)
+
+
+def default_workers():
+    """Worker processes: one per core, at most 61 (the Windows limit for a process pool)."""
+    return max(1, min(61, os.cpu_count() or 2))
+
+
+def replace_file(src, dst, tries=40):
+    """os.replace that waits a moment when Windows reports the target as in use (a browser still reading the mix)."""
+    for i in range(tries):
+        try:
+            os.replace(src, dst)
+            return
+        except PermissionError:
+            if i == tries - 1:
+                raise
+            time.sleep(0.1)
 
 
 def render_stems(song, cache_dir, progress=None, workers=None):
@@ -203,7 +297,8 @@ def render_stems(song, cache_dir, progress=None, workers=None):
         paths[s['id']] = p
         if os.path.exists(p):
             try:
-                infos[s['id']] = json.load(open(p[:-4] + '.json'))
+                with open(p[:-4] + '.json', encoding='utf-8') as f:
+                    infos[s['id']] = json.load(f)
             except Exception:
                 infos[s['id']] = {}
         else:
@@ -212,23 +307,25 @@ def render_stems(song, cache_dir, progress=None, workers=None):
     if progress:
         progress(done / max(1, len(specs)), f'{done} of {len(specs)} parts already rendered')
     if todo:
-        workers = workers or max(1, min(len(todo), os.cpu_count() or 2))
+        workers = workers or default_workers()
         todo.sort(key=lambda a: -len(a[0]['notes']))
-        if workers == 1:
-            it = map(_worker, todo)
-            ex = None
-        else:
-            ex = ProcessPoolExecutor(max_workers=workers)
-            it = ex.map(_worker, todo)
-        try:
+
+        def collect(it):
+            nonlocal done
             for tid, p, info in it:
                 done += 1
                 infos[tid] = info
                 if progress:
                     progress(done / len(specs), f'rendered {tid}')
-        finally:
-            if ex:
-                ex.shutdown()
+        if workers == 1 or len(todo) == 1:
+            collect(map(_worker, todo))
+        else:
+            try:
+                collect(_pool(workers).map(_worker, todo))
+            except BrokenProcessPool:                     # a worker died (out of memory, killed): start fresh once
+                _reset_pool()
+                todo = [a for a in todo if not os.path.exists(a[1])]
+                collect(_pool(workers).map(_worker, todo))
     return paths, infos
 
 
@@ -260,10 +357,19 @@ def width_of(x):
     return float(np.sqrt((side ** 2).mean() / ((mid ** 2).mean() + 1e-12)))
 
 
-def master(mix, g, brightness=0.0):
-    """Ref-steered master. -> (stereo float32, report dict)"""
-    fp = g.get('fingerprint') or {}
-    rep = {}
+MASTER_CHOICES = dict(loudness=['genre', 'club', 'stream'], width=['narrow', 'genre', 'wide'], tone=['darker', 'genre', 'brighter'],
+                      glue=['off', 'genre', 'heavy'], tape=['off', 'on'])
+
+
+def master(mix, g, brightness=0.0, opts=None):
+    """Ref-steered master. -> (stereo float32, report dict)
+    opts (the mixer's MASTER menu): loudness genre / club (-7 LUFS) / stream (-14), width narrow / genre / wide,
+    tone darker / genre / brighter, glue off / genre / heavy, tape off / on."""
+    fp = dict(g.get('fingerprint') or {})
+    o = {k: v for k, v in (opts or {}).items() if k in MASTER_CHOICES and v in MASTER_CHOICES[k]}
+    if o.get('width') in ('narrow', 'wide') and fp.get('width'):
+        fp['width'] = fp['width'] * (0.6 if o['width'] == 'narrow' else 1.45)
+    rep = {'options': o} if o else {}
     x = signal.sosfilt(signal.butter(2, 25 / (SR / 2), 'high', output='sos'), mix, axis=1)
     b = float(g.get('brightness', 0.0)) + brightness
     if b <= -0.6:                               # really dark genres (lo-fi): a gentle low-pass, like a worn tape
@@ -300,16 +406,30 @@ def master(mix, g, brightness=0.0):
         side = side * k
         rep['width_scale'] = round(k, 2)
     x = np.vstack([mid + side, mid - side])
-    # 3) glue compression (2:1 above -16 dB, 10 ms / 150 ms)
-    env = np.abs(x).max(0)
-    a_rel = np.exp(-1 / (0.15 * SR))
-    lvl = signal.lfilter([1 - a_rel], [1, -a_rel], env)
-    db = 20 * np.log10(lvl + 1e-9)
-    gr = np.where(db > -16, (db + 16) * (1 - 1 / 2.0), 0)
-    x = x * (10 ** (-gr / 20))
-    rep['glue_gr_db'] = round(float(np.percentile(gr, 95)), 1)
+    # tone tilt (MASTER menu)
+    if o.get('tone') in ('darker', 'brighter'):
+        sgn = 1 if o['tone'] == 'brighter' else -1
+        x = signal.sosfilt(np.vstack([_shelf_sos(6500, 2.5 * sgn, 'high'), _shelf_sos(140, -1.0 * sgn, 'low')]), x, axis=1)
+    # 3) glue compression (2:1 above -16 dB, 10 ms / 150 ms; heavy: 4:1 above -22 dB)
+    if o.get('glue') != 'off':
+        thr, ratio = (-22.0, 4.0) if o.get('glue') == 'heavy' else (-16.0, 2.0)
+        env = np.abs(x).max(0)
+        a_rel = np.exp(-1 / (0.15 * SR))
+        lvl = signal.lfilter([1 - a_rel], [1, -a_rel], env)
+        db = 20 * np.log10(lvl + 1e-9)
+        gr = np.where(db > thr, (db - thr) * (1 - 1 / ratio), 0)
+        x = x * (10 ** (-gr / 20))
+        rep['glue_gr_db'] = round(float(np.percentile(gr, 95)), 1)
+    if o.get('tape') == 'on':                       # tape saturation: rounds the peaks before the limiter
+        pk = np.abs(x).max() + 1e-9
+        y = np.tanh(x / pk * 1.8) / np.tanh(1.8) * pk
+        x = signal.sosfilt(_shelf_sos(12000, -1.5, 'high'), y, axis=1)
     # 4) loudness to the genre's target, then a look-ahead limiter at -1 dBFS
     target_l = float(g.get('loudness', fp.get('lufs', -10)))
+    if o.get('loudness') == 'club':
+        target_l = max(target_l, -7.0)
+    elif o.get('loudness') == 'stream':
+        target_l = -14.0
     pre = x
     gain = target_l - lufs(pre, SR)
     x = limit(pre * 10 ** (gain / 20), -1.0)
@@ -324,6 +444,11 @@ def master(mix, g, brightness=0.0):
     rep['width'] = round(width_of(x), 2)
     rep['target_width'] = fp.get('width')
     return x.astype(np.float32), rep
+
+
+def _shelf_sos(fc, gain_db, kind):
+    from .fx import _sos
+    return _sos('highshelf' if kind == 'high' else 'lowshelf', fc, 0.7, gain_db)[0]
 
 
 def limit(x, ceiling_db=-1.0, look=0.0015):
@@ -347,7 +472,7 @@ def mix_stems(paths, song, mix=None):
         m = mix.get(t.id, {})
         if m.get('mute') or (solo and t.id not in solo) or t.id not in paths:
             continue
-        x = np.load(paths[t.id], mmap_mode='r')
+        x = np.load(paths[t.id])          # read whole: a memory map keeps the file locked on Windows
         g = 10 ** (float(m.get('gain_db', 0)) / 20)
         pan = float(m.get('pan', 0))
         if pan:
@@ -378,7 +503,7 @@ def write_wav(path, x, sr=SR):
         w.setsampwidth(2)
         w.setframerate(sr)
         w.writeframes(pcm.tobytes())
-    os.replace(tmp, path)
+    replace_file(tmp, path)
 
 
 def peaks(x, n=1600):

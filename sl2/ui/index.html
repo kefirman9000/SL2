@@ -45,7 +45,8 @@
           <button class="tp ej" id="bEject" title="Open a song file (.sl2.json) or a reference track">⏏</button>
           <span class="flex"></span>
           <button class="tog" id="bShuffle" title="Surprise me: random genre">SHUFFLE</button>
-          <button class="tog" id="bRepeat" title="Loop the current section">↻</button>
+          <button class="tog" id="bRepeat" title="Loop the current section (L)">↻</button>
+          <button class="tog" id="bAB" title="A/B: mark this song as A, open another, then flip between them at the same spot">A/B</button>
           <span class="badge" title="SL2">⚡</span>
         </div>
       </div>
@@ -59,6 +60,7 @@
           <button class="tog on" id="mixAuto" title="Auto-gain: each part is set to its role's level before your fader moves">AUTO</button>
           <div class="curve"><canvas id="curve" width="300" height="24"></canvas></div>
           <button class="btn" id="mixPresets" title="Mixer presets">PRESETS</button>
+          <button class="btn" id="mixMaster" title="Master: loudness, width, tone, glue compression, tape">MASTER</button>
         </div>
         <div class="faders" id="faders"></div>
       </div>
@@ -92,14 +94,14 @@
         <div class="lcd said" id="said">TYPE A DESCRIPTION, OR PICK A GENRE BELOW</div>
         <div class="grid2">
           <div>
-            <div class="lab">GENRE</div>
+            <div class="row small"><span class="lab">GENRE</span><input id="gsearch" class="lcdin gs" placeholder="search: name, sound, mood" autocomplete="off"></div>
             <div class="genres" id="genres"></div>
           </div>
           <div class="knobs">
             <div class="lab">ENERGY <b id="energyV">60</b></div>
             <input type="range" id="energy" class="sl hz" min="20" max="100" value="60">
             <div class="lab">LENGTH</div>
-            <div class="seg" id="length"><button data-v="short">SHORT</button><button data-v="normal" class="on">NORMAL</button><button data-v="long">LONG</button></div>
+            <div class="seg" id="length"><button data-v="short" title="Radio edit">SHORT</button><button data-v="normal" class="on">NORMAL</button><button data-v="long">LONG</button><button data-v="extended" title="Extended / club mix">CLUB</button><button data-v="loop" title="One 16-bar loop of the main section">LOOP</button></div>
             <div class="row small">
               <div><div class="lab">BPM</div><input id="bpm" class="lcdin sm" placeholder="auto"></div>
               <div><div class="lab">KEY</div><input id="key" class="lcdin sm" placeholder="auto"></div>
@@ -110,6 +112,8 @@
             </div>
           </div>
         </div>
+        <div class="lab feelhd">FEEL <span class="hint">how the drummer plays and how much the song moves (your picks are remembered)</span></div>
+        <div class="feel" id="feel"></div>
         <div class="progress" id="progWrap"><div class="bar" id="progBar"></div><span id="progMsg"></span></div>
       </div>
     </section>
@@ -118,7 +122,9 @@
       <div class="tb"><span class="grip"></span><span class="ttl">SL2 EDITOR</span><span class="grip"></span><button class="tbb" title="Shade">▁</button></div>
       <div class="body editor">
         <div class="row small">
-          <span class="lab">SECTIONS</span><span class="flex"></span>
+          <span class="lab">SECTIONS</span><span class="hint">click: play · right-click: section tools</span><span class="flex"></span>
+          <button class="btn" id="bMore" title="A new song that keeps what you tick (groove, chords, melody, sounds ...)">MORE LIKE THIS</button>
+          <button class="btn" id="bDiff" title="Same genre, everything else new">SOMETHING DIFFERENT</button>
           <button class="btn" id="rrHarm" title="New chords (locked melodies are kept, and the chords are chosen to fit them)">NEW CHORDS</button>
           <button class="btn" id="rrForm" title="New arrangement">NEW FORM</button>
           <button class="btn" id="rrAll" title="Everything new except locked parts">NEW TAKE</button>
@@ -135,6 +141,11 @@
           <button class="btn" id="zoomOut">−</button><button class="btn" id="zoomIn">+</button>
           <button class="btn go" id="bApply" title="Render your note edits" disabled>APPLY EDITS</button>
         </div>
+        <div class="row small fxrow">
+          <span class="lab">FX</span>
+          <div class="fxchips" id="fxchips"></div>
+          <button class="btn" id="fxAdd" title="Add an effect to this part (drive, chorus, phaser, trance gate, OTT, echo ...)">+ EFFECT</button>
+        </div>
         <div class="roll"><canvas id="roll" height="260"></canvas></div>
         <div class="hint">Piano roll: click empty space to add a note (1/16 grid) · click a note to remove it · shift+drag to scroll</div>
       </div>
@@ -144,6 +155,7 @@
       <div class="tb"><span class="grip"></span><span class="ttl">SL2 INFO</span><span class="grip"></span><button class="tbb" title="Shade">▁</button></div>
       <div class="body">
         <div class="lcd insights" id="insights">NO SONG LOADED</div>
+        <div class="hint">Keys: space play/pause · ←/→ 5 s · [ ] previous / next section · L loop section · N new take · M more like this · B A/B · Z undo</div>
       </div>
     </section>
   </div>
@@ -152,7 +164,7 @@
 <div class="menu" id="menu"></div>
 <div class="toast" id="toast"></div>
 <audio id="audio" preload="auto" crossorigin="anonymous"></audio>
-<input type="file" id="fileIn" hidden accept=".json,.wav,.mp3,.flac,.ogg,.m4a,.aiff,.aif,.wma">
+<input type="file" id="fileIn" hidden accept=".json,.sl2.json,.wav,.mp3,.flac,.ogg,.m4a,.aiff,.aif,.wma">
 <script>window.SL2 = {token: '__SL2_TOKEN__', version: '__SL2_VERSION__'};</script>
 <script src="/ui/app.js"></script>
 </body>

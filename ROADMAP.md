@@ -11,6 +11,16 @@
 - [x] Classic media-player skin: player, mixer faders, playlist, composer, editor with piano roll, info
 - [x] Exports: WAV master, stems, MIDI, song file
 
+## Done in 2.1
+
+- [x] Phrase-level variation, staggered entries/exits, filter-sweep automation, evolving later drops, key lift
+- [x] Call and response, trance breakdown theme, house chops, techno sequence
+- [x] Melody critic that rewards tension/resolution, question/answer phrasing and syncopation
+- [x] Major V / borrowed iv, chord anticipation, bass approach notes, consistent chord colour, no semitone clusters
+- [x] Feel controls (fills, hats, ghosts, build-ups, FX, variation); club and loop lengths; 3-5 forms per genre
+- [x] Section tools, more like this / something different, A/B, genre search / favourites, open song files, MP3, diagnostics
+- [x] Windows app and installer (built and smoke-tested in CI), Windows launcher for the source, Windows CI
+
 ## Next
 
 - [ ] **Better drum transcription** from references (separate the kick from the sub with transient detection), so drum

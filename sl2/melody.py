@@ -40,8 +40,8 @@ def _place(cell, bar0):
     return out
 
 
-def _candidate(key, chord_at, bars, cells, center, rnd):
-    """One melody: list of (step, len, degree)."""
+def _candidate(key, chord_at, bars, cells, center, rnd, tension=0.18):
+    """One melody: list of (step, len, degree). tension: chance of an appoggiatura on a strong beat."""
     a, b = cells
     plan = []
     if bars <= 4:
@@ -80,6 +80,7 @@ def _candidate(key, chord_at, bars, cells, center, rnd):
         # new material (the motif itself, or the answer)
         line = []
         n = len(slots)
+        resolve = None
         for i, (st, ln) in enumerate(slots):
             bar = st // STEPS_PER_BAR
             cd = chord_at(bar)
@@ -87,12 +88,19 @@ def _candidate(key, chord_at, bars, cells, center, rnd):
             x = i / max(1, n - 1)
             shape = {'arch': 1 - abs(2 * x - 1), 'rise': x, 'fall': 1 - x, 'wave': 0.5 + 0.5 * ((-1) ** (i // 2))}[contour]
             target = center - 2 + 5 * shape
-            if part == 'B' and i == n - 1:      # the cadence: root or third of the last chord
+            if resolve is not None:              # the note after an appoggiatura resolves it by step
+                d, resolve = resolve, None
+            elif part == 'B' and i == n - 1:    # the cadence: root or third of the last chord
                 cands = [cd + 7 * o for o in range(-2, 4)] + [cd + 2 + 7 * o for o in range(-2, 4)]
                 d = min(cands, key=lambda c: abs(c - prev) + 0.3 * abs(c - center))
             elif st % 8 == 0 or i == 0:          # strong beat: a chord tone near the line
                 cands = [t + 7 * o for t in tones for o in range(-2, 4)]
                 d = min(cands, key=lambda c: abs(c - prev) * 0.7 + abs(c - target) * 0.5 + rnd.random() * 0.8)
+                nxt = slots[i + 1][0] if i + 1 < n else None
+                if (i > 0 and nxt is not None and nxt - st <= 4 and nxt // STEPS_PER_BAR == bar
+                        and not (part == 'B' and i + 1 == n - 1) and rnd.random() < tension):
+                    resolve = d                  # lean on the note above (sometimes below), resolve next
+                    d = d + (1 if rnd.random() < 0.7 else -1)
             else:                                # weak: a step (sometimes a leap) toward the contour
                 direction = 1 if target > prev else -1
                 r = rnd.random()
@@ -111,14 +119,33 @@ def _candidate(key, chord_at, bars, cells, center, rnd):
     return notes
 
 
-def score(notes, key, chord_at, center):
-    """Higher is better. -> (score, details)"""
+def score(notes, key, chord_at, center, bars=None):
+    """Higher is better. -> (score, details)
+
+    What it rewards: chord tones on strong beats (or a non-chord note that resolves by step: an appoggiatura, which
+    gives a line its pull), mostly stepwise motion with recovered leaps, a sensible range, one late high point, an open
+    half-way point (question) and a closed ending (answer), some syncopation, enough different notes - and it
+    penalises lines that only spell out the chords, which sound like arpeggios rather than tunes."""
     if len(notes) < 3:
         return -99, {}
     degs = [d for _, _, d in notes]
     ivs = [b - a for a, b in zip(degs, degs[1:])]
-    strong = [(st, d) for st, _, d in notes if st % 8 == 0]
-    ct = sum(1 for st, d in strong if d % 7 in chord_degrees(chord_at(st // STEPS_PER_BAR))) / max(1, len(strong))
+
+    def is_ct(st, d):
+        return d % 7 in chord_degrees(chord_at(st // STEPS_PER_BAR))
+    strong = [(i, st, d) for i, (st, _, d) in enumerate(notes) if st % 8 == 0]
+    ct = app = bad = 0
+    for i, st, d in strong:
+        if is_ct(st, d):
+            ct += 1
+        elif i + 1 < len(notes) and abs(notes[i + 1][2] - d) == 1 and is_ct(notes[i + 1][0], notes[i + 1][2]):
+            app += 1
+        else:
+            bad += 1
+    ns = max(1, len(strong))
+    ct_eff = (ct + app) / ns
+    app_share = app / ns
+    all_ct = sum(1 for st, _, d in notes if is_ct(st, d)) / len(notes)
     steps = sum(1 for i in ivs if abs(i) <= 1) / max(1, len(ivs))
     leaps = [i for i, v in enumerate(ivs) if abs(v) >= 3]
     recovered = sum(1 for i in leaps if i + 1 < len(ivs) and ivs[i + 1] * ivs[i] < 0) / max(1, len(leaps))
@@ -134,24 +161,137 @@ def score(notes, key, chord_at, center):
         r = r + 1 if i == 0 else 1
         runs += r >= 3
     peak_count = degs.count(max(degs))
-    s = (3.0 * ct + 2.0 * (1 - abs(steps - 0.65)) + 1.0 * recovered
+    span_steps = bars * STEPS_PER_BAR if bars else max(st + ln for st, ln, _ in notes)
+    half = span_steps // 2
+    before = [d for st, _, d in notes if st < half]
+    question = 1.0 if before and before[-1] % 7 != 0 else 0.0
+    sync = sum(1 for st, _, _ in notes if st % 4 != 0) / len(notes)
+    variety = len({d % 7 for d in degs})
+    s = (3.0 * ct_eff - 1.0 * bad / ns + (0.8 if 0.08 <= app_share <= 0.34 else 0.0)
+         + 2.0 * (1 - abs(steps - 0.65)) + 1.0 * recovered
          + (1.0 if 4 <= rng <= 9 else 0.3 if rng <= 11 else -1.0)
          + (1.2 if 0.5 <= climax <= 0.85 else 0.0) + (0.5 if peak_count <= 2 else 0)
-         + 1.5 * ending - 0.6 * runs - 0.05 * abs(sum(degs) / len(degs) - center))
-    return s, dict(chord_tones=round(ct, 2), steps=round(steps, 2), range=rng, climax=round(climax, 2), ending=ending)
+         + 1.5 * ending + 0.8 * question
+         + max(0.0, 1.0 - abs(sync - 0.35) * 2.5)
+         + (0.5 if variety >= 4 else -1.0 if variety <= 2 else 0.0)
+         - (1.5 * (all_ct - 0.8) / 0.2 if all_ct > 0.8 else 0.0)
+         - 0.6 * runs - 0.05 * abs(sum(degs) / len(degs) - center))
+    return s, dict(chord_tones=round(ct / ns, 2), tension=round(app_share, 2), steps=round(steps, 2), range=rng,
+                   climax=round(climax, 2), ending=ending, question=question, syncopation=round(sync, 2))
 
 
-def write_hook(key: Key, chord_at, bars, rhythms, density, center, rnd, candidates=48):
+def write_hook(key: Key, chord_at, bars, rhythms, density, center, rnd, candidates=48, tension=0.18):
     """-> (notes [(step, len_steps, degree)], info)"""
     best = None
+    scores = []
     for _ in range(candidates):
         cells = _cells(rhythms, density, rnd)
-        n = _candidate(key, chord_at, bars, cells, center, rnd)
-        s, det = score(n, key, chord_at, center)
+        n = _candidate(key, chord_at, bars, cells, center, rnd, tension)
+        s, det = score(n, key, chord_at, center, bars)
+        scores.append(s)
         if best is None or s > best[0]:
             best = (s, n, det)
     s, n, det = best
-    return n, dict(score=round(s, 2), candidates=candidates, **det)
+    ok = sorted(x for x in scores if x > -50)
+    median = ok[len(ok) // 2] if ok else s
+    return n, dict(score=round(s, 2), median=round(median, 2), candidates=candidates, **det)
+
+
+# ------------------------------------------------------------------ other lead devices
+CHOP_RHYTHMS = ['..x..x....x.x...', '...x..x...x..x..', '.x..x...x..x..x.', '..x...x.x...x.x.', 'x..x..x...x.....']
+OSTINATO_RHYTHMS = ['x.xx.xx.x.xx.xx.', 'x..x..x.x..x..x.', 'xx.x.xx.xx.x.xx.', 'x.x.x.x.x.x.x.x.']
+
+
+def write_chops(key, chord_at, bars, center, rnd):
+    """House / garage 'vocal chop' stabs: short syncopated hits on two or three high chord tones.
+    The figure repeats; the last two bars of the phrase answer it with a variation."""
+    rh = rnd.choice(CHOP_RHYTHMS)
+    on = _onsets(rh)
+    order = rnd.choice([[0, 1, 0, 2], [2, 1, 0, 1], [0, 0, 1, 2], [1, 2, 1, 0]])
+    notes = []
+    for bar in range(bars):
+        cd = chord_at(bar)
+        tones = sorted({t + 7 * o for t in chord_degrees(cd) for o in range(-1, 3)}, key=lambda d: abs(d - (center + 3)))[:3]
+        tones.sort()
+        answer = bars >= 4 and bar >= bars - 2
+        steps = on if not answer else [s for s in on if s < 10] + ([12, 14] if rnd.random() < 0.6 else [12])
+        for j, st in enumerate(steps):
+            d = tones[order[(j + bar) % len(order)] % len(tones)]
+            if answer and j == len(steps) - 1:
+                d = tones[-1]
+            notes.append((bar * STEPS_PER_BAR + st, 1 if rnd.random() < 0.7 else 2, d))
+    return notes, dict(device='chops', notes=len(notes))
+
+
+def write_ostinato(key, chord_at, bars, center, rnd):
+    """Techno / acid sequence: a hypnotic 3-4 note figure that barely changes; one note moves every 4 bars."""
+    rh = rnd.choice(OSTINATO_RHYTHMS)
+    on = _onsets(rh)
+    base = center - 2
+    cell = [0, rnd.choice([2, 4]), rnd.choice([4, 7]), rnd.choice([-1, 2, 3])][:rnd.choice([3, 4])]
+    notes = []
+    for bar in range(bars):
+        root = chord_at(bar)
+        shifted = list(cell)
+        if bar % 4 == 3:
+            k = rnd.randrange(len(shifted))
+            shifted[k] += rnd.choice([-1, 1, 2])
+        for j, st in enumerate(on):
+            notes.append((bar * STEPS_PER_BAR + st, 1, base + root % 7 + shifted[j % len(shifted)]))
+    return notes, dict(device='ostinato', notes=len(notes))
+
+
+def refit(line, chord_at_bar, tone_pcs_at_bar, key):
+    """Fit a line to the chords that actually sound under it.
+    Strong-beat notes become chord tones (unless they lean on one and resolve by step); held notes a semitone from
+    a chord note move to the nearest chord tone. line: [(step, len, degree)]; chord_at_bar(bar) -> degree;
+    tone_pcs_at_bar(bar) -> pitch classes sounding."""
+    out = []
+    for i, (st, ln, d) in enumerate(line):
+        bar = st // STEPS_PER_BAR
+        cd = chord_at_bar(bar)
+        tones = chord_degrees(cd)
+        near = lambda x: min((t + 7 * o for t in tones for o in range(-3, 5)), key=lambda c: (abs(c - x), c))  # noqa: E731
+        if st % 8 == 0 and d % 7 not in tones:
+            nxt = line[i + 1] if i + 1 < len(line) else None
+            leaning = nxt and abs(nxt[2] - d) == 1 and nxt[0] // STEPS_PER_BAR == bar and nxt[2] % 7 in tones
+            if not leaning:
+                d = near(d)
+        elif ln >= 4 and d % 7 not in tones:
+            pcs = tone_pcs_at_bar(bar)
+            pc = key.pc(d)
+            if pcs and any((pc - c) % 12 in (1, 11) for c in pcs):
+                d = near(d)
+        out.append((st, ln, d))
+    return out
+
+
+def answer_phrase(lead, bars, chord_at_bar, rnd, register=-7):
+    """Call and response: in each 2-bar half-phrase where the lead leaves a gap at the end, a second sound answers
+    with the start of the lead's own figure, an octave (or a sixth) away. -> [(step, len, degree)]"""
+    out = []
+    seg = 2 * STEPS_PER_BAR
+    for j in range(max(1, bars // 2)):
+        a, b = j * seg, (j + 1) * seg
+        inside = [n for n in lead if a <= n[0] < b]
+        if not inside:
+            continue
+        last = max(st for st, _, _ in inside)       # lead notes are held legato, so measure from the last onset
+        end = last + 3
+        gap = b - end
+        if gap < 5:
+            continue
+        figure = inside[:3]
+        start = end + (1 if gap > 8 else 0)
+        step = max(1, min(2, (b - start) // max(1, len(figure))))
+        reg = register if rnd.random() < 0.7 else register + 2
+        for k, (_, _, d) in enumerate(figure):
+            st = start + k * step
+            if st >= b:
+                break
+            out.append((st, step if k < len(figure) - 1 else max(step, b - st), d + reg))
+    return out
+
 
 
 def verse_variant(notes, chord_at, rnd):

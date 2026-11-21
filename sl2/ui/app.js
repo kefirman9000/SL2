@@ -4,7 +4,20 @@ const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAl
 const T = window.SL2.token;
 const audio = $('#audio');
 const S = { genres: [], genre: 'liquid_dnb', song: null, sel: null, lib: [], libSel: null, mix: {}, length: 'normal',
-            loop: false, roll: { notes: [], dirty: false, zoom: 14 }, busy: false };
+            loop: false, roll: { notes: [], dirty: false, zoom: 14 }, busy: false, choices: {}, caps: {}, feel: {}, ab: null };
+// small per-browser memory (favourite genres, recent genres, your composer picks); never required
+const mem = {
+  get(k, d) { try { const v = localStorage.getItem('sl2.' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem('sl2.' + k, JSON.stringify(v)); } catch (e) { /* storage off: fine */ } },
+};
+const FEEL = [
+  ['fills', 'FILLS', { none: 'NONE', fewer: 'FEWER', normal: 'NORMAL', more: 'MORE' }, 'Drum fills at the ends of sections and phrases'],
+  ['hats', 'HI-HATS', { sparse: 'SPARSE', normal: 'NORMAL', busy: 'BUSY' }, 'Sparse = 8ths, busy = extra 16ths'],
+  ['ghosts', 'GHOST NOTES', { off: 'OFF', normal: 'SOME', more: 'MORE' }, 'Soft in-between snare hits'],
+  ['builds', 'BUILD-UPS', { on: 'ON', subtle: 'SUBTLE', off: 'OFF' }, 'Subtle = no snare rolls or risers, the groove keeps going; off = no build sections'],
+  ['fx', 'TRANSITION FX', { normal: 'ALL', fewer: 'FEWER', off: 'OFF' }, 'Risers, reverse cymbals, impacts, downlifters'],
+  ['variation', 'VARIATION', { low: 'LOOPY', normal: 'NORMAL', high: 'RESTLESS' }, 'How much the parts change from phrase to phrase: fills, entries, sweeps, later drops'],
+];
 
 // ------------------------------------------------------------------ api
 async function api(path, opts = {}) {
@@ -45,21 +58,53 @@ function tickMarquee() {
 
 // ------------------------------------------------------------------ genres
 function renderGenres() {
-  const box = $('#genres'); box.innerHTML = '';
-  let grp = null;
-  for (const g of S.genres) {
-    if (g.group !== grp) { grp = g.group; box.insertAdjacentHTML('beforeend', `<div class="grp">${esc(grp || 'More')}</div>`); }
-    const d = document.createElement('div');
-    d.className = 'g' + (g.id === S.genre ? ' on' : '');
-    d.title = g.desc + (g.refs ? `\nModelled on: ${g.refs}` : '');
-    d.innerHTML = `<span>${esc(g.name)}</span>${g.refs ? '<span class="ref">★</span>' : ''}<span class="r">${g.bpm[0]}-${g.bpm[1]}</span>`;
-    d.onclick = () => { S.genre = g.id; renderGenres(); $('#said').textContent = g.desc.toUpperCase(); };
+  const box = $('#genres'), top = box.scrollTop; box.innerHTML = '';
+  const q = ($('#gsearch').value || '').trim().toLowerCase();
+  const favs = mem.get('favs', []), recent = mem.get('recent', []);
+  const hit = g => !q || [g.name, g.desc, g.group, ...(g.keywords || []), g.refs || ''].join(' ').toLowerCase().includes(q);
+  const groups = [];
+  if (!q) {
+    const f = S.genres.filter(g => favs.includes(g.id)); if (f.length) groups.push(['☆ Favourites', f]);
+    const r = recent.map(id => S.genres.find(g => g.id === id)).filter(Boolean).slice(0, 4); if (r.length) groups.push(['Recent', r]);
+  }
+  let grp = null, cur = null;
+  for (const g of S.genres.filter(hit)) { if (g.group !== grp) { grp = g.group; cur = [grp || 'More', []]; groups.push(cur); } cur[1].push(g); }
+  if (!groups.length) box.insertAdjacentHTML('beforeend', '<div class="grp">no genre matches - try a sound or a mood</div>');
+  for (const [name, list] of groups) {
+    box.insertAdjacentHTML('beforeend', `<div class="grp">${esc(name)}</div>`);
+    for (const g of list) {
+      const d = document.createElement('div');
+      d.className = 'g' + (g.id === S.genre ? ' on' : '');
+      d.title = g.desc + (g.refs ? `\nModelled on: ${g.refs}` : '');
+      d.innerHTML = `<span class="fav ${favs.includes(g.id) ? 'on' : ''}" title="Favourite">${favs.includes(g.id) ? '★' : '☆'}</span><span>${esc(g.name)}</span>${g.refs ? '<span class="ref">★</span>' : ''}<span class="r">${g.bpm[0]}-${g.bpm[1]}</span>`;
+      d.onclick = () => { S.genre = g.id; renderGenres(); $('#said').textContent = g.desc.toUpperCase(); };
+      d.querySelector('.fav').onclick = e => {
+        e.stopPropagation();
+        const f = mem.get('favs', []), i = f.indexOf(g.id);
+        if (i >= 0) f.splice(i, 1); else f.push(g.id);
+        mem.set('favs', f); renderGenres();
+      };
+      box.appendChild(d);
+    }
+  }
+  box.scrollTop = top;
+}
+function noteRecent(id) { const r = mem.get('recent', []).filter(x => x !== id); r.unshift(id); mem.set('recent', r.slice(0, 6)); }
+
+function renderFeel() {
+  const box = $('#feel'); box.innerHTML = '';
+  for (const [k, label, opts, tip] of FEEL) {
+    const cur = S.feel[k] || Object.keys(opts).find(v => v === 'normal' || v === 'on') || Object.keys(opts)[0];
+    const d = document.createElement('div'); d.title = tip;
+    d.innerHTML = `<div class="lab">${label}</div><div class="seg">${Object.entries(opts).map(([v, t]) => `<button data-v="${v}" class="${v === cur ? 'on' : ''}">${t}</button>`).join('')}</div>`;
+    d.querySelectorAll('button').forEach(b => b.onclick = () => { S.feel[k] = b.dataset.v; saveComposer(); renderFeel(); });
     box.appendChild(d);
   }
 }
+function saveComposer() { mem.set('composer', { feel: S.feel, length: S.length, energy: +$('#energy').value, genre: S.genre }); }
 
 function settingsFromUI() {
-  const s = { genre: S.genre, energy: +$('#energy').value / 100, length: S.length, seed: parseInt($('#seed').value) || 1 };
+  const s = Object.assign({ genre: S.genre, energy: +$('#energy').value / 100, length: S.length, seed: parseInt($('#seed').value) || 1 }, S.feel);
   const b = parseFloat($('#bpm').value); if (b) s.bpm = b;
   const k = $('#key').value.trim(); if (k) s.key = k;
   return s;
@@ -77,6 +122,7 @@ async function compose(extra = {}) {
     if (r.settings.energy) { $('#energy').value = Math.round(r.settings.energy * 100); $('#energyV').textContent = $('#energy').value; }
   }
   Object.assign(s, extra); delete s.skipPrompt;
+  noteRecent(s.genre); saveComposer();
   try {
     const { job } = await post('/api/generate', s);
     const meta = await runJob(job, 'composing');
@@ -206,18 +252,142 @@ function beatNow() { return audio.currentTime * S.song.song.bpm / 60; }
 function renderTimeline() {
   const tl = $('#timeline'); tl.innerHTML = '';
   const sg = S.song.song, total = sg.bars;
+  const mutes = (sg.settings && sg.settings.section_mutes) || {};
+  sg.sections.forEach((s, i) => s._i = i);
   for (const s of sg.sections) {
+    const i = s._i;
     const d = document.createElement('div');
-    d.className = `sec ${s.kind}`; d.style.width = (s.bars / total * 100) + '%';
+    d.className = `sec ${s.kind}${mutes[i] && mutes[i].length ? ' muted' : ''}`; d.style.width = (s.bars / total * 100) + '%';
     d.innerHTML = `<div class="e" style="height:${Math.round(s.energy * 100)}%"></div><span class="n">${esc(s.name)} ${s.bars}</span>`;
     d.title = `${s.name}: bars ${s.start_bar + 1}-${s.start_bar + s.bars}, energy ${Math.round(s.energy * 100)}`;
     d.onclick = () => { audio.currentTime = s.start_bar * 4 * 60 / sg.bpm; if (audio.paused) play(); };
+    d.oncontextmenu = e => { e.preventDefault(); sectionMenu(e.clientX, e.clientY, i); };
     tl.appendChild(d);
   }
   tl.insertAdjacentHTML('beforeend', '<div class="ph" id="ph"></div>');
   const marks = $('#secmarks'); marks.innerHTML = '';
   for (const s of sg.sections.slice(1)) marks.insertAdjacentHTML('beforeend', `<i style="left:${s.start_bar / total * 100}%"></i>`);
 }
+
+async function sectionOp(index, action, extra = {}) {
+  if (S.busy) return toast('BUSY');
+  try {
+    const { job } = await post(`/api/song/${S.song.meta.id}/section`, Object.assign({ index, action }, extra));
+    const meta = await runJob(job, action === 'take' ? 'new take of the section' : 'editing the section');
+    await loadSong(meta.id, !audio.paused); refreshLibrary(); toast(meta.note.toUpperCase());
+  } catch (e) { toast('ERROR: ' + e.message, 6000); }
+}
+function sectionMenu(x, y, i) {
+  const sg = S.song.song, s = sg.sections[i], bpm = sg.bpm, t0 = s.start_bar * 4 * 60 / bpm;
+  const muted = ((sg.settings && sg.settings.section_mutes) || {})[i] || [];
+  const items = [
+    ['▶ Play from here', () => { audio.currentTime = t0; play(); }],
+    ['↻ Loop this section', () => { S.song.song.sections.forEach(x => x._loop = x === s); S.loop = true; $('#bRepeat').classList.add('on'); audio.currentTime = t0; play(); }],
+    ['🎲 New take of this section', () => sectionOp(i, 'take')], '-',
+    ['⧉ Duplicate', () => sectionOp(i, 'duplicate')],
+    ['+ 4 bars longer', () => sectionOp(i, 'longer', { bars: 4 })],
+    ['− 4 bars shorter', () => sectionOp(i, 'shorter', { bars: 4 })],
+    ['◀ Move earlier', () => sectionOp(i, 'left')],
+    ['▶ Move later', () => sectionOp(i, 'right')],
+    ['✕ Remove', () => { if (confirm(`Remove "${s.name}" (${s.bars} bars)?`)) sectionOp(i, 'remove'); }], '-',
+  ];
+  const take = S.song.tracks.filter(t => !muted.includes(t.id)).map(t => [`∅ Take ${t.id} out of this section`, () => sectionOp(i, 'mute', { track: t.id })]);
+  const back = muted.map(id => [`↺ Let ${id} back in (next re-roll)`, () => sectionOp(i, 'unmute', { track: id })]);
+  menu(x, y, [...items, ...take.slice(0, 12), ...back], `${s.name.toUpperCase()} · BARS ${s.start_bar + 1}-${s.start_bar + s.bars}`);
+}
+
+// ------------------------------------------------------------------ more like this, A/B
+const KEEP = [['tempo', 'Tempo & key'], ['form', 'Song form'], ['groove', 'Drum groove'], ['bass', 'Bass line'], ['chords', 'Chords'], ['melody', 'Melody'], ['sounds', 'Sounds & mix']];
+function moreLikeThis(x, y) {
+  if (!S.song) return toast('NO SONG LOADED');
+  const keep = new Set(mem.get('keep', ['tempo', 'groove', 'chords', 'sounds']));
+  const draw = () => menu(x, y, [
+    ...KEEP.map(([k, l]) => ({ label: 'Keep ' + l, chk: keep.has(k), stay: true, fn: () => { keep.has(k) ? keep.delete(k) : keep.add(k); mem.set('keep', [...keep]); draw(); } })),
+    '-', ['✨ Make it', () => variation([...keep])],
+  ], 'MORE LIKE THIS');
+  draw();
+}
+async function variation(keep) {
+  if (S.busy) return toast('BUSY');
+  try {
+    const { job } = await post(`/api/song/${S.song.meta.id}/variation`, { keep });
+    const meta = await runJob(job, keep.length ? 'more like this' : 'something different');
+    await loadSong(meta.id, true); refreshLibrary();
+  } catch (e) { toast('ERROR: ' + e.message, 6000); }
+}
+function toggleAB() {
+  const b = $('#bAB');
+  if (!S.song) return;
+  if (!S.ab) { S.ab = { a: S.song.meta.id, b: null, on: 'a' }; b.classList.add('on', 'a'); toast('A = THIS SONG. OPEN ANOTHER ONE, THEN PRESS A/B TO FLIP'); return; }
+  const cur = S.song.meta.id;
+  if (cur === S.ab.a && !S.ab.b) { S.ab = null; b.classList.remove('on', 'a', 'b'); toast('A/B OFF'); return; }
+  if (cur !== S.ab.a) S.ab.b = cur;
+  const go = cur === S.ab.a ? S.ab.b : S.ab.a, t = audio.currentTime, playing = !audio.paused;
+  loadSong(go, false).then(() => {
+    const seek = () => { audio.currentTime = Math.min(t, (audio.duration || t + 1) - 0.1); if (playing) play(); };
+    if (audio.readyState >= 1) seek(); else audio.addEventListener('loadedmetadata', seek, { once: true });
+    b.classList.toggle('a', go === S.ab.a); b.classList.toggle('b', go !== S.ab.a);
+    toast(go === S.ab.a ? 'A' : 'B', 900);
+  });
+}
+
+// ------------------------------------------------------------------ part effects and master
+function fxAmount(name, p) {
+  const e = S.effects.find(x => x.id === name); if (!e) return '';
+  for (const a of ['light', 'medium', 'heavy']) if (Object.entries(e.presets[a]).every(([k, v]) => p[k] === undefined || p[k] === v)) return a;
+  return 'custom';
+}
+function renderFx() {
+  const box = $('#fxchips'); box.innerHTML = '';
+  const t = S.song && S.song.tracks.find(x => x.id === S.sel); if (!t) return;
+  const chain = t.fx || [];
+  if (!chain.length) box.insertAdjacentHTML('beforeend', '<span class="none">no effects on this part - add one</span>');
+  chain.forEach(([name, p], i) => {
+    const e = S.effects.find(x => x.id === name) || { label: name };
+    const c = document.createElement('span'); c.className = 'chip';
+    c.innerHTML = `${esc(e.label)} <i>${fxAmount(name, p || {}).toUpperCase()}</i>`;
+    c.onclick = ev => {
+      const r = ev.target.getBoundingClientRect();
+      const set = a => { const ch = chain.map(x => [x[0], Object.assign({}, x[1])]); ch[i] = [name, Object.assign({}, e.presets[a])]; setFx(ch); };
+      menu(r.left, r.bottom + 2, [['Light', () => set('light')], ['Medium', () => set('medium')], ['Heavy', () => set('heavy')], '-',
+        i > 0 ? ['◀ Earlier in the chain', () => { const ch = chain.slice(); [ch[i - 1], ch[i]] = [ch[i], ch[i - 1]]; setFx(ch); }] : { label: '◀ Earlier in the chain' },
+        ['✕ Remove', () => setFx(chain.filter((_, j) => j !== i))]], e.label.toUpperCase());
+    };
+    box.appendChild(c);
+  });
+}
+async function setFx(chain) {
+  if (S.busy) return toast('BUSY');
+  try {
+    const { job } = await post(`/api/song/${S.song.meta.id}/fx`, { track: S.sel, fx: chain });
+    const meta = await runJob(job, 'effects on ' + S.sel);
+    await loadSong(meta.id, !audio.paused); refreshLibrary();
+  } catch (e) { toast('ERROR: ' + e.message, 6000); }
+}
+$('#fxAdd').onclick = e => {
+  const t = S.song && S.song.tracks.find(x => x.id === S.sel); if (!t) return toast('NO PART SELECTED');
+  const r = e.target.getBoundingClientRect();
+  menu(r.left - 140, r.bottom + 2, S.effects.map(x => [x.label, () => setFx([...(t.fx || []), [x.id, Object.assign({}, x.presets.medium)]])]), 'ADD TO ' + S.sel.toUpperCase());
+};
+const MASTER = [['loudness', 'LOUDNESS', { genre: 'As the genre', club: 'Club (-7 LUFS)', stream: 'Streaming (-14 LUFS)' }],
+  ['width', 'STEREO WIDTH', { narrow: 'Narrower', genre: 'As the genre', wide: 'Wider' }],
+  ['tone', 'TONE', { darker: 'Darker', genre: 'As the genre', brighter: 'Brighter' }],
+  ['glue', 'GLUE COMPRESSION', { off: 'Off', genre: 'Gentle', heavy: 'Heavy' }],
+  ['tape', 'TAPE SATURATION', { off: 'Off', on: 'On' }]];
+$('#mixMaster').onclick = e => {
+  if (!S.song) return;
+  const r = e.target.getBoundingClientRect();
+  const m = S.mix._master || {};
+  const items = [];
+  for (const [k, label, opts] of MASTER) {
+    items.push({ label: label });
+    for (const [v, t] of Object.entries(opts)) {
+      const cur = m[k] || (k === 'tape' ? 'off' : 'genre');
+      items.push({ label: '  ' + t, chk: cur === v, fn: () => { S.mix._master = Object.assign({}, S.mix._master, { [k]: v }); remix(); } });
+    }
+  }
+  menu(r.left - 60, r.bottom + 2, items, 'MASTER');
+};
 
 // ------------------------------------------------------------------ track select, sounds, piano roll
 function renderTrackSel() {
@@ -232,6 +402,7 @@ function renderTrackSel() {
     ss.disabled = !t.choices.length;
     $('#bLock').textContent = t.locked ? '🔓 UNLOCK' : '🔒 LOCK';
   }
+  renderFx();
 }
 async function loadRoll() {
   if (!S.song || !S.sel) return;
@@ -298,19 +469,35 @@ function renderPlaylist() {
     box.appendChild(d);
   });
 }
-function menu(x, y, items) {
+function menu(x, y, items, title) {
   const m = $('#menu'); m.innerHTML = '';
+  if (title) m.insertAdjacentHTML('beforeend', `<div class="hd">${esc(title)}</div>`);
   for (const it of items) {
     if (it === '-') { m.insertAdjacentHTML('beforeend', '<div class="sep"></div>'); continue; }
-    const d = document.createElement('div'); d.className = 'mi'; d.textContent = it[0]; d.onclick = () => { m.classList.remove('on'); it[1](); }; m.appendChild(d);
+    const o = Array.isArray(it) ? { label: it[0], fn: it[1] } : it;
+    const d = document.createElement('div'); d.className = 'mi' + ('chk' in o ? ' chk' + (o.chk ? ' on' : '') : '') + (o.fn ? '' : ' dim');
+    d.textContent = o.label;
+    d.onclick = () => { if (!o.fn) return; if (!o.stay) m.classList.remove('on'); o.fn(); };
+    m.appendChild(d);
   }
-  m.style.left = Math.min(x, innerWidth - 220) + 'px'; m.style.top = Math.min(y, innerHeight - 30 * items.length) + 'px'; m.classList.add('on');
+  m.classList.add('on');
+  const h = m.offsetHeight, w = m.offsetWidth;
+  m.style.left = Math.max(4, Math.min(x, innerWidth - w - 8)) + 'px'; m.style.top = Math.max(4, Math.min(y, innerHeight - h - 8)) + 'px';
 }
 document.addEventListener('mousedown', e => { if (!e.target.closest('.menu')) $('#menu').classList.remove('on'); });
 function dl(what) { if (!S.song) return; location.href = `/api/song/${S.song.meta.id}/${what}?t=${encodeURIComponent(T)}`; }
 
 // ------------------------------------------------------------------ reference analysis
+async function openSongFile(file) {
+  if (S.busy) return toast('BUSY');
+  try {
+    const { job } = await api('/api/import', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: await file.text() });
+    const meta = await runJob(job, 'opening ' + file.name);
+    await loadSong(meta.id, true); refreshLibrary(); toast('OPENED ' + meta.title.toUpperCase());
+  } catch (e) { toast('ERROR: ' + e.message, 6000); }
+}
 async function analyzeFile(file) {
+  if (/\.json$/i.test(file.name)) return openSongFile(file);
   if (S.busy) return toast('BUSY');
   $('#said').textContent = `MEASURING ${file.name.toUpperCase()}...`;
   try {
@@ -339,7 +526,12 @@ $('#bShuffle').onclick = () => {
   S.genre = g.id; renderGenres(); $('#seed').value = 1 + Math.floor(Math.random() * 9999); $('#prompt').value = '';
   compose({ skipPrompt: true });
 };
-$('#bRepeat').onclick = e => { S.loop = !S.loop; e.target.classList.toggle('on', S.loop); toast(S.loop ? 'LOOPING THE CURRENT SECTION' : 'LOOP OFF'); };
+$('#bRepeat').onclick = () => toggleLoop();
+function toggleLoop() { S.loop = !S.loop; $('#bRepeat').classList.toggle('on', S.loop); toast(S.loop ? 'LOOPING THE CURRENT SECTION' : 'LOOP OFF'); }
+$('#bAB').onclick = toggleAB;
+$('#bMore').onclick = e => { const r = e.target.getBoundingClientRect(); moreLikeThis(r.left, r.bottom + 2); };
+$('#bDiff').onclick = () => { if (!S.song) return compose(); variation([]); };
+$('#gsearch').oninput = renderGenres;
 $('#seek').oninput = e => { if (audio.duration) audio.currentTime = audio.duration * e.target.value / 1000; };
 $('#vol').oninput = applyOut; $('#bal').oninput = applyOut;
 $('#togMix').onclick = e => { e.target.classList.toggle('on'); $('#wMixer').style.display = e.target.classList.contains('on') ? '' : 'none'; };
@@ -360,8 +552,8 @@ async function reroll(what) {
 // ------------------------------------------------------------------ composer controls
 $('#bCompose').onclick = () => compose();
 $('#prompt').addEventListener('keydown', e => { if (e.key === 'Enter') compose(); });
-$('#energy').oninput = e => $('#energyV').textContent = e.target.value;
-$$('#length button').forEach(b => b.onclick = () => { S.length = b.dataset.v; $$('#length button').forEach(x => x.classList.toggle('on', x === b)); });
+$('#energy').oninput = e => { $('#energyV').textContent = e.target.value; saveComposer(); };
+$$('#length button').forEach(b => b.onclick = () => { S.length = b.dataset.v; $$('#length button').forEach(x => x.classList.toggle('on', x === b)); saveComposer(); });
 const drop = $('#drop');
 drop.onclick = () => $('#fileIn').click();
 ['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
@@ -405,7 +597,7 @@ $('#mixPresets').onclick = e => {
   const set = f => { for (const t of S.song.tracks) setMix(t.id, { gain_db: f(t) }); renderFaders(); remix(); };
   const drum = t => ['kick', 'snare', 'clap', 'hat', 'ohat', 'ride', 'shaker', 'perc', 'rim', 'cowbell'].includes(t.role);
   menu(r.left, r.bottom + 2, [
-    ['Flat (as written)', () => { S.mix = {}; renderFaders(); remix(); }],
+    ['Flat (as written)', () => { S.mix = S.mix._master ? { _master: S.mix._master } : {}; renderFaders(); remix(); }],
     ['Drums up', () => set(t => drum(t) ? 2.5 : 0)],
     ['Low end up', () => set(t => ['kick', 'bass', 'riff'].includes(t.role) ? 2.5 : 0)],
     ['Melody up', () => set(t => ['lead', 'arp'].includes(t.role) ? 3 : 0)],
@@ -426,7 +618,10 @@ $('#plSel').onclick = async () => {
 };
 $('#plMisc').onclick = e => {
   const r = e.target.getBoundingClientRect();
-  menu(r.left, r.top - 130, [['Download WAV (master)', () => dl('wav')], ['Download stems (ZIP)', () => dl('stems')], ['Download MIDI', () => dl('midi')], ['Download song file (.sl2.json)', () => dl('json')]]);
+  menu(r.left, r.top - 200, [['Download WAV (master)', () => dl('wav')],
+    S.caps.mp3 ? ['Download MP3 (256k)', () => dl('mp3')] : { label: 'MP3 needs ffmpeg installed' },
+    ['Download stems (ZIP)', () => dl('stems')], ['Download MIDI', () => dl('midi')], ['Download song file (.sl2.json)', () => dl('json')],
+    '-', ['Open a song file...', () => $('#fileIn').click()], ['Copy diagnostics (for a bug report)', copyDiag]]);
 };
 $('#plOpts').onclick = async e => {
   if (!S.song) return;
@@ -434,9 +629,33 @@ $('#plOpts').onclick = async e => {
   const h = await api(`/api/song/${S.song.meta.id}/history`);
   menu(r.left - 120, r.top - 24 * h.length - 10, h.map((v, i) => [`${i === 0 ? '● ' : ''}${new Date(v.created * 1000).toLocaleTimeString()}  ${v.note || ''}`, () => loadSong(v.id, true)]));
 };
+async function copyDiag() {
+  try {
+    const d = await api('/api/diag');
+    const text = Object.entries(d).map(([k, v]) => `${k}: ${v}`).join('\n') + (S.song ? `\nsong: ${S.song.meta.id} (${S.song.song.genre})` : '');
+    await navigator.clipboard.writeText(text); toast('DIAGNOSTICS COPIED');
+  } catch (e) { toast('COULD NOT COPY: ' + e.message); }
+}
+function jumpSection(dir) {
+  if (!S.song) return;
+  const secs = S.song.song.sections, now = beatNow(), bpm = S.song.song.bpm;
+  const i = secs.findIndex(x => now >= x.start_bar * 4 && now < (x.start_bar + x.bars) * 4);
+  const j = Math.max(0, Math.min(secs.length - 1, (i < 0 ? 0 : i) + dir));
+  audio.currentTime = secs[j].start_bar * 4 * 60 / bpm;
+}
 document.addEventListener('keydown', e => {
-  if (e.target.matches('input, select, textarea')) return;
+  if (e.target.matches('input, select, textarea') || e.ctrlKey || e.metaKey || e.altKey) return;
+  const k = e.key.toLowerCase();
   if (e.code === 'Space') { e.preventDefault(); audio.paused ? play() : audio.pause(); }
+  else if (e.key === 'ArrowLeft') audio.currentTime = Math.max(0, audio.currentTime - 5);
+  else if (e.key === 'ArrowRight') audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 5);
+  else if (e.key === '[') jumpSection(-1);
+  else if (e.key === ']') jumpSection(1);
+  else if (k === 'l') toggleLoop();
+  else if (k === 'n') reroll('all');
+  else if (k === 'b') toggleAB();
+  else if (k === 'z') $('#bPrev').click();
+  else if (k === 'm') { const r = $('#bMore').getBoundingClientRect(); moreLikeThis(r.left, r.bottom + 2); }
 });
 
 // ------------------------------------------------------------------ frame loop
@@ -466,8 +685,13 @@ audio.addEventListener('play', ensureAudio);
 // ------------------------------------------------------------------ start
 (async () => {
   const g = await api('/api/genres');
-  S.genres = g.genres; S.genre = (S.genres.find(x => x.id === 'liquid_dnb') || S.genres[0]).id;
-  renderGenres();
+  S.genres = g.genres; S.choices = g.choices || {}; S.caps = g.caps || {}; S.effects = g.effects || [];
+  const saved = mem.get('composer', {});
+  S.genre = (S.genres.find(x => x.id === saved.genre) || S.genres.find(x => x.id === 'liquid_dnb') || S.genres[0]).id;
+  S.feel = saved.feel || {};
+  if (saved.length) { S.length = saved.length; $$('#length button').forEach(x => x.classList.toggle('on', x.dataset.v === S.length)); }
+  if (saved.energy) { $('#energy').value = saved.energy; $('#energyV').textContent = saved.energy; }
+  renderGenres(); renderFeel();
   await refreshLibrary();
   if (S.lib.length) await loadSong(S.lib[0].id, false);
   else setMarquee('SL2 - STUDIO LAB 2 *** DESCRIBE A TRACK IN THE COMPOSER, OR PICK A GENRE AND PRESS COMPOSE *** ');

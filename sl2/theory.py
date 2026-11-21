@@ -136,3 +136,36 @@ def voice_lead(pcs, prev, lo=52, hi=79, center=None):
 
 def nearest(midi_choices, target):
     return min(midi_choices, key=lambda m: (abs(m - target), m))
+
+
+def color_pcs(key, degree, size, add9):
+    """A chord's pitch classes with its colour notes (7th, 9th), leaving out colours that don't sound like that chord:
+    a 9th a semitone above the root (b9), or a 7th on a diminished triad. -> (pcs, core) where core is the triad."""
+    core = key.chord_pcs(degree, 3)
+    pcs = list(core)
+    if size >= 4 and key.quality(degree % 7) != 'dim':
+        pcs.append(key.pc(degree + 6))
+    if add9:
+        nine = key.pc(degree + 8)
+        if (nine - core[0]) % 12 != 1:
+            pcs.append(nine)
+    return pcs, core
+
+
+def declutter(voicing, core_pcs, hi):
+    """No two notes a semitone apart: the colour note (7th / 9th) moves up an octave, where it rings open, or is
+    dropped when that would leave the range."""
+    v = sorted(voicing)
+    for _ in range(6):
+        clash = next(((a, b) for a, b in zip(v, v[1:]) if b - a == 1), None)
+        if not clash:
+            break
+        a, b = clash
+        mover = a if a % 12 not in core_pcs else b if b % 12 not in core_pcs else None
+        if mover is None:
+            break
+        v.remove(mover)
+        if mover + 12 <= hi + 5 and mover + 12 not in v:
+            v.append(mover + 12)
+        v.sort()
+    return v
