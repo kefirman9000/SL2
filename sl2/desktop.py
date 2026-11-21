@@ -57,7 +57,7 @@ class Api:
     def save(self, path):
         """Download one of SL2's exports (path like /api/song/<id>/wav) to a place the user picks."""
         import webview
-        if not re.fullmatch(r'/api/song/[A-Za-z0-9_.-]+/(wav|mp3|stems|midi|json)', path or ''):
+        if not re.fullmatch(r'/api/song/[A-Za-z0-9_.-]+/(wav|wav24|mp3|stems|midi|json)', path or ''):
             return dict(ok=False, error='not an export')
         req = urllib.request.Request(self.url + path, headers={'X-SL2-Token': self.token})
         with urllib.request.urlopen(req) as r:

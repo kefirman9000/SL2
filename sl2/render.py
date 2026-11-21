@@ -22,14 +22,15 @@ from concurrent.futures.process import BrokenProcessPool
 
 import numpy as np
 from scipy import signal
-from scipy.ndimage import minimum_filter1d, uniform_filter1d
+from scipy.ndimage import maximum_filter1d, minimum_filter1d, uniform_filter1d
 
 from . import genres as G
 from . import synth
 from .analyze import BANDS, lufs
 
 SR = synth.SR
-ENGINE = 'sl2-engine-1'
+ENGINE = 'sl2-engine-2'                     # 2: round-robin drums, tuned kicks, ducked and section-shaped sends
+SEND_BY_KIND = {'drop': 0.8, 'groove': 1.0, 'build': 1.15, 'break': 1.45, 'intro': 1.2, 'outro': 1.35}
 ROLE_TARGET = {'kick': -14, 'snare': -17.5, 'clap': -19, 'hat': -28, 'ohat': -28, 'ride': -30, 'shaker': -31, 'perc': -26,
                'rim': -27, 'cowbell': -26, 'bass': -15.5, 'riff': -18, 'chords': -21, 'pad': -25, 'lead': -19, 'arp': -24, 'answer': -24,
                'fx': -28}
@@ -64,6 +65,35 @@ def _beat_s(song):
     return 60.0 / song.bpm
 
 
+@functools.lru_cache(maxsize=64)
+def kick_f0(inst):
+    """The fundamental of a kick sound (Hz), measured from its tail."""
+    x = np.asarray(synth.play(inst, 36, 0.3, 1.0, {}), float).mean(0)
+    a = int(0.04 * SR)
+    seg = x[a:a + int(0.25 * SR)]
+    if len(seg) < 2048:
+        return 50.0
+    F = np.abs(np.fft.rfft(seg * np.hanning(len(seg)), 1 << 16))
+    f = np.fft.rfftfreq(1 << 16, 1 / SR)
+    m = (f > 30) & (f < 130)
+    return float(f[m][np.argmax(F[m])])
+
+
+def kick_tune(inst, key_name):
+    """Semitones that put a kick on the song's root (or its fifth when that's closer), at most 3 either way."""
+    from .theory import parse_key
+    pk = parse_key(key_name or '')
+    if not pk:
+        return 0.0
+    cur = 12 * np.log2(kick_f0(inst) / 440.0) + 69
+    best = None
+    for target_pc in (pk[0], (pk[0] + 7) % 12):
+        d = ((target_pc - cur) % 12 + 6) % 12 - 6
+        if best is None or abs(d) < abs(best):
+            best = d
+    return float(np.clip(round(best, 2), -3, 3))
+
+
 def track_specs(song):
     g = G.load(song.genre)
     bs = _beat_s(song)
@@ -87,6 +117,18 @@ def track_specs(song):
                     kicks=kick if t.role != 'kick' and sc.get('depth', 0) > 0 else [])
         if auto:
             spec['auto'] = auto
+        if t.role == 'kick':
+            spec['tune'] = kick_tune(t.instrument, song.key)
+        if spec['rev'] > 0 or spec['dly'] > 0:            # sends follow the arrangement: tight drops, wet breakdowns,
+            curve, throws = [], []                         # and a delay throw on the last beat before each drop
+            for i, x in enumerate(song.sections):
+                s0, s1 = round(x.start_bar * 4 * bs, 5), round((x.start_bar + x.bars) * 4 * bs, 5)
+                curve.append([s0, s1, SEND_BY_KIND.get(x.tags[0], 1.0)])
+                if i + 1 < len(song.sections) and song.sections[i + 1].tags[0] == 'drop' and t.role in ('lead', 'answer', 'chords', 'arp'):
+                    throws.append([round(s1 - bs, 5), s1])
+            spec['sends'] = curve
+            if throws:
+                spec['throws'] = throws
         chain = pr.get('fx') or []
         if chain:
             spec['fx'] = chain
@@ -120,9 +162,16 @@ def render_track(spec):
     mono = spec['role'] in MONO_ROLES
     fade = int(0.006 * SR)
     synced = spec['inst'] in synth.TEMPO_SYNCED
+    role = spec['role']
+    drum = role in DRUMS
+    tune = spec.get('tune', 0.0)
     for i, (st, dur, midi, vel, p) in enumerate(notes):
         if synced:
             p = dict(p, spb=round(spec['beat'], 4))
+        if drum:                                   # 4 round-robin takes, so no two hits in a row are identical
+            p = dict(p, rr=i % 4)
+            if tune:
+                p['tune'] = tune
         x = synth.play(spec['inst'], midi, dur, vel, p)
         s0 = int(st * SR)
         if s0 >= n_total:
@@ -134,7 +183,6 @@ def render_track(spec):
                 x[:, cut:] *= np.linspace(1, 0, x.shape[1] - cut, dtype=np.float32)
         e = min(n_total, s0 + x.shape[1])
         buf[:, s0:e] += x[:, :e - s0]
-    role = spec['role']
     # tidy the low end: only kick, bass, riff and fx keep their sub
     if role not in ('kick', 'bass', 'riff', 'fx'):
         hpf = {'pad': 220, 'chords': 160, 'lead': 180, 'arp': 200, 'answer': 220, 'hat': 3000, 'ohat': 3000, 'ride': 2500, 'shaker': 4000,
@@ -173,11 +221,19 @@ def render_track(spec):
         env = 1 - depth * np.exp(-since / (rel / 3)) * att
         buf *= env.astype(np.float32)
     dry = buf
-    wet = dry.copy()
-    # delay: dotted 8th ping-pong, each repeat darker
-    if spec['dly'] > 0:
+    sends = np.zeros_like(dry)
+    mono_dry = (dry[0] + dry[1]) * 0.5
+    curve = np.ones(n_total, np.float32)
+    for s0, s1, m in spec.get('sends', []):
+        curve[int(s0 * SR):int(s1 * SR)] = m
+    curve = uniform_filter1d(curve, int(0.25 * SR)).astype(np.float32)
+    throw = np.zeros(n_total, np.float32)
+    for s0, s1 in spec.get('throws', []):
+        throw[int(s0 * SR):int(s1 * SR)] = 1.0
+    # delay: dotted 8th ping-pong, each repeat darker (+ throws into the drops)
+    if spec['dly'] > 0 or spec.get('throws'):
         d = int(0.75 * spec['beat'] * SR)
-        src = (dry[0] + dry[1]) * 0.5 * spec['dly']
+        src = mono_dry * (spec['dly'] * curve + 0.6 * throw)
         sos = signal.butter(1, 3500 / (SR / 2), 'low', output='sos')
         e = src
         for k in range(1, 6):
@@ -185,14 +241,24 @@ def render_track(spec):
             sh = d * k
             if sh >= n_total:
                 break
-            wet[k % 2, sh:] += e[:n_total - sh].astype(np.float32)
-    # reverb send
+            sends[k % 2, sh:] += e[:n_total - sh].astype(np.float32)
+    # reverb send, with a tempo-synced pre-delay (a 1/32 note, at most 60 ms) so the dry hit stays in front
     if spec['rev'] > 0:
         ir = impulse(spec['space'])
-        src = (dry[0] + dry[1]) * 0.5 * spec['rev']
+        pre = int(min(0.06, spec['beat'] / 8) * SR)
+        src = mono_dry * spec['rev'] * curve
         src = signal.sosfilt(signal.butter(2, 250 / (SR / 2), 'high', output='sos'), src).astype(np.float32)
-        wet += reverb(src, ir, n_total)
-    return wet.astype(np.float32), dict(gain_db=round(gain_db, 1), level_db=round(measured, 1))
+        src = np.concatenate([np.zeros(pre, np.float32), src[:n_total - pre]])
+        sends += reverb(src, ir, n_total)
+    if spec['rev'] > 0 or spec['dly'] > 0:
+        # ducked sends: the echoes and the room step back while the part plays and bloom in its gaps
+        env = np.sqrt(np.maximum(uniform_filter1d(mono_dry.astype(np.float64) ** 2, int(0.03 * SR)), 0))
+        ref = np.percentile(env[env > 1e-5], 90) if (env > 1e-5).any() else 1.0
+        duck = 1 - 0.5 * np.clip(env / (ref + 1e-9), 0, 1)
+        duck = uniform_filter1d(duck, int(0.12 * SR)).astype(np.float32)
+        sends *= duck
+    wet = dry + sends
+    return wet.astype(np.float32), dict(gain_db=round(gain_db, 1), level_db=round(measured, 1), tune=tune or None)
 
 
 def apply_sweeps(buf, auto):
@@ -358,7 +424,7 @@ def width_of(x):
 
 
 MASTER_CHOICES = dict(loudness=['genre', 'club', 'stream'], width=['narrow', 'genre', 'wide'], tone=['darker', 'genre', 'brighter'],
-                      glue=['off', 'genre', 'heavy'], tape=['off', 'on'])
+                      glue=['off', 'genre', 'heavy'], tape=['off', 'on'], buses=['on', 'off'])
 
 
 def master(mix, g, brightness=0.0, opts=None):
@@ -424,7 +490,8 @@ def master(mix, g, brightness=0.0, opts=None):
         pk = np.abs(x).max() + 1e-9
         y = np.tanh(x / pk * 1.8) / np.tanh(1.8) * pk
         x = signal.sosfilt(_shelf_sos(12000, -1.5, 'high'), y, axis=1)
-    # 4) loudness to the genre's target, then a look-ahead limiter at -1 dBFS
+    # 4) loudness to the genre's target: a soft clipper takes the tops off the loudest transients, then a look-ahead
+    #    true-peak limiter holds -1 dBTP
     target_l = float(g.get('loudness', fp.get('lufs', -10)))
     if o.get('loudness') == 'club':
         target_l = max(target_l, -7.0)
@@ -432,15 +499,16 @@ def master(mix, g, brightness=0.0, opts=None):
         target_l = -14.0
     pre = x
     gain = target_l - lufs(pre, SR)
-    x = limit(pre * 10 ** (gain / 20), -1.0)
+    x = limit(soft_clip(pre * 10 ** (gain / 20), -1.0), -1.0)
     L1 = lufs(x, SR)
     if L1 < target_l - 0.5:                        # the limiter ate some loudness: push once more
         gain += min(4.0, target_l - L1)
-        x = limit(pre * 10 ** (gain / 20), -1.0)
+        x = limit(soft_clip(pre * 10 ** (gain / 20), -1.0), -1.0)
         L1 = lufs(x, SR)
     rep['lufs'] = round(L1, 1)
     rep['target_lufs'] = target_l
     rep['peak_db'] = round(float(20 * np.log10(np.abs(x).max() + 1e-9)), 1)
+    rep['true_peak_db'] = round(float(20 * np.log10(true_peak(x).max() + 1e-9)), 1)
     rep['width'] = round(width_of(x), 2)
     rep['target_width'] = fp.get('width')
     return x.astype(np.float32), rep
@@ -451,22 +519,110 @@ def _shelf_sos(fc, gain_db, kind):
     return _sos('highshelf' if kind == 'high' else 'lowshelf', fc, 0.7, gain_db)[0]
 
 
-def limit(x, ceiling_db=-1.0, look=0.0015):
+def true_peak(x, os_=4):
+    """Inter-sample (true) peak per sample of x, from a 4x oversampled copy: what a DAC or an MP3 decoder will see."""
+    up = signal.resample_poly(x, os_, 1, axis=1)
+    return np.abs(up).max(0).reshape(-1, os_).max(1)[:x.shape[1]] if up.shape[1] >= x.shape[1] * os_ else np.abs(x).max(0)
+
+
+def soft_clip(x, ceiling_db=-1.0, knee_db=4.0):
+    """Clip the very tops of the loudest transients smoothly before the limiter, so it has less to do (less pumping)."""
     c = 10 ** (ceiling_db / 20)
-    peak = np.abs(x).max(0)
-    g = np.minimum(1.0, c / np.maximum(peak, 1e-9))
-    w = max(3, int(look * SR))
-    g = minimum_filter1d(g, size=2 * w + 1)
-    g = uniform_filter1d(g, size=w)
-    y = x * g
+    t = c * 10 ** (-knee_db / 20)
+    a = np.abs(x)
+    over = a > t
+    y = x.copy()
+    y[over] = np.sign(x[over]) * (t + (c - t) * np.tanh((a[over] - t) / (c - t)))
+    return y
+
+
+def limit(x, ceiling_db=-1.0, look=0.0015):
+    """Look-ahead limiter on the true (inter-sample) peak: nothing goes over the ceiling once decoded."""
+    c = 10 ** (ceiling_db / 20)
+    y = x
+    for _ in range(3):
+        peak = true_peak(y)
+        if peak.max() <= c * 1.0005:
+            break
+        g = np.minimum(1.0, c / np.maximum(peak, 1e-9))
+        w = max(3, int(look * SR))
+        g = minimum_filter1d(g, size=2 * w + 1)
+        g = uniform_filter1d(g, size=w)
+        y = y * g
     return np.clip(y, -c, c)
 
 
 # ------------------------------------------------------------------ mixing
-def mix_stems(paths, song, mix=None):
-    """Sum the stems with the user's mixer settings. mix: {track_id: {gain_db, pan, mute, solo}}"""
+BUS_OF = {**{r: 'drums' for r in DRUMS}, 'bass': 'low', 'riff': 'low', 'chords': 'music', 'pad': 'music', 'arp': 'music',
+          'answer': 'music', 'lead': 'lead', 'fx': 'fx'}
+
+
+def _comp_gain(x, thr_db, ratio, att, rel):
+    """Gain curve (n,) of a feed-forward compressor on (2, n) x."""
+    lvl = np.abs(x).max(0)
+    env = maximum_filter1d(lvl, max(1, int(att * SR)))
+    a = np.exp(-1 / max(1, rel * SR))
+    env = signal.lfilter([1 - a], [1, -a], env)
+    db = 20 * np.log10(env + 1e-9)
+    gr = np.maximum(0, db - thr_db) * (1 - 1 / ratio)
+    return 10 ** (-gr / 20)
+
+
+def bus_process(buses, info):
+    """The mix buses, the way an engineer would set them up:
+    drums  parallel ('New York') compression under the dry kit + a touch of saturation: punch without losing transients
+    low    the bass and riff below 120 Hz kept mono, plus their own upper harmonics so the bass reads on small speakers
+    music  chords, pads and arps make room for the lead: a dynamic dip at the lead's own frequency while it plays
+    -> one stereo mix"""
+    out = None
+    n = max(b.shape[1] for b in buses.values())
+
+    def pad(x):
+        return x if x.shape[1] == n else np.pad(x, ((0, 0), (0, n - x.shape[1])))
+    buses = {k: pad(v.astype(np.float64)) for k, v in buses.items()}
+    if 'drums' in buses:
+        d = buses['drums']
+        g = _comp_gain(d, -24.0, 6.0, 0.001, 0.08)
+        crushed = d * g
+        crushed *= np.sqrt((d ** 2).mean() / max((crushed ** 2).mean(), 1e-12))
+        crushed = np.tanh(crushed * 1.6) / 1.6
+        buses['drums'] = d + 0.28 * crushed
+        info['drum_bus'] = 'parallel compression 28 %'
+    if 'low' in buses:
+        x = buses['low']
+        sos_lo = signal.butter(4, 120 / (SR / 2), 'low', output='sos')
+        lo = signal.sosfilt(sos_lo, x, axis=1)
+        hi = x - lo
+        mono_lo = lo.mean(0, keepdims=True).repeat(2, 0)
+        harm = np.tanh(mono_lo * 4.0)
+        harm = signal.sosfilt(signal.butter(2, [160 / (SR / 2), 1200 / (SR / 2)], 'band', output='sos'), harm, axis=1)
+        k = 0.12 * np.sqrt((mono_lo ** 2).mean() / max((harm ** 2).mean(), 1e-12))
+        buses['low'] = mono_lo + hi + harm * k
+        info['low_bus'] = 'mono below 120 Hz, sub harmonics added'
+    if 'lead' in buses and 'music' in buses:
+        lead = buses['lead']
+        f, P = signal.welch(lead.mean(0)[:SR * 120], SR, nperseg=8192)
+        band = (f > 400) & (f < 5000)
+        if P[band].sum() > 0:
+            f0 = float(f[band][np.argmax(P[band])])
+            from .fx import _sos
+            cut = signal.sosfilt(_sos('peak', f0, 1.2, -3.0), buses['music'], axis=1)
+            env = np.sqrt(np.maximum(uniform_filter1d(lead.mean(0) ** 2, int(0.05 * SR)), 0))
+            ref = np.percentile(env[env > 1e-5], 80) if (env > 1e-5).any() else 1.0
+            act = uniform_filter1d(np.clip(env / (ref + 1e-9), 0, 1), int(0.1 * SR))
+            buses['music'] = buses['music'] + (cut - buses['music']) * act
+            info['music_bus'] = f'-3 dB at {f0:.0f} Hz while the lead plays'
+    for v in buses.values():
+        out = v if out is None else out + v
+    return out.astype(np.float32)
+
+
+def mix_stems(paths, song, mix=None, info=None, buses_out=None):
+    """Sum the stems with the user's mixer settings through the mix buses. mix: {track_id: {gain_db, pan, mute, solo}}"""
     mix = mix or {}
+    info = info if info is not None else {}
     solo = [t for t, m in mix.items() if m.get('solo')]
+    buses = {}
     acc = None
     for t in song.tracks:
         m = mix.get(t.id, {})
@@ -480,7 +636,15 @@ def mix_stems(paths, song, mix=None):
             y = np.vstack([x[0] * g * l, x[1] * g * r])
         else:
             y = x * g
-        acc = y.astype(np.float32) if acc is None else acc + y
+        b = BUS_OF.get(t.role, 'music')
+        buses[b] = y.astype(np.float32) if b not in buses else _add(buses[b], y)
+    if buses_out is not None:
+        buses_out.update({k: v for k, v in buses.items() if k in ('lead', 'music')})
+    if buses and (mix.get('_master') or {}).get('buses', 'on') != 'off':
+        acc = bus_process(buses, info)
+    elif buses:
+        for v in buses.values():
+            acc = v if acc is None else _add(acc, v)
     if acc is None:
         n = int((song.total_bars() * 4 * 60 / song.bpm + 4) * SR)
         acc = np.zeros((2, n), np.float32)
@@ -492,17 +656,31 @@ def mix_stems(paths, song, mix=None):
     return acc[:, :min(cut, acc.shape[1])]
 
 
-def write_wav(path, x, sr=SR):
+def _add(a, b):
+    n = max(a.shape[1], b.shape[1])
+    out = np.zeros((2, n), np.float32)
+    out[:, :a.shape[1]] += a
+    out[:, :b.shape[1]] += b
+    return out
+
+
+def write_wav(path, x, sr=SR, bits=16):
+    """16-bit with TPDF dither (the player, sharing), or 24-bit (for mastering elsewhere)."""
     rng = np.random.default_rng(0)
-    d = (rng.random(x.shape) - rng.random(x.shape)) / 32768
-    y = np.clip(x + d, -1, 1)
-    pcm = (y.T * 32767).astype('<i2')
+    q = 2 ** (bits - 1)
+    d = (rng.random(x.shape) - rng.random(x.shape)) / q
+    y = np.clip(x + d, -1, 1 - 1 / q)
+    if bits == 24:
+        v = np.round(y.T * (q - 1)).astype('<i4').reshape(-1)
+        pcm = np.frombuffer(v.tobytes(), np.uint8).reshape(-1, 4)[:, :3].tobytes()
+    else:
+        pcm = (y.T * (q - 1)).astype('<i2').tobytes()
     tmp = path + '.tmp'
     with wave.open(tmp, 'wb') as w:
         w.setnchannels(2)
-        w.setsampwidth(2)
+        w.setsampwidth(bits // 8)
         w.setframerate(sr)
-        w.writeframes(pcm.tobytes())
+        w.writeframes(pcm)
     replace_file(tmp, path)
 
 

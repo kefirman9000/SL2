@@ -161,6 +161,9 @@ class Handler(BaseHTTPRequestHandler):
             if what == 'wav':
                 meta = store.load_meta(sid)
                 return self._file(os.path.join(store._dir(sid), 'mix.wav'), 'audio/wav', download=_fname(meta, 'wav'))
+            if what == 'wav24':
+                meta = store.load_meta(sid)
+                return self._file(store.export_wav24(sid), 'audio/wav', download=_fname(meta, 'wav').replace('.wav', ' (24-bit).wav'))
             if what == 'mp3':
                 meta = store.load_meta(sid)
                 return self._file(store.export_mp3(sid), 'audio/mpeg', download=_fname(meta, 'mp3'))

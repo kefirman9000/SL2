@@ -54,8 +54,11 @@ def sine(freq, n, sr=SR, phase=0.0):
     return np.sin(ph)
 
 
+_RR = 0          # round-robin take of the drum hit being made (set per hit by _cached): new noise each take
+
+
 def noise(n, seed=0):
-    return np.random.default_rng(seed).standard_normal(n)
+    return np.random.default_rng(seed + 7919 * _RR).standard_normal(n)
 
 
 def adsr(n, a, d, s, r, dur_n, sr=SR):
@@ -731,11 +734,24 @@ def _cached(inst, midi, vel_q, dur_q, pkey):
     vel = vel_q / 16
     dur = dur_q / 200
     if inst in DRUMS:
+        global _RR
         fn = DRUMS[inst]
-        if fn is d_perc:
-            x = d_perc(inst, vel, p, f=mtof(midi) if midi else None)
-        else:
-            x = fn(inst, vel, p)
+        _RR = int(p.pop('rr', 0))                  # round robin: each take has its own noise, like a sampled kit
+        try:
+            if fn is d_perc:
+                x = d_perc(inst, vel, p, f=mtof(midi) if midi else None)
+            else:
+                x = fn(inst, vel, p)
+        finally:
+            _RR = 0
+        x = np.asarray(x, dtype=np.float64)
+        if vel < 0.95:                             # softer hits are darker, as on a real drum
+            x = x + (lp(x, 3500) - x) * min(0.7, (1 - vel) * 0.9)
+        tune = float(p.get('tune', 0))
+        if abs(tune) > 0.05:                       # tuned to the song's key: resampled up or down
+            k = 2 ** (tune / 12)
+            n_out = max(16, int(x.shape[1] / k))
+            x = signal.resample(x, n_out, axis=1)
     elif inst == 'fx':
         x = fx(p.get('kind', 'riser'), dur, vel, p)
     else:
