@@ -242,11 +242,21 @@
   {
    "id": "chords",
    "role": "chords",
-   "inst": "keys_epiano",
+   "inst": "fm_epiano",
    "min": 0.0,
    "max": 1.01,
    "rev": 0.35,
-   "sc": 0.5
+   "sc": 0.5,
+   "fx": [
+    [
+     "chorus",
+     {
+      "depth": 0.004,
+      "rate": 0.6,
+      "mix": 0.3
+     }
+    ]
+   ]
   },
   {
    "id": "pad",

@@ -165,7 +165,7 @@
   {
    "id": "snare",
    "role": "snare",
-   "inst": "snare_dnb",
+   "inst": "snare_heavy",
    "min": 0.45,
    "max": 1.01
   },
@@ -186,9 +186,18 @@
   {
    "id": "bass",
    "role": "bass",
-   "inst": "bass_reese",
+   "inst": "neuro",
    "min": 0.5,
-   "max": 1.01
+   "max": 1.01,
+   "fx": [
+    [
+     "ott",
+     {
+      "amt": 0.5,
+      "mix": 1.0
+     }
+    ]
+   ]
   },
   {
    "id": "pad",

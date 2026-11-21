@@ -77,21 +77,42 @@
   {
    "id": "pad",
    "role": "pad",
-   "inst": "pad_warm",
+   "inst": "dark_pad",
    "min": 0.0,
    "max": 1.01,
    "rev": 0.5,
-   "sc": 0.8
+   "sc": 0.8,
+   "fx": [
+    [
+     "chorus",
+     {
+      "depth": 0.004,
+      "rate": 0.6,
+      "mix": 0.3
+     }
+    ]
+   ]
   },
   {
    "id": "arp",
    "role": "arp",
-   "inst": "pluck",
+   "inst": "techno_seq",
    "min": 0.3,
    "max": 1.01,
    "rev": 0.35,
    "dly": 0.35,
-   "sc": 0.6
+   "sc": 0.6,
+   "fx": [
+    [
+     "echo",
+     {
+      "beats": 0.75,
+      "fb": 0.45,
+      "mix": 0.3,
+      "tone": 3000.0
+     }
+    ]
+   ]
   },
   {
    "id": "lead",
@@ -101,7 +122,26 @@
    "max": 1.01,
    "rev": 0.45,
    "dly": 0.25,
-   "sc": 0.5
+   "sc": 0.5,
+   "fx": [
+    [
+     "chorus",
+     {
+      "depth": 0.004,
+      "rate": 0.6,
+      "mix": 0.3
+     }
+    ],
+    [
+     "echo",
+     {
+      "beats": 0.75,
+      "fb": 0.3,
+      "mix": 0.18,
+      "tone": 3000.0
+     }
+    ]
+   ]
   },
   {
    "id": "fx",

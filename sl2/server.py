@@ -137,7 +137,8 @@ class Handler(BaseHTTPRequestHandler):
     def _get_api(self, p, q):
         if p == '/api/genres':
             from .compose import CHOICES
-            return self._send(200, dict(genres=genres.summary(), sounds=LABELS, choices=CHOICES,
+            from .fx import menu as fx_menu
+            return self._send(200, dict(genres=genres.summary(), sounds=LABELS, choices=CHOICES, effects=fx_menu(),
                                         caps=dict(mp3=bool(shutil.which('ffmpeg')))))
         if p == '/api/diag':
             return self._send(200, diagnostics())
@@ -226,6 +227,8 @@ class Handler(BaseHTTPRequestHandler):
                         return self._send(200, dict(job=store.start_job('section', store.reroll_section, sid, body['index'])))
                     return self._send(200, dict(job=store.start_job('section', store.edit_section, sid, body['index'], body['action'],
                                                                     body.get('track'), body.get('bars', 4))))
+                if what == 'fx':
+                    return self._send(200, dict(job=store.start_job('effects', store.set_fx, sid, body['track'], body.get('fx', []))))
                 if what == 'variation':
                     return self._send(200, dict(job=store.start_job('variation', store.variation, sid, body.get('keep', []))))
                 if what == 'star':

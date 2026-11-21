@@ -87,6 +87,11 @@ def track_specs(song):
                     kicks=kick if t.role != 'kick' and sc.get('depth', 0) > 0 else [])
         if auto:
             spec['auto'] = auto
+        chain = pr.get('fx') or []
+        if chain:
+            spec['fx'] = chain
+            if any(c[0] in ('stutter', 'reverse') for c in chain):
+                spec['secs'] = [[round(x.start_bar * 4 * bs, 5), round((x.start_bar + x.bars) * 4 * bs, 5)] for x in song.sections]
         spec['hash'] = hashlib.sha1(json.dumps(spec, sort_keys=True).encode()).hexdigest()[:20]
         specs.append(spec)
     return specs
@@ -114,7 +119,10 @@ def render_track(spec):
     notes = sorted(spec['notes'], key=lambda n: n[0])
     mono = spec['role'] in MONO_ROLES
     fade = int(0.006 * SR)
+    synced = spec['inst'] in synth.TEMPO_SYNCED
     for i, (st, dur, midi, vel, p) in enumerate(notes):
+        if synced:
+            p = dict(p, spb=round(spec['beat'], 4))
         x = synth.play(spec['inst'], midi, dur, vel, p)
         s0 = int(st * SR)
         if s0 >= n_total:
@@ -132,6 +140,10 @@ def render_track(spec):
         hpf = {'pad': 220, 'chords': 160, 'lead': 180, 'arp': 200, 'answer': 220, 'hat': 3000, 'ohat': 3000, 'ride': 2500, 'shaker': 4000,
                'snare': 110, 'clap': 200, 'perc': 90, 'rim': 300, 'cowbell': 300}.get(role, 120)
         buf = signal.sosfilt(signal.butter(2, hpf / (SR / 2), 'high', output='sos'), buf, axis=1).astype(np.float32)
+    # the part's effects chain (drive, chorus, gate, OTT, echo ...)
+    if spec.get('fx'):
+        from .fx import apply_chain
+        buf = apply_chain(buf, spec['fx'], spec['beat'], spec.get('secs'))
     # filter sweeps (automation)
     if spec.get('auto'):
         buf = apply_sweeps(buf, spec['auto'])
@@ -345,10 +357,19 @@ def width_of(x):
     return float(np.sqrt((side ** 2).mean() / ((mid ** 2).mean() + 1e-12)))
 
 
-def master(mix, g, brightness=0.0):
-    """Ref-steered master. -> (stereo float32, report dict)"""
-    fp = g.get('fingerprint') or {}
-    rep = {}
+MASTER_CHOICES = dict(loudness=['genre', 'club', 'stream'], width=['narrow', 'genre', 'wide'], tone=['darker', 'genre', 'brighter'],
+                      glue=['off', 'genre', 'heavy'], tape=['off', 'on'])
+
+
+def master(mix, g, brightness=0.0, opts=None):
+    """Ref-steered master. -> (stereo float32, report dict)
+    opts (the mixer's MASTER menu): loudness genre / club (-7 LUFS) / stream (-14), width narrow / genre / wide,
+    tone darker / genre / brighter, glue off / genre / heavy, tape off / on."""
+    fp = dict(g.get('fingerprint') or {})
+    o = {k: v for k, v in (opts or {}).items() if k in MASTER_CHOICES and v in MASTER_CHOICES[k]}
+    if o.get('width') in ('narrow', 'wide') and fp.get('width'):
+        fp['width'] = fp['width'] * (0.6 if o['width'] == 'narrow' else 1.45)
+    rep = {'options': o} if o else {}
     x = signal.sosfilt(signal.butter(2, 25 / (SR / 2), 'high', output='sos'), mix, axis=1)
     b = float(g.get('brightness', 0.0)) + brightness
     if b <= -0.6:                               # really dark genres (lo-fi): a gentle low-pass, like a worn tape
@@ -385,16 +406,30 @@ def master(mix, g, brightness=0.0):
         side = side * k
         rep['width_scale'] = round(k, 2)
     x = np.vstack([mid + side, mid - side])
-    # 3) glue compression (2:1 above -16 dB, 10 ms / 150 ms)
-    env = np.abs(x).max(0)
-    a_rel = np.exp(-1 / (0.15 * SR))
-    lvl = signal.lfilter([1 - a_rel], [1, -a_rel], env)
-    db = 20 * np.log10(lvl + 1e-9)
-    gr = np.where(db > -16, (db + 16) * (1 - 1 / 2.0), 0)
-    x = x * (10 ** (-gr / 20))
-    rep['glue_gr_db'] = round(float(np.percentile(gr, 95)), 1)
+    # tone tilt (MASTER menu)
+    if o.get('tone') in ('darker', 'brighter'):
+        sgn = 1 if o['tone'] == 'brighter' else -1
+        x = signal.sosfilt(np.vstack([_shelf_sos(6500, 2.5 * sgn, 'high'), _shelf_sos(140, -1.0 * sgn, 'low')]), x, axis=1)
+    # 3) glue compression (2:1 above -16 dB, 10 ms / 150 ms; heavy: 4:1 above -22 dB)
+    if o.get('glue') != 'off':
+        thr, ratio = (-22.0, 4.0) if o.get('glue') == 'heavy' else (-16.0, 2.0)
+        env = np.abs(x).max(0)
+        a_rel = np.exp(-1 / (0.15 * SR))
+        lvl = signal.lfilter([1 - a_rel], [1, -a_rel], env)
+        db = 20 * np.log10(lvl + 1e-9)
+        gr = np.where(db > thr, (db - thr) * (1 - 1 / ratio), 0)
+        x = x * (10 ** (-gr / 20))
+        rep['glue_gr_db'] = round(float(np.percentile(gr, 95)), 1)
+    if o.get('tape') == 'on':                       # tape saturation: rounds the peaks before the limiter
+        pk = np.abs(x).max() + 1e-9
+        y = np.tanh(x / pk * 1.8) / np.tanh(1.8) * pk
+        x = signal.sosfilt(_shelf_sos(12000, -1.5, 'high'), y, axis=1)
     # 4) loudness to the genre's target, then a look-ahead limiter at -1 dBFS
     target_l = float(g.get('loudness', fp.get('lufs', -10)))
+    if o.get('loudness') == 'club':
+        target_l = max(target_l, -7.0)
+    elif o.get('loudness') == 'stream':
+        target_l = -14.0
     pre = x
     gain = target_l - lufs(pre, SR)
     x = limit(pre * 10 ** (gain / 20), -1.0)
@@ -409,6 +444,11 @@ def master(mix, g, brightness=0.0):
     rep['width'] = round(width_of(x), 2)
     rep['target_width'] = fp.get('width')
     return x.astype(np.float32), rep
+
+
+def _shelf_sos(fc, gain_db, kind):
+    from .fx import _sos
+    return _sos('highshelf' if kind == 'high' else 'lowshelf', fc, 0.7, gain_db)[0]
 
 
 def limit(x, ceiling_db=-1.0, look=0.0015):

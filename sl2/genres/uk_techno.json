@@ -1,0 +1,538 @@
+{
+ "extends": "_club",
+ "name": "Euphoric UK Techno",
+ "group": "House & Techno",
+ "refs": "Scuba - NE1BUTU",
+ "desc": "Scuba-style 128 BPM UK techno: a simple, punchy broken kick over a heavy sub and a percussion bed that fills in to rolling 16ths, then a long final stretch where pads, rave stabs, plucks and a soaring lead stack up section by section into a euphoric ending.",
+ "keywords": [
+  "uk techno",
+  "euphoric techno",
+  "scuba",
+  "ne1butu",
+  "rave techno",
+  "festival techno",
+  "euphoric",
+  "slow build",
+  "hotflush"
+ ],
+ "bpm": [
+  126,
+  130
+ ],
+ "scales": {
+  "major": 2,
+  "mixolydian": 1,
+  "dorian": 1
+ },
+ "loudness": -9.5,
+ "space": "hall",
+ "brightness": -0.05,
+ "fingerprint": {
+  "tone": [
+   0.0,
+   -5.8,
+   -8.4,
+   -9.1,
+   -7.2,
+   -8.7,
+   -10.3,
+   -12.3,
+   -15.4
+  ],
+  "width": 0.31,
+  "lufs": -9.5,
+  "pump_db": 6.3,
+  "low_side_db": -20.9,
+  "bpm": 128.0,
+  "n": 1
+ },
+ "harmony": {
+  "loop": 4,
+  "bars_per_chord": 2,
+  "start": [
+   0,
+   5
+  ],
+  "color": 0.35,
+  "static": false,
+  "dominant": 0.0,
+  "borrow": 0.4,
+  "moves": {
+   "0": {
+    "3": 4,
+    "4": 3,
+    "5": 2
+   },
+   "3": {
+    "4": 3,
+    "0": 3,
+    "5": 2
+   },
+   "4": {
+    "0": 3,
+    "5": 3,
+    "3": 1
+   },
+   "5": {
+    "3": 4,
+    "4": 2,
+    "0": 1
+   },
+   "1": {
+    "4": 3,
+    "3": 1
+   },
+   "2": {
+    "5": 3,
+    "3": 2
+   },
+   "6": {
+    "0": 2
+   }
+  }
+ },
+ "break_alt": false,
+ "sidechain": {
+  "depth": 0.5,
+  "release": 0.4
+ },
+ "swing": 0.52,
+ "drum_flags": {
+  "fills": true,
+  "build_roll": "clap",
+  "humanize": 0.2,
+  "hat_accent": [
+   1.0,
+   0.75,
+   0.9,
+   0.8
+  ]
+ },
+ "drums": {
+  "low": {
+   "hat": "..x...x...x...x.",
+   "perc": "x.....x.....x..."
+  },
+  "mid": {
+   "kick": "X.....x.....x...",
+   "clap": "....x.......x...",
+   "hat": "..x...x...x...x.",
+   "perc": "x..o..x..o..x.o."
+  },
+  "high": {
+   "kick": "X.....x.....x...X.....x.....x.x.",
+   "clap": "....X.......X...",
+   "hat": "gxgxgxgxgxgxgxgx",
+   "ohat": "..x...x...x...x.",
+   "shaker": "gogogogogogogogo",
+   "perc": "x.ox.ox.x.ox.ox.",
+   "ride": "x.x.x.x.x.x.x.x."
+  }
+ },
+ "bass": {
+  "style": "sub_long",
+  "octave": 1,
+  "approach": 0.25
+ },
+ "chords": {
+  "rhythm": "X..X..X...X.....",
+  "length": 0.3,
+  "push": 0.0
+ },
+ "lead": {
+  "octave": 5,
+  "density": 0.45,
+  "break_skeleton": true,
+  "tension": 0.22,
+  "rhythms": [
+   "x.....x.....x...x.....x.....x...",
+   "x..x..x...x.....x..x..x.x.......",
+   "x.......x.x.x...x.......x...x...",
+   "x.....x...x.x...x.....x...x.....",
+   "x...x...x...x.x.x...x...x.......",
+   "x..x..x..x..x...x..x..x.x.x....."
+  ]
+ },
+ "arp": {
+  "pattern": "updown",
+  "rate": 16,
+  "octaves": 2,
+  "gate": 0.5
+ },
+ "drop2": [
+  "lead_octave",
+  "lift"
+ ],
+ "forms": [
+  [
+   [
+    "intro",
+    16,
+    0.25
+   ],
+   [
+    "groove",
+    16,
+    0.7
+   ],
+   [
+    "break",
+    16,
+    0.35
+   ],
+   [
+    "groove",
+    16,
+    0.76
+   ],
+   [
+    "break",
+    8,
+    0.42
+   ],
+   [
+    "drop",
+    16,
+    0.8
+   ],
+   [
+    "drop",
+    16,
+    0.86
+   ],
+   [
+    "drop",
+    16,
+    0.92
+   ],
+   [
+    "climax",
+    8,
+    1.0
+   ],
+   [
+    "outro",
+    8,
+    0.3
+   ]
+  ],
+  [
+   [
+    "intro",
+    16,
+    0.25
+   ],
+   [
+    "groove",
+    16,
+    0.7
+   ],
+   [
+    "break",
+    8,
+    0.35
+   ],
+   [
+    "groove",
+    16,
+    0.76
+   ],
+   [
+    "break",
+    16,
+    0.4
+   ],
+   [
+    "build",
+    8,
+    0.6
+   ],
+   [
+    "drop",
+    16,
+    0.82
+   ],
+   [
+    "drop",
+    16,
+    0.9
+   ],
+   [
+    "climax",
+    16,
+    1.0
+   ],
+   [
+    "outro",
+    8,
+    0.3
+   ]
+  ],
+  [
+   [
+    "intro",
+    8,
+    0.3
+   ],
+   [
+    "groove",
+    16,
+    0.72
+   ],
+   [
+    "break",
+    16,
+    0.38
+   ],
+   [
+    "drop",
+    16,
+    0.8
+   ],
+   [
+    "drop",
+    16,
+    0.86
+   ],
+   [
+    "break",
+    8,
+    0.42
+   ],
+   [
+    "drop",
+    16,
+    0.92
+   ],
+   [
+    "climax",
+    16,
+    1.0
+   ],
+   [
+    "outro",
+    8,
+    0.3
+   ]
+  ]
+ ],
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_techno",
+   "min": 0.5,
+   "max": 1.01
+  },
+  {
+   "id": "clap",
+   "role": "clap",
+   "inst": "clap_reverb",
+   "min": 0.6,
+   "max": 1.01,
+   "rev": 0.15
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_909",
+   "min": 0.2,
+   "max": 1.01
+  },
+  {
+   "id": "perc",
+   "role": "perc",
+   "inst": "perc_tom",
+   "min": 0.2,
+   "max": 1.01,
+   "rev": 0.2,
+   "fx": [
+    [
+     "echo",
+     {
+      "beats": 0.75,
+      "fb": 0.3,
+      "mix": 0.18,
+      "tone": 3000.0
+     }
+    ]
+   ]
+  },
+  {
+   "id": "shaker",
+   "role": "shaker",
+   "inst": "shaker",
+   "min": 0.8,
+   "max": 1.01
+  },
+  {
+   "id": "ohat",
+   "role": "ohat",
+   "inst": "ohat_909",
+   "min": 0.86,
+   "max": 1.01
+  },
+  {
+   "id": "ride",
+   "role": "ride",
+   "inst": "ride",
+   "min": 0.97,
+   "max": 1.01
+  },
+  {
+   "id": "sub",
+   "role": "bass",
+   "inst": "bass_sub",
+   "min": 0.5,
+   "max": 1.01,
+   "label": "Sub"
+  },
+  {
+   "id": "midbass",
+   "role": "bass",
+   "inst": "reese_deep",
+   "min": 0.9,
+   "max": 1.01,
+   "label": "Mid bass",
+   "fx": [
+    [
+     "drive",
+     {
+      "amt": 0.2,
+      "kind": "tanh",
+      "mix": 1.0
+     }
+    ]
+   ]
+  },
+  {
+   "id": "pad",
+   "role": "pad",
+   "inst": "pad_warm",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.5,
+   "fx": [
+    [
+     "chorus",
+     {
+      "depth": 0.004,
+      "rate": 0.6,
+      "mix": 0.3
+     }
+    ]
+   ]
+  },
+  {
+   "id": "keys",
+   "role": "chords",
+   "inst": "strings",
+   "min": 0.0,
+   "max": 1.01,
+   "only": [
+    "break"
+   ],
+   "rev": 0.5,
+   "label": "Breakdown chords"
+  },
+  {
+   "id": "stabs",
+   "role": "chords",
+   "inst": "supersaw",
+   "min": 0.8,
+   "max": 1.01,
+   "rev": 0.3,
+   "dly": 0.2,
+   "label": "Rave stabs",
+   "fx": [
+    [
+     "ott",
+     {
+      "amt": 0.25,
+      "mix": 1.0
+     }
+    ]
+   ]
+  },
+  {
+   "id": "arp",
+   "role": "arp",
+   "inst": "trance_pluck",
+   "min": 0.86,
+   "max": 1.01,
+   "rev": 0.35,
+   "fx": [
+    [
+     "echo",
+     {
+      "beats": 0.75,
+      "fb": 0.3,
+      "mix": 0.18,
+      "tone": 3000.0
+     }
+    ]
+   ]
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "trance_lead",
+   "min": 0.92,
+   "max": 1.01,
+   "rev": 0.45,
+   "dly": 0.3,
+   "fx": [
+    [
+     "chorus",
+     {
+      "depth": 0.004,
+      "rate": 0.6,
+      "mix": 0.3
+     }
+    ],
+    [
+     "echo",
+     {
+      "beats": 0.75,
+      "fb": 0.45,
+      "mix": 0.3,
+      "tone": 3000.0
+     }
+    ]
+   ]
+  },
+  {
+   "id": "theme",
+   "role": "lead",
+   "inst": "bell",
+   "min": 0.0,
+   "max": 1.01,
+   "only": [
+    "break"
+   ],
+   "line": "hook",
+   "rev": 0.6,
+   "dly": 0.3,
+   "label": "Breakdown theme"
+  },
+  {
+   "id": "answer",
+   "role": "answer",
+   "inst": "vox_chop",
+   "min": 0.95,
+   "max": 1.01,
+   "rev": 0.35,
+   "dly": 0.3,
+   "register": -5
+  },
+  {
+   "id": "fx",
+   "role": "fx",
+   "inst": "fx",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35
+  }
+ ],
+ "lift_chance": 1.0
+}

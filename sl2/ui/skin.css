@@ -198,4 +198,10 @@ button, input, select { font: inherit; color: inherit; }
 #bAB.a::after { content: " A"; color: var(--green2); }
 #bAB.b::after { content: " B"; color: var(--amber); }
 
+.fxchips { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; min-height: 20px; align-items: center; }
+.fxchips .chip { font-family: var(--pix); font-size: 15px; color: var(--green); background: #000; border: 1px solid var(--green3); padding: 0 6px; cursor: pointer; }
+.fxchips .chip:hover { border-color: var(--green); }
+.fxchips .chip i { color: var(--amber); font-style: normal; }
+.fxchips .none { color: #8d8fb0; font-size: 10px; }
+
 @media (max-width: 1180px) { #desk { grid-template-columns: 1fr; } .stack { max-width: 560px; } }

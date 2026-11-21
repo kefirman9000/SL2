@@ -86,12 +86,22 @@ Keys: space play/pause · ←/→ 5 s · [ ] previous / next section · L loop s
   more semitone clusters in voicings.
 - **Fixes**: the breakdown melody followed the wrong chords; leads went silent at the end of some sections.
 - **3-5 song forms per genre** instead of one or two.
+- **25 new synths** (analog-modelled, ported from Studio Lab's engine): techno rumble, dub-techno stab, techno sequence,
+  dark pad, atmosphere; M1 house organ, fuzz bass, DX e-piano, vocal chops; trance supersaw lead and pluck; heavy /
+  dark / sub / vowel / chop wobbles, growl, FM growl, talking growl, riddim, screech; neuro, deep reese, DnB wobble,
+  metallic neuro. **New drums**: hard kick, techno kick + rumble, heavy layered snare, clap in a room. Drum parts now
+  have a sound menu too.
+- **Effects on every part** (EDITOR → FX): drive, bit-crusher, chorus, phaser, flanger, trance gate, pump (LFO tool),
+  auto-pan, OTT, compressor, EQ, filter, synced echo, ring mod, tape, stutter and reverse swells - each light / medium /
+  heavy, in any order. The genres now use them (trance-gated pads, dub-techno echo throws, OTT on neuro and growls ...).
+- **Master options** (MIXER → MASTER): loudness (genre / club / streaming), width, tone, glue compression, tape.
 
 ## Genres
 
 Classic House · Techno · Acid House · Tech House★ · Melodic Techno · Trance★ · Hard Electro★ · UK Garage ·
 Liquid DnB★ · Neuro DnB · Deep Dubstep★ · Hard Trap★ · Memphis Phonk★ · Melodic Deep House★ · Sunlit Electronica★ ·
-Lo-fi Hip Hop★ · Synthwave · Ambient · Spooky Surf★
+Lo-fi Hip Hop★ · Synthwave · Ambient · Spooky Surf★ · **Dubstep** (new: growls, riddim, heavy snare) ·
+**Euphoric UK Techno★** (new: modelled on Scuba - NE1BUTU - a simple broken beat and a long build into a euphoric ending)
 
 A genre is one JSON file in `sl2/genres/`: tempo range, scales, chord moves, song forms, drum patterns per energy level, bass
 style, lead rhythms, tracks with their sounds and send levels, and the reference fingerprint.
@@ -105,6 +115,8 @@ sl2/melody.py       motif-based hooks + the melody critic, chops, sequences, cal
 sl2/edit.py         section editing (duplicate, remove, move, resize, mute a part) on the song document
 sl2/theory.py       keys, scales, chords, voice leading, per-part seeds
 sl2/synth.py        every instrument and drum, synthesized with numpy
+sl2/va.py, va_bass.py   the analog-modelled engine behind the club and bass-music synths (from Studio Lab)
+sl2/fx.py           part effects (drive, chorus, phaser, gate, OTT, echo, stutter ...)
 sl2/render.py       parallel cached stems, auto-gain, sidechain, sends, ref-steered master
 sl2/analyze.py      reference analysis (tempo, key, drums, sections, tone, loudness, width, pump)
 sl2/prompt.py       text description -> settings

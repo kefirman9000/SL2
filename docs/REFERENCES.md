@@ -17,6 +17,7 @@ low-end side level, and pumping = how much the 300 Hz-3 kHz band dips and recove
 | Hard Trap | 1 | 140–140 | -9.9 | 0.13 | -34 dB | 14.9 dB | 0 / -5 / -11 / -13 / -11 / -13 / -14 / -12 / -17 |
 | Memphis Phonk | 1 | 162–162 | -8.5 | 0.21 | -15 dB | 5.1 dB | 0 / -9 / -16 / -18 / -20 / -23 / -23 / -23 / -30 |
 | Tech House | 1 | 126–126 | -9.1 | 0.21 | -20 dB | 7.7 dB | 0 / -3 / -8 / -13 / -9 / -12 / -15 / -14 / -20 |
+| Euphoric UK Techno | 1 | 128–128 | -9.5 | 0.31 | -21 dB | 6.3 dB | 0 / -6 / -8 / -9 / -7 / -9 / -10 / -12 / -15 |
 
 What came from these, per genre:
 
@@ -25,6 +26,16 @@ What came from these, per genre:
 - **Deep Dubstep** (Skream, Benga, Kromestar, Distance, Joker): 140 BPM half-step; very narrow (0.09–0.25); sub-heavy and fully mono below 120 Hz; long low-end sections with short breakdowns.
 - **Melodic Deep House** (Nora En Pure): 120–125 BPM; the widest of all (0.4–0.6); ~6 dB of pump; loud; 16-bar intros.
 - **Trance** (Joop), **Hard Electro** (JFK / Bad Habit Boys), **Tech House** (Girl Unit / Claude VonStroke remix), **Hard Trap** (Waka Flocka Flame instrumental), **Memphis Phonk** (DJ Smokey), **Lo-fi Hip Hop** (tomcbumpz), **Spooky Surf** (the Munsters theme): one reference each - tempo, loudness, width, pump and tone.
+
+- **Euphoric UK Techno** (Scuba - NE1BUTU, 2.1): 128 BPM, 149 bars. Measured every 8 bars as well as overall: a near-silent
+  16-bar intro; the beat with a heavy sub from bar 16; breakdowns at bars 32 and 65 with no low end and the chords up;
+  then one 56-bar final stretch where the sub stays constant (about -21 dB) while the 600 Hz-3 kHz band rises ~5 dB
+  as layers stack up - the slow build into the euphoric ending. Per-16th onsets: no kick on beat 3 (hits on steps 1, 7
+  and 13 - a broken "UK" kick), and the percussion band filling in from sparse to every 16th by the end. The genre
+  rebuilds that shape with rising section energies: each section of the final stretch lets the next layer in
+  (stabs, then plucks and open hats, then the lead, mid bass and ride), and the climax lifts the key.
+  Chords measured around F / Dm / C / Am and G / C / D (the key finder is unsure on this mix, so the genre uses
+  major / mixolydian / dorian rather than one key).
 
 Not reliable yet: the key finder (it leans to C and F major on dense mixes), and per-step kick patterns on bass-heavy tracks (the sub masks the kick).
 Drum patterns therefore come from each style's standard grooves; snare placement did match (2 & 4 for DnB, 3 for half-step).

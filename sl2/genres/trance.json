@@ -230,7 +230,16 @@
    "max": 1.01,
    "rev": 0.35,
    "sc": 1.0,
-   "level": -3
+   "level": -3,
+   "fx": [
+    [
+     "ott",
+     {
+      "amt": 0.25,
+      "mix": 1.0
+     }
+    ]
+   ]
   },
   {
    "id": "pad",
@@ -239,27 +248,67 @@
    "min": 0.0,
    "max": 1.01,
    "rev": 0.5,
-   "sc": 0.7
+   "sc": 0.7,
+   "fx": [
+    [
+     "gate",
+     {
+      "pattern": "x.xxx.xx.x.xx.xx",
+      "depth": 0.85,
+      "smooth": 0.004
+     }
+    ]
+   ]
   },
   {
    "id": "arp",
    "role": "arp",
-   "inst": "pluck",
+   "inst": "trance_pluck",
    "min": 0.35,
    "max": 1.01,
    "rev": 0.3,
    "dly": 0.3,
-   "sc": 0.7
+   "sc": 0.7,
+   "fx": [
+    [
+     "echo",
+     {
+      "beats": 0.75,
+      "fb": 0.3,
+      "mix": 0.18,
+      "tone": 3000.0
+     }
+    ]
+   ]
   },
   {
    "id": "lead",
    "role": "lead",
-   "inst": "supersaw",
+   "inst": "trance_lead",
    "min": 0.8,
    "max": 1.01,
    "rev": 0.45,
    "dly": 0.2,
-   "sc": 0.4
+   "sc": 0.4,
+   "fx": [
+    [
+     "chorus",
+     {
+      "depth": 0.004,
+      "rate": 0.6,
+      "mix": 0.3
+     }
+    ],
+    [
+     "echo",
+     {
+      "beats": 0.75,
+      "fb": 0.45,
+      "mix": 0.3,
+      "tone": 3000.0
+     }
+    ]
+   ]
   },
   {
    "id": "theme",

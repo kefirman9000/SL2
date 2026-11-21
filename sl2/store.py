@@ -114,7 +114,7 @@ def _mixdown(sid, song, meta, progress=None):
         progress(0.88, 'mixing and mastering')
     mx = R.mix_stems(paths, song, meta.get('mix'))
     g = G.load(song.genre)
-    m, rep = R.master(mx, g, float(song.settings.get('brightness') or 0))
+    m, rep = R.master(mx, g, float(song.settings.get('brightness') or 0), (meta.get('mix') or {}).get('_master'))
     R.write_wav(os.path.join(_dir(sid), 'mix.wav'), m)
     meta['master'] = rep
     meta['autogain'] = infos
@@ -142,6 +142,10 @@ def _apply_overrides(song, settings):
         for t in song.tracks:
             if t.id == tid:
                 t.instrument = inst
+    for tid, chain in (settings.get('part_fx') or {}).items():     # your effect chains survive re-rolls
+        for t in song.tracks:
+            if t.id == tid:
+                t.params['fx'] = chain
 
 
 def reroll(sid, what, progress=None):
@@ -263,7 +267,10 @@ def import_song(text, progress=None):
         raise ValueError(f'this song uses the genre {song.genre!r}, which this SL2 does not have')
     g = G.load(song.genre)
     spec = {t['id']: t for t in g['tracks']}
+    from .fx import clean_chain
     for t in song.tracks:
+        if t.params.get('fx'):
+            t.params['fx'] = clean_chain(t.params['fx'])
         if not known(t.instrument):
             t.instrument = spec.get(t.id, {}).get('inst', 'pluck' if t.role not in ('fx',) else 'fx')
         for p in t.placements:
@@ -289,6 +296,19 @@ def export_mp3(sid):
             raise ValueError('ffmpeg could not write the MP3: ' + p.stderr.decode(errors='replace')[-300:])
         R.replace_file(tmp, dst)
     return dst
+
+
+def set_fx(sid, tid, chain, progress=None):
+    """Replace a part's effects chain (only that part re-renders)."""
+    from .fx import EFFECTS, clean_chain
+    song = load_song(sid)
+    meta = load_meta(sid)
+    chain = clean_chain(chain)
+    t = song.track(tid)
+    t.params['fx'] = chain
+    song.settings.setdefault('part_fx', {})[tid] = chain
+    names = ', '.join(EFFECTS[c[0]][0].lower() for c in chain) or 'none'
+    return _finish(song, parent=sid, mix=meta.get('mix'), progress=progress, note=f'{tid} effects: {names}')
 
 
 def set_lock(sid, tid, on):
@@ -355,7 +375,7 @@ def song_view(sid):
         notes = song.notes_of(t.id)
         tracks.append(dict(id=t.id, role=t.role, instrument=t.instrument, label=LABELS.get(t.instrument, t.instrument),
                            locked=t.locked, notes=len(notes), choices=[dict(id=c, label=LABELS.get(c, c)) for c in ROLE_CHOICES.get(t.role, [])],
-                           mix=meta.get('mix', {}).get(t.id, {})))
+                           mix=meta.get('mix', {}).get(t.id, {}), fx=t.params.get('fx') or []))
     return dict(meta=meta, song=dict(title=song.title, genre=song.genre, genre_name=g['name'], key=song.key, bpm=song.bpm,
                                      bars=song.total_bars(), sections=[dict(name=s.name, start_bar=s.start_bar, bars=s.bars, kind=s.tags[0],
                                                                             energy=float(s.tags[1][1:])) for s in song.sections],

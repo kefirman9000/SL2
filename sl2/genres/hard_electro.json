@@ -213,7 +213,7 @@
   {
    "id": "kick",
    "role": "kick",
-   "inst": "kick_techno",
+   "inst": "kick_hard",
    "min": 0.4,
    "max": 1.01,
    "level": 1
@@ -242,9 +242,19 @@
   {
    "id": "bass",
    "role": "bass",
-   "inst": "bass_synth",
+   "inst": "fuzz_bass",
    "min": 0.45,
-   "max": 1.01
+   "max": 1.01,
+   "fx": [
+    [
+     "drive",
+     {
+      "amt": 0.45,
+      "kind": "tanh",
+      "mix": 1.0
+     }
+    ]
+   ]
   },
   {
    "id": "lead",
@@ -253,7 +263,17 @@
    "min": 0.65,
    "max": 1.01,
    "rev": 0.15,
-   "level": -2
+   "level": -2,
+   "fx": [
+    [
+     "drive",
+     {
+      "amt": 0.2,
+      "kind": "tanh",
+      "mix": 1.0
+     }
+    ]
+   ]
   },
   {
    "id": "chords",

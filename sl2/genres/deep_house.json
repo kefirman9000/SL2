@@ -239,7 +239,18 @@
    "min": 0.0,
    "max": 1.01,
    "rev": 0.4,
-   "sc": 0.7
+   "sc": 0.7,
+   "fx": [
+    [
+     "eq",
+     {
+      "low": -2.0,
+      "mid": 0.0,
+      "mid_hz": 1200.0,
+      "high": 1.5
+     }
+    ]
+   ]
   },
   {
    "id": "pad",
@@ -248,7 +259,17 @@
    "min": 0.0,
    "max": 1.01,
    "rev": 0.5,
-   "sc": 0.7
+   "sc": 0.7,
+   "fx": [
+    [
+     "chorus",
+     {
+      "depth": 0.004,
+      "rate": 0.6,
+      "mix": 0.3
+     }
+    ]
+   ]
   },
   {
    "id": "lead",
@@ -273,12 +294,23 @@
   {
    "id": "answer",
    "role": "answer",
-   "inst": "mallet",
+   "inst": "vox_chop",
    "min": 0.8,
    "max": 1.01,
    "rev": 0.3,
    "dly": 0.25,
-   "register": -5
+   "register": -5,
+   "fx": [
+    [
+     "echo",
+     {
+      "beats": 0.75,
+      "fb": 0.3,
+      "mix": 0.18,
+      "tone": 3000.0
+     }
+    ]
+   ]
   },
   {
    "id": "fx",

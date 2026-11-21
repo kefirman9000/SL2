@@ -241,7 +241,17 @@
    "inst": "bass_808",
    "min": 0.4,
    "max": 1.01,
-   "level": 1
+   "level": 1,
+   "fx": [
+    [
+     "drive",
+     {
+      "amt": 0.2,
+      "kind": "tanh",
+      "mix": 1.0
+     }
+    ]
+   ]
   },
   {
    "id": "lead",

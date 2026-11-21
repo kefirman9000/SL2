@@ -331,6 +331,64 @@ function toggleAB() {
   });
 }
 
+// ------------------------------------------------------------------ part effects and master
+function fxAmount(name, p) {
+  const e = S.effects.find(x => x.id === name); if (!e) return '';
+  for (const a of ['light', 'medium', 'heavy']) if (Object.entries(e.presets[a]).every(([k, v]) => p[k] === undefined || p[k] === v)) return a;
+  return 'custom';
+}
+function renderFx() {
+  const box = $('#fxchips'); box.innerHTML = '';
+  const t = S.song && S.song.tracks.find(x => x.id === S.sel); if (!t) return;
+  const chain = t.fx || [];
+  if (!chain.length) box.insertAdjacentHTML('beforeend', '<span class="none">no effects on this part - add one</span>');
+  chain.forEach(([name, p], i) => {
+    const e = S.effects.find(x => x.id === name) || { label: name };
+    const c = document.createElement('span'); c.className = 'chip';
+    c.innerHTML = `${esc(e.label)} <i>${fxAmount(name, p || {}).toUpperCase()}</i>`;
+    c.onclick = ev => {
+      const r = ev.target.getBoundingClientRect();
+      const set = a => { const ch = chain.map(x => [x[0], Object.assign({}, x[1])]); ch[i] = [name, Object.assign({}, e.presets[a])]; setFx(ch); };
+      menu(r.left, r.bottom + 2, [['Light', () => set('light')], ['Medium', () => set('medium')], ['Heavy', () => set('heavy')], '-',
+        i > 0 ? ['◀ Earlier in the chain', () => { const ch = chain.slice(); [ch[i - 1], ch[i]] = [ch[i], ch[i - 1]]; setFx(ch); }] : { label: '◀ Earlier in the chain' },
+        ['✕ Remove', () => setFx(chain.filter((_, j) => j !== i))]], e.label.toUpperCase());
+    };
+    box.appendChild(c);
+  });
+}
+async function setFx(chain) {
+  if (S.busy) return toast('BUSY');
+  try {
+    const { job } = await post(`/api/song/${S.song.meta.id}/fx`, { track: S.sel, fx: chain });
+    const meta = await runJob(job, 'effects on ' + S.sel);
+    await loadSong(meta.id, !audio.paused); refreshLibrary();
+  } catch (e) { toast('ERROR: ' + e.message, 6000); }
+}
+$('#fxAdd').onclick = e => {
+  const t = S.song && S.song.tracks.find(x => x.id === S.sel); if (!t) return toast('NO PART SELECTED');
+  const r = e.target.getBoundingClientRect();
+  menu(r.left - 140, r.bottom + 2, S.effects.map(x => [x.label, () => setFx([...(t.fx || []), [x.id, Object.assign({}, x.presets.medium)]])]), 'ADD TO ' + S.sel.toUpperCase());
+};
+const MASTER = [['loudness', 'LOUDNESS', { genre: 'As the genre', club: 'Club (-7 LUFS)', stream: 'Streaming (-14 LUFS)' }],
+  ['width', 'STEREO WIDTH', { narrow: 'Narrower', genre: 'As the genre', wide: 'Wider' }],
+  ['tone', 'TONE', { darker: 'Darker', genre: 'As the genre', brighter: 'Brighter' }],
+  ['glue', 'GLUE COMPRESSION', { off: 'Off', genre: 'Gentle', heavy: 'Heavy' }],
+  ['tape', 'TAPE SATURATION', { off: 'Off', on: 'On' }]];
+$('#mixMaster').onclick = e => {
+  if (!S.song) return;
+  const r = e.target.getBoundingClientRect();
+  const m = S.mix._master || {};
+  const items = [];
+  for (const [k, label, opts] of MASTER) {
+    items.push({ label: label });
+    for (const [v, t] of Object.entries(opts)) {
+      const cur = m[k] || (k === 'tape' ? 'off' : 'genre');
+      items.push({ label: '  ' + t, chk: cur === v, fn: () => { S.mix._master = Object.assign({}, S.mix._master, { [k]: v }); remix(); } });
+    }
+  }
+  menu(r.left - 60, r.bottom + 2, items, 'MASTER');
+};
+
 // ------------------------------------------------------------------ track select, sounds, piano roll
 function renderTrackSel() {
   const ts = $('#trackSel'); ts.innerHTML = '';
@@ -344,6 +402,7 @@ function renderTrackSel() {
     ss.disabled = !t.choices.length;
     $('#bLock').textContent = t.locked ? '🔓 UNLOCK' : '🔒 LOCK';
   }
+  renderFx();
 }
 async function loadRoll() {
   if (!S.song || !S.sel) return;
@@ -538,7 +597,7 @@ $('#mixPresets').onclick = e => {
   const set = f => { for (const t of S.song.tracks) setMix(t.id, { gain_db: f(t) }); renderFaders(); remix(); };
   const drum = t => ['kick', 'snare', 'clap', 'hat', 'ohat', 'ride', 'shaker', 'perc', 'rim', 'cowbell'].includes(t.role);
   menu(r.left, r.bottom + 2, [
-    ['Flat (as written)', () => { S.mix = {}; renderFaders(); remix(); }],
+    ['Flat (as written)', () => { S.mix = S.mix._master ? { _master: S.mix._master } : {}; renderFaders(); remix(); }],
     ['Drums up', () => set(t => drum(t) ? 2.5 : 0)],
     ['Low end up', () => set(t => ['kick', 'bass', 'riff'].includes(t.role) ? 2.5 : 0)],
     ['Melody up', () => set(t => ['lead', 'arp'].includes(t.role) ? 3 : 0)],
@@ -626,7 +685,7 @@ audio.addEventListener('play', ensureAudio);
 // ------------------------------------------------------------------ start
 (async () => {
   const g = await api('/api/genres');
-  S.genres = g.genres; S.choices = g.choices || {}; S.caps = g.caps || {};
+  S.genres = g.genres; S.choices = g.choices || {}; S.caps = g.caps || {}; S.effects = g.effects || [];
   const saved = mem.get('composer', {});
   S.genre = (S.genres.find(x => x.id === saved.genre) || S.genres.find(x => x.id === 'liquid_dnb') || S.genres[0]).id;
   S.feel = saved.feel || {};

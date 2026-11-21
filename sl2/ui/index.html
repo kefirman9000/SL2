@@ -60,6 +60,7 @@
           <button class="tog on" id="mixAuto" title="Auto-gain: each part is set to its role's level before your fader moves">AUTO</button>
           <div class="curve"><canvas id="curve" width="300" height="24"></canvas></div>
           <button class="btn" id="mixPresets" title="Mixer presets">PRESETS</button>
+          <button class="btn" id="mixMaster" title="Master: loudness, width, tone, glue compression, tape">MASTER</button>
         </div>
         <div class="faders" id="faders"></div>
       </div>
@@ -139,6 +140,11 @@
           <span class="flex"></span>
           <button class="btn" id="zoomOut">−</button><button class="btn" id="zoomIn">+</button>
           <button class="btn go" id="bApply" title="Render your note edits" disabled>APPLY EDITS</button>
+        </div>
+        <div class="row small fxrow">
+          <span class="lab">FX</span>
+          <div class="fxchips" id="fxchips"></div>
+          <button class="btn" id="fxAdd" title="Add an effect to this part (drive, chorus, phaser, trance gate, OTT, echo ...)">+ EFFECT</button>
         </div>
         <div class="roll"><canvas id="roll" height="260"></canvas></div>
         <div class="hint">Piano roll: click empty space to add a note (1/16 grid) · click a note to remove it · shift+drag to scroll</div>

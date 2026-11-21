@@ -116,16 +116,26 @@
   {
    "id": "lead",
    "role": "lead",
-   "inst": "keys_epiano",
+   "inst": "fm_epiano",
    "min": 0.8,
    "max": 1.01,
    "rev": 0.3,
-   "dly": 0.3
+   "dly": 0.3,
+   "fx": [
+    [
+     "chorus",
+     {
+      "depth": 0.004,
+      "rate": 0.6,
+      "mix": 0.3
+     }
+    ]
+   ]
   },
   {
    "id": "answer",
    "role": "answer",
-   "inst": "pluck",
+   "inst": "vox_chop",
    "min": 0.85,
    "max": 1.01,
    "rev": 0.25,

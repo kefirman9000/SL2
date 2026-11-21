@@ -192,7 +192,7 @@ def compose(settings, locked=None, prev_harmony=None):
         n = 0 if var < 0.5 else 2 if var > 1.2 else 1
         pool = [o for o in opts if o != 'lift']
         ch = rd.sample(pool, min(n, len(pool)))
-        if 'lift' in opts and si == drops[-1] and var >= 0.5 and rd.random() < 0.7:
+        if 'lift' in opts and si == drops[-1] and var >= 0.5 and rd.random() < float(g.get('lift_chance', 0.7)):
             ch.append('lift')
         drop_changes[si] = ch
     for si, ch in drop_changes.items():
@@ -477,7 +477,7 @@ def compose(settings, locked=None, prev_harmony=None):
         spec_by_id['vinyl'] = dict(id='vinyl', role='fx', inst='fx', label='Vinyl')
     for tid, spec in spec_by_id.items():
         tr = Track(id=tid, role=spec['role'], instrument=spec['inst'],
-                   params={k: spec[k] for k in ('rev', 'dly', 'sc', 'level', 'voice', 'label', 'width') if k in spec},
+                   params={k: spec[k] for k in ('rev', 'dly', 'sc', 'level', 'voice', 'label', 'width', 'fx') if k in spec},
                    pan=float(spec.get('pan', 0.0)), automation=auto.get(tid, {}))
         if tid in locked:
             tr.locked = True

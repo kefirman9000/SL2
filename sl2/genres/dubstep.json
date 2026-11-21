@@ -1,0 +1,409 @@
+{
+ "extends": "_halftime",
+ "name": "Dubstep",
+ "group": "Bass & Trap",
+ "desc": "Modern dubstep at 140-150: half-time drums, a heavy layered snare, growls and talking wobbles over a clean sub, riddim chops in the second drop.",
+ "keywords": [
+  "dubstep",
+  "brostep",
+  "riddim",
+  "growl",
+  "wobble",
+  "bass music",
+  "heavy dubstep",
+  "festival dubstep"
+ ],
+ "bpm": [
+  140,
+  150
+ ],
+ "scales": {
+  "minor": 2,
+  "phrygian": 2,
+  "harmonic_minor": 1
+ },
+ "brightness": 0.1,
+ "loudness": -7.0,
+ "space": "plate",
+ "harmony": {
+  "static": true,
+  "loop": 2,
+  "bars_per_chord": 4
+ },
+ "sidechain": {
+  "depth": 0.55,
+  "release": 0.3
+ },
+ "bass": {
+  "style": "wobble",
+  "octave": 1
+ },
+ "drop2": [
+  "lead_octave",
+  "layer"
+ ],
+ "drums": {
+  "low": {
+   "hat": "..x...x...x...x."
+  },
+  "mid": {
+   "kick": "X.........x.....",
+   "snare": "........X.......",
+   "hat": "x.x.x.x.x.x.x.x."
+  },
+  "high": {
+   "kick": "X.....x...X.....X...........x...",
+   "snare": "........X...............X.....xx",
+   "hat": "x.xgx.x.x.xgx.x.",
+   "ohat": "......x.......x.",
+   "perc": "...........x...."
+  }
+ },
+ "drum_flags": {
+  "fills": true,
+  "build_roll": "snare",
+  "humanize": 0.1
+ },
+ "lead": {
+  "octave": 5,
+  "density": 0.35,
+  "break_skeleton": true,
+  "rhythms": [
+   "x.......x.....x.x...............",
+   "x...x.......x...x.......x.......",
+   "x.....x.....x...x...x...........",
+   "x.x.....x.......x.....x.x......."
+  ]
+ },
+ "riff": {
+  "octave": 2,
+  "patterns": [
+   [
+    [
+     0,
+     0,
+     3
+    ],
+    [
+     4,
+     0,
+     2
+    ],
+    [
+     6,
+     0,
+     2
+    ],
+    [
+     10,
+     3,
+     2
+    ],
+    [
+     12,
+     0,
+     4
+    ]
+   ],
+   [
+    [
+     0,
+     0,
+     2
+    ],
+    [
+     2,
+     0,
+     2
+    ],
+    [
+     6,
+     -2,
+     2
+    ],
+    [
+     8,
+     0,
+     6
+    ]
+   ],
+   [
+    [
+     0,
+     0,
+     4
+    ],
+    [
+     6,
+     1,
+     2
+    ],
+    [
+     8,
+     0,
+     3
+    ],
+    [
+     12,
+     7,
+     4
+    ]
+   ]
+  ]
+ },
+ "fingerprint": {
+  "tone": [
+   0.0,
+   -1.5,
+   -5.0,
+   -7.5,
+   -8.5,
+   -9.0,
+   -10.5,
+   -12.5,
+   -16.0
+  ],
+  "width": 0.28,
+  "lufs": -7.0,
+  "pump_db": 6.0
+ },
+ "forms": [
+  [
+   [
+    "intro",
+    16,
+    0.32
+   ],
+   [
+    "build",
+    8,
+    0.6
+   ],
+   [
+    "drop",
+    16,
+    0.92
+   ],
+   [
+    "break",
+    8,
+    0.35
+   ],
+   [
+    "build",
+    8,
+    0.66
+   ],
+   [
+    "drop",
+    16,
+    1.0
+   ],
+   [
+    "outro",
+    8,
+    0.3
+   ]
+  ],
+  [
+   [
+    "intro",
+    8,
+    0.35
+   ],
+   [
+    "build",
+    8,
+    0.62
+   ],
+   [
+    "drop",
+    32,
+    0.95
+   ],
+   [
+    "break",
+    16,
+    0.35
+   ],
+   [
+    "build",
+    8,
+    0.66
+   ],
+   [
+    "drop",
+    16,
+    1.0
+   ],
+   [
+    "outro",
+    8,
+    0.3
+   ]
+  ],
+  [
+   [
+    "intro",
+    16,
+    0.3
+   ],
+   [
+    "drop",
+    16,
+    0.9
+   ],
+   [
+    "break",
+    8,
+    0.38
+   ],
+   [
+    "build",
+    8,
+    0.65
+   ],
+   [
+    "drop",
+    16,
+    0.97
+   ],
+   [
+    "groove",
+    8,
+    0.7
+   ],
+   [
+    "drop",
+    8,
+    1.0
+   ],
+   [
+    "outro",
+    8,
+    0.3
+   ]
+  ]
+ ],
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_deep",
+   "min": 0.45,
+   "max": 1.01
+  },
+  {
+   "id": "snare",
+   "role": "snare",
+   "inst": "snare_heavy",
+   "min": 0.45,
+   "max": 1.01,
+   "rev": 0.15
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_909",
+   "min": 0.2,
+   "max": 1.01
+  },
+  {
+   "id": "ohat",
+   "role": "ohat",
+   "inst": "ohat_909",
+   "min": 0.85,
+   "max": 1.01
+  },
+  {
+   "id": "perc",
+   "role": "perc",
+   "inst": "rim",
+   "min": 0.85,
+   "max": 1.01
+  },
+  {
+   "id": "sub",
+   "role": "bass",
+   "inst": "bass_sub",
+   "min": 0.5,
+   "max": 1.01,
+   "label": "Sub"
+  },
+  {
+   "id": "growl",
+   "role": "bass",
+   "inst": "growl",
+   "min": 0.85,
+   "max": 1.01,
+   "fx": [
+    [
+     "ott",
+     {
+      "amt": 0.5,
+      "mix": 1.0
+     }
+    ],
+    [
+     "drive",
+     {
+      "amt": 0.2,
+      "kind": "tanh",
+      "mix": 1.0
+     }
+    ]
+   ],
+   "label": "Growl"
+  },
+  {
+   "id": "riddim",
+   "role": "riff",
+   "inst": "riddim",
+   "min": 0.97,
+   "max": 1.01,
+   "fx": [
+    [
+     "ott",
+     {
+      "amt": 0.85,
+      "mix": 1.0
+     }
+    ],
+    [
+     "stutter",
+     {
+      "beats": 0.5,
+      "slice": 0.25
+     }
+    ]
+   ],
+   "label": "Riddim"
+  },
+  {
+   "id": "pad",
+   "role": "pad",
+   "inst": "dark_pad",
+   "min": 0.0,
+   "max": 0.7,
+   "rev": 0.5
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "screech",
+   "min": 0.0,
+   "max": 0.7,
+   "rev": 0.4,
+   "dly": 0.3,
+   "label": "Screech"
+  },
+  {
+   "id": "fx",
+   "role": "fx",
+   "inst": "fx",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35
+  }
+ ]
+}

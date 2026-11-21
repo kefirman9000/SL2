@@ -756,3 +756,192 @@ def play(inst, midi, dur, vel, p=None):
 
 def known(inst):
     return inst in MELODIC or inst in DRUMS or inst == 'fx'
+
+
+# ------------------------------------------------------------------ 2.1: analog-modelled club and bass-music synths
+# The voices come from sl2.va / sl2.va_bass (Studio Lab's virtual-analog engine: band-limited oscillators, a resonant
+# 24 dB ladder, oversampled distortion, tempo-synced LFOs). Each note is seeded from what it is, so the same note always
+# renders the same way, whichever worker process renders it.
+import zlib  # noqa: E402
+
+TEMPO_SYNCED = set()          # instruments whose movement locks to the beat: the renderer passes them p['spb']
+
+
+def _va_voice(name, defaults=None, synced=False, mod_default=None):
+    def play_(f, dur, vel, p):
+        from . import va, va_bass
+        fn = getattr(va_bass, name, None) or getattr(va, name)
+        m = 69 + 12 * math.log2(max(f, 1.0) / 440.0)
+        q = dict(defaults or {})
+        q.update(p)
+        rng = np.random.default_rng(zlib.crc32(f'{name}|{m:.2f}|{dur:.3f}'.encode()))
+        va._RNG = rng
+        va_bass._RNG = rng
+        va.NOTE = None
+        mod = mod_default
+        if q.get('rate') and q.get('spb'):
+            mod = 1.0 / (float(q['rate']) * float(q['spb']))
+        elif q.get('beats'):
+            mod = float(q['beats'])
+        try:
+            y = fn(m, dur, q, mod=mod)
+        except TypeError:
+            y = fn(m, dur, q)
+        y = np.asarray(y, dtype=np.float64)
+        if y.ndim == 1:
+            y = np.vstack([y, y])
+        y = np.nan_to_num(y)
+        pk = np.abs(y).max()
+        return y / pk * 0.8 if pk > 0.95 else y
+    play_.__name__ = 'va_' + name
+    return play_
+
+
+def i_trance_lead(f, dur, vel, p):
+    """Anthem trance lead: a JP-8000 style supersaw (seven detuned saws) with delayed vibrato and a quiet octave on
+    top, through a bright low-pass that opens with the note."""
+    from . import va
+    va._RNG = np.random.default_rng(zlib.crc32(f"i_trance_lead|{f:.2f}|{dur:.3f}".encode()))
+    n = _len(dur, 0.35)
+    t = _t(n)
+    vib = f * 2 ** (0.12 / 12 * np.sin(2 * np.pi * 5.2 * t) * np.clip((t - 0.18) / 0.3, 0, 1))
+    x = va.jp_supersaw(vib, n, detune=0.42, mix=0.78) + 0.28 * va.jp_supersaw(vib * 2, n, detune=0.3, mix=0.6)
+    cut = 2200 + 7500 * (1 - np.exp(-t * 9))
+    y = va.vcf(x, cut, res=0.15, drive=1.1, tone=False)
+    env = adsr(n, 0.004, 0.25, 0.85, 0.3, int(dur * SR))
+    return y * env * 0.9
+
+
+def i_trance_pluck(f, dur, vel, p):
+    """Trance pluck: a supersaw whose filter snaps shut in a fraction of a second - the rolling 16th arp sound."""
+    from . import va
+    va._RNG = np.random.default_rng(zlib.crc32(f"i_trance_pluck|{f:.2f}|{dur:.3f}".encode()))
+    n = _len(min(dur, 0.35), 0.25)
+    t = _t(n)
+    x = va.jp_supersaw(np.full(n, f), n, detune=0.3, mix=0.7)
+    cut = 420 + 8500 * np.exp(-t * 26)
+    y = va.vcf(x, cut, res=0.3, drive=1.2, tone=False)
+    return y * expdecay(n, 0.45) * 1.1
+
+
+VOWELS = ['a', 'o', 'e', 'i', 'u']
+
+
+def i_vox_chop(f, dur, vel, p):
+    """Chopped vocal stab ('oh', 'ah', 'eh'): a breathy saw + pulse through three formant band-passes, a little scoop
+    into the pitch and a hard gate, like a sampler slicing a sung phrase. The vowel follows the pitch, so a line of
+    chops 'says' something different on each note."""
+    from . import va
+    n = _len(min(dur, 0.6), 0.06)
+    t = _t(n)
+    scoop = f * 2 ** (-0.7 / 12 * np.exp(-t * 40))
+    src = saw(scoop, n) * 0.7 + square(scoop, n, pw=0.35) * 0.25 + noise(n, seed=int(f)) * 0.06
+    vowel = p.get('vowel') or VOWELS[int(round(12 * math.log2(f / 55))) % len(VOWELS)]
+    y = va.formant(src, vowel, q=7.0) * 2.2
+    y = y + 0.25 * lp(src, 900)
+    env = adsr(n, 0.003, 0.08, 0.7, 0.04, int(min(dur, 0.6) * SR))
+    return stereo(y * env, 0.4)
+
+
+_VA = {
+    # techno
+    'rumble': ('rumble', {}, False), 'dub_stab': ('dub_stab', {}, False), 'techno_seq': ('techno_seq', {}, False),
+    'dark_pad': ('dark_pad', {}, False), 'atmosphere': ('atmosphere', {}, False),
+    # house
+    'house_organ': ('house_organ', {}, False), 'fuzz_bass': ('fuzz_bass', {}, False), 'fm_epiano': ('fm_epiano', {}, False),
+    # dubstep
+    'wobble_heavy': ('wobble', {}, True), 'growl': ('growl', {}, True), 'fm_growl': ('fm_growl', {}, True),
+    'talk_growl': ('talk_growl', {}, True), 'riddim': ('riddim', {}, True), 'screech': ('screech', {}, True),
+    'dark_wobble': ('dark_wobble', {}, True), 'sub_wobble': ('sub_wobble', {}, True), 'vowel_wobble': ('vowel_wobble', {}, True),
+    'chop_wobble': ('chop_wobble', {}, True),
+    # drum & bass
+    'neuro': ('neuro', {}, True), 'reese_deep': ('reese', {}, True), 'dnb_wobble': ('dnb_wobble', {}, True),
+    'metal_bass': ('metal_bass', {}, True),
+}
+for _id, (_fn, _d, _sync) in _VA.items():
+    MELODIC[_id] = _va_voice(_fn, _d)
+    if _sync:
+        TEMPO_SYNCED.add(_id)
+MELODIC.update({'trance_lead': i_trance_lead, 'trance_pluck': i_trance_pluck, 'vox_chop': i_vox_chop})
+LABELS.update({
+    'rumble': 'Techno rumble', 'dub_stab': 'Dub-techno stab', 'techno_seq': 'Techno sequence', 'dark_pad': 'Dark techno pad',
+    'atmosphere': 'Atmosphere', 'house_organ': 'M1 house organ', 'fuzz_bass': 'Fuzz filter bass', 'fm_epiano': 'FM e-piano (DX)',
+    'wobble_heavy': 'Heavy wobble', 'growl': 'Growl', 'fm_growl': 'FM growl', 'talk_growl': 'Talking growl', 'riddim': 'Riddim',
+    'screech': 'Screech', 'dark_wobble': 'Dark wobble', 'sub_wobble': 'Sub wobble', 'vowel_wobble': 'Vowel wobble (yoy)',
+    'chop_wobble': 'Chop wobble', 'neuro': 'Neuro bass', 'reese_deep': 'Deep reese', 'dnb_wobble': 'DnB wobble',
+    'metal_bass': 'Metallic neuro', 'trance_lead': 'Trance supersaw lead', 'trance_pluck': 'Trance pluck', 'vox_chop': 'Vocal chops',
+})
+_BASSES = ['rumble', 'fuzz_bass', 'wobble_heavy', 'growl', 'fm_growl', 'talk_growl', 'riddim', 'dark_wobble', 'sub_wobble',
+           'vowel_wobble', 'chop_wobble', 'neuro', 'reese_deep', 'dnb_wobble', 'metal_bass']
+ROLE_CHOICES['bass'] += _BASSES
+ROLE_CHOICES['riff'] += [b for b in _BASSES if b not in ('rumble', 'sub_wobble')] + ['screech']
+ROLE_CHOICES['chords'] += ['dub_stab', 'house_organ', 'fm_epiano', 'trance_pluck']
+ROLE_CHOICES['pad'] += ['dark_pad', 'atmosphere']
+ROLE_CHOICES['lead'] += ['trance_lead', 'trance_pluck', 'vox_chop', 'techno_seq', 'screech', 'fm_epiano']
+ROLE_CHOICES['arp'] += ['trance_pluck', 'techno_seq', 'vox_chop', 'fm_epiano']
+ROLE_CHOICES['answer'] += ['vox_chop', 'trance_pluck', 'fm_epiano']
+
+
+# ------------------------------------------------------------------ 2.1: heavier drums for techno, dubstep, DnB
+def _norm(x, peak=0.95):
+    pk = np.abs(x).max()
+    return x / pk * peak if pk > 0 else x
+
+
+def d_kick_hard(kind, vel, p):
+    """Hard techno / rave kick: the techno kick driven into a wavefolder-ish clip with a long, distorted tail."""
+    x = np.asarray(d_kick('kick_techno', vel, p), float)
+    n = x.shape[1]
+    tail = np.exp(-_t(n) / 0.28)
+    y = np.tanh(x * 4.0 * (0.6 + 0.4 * tail)) * 0.9
+    return _norm(lp(y, 6000))
+
+
+def d_kick_rumble(kind, vel, p):
+    """Techno kick with its own rumble: the kick plus a dark reverberant low tail that rolls into the next beat."""
+    x = np.asarray(d_kick('kick_techno', vel, p), float)
+    n = int(0.6 * SR)
+    x = np.pad(x, ((0, 0), (0, max(0, n - x.shape[1]))))[:, :n]
+    t = _t(n)
+    rum = lp(noise(n, 77), 140) * np.exp(-t / 0.22) * np.clip(t / 0.04, 0, 1) * 2.2
+    rum = np.tanh(rum * 2.5)
+    return _norm(x + np.vstack([rum, rum]) * 0.55)
+
+
+def d_snare_heavy(kind, vel, p):
+    """Brostep / neuro snare: a fat body, a big clap and a burst of driven noise, layered and glued."""
+    s = np.asarray(d_snare('snare_dnb', vel, p), float)
+    c = np.asarray(d_clap('clap_big', vel, p), float)
+    n = max(s.shape[1], c.shape[1])
+    s = np.pad(s, ((0, 0), (0, n - s.shape[1])))
+    c = np.pad(c, ((0, 0), (0, n - c.shape[1])))
+    t = _t(n)
+    body = np.sin(2 * np.pi * 190 * t * (1 + 0.4 * np.exp(-t * 40))) * np.exp(-t / 0.07)
+    y = s + 0.8 * c + 0.6 * np.vstack([body, body])
+    return _norm(np.tanh(y * 1.8))
+
+
+def d_clap_reverb(kind, vel, p):
+    """House / tech-house clap in its own short room: the clap with a bright 0.6 s tail."""
+    c = np.asarray(d_clap('clap_909', vel, p), float)
+    n = int(0.8 * SR)
+    c = np.pad(c, ((0, 0), (0, max(0, n - c.shape[1]))))[:, :n]
+    t = _t(n)
+    tail = bp(noise(n, 5), 1500, 9000) * np.exp(-t / 0.18) * np.clip((t - 0.01) / 0.02, 0, 1) * 0.35
+    return _norm(c + np.vstack([tail, np.roll(tail, 400)]))
+
+
+DRUMS.update(kick_hard=d_kick_hard, kick_rumble=d_kick_rumble, snare_heavy=d_snare_heavy, clap_reverb=d_clap_reverb)
+LABELS.update({
+    'kick_909': '909 kick', 'kick_808': '808 kick', 'kick_techno': 'Techno kick', 'kick_soft': 'Soft kick', 'kick_dnb': 'DnB kick',
+    'kick_trap': 'Trap kick', 'kick_deep': 'Deep kick', 'kick_acoustic': 'Acoustic kick', 'kick_hard': 'Hard kick (distorted)',
+    'kick_rumble': 'Techno kick + rumble', 'snare_909': '909 snare', 'snare_dnb': 'DnB snare', 'snare_lofi': 'Lo-fi snare',
+    'snare_trap': 'Trap snare', 'snare_gated': 'Gated 80s snare', 'snare_surf': 'Surf snare', 'snare_dub': 'Dub snare',
+    'snare_heavy': 'Heavy layered snare', 'clap_909': '909 clap', 'clap_big': 'Big clap', 'clap_reverb': 'Clap in a room',
+    'hat_909': '909 hat', 'hat_808': '808 hat', 'hat_lofi': 'Lo-fi hat', 'hat_trap': 'Trap hat', 'hat_surf': 'Surf hat',
+    'ohat_909': '909 open hat', 'ride': 'Ride', 'shaker': 'Shaker', 'rim': 'Rim', 'perc_conga': 'Conga', 'perc_tom': 'Tom',
+})
+_KICKS = ['kick_909', 'kick_808', 'kick_techno', 'kick_hard', 'kick_rumble', 'kick_dnb', 'kick_trap', 'kick_deep', 'kick_soft', 'kick_acoustic']
+_SNARES = ['snare_909', 'snare_dnb', 'snare_heavy', 'snare_dub', 'snare_trap', 'snare_gated', 'snare_lofi', 'snare_surf', 'clap_909', 'clap_big', 'clap_reverb']
+ROLE_CHOICES.update(kick=_KICKS, snare=_SNARES, clap=['clap_909', 'clap_big', 'clap_reverb'] + _SNARES[:4],
+                    hat=['hat_909', 'hat_808', 'hat_trap', 'hat_lofi', 'hat_surf'], ohat=['ohat_909'])

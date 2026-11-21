@@ -84,11 +84,21 @@
   {
    "id": "chords",
    "role": "chords",
-   "inst": "stab_organ",
+   "inst": "house_organ",
    "min": 0.0,
    "max": 1.01,
    "rev": 0.2,
-   "sc": 1.0
+   "sc": 1.0,
+   "fx": [
+    [
+     "chorus",
+     {
+      "depth": 0.004,
+      "rate": 0.6,
+      "mix": 0.3
+     }
+    ]
+   ]
   },
   {
    "id": "pad",
@@ -97,17 +107,38 @@
    "min": 0.0,
    "max": 0.6,
    "rev": 0.4,
-   "sc": 0.6
+   "sc": 0.6,
+   "fx": [
+    [
+     "phaser",
+     {
+      "beats": 4.0,
+      "depth": 0.8,
+      "mix": 0.3
+     }
+    ]
+   ]
   },
   {
    "id": "chops",
    "role": "lead",
-   "inst": "pluck",
+   "inst": "vox_chop",
    "min": 0.8,
    "max": 1.01,
    "rev": 0.3,
    "dly": 0.2,
-   "label": "Chops"
+   "label": "Chops",
+   "fx": [
+    [
+     "echo",
+     {
+      "beats": 0.75,
+      "fb": 0.3,
+      "mix": 0.18,
+      "tone": 3000.0
+     }
+    ]
+   ]
   },
   {
    "id": "fx",
