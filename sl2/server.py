@@ -253,18 +253,20 @@ def _fname(meta, ext):
     return f"{t}_{meta.get('genre', '')}_{str(meta.get('key', '')).replace(' ', '-')}_{int(meta.get('bpm', 0))}bpm.{ext}"
 
 
-def run(port=8770, open_browser=True):
+def start(port=8770):
+    """Open the server on the first free port from `port`. -> (server, url); the caller runs serve_forever."""
     os.makedirs(store.HOME, exist_ok=True)
-    srv = None
     for p in range(port, port + 20):
         try:
             srv = ThreadingHTTPServer(('127.0.0.1', p), Handler)
-            break
+            return srv, f'http://127.0.0.1:{srv.server_address[1]}/'
         except OSError:
             continue
-    if srv is None:
-        raise SystemExit('no free port')
-    url = f'http://127.0.0.1:{srv.server_address[1]}/'
+    raise SystemExit('no free port')
+
+
+def run(port=8770, open_browser=True):
+    srv, url = start(port)
     print(f'SL2 is running at {url}  (Ctrl+C to quit)')
     if open_browser:
         threading.Timer(0.6, lambda: webbrowser.open(url)).start()

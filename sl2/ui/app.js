@@ -485,7 +485,19 @@ function menu(x, y, items, title) {
   m.style.left = Math.max(4, Math.min(x, innerWidth - w - 8)) + 'px'; m.style.top = Math.max(4, Math.min(y, innerHeight - h - 8)) + 'px';
 }
 document.addEventListener('mousedown', e => { if (!e.target.closest('.menu')) $('#menu').classList.remove('on'); });
-function dl(what) { if (!S.song) return; location.href = `/api/song/${S.song.meta.id}/${what}?t=${encodeURIComponent(T)}`; }
+async function dl(what) {
+  if (!S.song) return;
+  const path = `/api/song/${S.song.meta.id}/${what}`;
+  const desk = window.pywebview && window.pywebview.api && window.pywebview.api.save;
+  if (!desk) { location.href = `${path}?t=${encodeURIComponent(T)}`; return; }
+  try {                                         // the desktop program: a real "Save as" dialog
+    toast('PREPARING THE FILE ...', 20000);
+    const r = await window.pywebview.api.save(path);
+    if (r && r.ok) { toast('SAVED ' + r.path.split(/[\\/]/).pop().toUpperCase(), 4000); window.pywebview.api.reveal(r.path); }
+    else if (r && r.cancelled) toast('NOT SAVED');
+    else toast('COULD NOT SAVE: ' + ((r && r.error) || 'unknown'), 6000);
+  } catch (e) { toast('COULD NOT SAVE: ' + e, 6000); }
+}
 
 // ------------------------------------------------------------------ reference analysis
 async function openSongFile(file) {

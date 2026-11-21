@@ -25,8 +25,10 @@ if not errorlevel 1 goto :run
 echo Installing numpy and scipy ...
 "%VENV%\Scripts\python.exe" -m pip install --disable-pip-version-check -q "numpy>=1.22" "scipy>=1.8"
 if errorlevel 1 goto :fail
+rem its own window (Edge WebView2); without it SL2 opens in your browser
+"%VENV%\Scripts\python.exe" -m pip install --disable-pip-version-check -q "pywebview>=5.1"
 :run
-"%VENV%\Scripts\python.exe" sl2.py %*
+"%VENV%\Scripts\python.exe" sl2.py --window %*
 if errorlevel 1 pause
 exit /b 0
 :nopython

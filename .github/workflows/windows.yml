@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install
-        run: pip install "numpy>=1.22" "scipy>=1.8" pyinstaller
+        run: pip install "numpy>=1.22" "scipy>=1.8" "pywebview>=5.1" pyinstaller
       - name: Version
         id: v
         shell: pwsh
@@ -31,8 +31,8 @@ jobs:
         shell: pwsh
         run: |
           $env:SL2_HOME = "$env:RUNNER_TEMP\sl2-songs"
-          & dist\SL2\SL2.exe --version
-          & dist\SL2\SL2.exe make "short techno"
+          & dist\SL2\sl2-cli.exe --version
+          & dist\SL2\sl2-cli.exe make "short techno"
           if ($LASTEXITCODE -ne 0) { throw "make failed" }
           $wav = Get-ChildItem -Recurse -Filter mix.wav $env:SL2_HOME | Select-Object -First 1
           if (-not $wav -or $wav.Length -lt 1000000) { throw "no mix.wav was written" }
@@ -41,7 +41,7 @@ jobs:
         shell: pwsh
         run: |
           $env:SL2_HOME = "$env:RUNNER_TEMP\sl2-songs"
-          $p = Start-Process -FilePath dist\SL2\SL2.exe -ArgumentList '--no-browser' -PassThru
+          $p = Start-Process -FilePath dist\SL2\sl2-cli.exe -ArgumentList '--no-browser' -PassThru
           try {
             $ok = $false
             for ($i = 0; $i -lt 60 -and -not $ok; $i++) {
@@ -53,6 +53,16 @@ jobs:
             if ($js.Headers['Content-Type'] -notlike 'text/javascript*') { throw "app.js served as $($js.Headers['Content-Type'])" }
             "page and script OK"
           } finally { Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue }
+      - name: Smoke test - the program opens its own window and the interface loads in it
+        shell: pwsh
+        run: |
+          $env:SL2_HOME = "$env:RUNNER_TEMP\sl2-songs"
+          $out = "$env:RUNNER_TEMP\selftest.json"
+          $p = Start-Process -FilePath dist\SL2\SL2.exe -ArgumentList '--selftest', $out -PassThru -Wait
+          if (-not (Test-Path $out)) { throw "the window self-test wrote nothing (exit $($p.ExitCode))" }
+          Get-Content $out
+          $r = Get-Content $out | ConvertFrom-Json
+          if ($r.genres -lt 10 -or -not $r.api) { throw "the window opened but the interface did not load: $(Get-Content $out)" }
       - name: Zip
         shell: pwsh
         run: Compress-Archive -Path dist\SL2 -DestinationPath "dist\SL2-${{ steps.v.outputs.version }}-Windows.zip"
