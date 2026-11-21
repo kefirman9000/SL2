@@ -125,10 +125,26 @@ def run(selftest=None):
     w.events.closing += lambda: _save_state(w)
     result = {}
 
+    def watchdog():
+        """--selftest never hangs: whatever happens, after 90 s the result so far is written and the program exits."""
+        time.sleep(90)
+        result.setdefault('timeout', True)
+        try:
+            with open(selftest, 'w', encoding='utf-8') as f:
+                json.dump(result, f)
+        finally:
+            os._exit(3)
+
     def check():
         """--selftest: wait for the page, count the genres it lists, then close."""
+        threading.Thread(target=watchdog, daemon=True).start()
+        try:
+            w.events.loaded.wait(60)
+        except Exception:
+            pass
         t0 = time.time()
         n = 0
+        has_api = False
         while time.time() - t0 < 60:
             time.sleep(1.0)
             try:
