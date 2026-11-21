@@ -51,7 +51,8 @@
  },
  "chords": {
   "rhythm": "xxxxxxxxxxxxxxxx",
-  "length": 0.18
+  "length": 0.18,
+  "push": 0.5
  },
  "sidechain": {
   "depth": 0.6,
@@ -88,6 +89,90 @@
     "build",
     16,
     0.7
+   ],
+   [
+    "drop",
+    32,
+    1.0
+   ],
+   [
+    "outro",
+    16,
+    0.4
+   ]
+  ],
+  [
+   [
+    "intro",
+    16,
+    0.42
+   ],
+   [
+    "groove",
+    16,
+    0.65
+   ],
+   [
+    "break",
+    16,
+    0.35
+   ],
+   [
+    "build",
+    8,
+    0.65
+   ],
+   [
+    "drop",
+    32,
+    0.95
+   ],
+   [
+    "break",
+    16,
+    0.38
+   ],
+   [
+    "build",
+    8,
+    0.7
+   ],
+   [
+    "drop",
+    16,
+    1.0
+   ],
+   [
+    "outro",
+    16,
+    0.4
+   ]
+  ],
+  [
+   [
+    "intro",
+    32,
+    0.42
+   ],
+   [
+    "build",
+    8,
+    0.6
+   ],
+   [
+    "drop",
+    16,
+    0.85
+   ],
+   [
+    "break",
+    32,
+    0.35
+   ],
+   [
+    "build",
+    16,
+    0.72
    ],
    [
     "drop",
@@ -177,6 +262,29 @@
    "sc": 0.4
   },
   {
+   "id": "theme",
+   "role": "lead",
+   "inst": "piano",
+   "min": 0.0,
+   "max": 1.01,
+   "only": [
+    "break"
+   ],
+   "line": "hook",
+   "rev": 0.5,
+   "label": "Breakdown theme"
+  },
+  {
+   "id": "answer",
+   "role": "answer",
+   "inst": "bell",
+   "min": 0.85,
+   "max": 1.01,
+   "rev": 0.4,
+   "dly": 0.3,
+   "register": -7
+  },
+  {
    "id": "fx",
    "role": "fx",
    "inst": "fx",
@@ -184,5 +292,11 @@
    "max": 1.01,
    "rev": 0.35
   }
+ ],
+ "break_alt": false,
+ "drop2": [
+  "lead_octave",
+  "layer",
+  "lift"
  ]
 }

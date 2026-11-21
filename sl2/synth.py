@@ -107,6 +107,24 @@ def res_lp_sweep(x, cutoff, q=4.0, sr=SR, block=64):
     return y
 
 
+def sweep(x, cutoff, kind='lp', q=0.707, sr=SR, block=128):
+    """Low- or high-pass whose cutoff moves over time (cutoff: per-sample array). RBJ biquad, updated per block."""
+    y = np.empty_like(x)
+    zi = np.zeros(2)
+    for i in range(0, len(x), block):
+        fc = float(np.clip(cutoff[min(i, len(cutoff) - 1)], 20, sr * 0.45))
+        w = 2 * np.pi * fc / sr
+        al = np.sin(w) / (2 * q)
+        c = np.cos(w)
+        if kind == 'hp':
+            b = np.array([(1 + c) / 2, -(1 + c), (1 + c) / 2])
+        else:
+            b = np.array([(1 - c) / 2, 1 - c, (1 - c) / 2])
+        a = np.array([1 + al, -2 * c, 1 - al])
+        y[i:i + block], zi = signal.lfilter(b / a[0], a / a[0], x[i:i + block], zi=zi)
+    return y
+
+
 def soft(x, drive=1.0):
     return np.tanh(x * drive) / np.tanh(drive)
 
@@ -698,6 +716,7 @@ ROLE_CHOICES = {
     'pad': ['pad_warm', 'pad_air', 'strings', 'supersaw', 'guitar_space'],
     'lead': ['pluck', 'bell', 'mallet', 'lead_saw', 'supersaw', 'arp_square', 'surf_guitar', 'horns', 'keys_epiano', 'guitar_clean', 'combo_organ', 'piano', 'flute', 'hoover', 'cowbell_mel'],
     'arp': ['pluck', 'bell', 'mallet', 'arp_square', 'keys_epiano', 'guitar_clean', 'guitar_space'],
+    'answer': ['bell', 'mallet', 'pluck', 'arp_square', 'keys_epiano', 'flute', 'guitar_clean', 'piano'],
     'riff': ['baritone', 'surf_guitar', 'bass_guitar', 'lead_saw', 'bass_synth'],
 }
 

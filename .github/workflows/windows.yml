@@ -1,0 +1,78 @@
+name: windows app
+# Builds SL2.exe (Python, numpy and scipy inside - nothing else to install), checks that it really composes a song
+# and serves the app, then wraps it in an installer. On a version tag (v2.1.0 ...) both go to a GitHub release.
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: pip install "numpy>=1.22" "scipy>=1.8" pyinstaller
+      - name: Version
+        id: v
+        shell: pwsh
+        run: |
+          $v = (Select-String -Path sl2/__init__.py -Pattern '__version__ = "(.+)"').Matches[0].Groups[1].Value
+          "version=$v" >> $env:GITHUB_OUTPUT
+      - name: Build SL2.exe
+        run: pyinstaller packaging/windows/sl2.spec --noconfirm --distpath dist --workpath build
+      - name: Smoke test - compose and render a song with the exe
+        shell: pwsh
+        run: |
+          $env:SL2_HOME = "$env:RUNNER_TEMP\sl2-songs"
+          & dist\SL2\SL2.exe --version
+          & dist\SL2\SL2.exe make "short techno"
+          if ($LASTEXITCODE -ne 0) { throw "make failed" }
+          $wav = Get-ChildItem -Recurse -Filter mix.wav $env:SL2_HOME | Select-Object -First 1
+          if (-not $wav -or $wav.Length -lt 1000000) { throw "no mix.wav was written" }
+          "rendered $($wav.FullName) ($($wav.Length) bytes)"
+      - name: Smoke test - the app serves its page and script
+        shell: pwsh
+        run: |
+          $env:SL2_HOME = "$env:RUNNER_TEMP\sl2-songs"
+          $p = Start-Process -FilePath dist\SL2\SL2.exe -ArgumentList '--no-browser' -PassThru
+          try {
+            $ok = $false
+            for ($i = 0; $i -lt 60 -and -not $ok; $i++) {
+              Start-Sleep -Seconds 1
+              try { $r = Invoke-WebRequest -UseBasicParsing http://127.0.0.1:8770/ -TimeoutSec 5; $ok = $r.StatusCode -eq 200 } catch {}
+            }
+            if (-not $ok) { throw "the app did not answer" }
+            $js = Invoke-WebRequest -UseBasicParsing http://127.0.0.1:8770/ui/app.js
+            if ($js.Headers['Content-Type'] -notlike 'text/javascript*') { throw "app.js served as $($js.Headers['Content-Type'])" }
+            "page and script OK"
+          } finally { Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue }
+      - name: Zip
+        shell: pwsh
+        run: Compress-Archive -Path dist\SL2 -DestinationPath "dist\SL2-${{ steps.v.outputs.version }}-Windows.zip"
+      - name: Installer
+        shell: pwsh
+        run: |
+          $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+          if (-not (Test-Path $iscc)) { choco install innosetup -y --no-progress | Out-Null }
+          & $iscc "/DVERSION=${{ steps.v.outputs.version }}" packaging\windows\sl2.iss
+          if ($LASTEXITCODE -ne 0) { throw "installer build failed" }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SL2-${{ steps.v.outputs.version }}-Windows
+          path: |
+            dist/SL2-Setup-*.exe
+            dist/SL2-*-Windows.zip
+      - name: Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/SL2-Setup-*.exe
+            dist/SL2-*-Windows.zip

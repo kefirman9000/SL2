@@ -6,8 +6,11 @@ header must be the local address, so other web pages can't drive it.
 import json
 import mimetypes
 import os
+import platform
 import re
 import secrets
+import shutil
+import sys
 import tempfile
 import threading
 import webbrowser
@@ -18,6 +21,11 @@ from . import __version__, analyze, genres, prompt, store
 from .synth import LABELS
 
 UI = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ui')
+# Explicit types: on Windows, mimetypes reads the registry, where .js is sometimes registered as text/plain
+# (and browsers then refuse to run the page's script).
+TYPES = {'.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
+         '.ttf': 'font/ttf', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json',
+         '.txt': 'text/plain; charset=utf-8', '.wav': 'audio/wav', '.mp3': 'audio/mpeg', '.mid': 'audio/midi', '.ico': 'image/x-icon'}
 TOKEN = secrets.token_urlsafe(24)
 MAX_UPLOAD = 300 * 1024 * 1024
 
@@ -62,7 +70,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def _file(self, path, ctype=None, download=None):
         size = os.path.getsize(path)
-        ctype = ctype or mimetypes.guess_type(path)[0] or 'application/octet-stream'
+        ctype = ctype or TYPES.get(os.path.splitext(path)[1].lower()) or mimetypes.guess_type(path)[0] or 'application/octet-stream'
         rng = self.headers.get('Range')
         start, end = 0, size - 1
         code = 200
@@ -128,7 +136,11 @@ class Handler(BaseHTTPRequestHandler):
 
     def _get_api(self, p, q):
         if p == '/api/genres':
-            return self._send(200, dict(genres=genres.summary(), sounds=LABELS))
+            from .compose import CHOICES
+            return self._send(200, dict(genres=genres.summary(), sounds=LABELS, choices=CHOICES,
+                                        caps=dict(mp3=bool(shutil.which('ffmpeg')))))
+        if p == '/api/diag':
+            return self._send(200, diagnostics())
         if p == '/api/library':
             return self._send(200, store.library())
         if p.startswith('/api/job/'):
@@ -148,6 +160,9 @@ class Handler(BaseHTTPRequestHandler):
             if what == 'wav':
                 meta = store.load_meta(sid)
                 return self._file(os.path.join(store._dir(sid), 'mix.wav'), 'audio/wav', download=_fname(meta, 'wav'))
+            if what == 'mp3':
+                meta = store.load_meta(sid)
+                return self._file(store.export_mp3(sid), 'audio/mpeg', download=_fname(meta, 'mp3'))
             if what == 'midi':
                 meta = store.load_meta(sid)
                 return self._file(store.export_midi(sid), 'audio/midi', download=_fname(meta, 'mid'))
@@ -184,6 +199,9 @@ class Handler(BaseHTTPRequestHandler):
                     finally:
                         os.remove(tmp)
                 return self._send(200, dict(job=store.start_job('analyze', job)))
+            if p == '/api/import':
+                text = self._body().decode('utf-8-sig')
+                return self._send(200, dict(job=store.start_job('open', store.import_song, text)))
             body = json.loads(self._body() or b'{}')
             if p == '/api/prompt':
                 s, said = prompt.parse(body.get('text', ''))
@@ -203,6 +221,13 @@ class Handler(BaseHTTPRequestHandler):
                     return self._send(200, dict(job=store.start_job('edit', store.edit_notes, sid, body['track'], body['notes'])))
                 if what == 'mix':
                     return self._send(200, dict(job=store.start_job('mix', store.remix, sid, body.get('mix', {}))))
+                if what == 'section':
+                    if body.get('action') == 'take':
+                        return self._send(200, dict(job=store.start_job('section', store.reroll_section, sid, body['index'])))
+                    return self._send(200, dict(job=store.start_job('section', store.edit_section, sid, body['index'], body['action'],
+                                                                    body.get('track'), body.get('bars', 4))))
+                if what == 'variation':
+                    return self._send(200, dict(job=store.start_job('variation', store.variation, sid, body.get('keep', []))))
                 if what == 'star':
                     return self._send(200, store.star(sid, body.get('on', True)))
                 if what == 'delete':
@@ -210,6 +235,14 @@ class Handler(BaseHTTPRequestHandler):
             return self._err(404, 'not found')
         except Exception as e:
             return self._err(400, f'{type(e).__name__}: {e}')
+
+
+def diagnostics():
+    import numpy
+    import scipy
+    return dict(sl2=__version__, python=sys.version.split()[0], platform=platform.platform(), machine=platform.machine(),
+                numpy=numpy.__version__, scipy=scipy.__version__, cpus=os.cpu_count(), frozen=bool(getattr(sys, 'frozen', False)),
+                ffmpeg=bool(shutil.which('ffmpeg')), songs=store.HOME, workers=__import__('sl2.render', fromlist=['x']).default_workers())
 
 
 def _fname(meta, ext):

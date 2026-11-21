@@ -12,6 +12,7 @@ import io
 import json
 import os
 import shutil
+import sys
 import threading
 import time
 import traceback
@@ -26,7 +27,18 @@ from .compose import compose, song_beats_notes
 from .midi import write_midi
 from .song import Clip, Note, Placement, Song
 
-HOME = os.environ.get('SL2_HOME') or os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'songs')
+def _default_home():
+    """Where songs are saved: $SL2_HOME, else (the installed Windows / Mac app) Documents/SL2 Songs, else songs/ next
+    to the code (running from a download or a clone)."""
+    if os.environ.get('SL2_HOME'):
+        return os.environ['SL2_HOME']
+    if getattr(sys, 'frozen', False):
+        docs = os.path.join(os.path.expanduser('~'), 'Documents')
+        return os.path.join(docs if os.path.isdir(docs) else os.path.expanduser('~'), 'SL2 Songs')
+    return os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'songs')
+
+
+HOME = _default_home()
 STEMS = os.path.join(HOME, '.stems')
 JOBS = {}
 _LOCK = threading.Lock()
@@ -52,7 +64,7 @@ def save_meta(sid, meta):
     p = os.path.join(_dir(sid), 'meta.json')
     with open(p + '.tmp', 'w', encoding='utf-8') as f:
         json.dump(meta, f, indent=1)
-    os.replace(p + '.tmp', p)
+    R.replace_file(p + '.tmp', p)
 
 
 def _new_id(song):
@@ -141,11 +153,15 @@ def reroll(sid, what, progress=None):
     if what == 'all':
         s['seed'] = int(s.get('seed', 1)) + 1
         ps = {}
+        s.pop('form_override', None)
+        s.pop('section_mutes', None)
     elif what == 'harmony':
         ps['harmony'] = ps.get('harmony', 0) + 1
         ps['voicing'] = ps.get('voicing', 0) + 1
     elif what == 'form':
         ps['form'] = ps.get('form', 0) + 1
+        s.pop('form_override', None)
+        s.pop('section_mutes', None)
     else:
         t = next((t for t in old.tracks if t.id == what), None)
         if t is None:
@@ -166,6 +182,113 @@ def reroll(sid, what, progress=None):
             t.instrument = o.instrument
             t.locked = o.locked
     return _finish(song, parent=sid, mix=meta.get('mix'), progress=progress, note=f're-rolled {what}')
+
+
+# ------------------------------------------------------------------ sections, variations, files
+VARIATION_PARTS = {
+    'tempo': ('tempo', 'key'),
+    'form': ('form', 'arrange', 'drop2'),
+    'chords': ('harmony', 'voicing', 'harmony-colour'),
+    'melody': ('melody',),
+}
+
+
+def edit_section(sid, index, action, track=None, bars=4, progress=None):
+    """Duplicate / remove / move / lengthen / shorten a section, or take a part out of it. Notes are kept exactly."""
+    from . import edit as E
+    song = load_song(sid)
+    meta = load_meta(sid)
+    what = E.apply(song, int(index), action, track, int(bars or 4))
+    return _finish(song, parent=sid, mix=meta.get('mix'), progress=progress, note=what)
+
+
+def reroll_section(sid, index, progress=None):
+    """A new take of one section: every unlocked part is re-written there; the rest of the song stays as it is."""
+    from . import edit as E
+    old = load_song(sid)
+    meta = load_meta(sid)
+    index = int(index)
+    if not 0 <= index < len(old.sections):
+        raise ValueError('no such section')
+    s = dict(old.settings)
+    s.pop('report', None)
+    s['form_override'] = [[x.name, x.bars, E._base_energy(x)] for x in old.sections]
+    ps = dict(s.get('part_seeds') or {})
+    for part in ['melody', 'arrange', 'drop2'] + ['track-' + t.id for t in old.tracks]:
+        ps[part] = ps.get(part, 0) + 1
+    s['part_seeds'] = ps
+    locked = {t.id: song_beats_notes(old, t.id) for t in old.tracks if t.locked}
+    new = compose(s, locked=locked, prev_harmony=old.settings.get('harmony'))
+    E.take_section(old, new, index)
+    return _finish(old, parent=sid, mix=meta.get('mix'), progress=progress, note=f'new take of {old.sections[index].name}')
+
+
+def variation(sid, keep, progress=None):
+    """'More like this': a new song that keeps what you tick (tempo & key, form, groove, bass, chords, melody,
+    sounds) and re-writes the rest. keep=[] is 'something different' (same genre, everything new)."""
+    old = load_song(sid)
+    meta = load_meta(sid)
+    keep = set(keep or [])
+    s = dict(old.settings)
+    s.pop('report', None)
+    ps = dict(s.get('part_seeds') or {})
+    bump = set()
+    for name, parts in VARIATION_PARTS.items():
+        if name not in keep:
+            bump.update(parts)
+    drum_roles = {'kick', 'snare', 'clap', 'hat', 'ohat', 'ride', 'shaker', 'perc', 'rim', 'cowbell'}
+    for t in old.tracks:
+        group = 'groove' if t.role in drum_roles else 'bass' if t.role in ('bass', 'riff') else             'melody' if t.role in ('lead', 'answer') else 'chords'
+        if group not in keep:
+            bump.add('track-' + t.id)
+    for part in bump:
+        ps[part] = ps.get(part, 0) + 1 + int(time.time()) % 97
+    s['part_seeds'] = ps
+    if 'form' not in keep:
+        s.pop('form_override', None)
+        s.pop('section_mutes', None)
+    if 'sounds' not in keep:
+        s.pop('instruments', None)
+    song = compose(s, prev_harmony=old.settings.get('harmony') if 'chords' in keep else None)
+    _apply_overrides(song, s)
+    label = 'more like this (kept ' + ', '.join(sorted(keep)) + ')' if keep else 'something different'
+    return _finish(song, parent=sid, mix=meta.get('mix') if 'sounds' in keep else None, progress=progress, note=label)
+
+
+def import_song(text, progress=None):
+    """Open a song file (.sl2.json) - from this computer or someone else's - as a new song."""
+    from .synth import known
+    song = Song.from_json(text)
+    if song.genre not in G.ids():
+        raise ValueError(f'this song uses the genre {song.genre!r}, which this SL2 does not have')
+    g = G.load(song.genre)
+    spec = {t['id']: t for t in g['tracks']}
+    for t in song.tracks:
+        if not known(t.instrument):
+            t.instrument = spec.get(t.id, {}).get('inst', 'pluck' if t.role not in ('fx',) else 'fx')
+        for p in t.placements:
+            if p.clip not in song.clips or not 0 <= p.section < len(song.sections):
+                raise ValueError('the song file is damaged (a clip or section is missing)')
+    if progress:
+        progress(0.03, 'opening the song file')
+    return _finish(song, progress=progress, note='opened from a file')
+
+
+def export_mp3(sid):
+    exe = shutil.which('ffmpeg')
+    if not exe:
+        raise ValueError('MP3 export needs ffmpeg (https://ffmpeg.org) - WAV export works without it')
+    src = os.path.join(_dir(sid), 'mix.wav')
+    dst = os.path.join(_dir(sid), 'mix.mp3')
+    if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src):
+        import subprocess
+        tmp = dst + '.tmp.mp3'
+        p = subprocess.run([exe, '-y', '-v', 'error', '-i', src, '-codec:a', 'libmp3lame', '-b:a', '256k', tmp],
+                           capture_output=True, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
+        if p.returncode != 0:
+            raise ValueError('ffmpeg could not write the MP3: ' + p.stderr.decode(errors='replace')[-300:])
+        R.replace_file(tmp, dst)
+    return dst
 
 
 def set_lock(sid, tid, on):
@@ -318,10 +441,19 @@ def insights(song, meta):
     out = []
     rep = meta.get('report', {})
     mel = rep.get('melody') or {}
-    if mel:
-        out.append(f"Hook: best of {mel.get('candidates')} candidates (score {mel.get('score')}). "
-                   f"{int(100 * mel.get('chord_tones', 0))}% chord tones on strong beats, {int(100 * mel.get('steps', 0))}% stepwise, "
-                   f"range {mel.get('range')} scale steps.")
+    if mel.get('device') == 'chops':
+        out.append(f"Lead: chopped stabs on the top chord tones ({mel.get('notes')} hits per phrase), the last two bars answer.")
+    elif mel.get('device') == 'ostinato':
+        out.append(f"Lead: a hypnotic sequence ({mel.get('notes')} notes per phrase); one note moves every 4 bars.")
+    elif mel:
+        out.append(f"Hook: best of {mel.get('candidates')} candidates (score {mel.get('score')}, median {mel.get('median')}). "
+                   f"{int(100 * mel.get('chord_tones', 0))}% chord tones on strong beats + {int(100 * mel.get('tension', 0))}% leaning notes "
+                   f"that resolve, {int(100 * mel.get('steps', 0))}% stepwise, range {mel.get('range')} scale steps"
+                   + (", open half-way, closed ending." if mel.get('question') else "."))
+    if rep.get('later_drops'):
+        names = {'lead_octave': 'lead doubled an octave up', 'layer': 'an extra layer', 'lift': 'key lift'}
+        out.append('Later drops: ' + '; '.join(f"{k}: {', '.join(names.get(c, c) for c in v)}" for k, v in rep['later_drops'].items())
+                   + (f" ({rep['key_lift']})" if rep.get('key_lift') else '') + '.')
     out.append(f"Chords: {rep.get('progression', '?')}" + (f"; breakdown: {rep['break_progression']}" if rep.get('break_progression') else ''))
     ms = meta.get('master') or {}
     if ms.get('tone_error_before') is not None:
