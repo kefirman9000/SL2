@@ -34,6 +34,7 @@ Source: "..\..\dist\SL2\*"; DestDir: "{app}"; Flags: recursesubdirs createallsub
 [Icons]
 Name: "{group}\SL2"; Filename: "{app}\SL2.exe"
 Name: "{group}\SL2 songs folder"; Filename: "{userdocs}\SL2 Songs"
+Name: "{group}\SL2 command line"; Filename: "{cmd}"; Parameters: "/k ""{app}\sl2-cli.exe"" --help"
 Name: "{group}\Uninstall SL2"; Filename: "{uninstallexe}"
 Name: "{userdesktop}\SL2"; Filename: "{app}\SL2.exe"; Tasks: desktopicon
 

@@ -373,6 +373,7 @@ const MASTER = [['loudness', 'LOUDNESS', { genre: 'As the genre', club: 'Club (-
   ['width', 'STEREO WIDTH', { narrow: 'Narrower', genre: 'As the genre', wide: 'Wider' }],
   ['tone', 'TONE', { darker: 'Darker', genre: 'As the genre', brighter: 'Brighter' }],
   ['glue', 'GLUE COMPRESSION', { off: 'Off', genre: 'Gentle', heavy: 'Heavy' }],
+  ['buses', 'MIX BUSES (drum punch, mono sub, room for the lead)', { on: 'On', off: 'Off' }],
   ['tape', 'TAPE SATURATION', { off: 'Off', on: 'On' }]];
 $('#mixMaster').onclick = e => {
   if (!S.song) return;
@@ -382,7 +383,7 @@ $('#mixMaster').onclick = e => {
   for (const [k, label, opts] of MASTER) {
     items.push({ label: label });
     for (const [v, t] of Object.entries(opts)) {
-      const cur = m[k] || (k === 'tape' ? 'off' : 'genre');
+      const cur = m[k] || (k === 'tape' ? 'off' : k === 'buses' ? 'on' : 'genre');
       items.push({ label: '  ' + t, chk: cur === v, fn: () => { S.mix._master = Object.assign({}, S.mix._master, { [k]: v }); remix(); } });
     }
   }
@@ -485,7 +486,19 @@ function menu(x, y, items, title) {
   m.style.left = Math.max(4, Math.min(x, innerWidth - w - 8)) + 'px'; m.style.top = Math.max(4, Math.min(y, innerHeight - h - 8)) + 'px';
 }
 document.addEventListener('mousedown', e => { if (!e.target.closest('.menu')) $('#menu').classList.remove('on'); });
-function dl(what) { if (!S.song) return; location.href = `/api/song/${S.song.meta.id}/${what}?t=${encodeURIComponent(T)}`; }
+async function dl(what) {
+  if (!S.song) return;
+  const path = `/api/song/${S.song.meta.id}/${what}`;
+  const desk = window.pywebview && window.pywebview.api && window.pywebview.api.save;
+  if (!desk) { location.href = `${path}?t=${encodeURIComponent(T)}`; return; }
+  try {                                         // the desktop program: a real "Save as" dialog
+    toast('PREPARING THE FILE ...', 20000);
+    const r = await window.pywebview.api.save(path);
+    if (r && r.ok) { toast('SAVED ' + r.path.split(/[\\/]/).pop().toUpperCase(), 4000); window.pywebview.api.reveal(r.path); }
+    else if (r && r.cancelled) toast('NOT SAVED');
+    else toast('COULD NOT SAVE: ' + ((r && r.error) || 'unknown'), 6000);
+  } catch (e) { toast('COULD NOT SAVE: ' + e, 6000); }
+}
 
 // ------------------------------------------------------------------ reference analysis
 async function openSongFile(file) {
@@ -618,7 +631,7 @@ $('#plSel').onclick = async () => {
 };
 $('#plMisc').onclick = e => {
   const r = e.target.getBoundingClientRect();
-  menu(r.left, r.top - 200, [['Download WAV (master)', () => dl('wav')],
+  menu(r.left, r.top - 220, [['Download WAV (master)', () => dl('wav')], ['Download WAV 24-bit (for mastering)', () => dl('wav24')],
     S.caps.mp3 ? ['Download MP3 (256k)', () => dl('mp3')] : { label: 'MP3 needs ffmpeg installed' },
     ['Download stems (ZIP)', () => dl('stems')], ['Download MIDI', () => dl('midi')], ['Download song file (.sl2.json)', () => dl('json')],
     '-', ['Open a song file...', () => $('#fileIn').click()], ['Copy diagnostics (for a bug report)', copyDiag]]);

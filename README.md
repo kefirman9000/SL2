@@ -14,11 +14,11 @@ stay distinct and each one is grounded in real reference tracks.
 ### Windows
 
 Download `SL2-Setup-<version>.exe` from the [latest release](https://github.com/kefirman9000/SL2/releases/latest) and
-double-click it. Python, numpy and scipy are inside; nothing else to install, no admin password. If Windows shows
+double-click it. Python, numpy, scipy and the window component are inside; nothing else to install, no admin password. If Windows shows
 *"Windows protected your PC"*, click **More info → Run anyway** (the installer isn't signed with a paid certificate).
-SL2 appears in the Start menu, opens in your browser, and saves songs in **Documents\SL2 Songs** (kept when you
+SL2 appears in the Start menu and opens in **its own window** (Microsoft Edge WebView2, part of Windows 10 and 11: no browser, no console). Exports open a normal *Save as* dialog. Songs are saved in **Documents\SL2 Songs** (kept when you
 update or uninstall). Prefer no installer? The release also has `SL2-<version>-Windows.zip`: unzip it anywhere and run
-`SL2.exe`.
+`SL2.exe` (`sl2-cli.exe` is the same program for the command line).
 
 From the source code instead: install [Python 3.9+](https://www.python.org/downloads/) (tick *Add python.exe to
 PATH*), download this repository and double-click **`Start SL2 (Windows).bat`**. The first start sets up a private

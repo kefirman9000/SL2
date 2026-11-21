@@ -1,19 +1,24 @@
 ## Install on Windows
 
-Download **`SL2-Setup-2.1.0.exe`** below and double-click it. Python, numpy and scipy are inside, so there's nothing else to install, and it doesn't need an admin password.
+Download **`SL2-Setup-2.2.0.exe`** below and double-click it. Python, numpy, scipy and the window component are inside, so there's nothing else to install, and it doesn't need an admin password.
 
 If Windows shows *"Windows protected your PC"*, click **More info → Run anyway**. The installer isn't signed with a paid certificate.
 
-SL2 appears in the Start menu and opens in your browser. Songs are saved in **Documents\SL2 Songs**, and updating or uninstalling leaves them there.
+SL2 appears in the Start menu and on your desktop. Songs are saved in **Documents\SL2 Songs**, and updating or uninstalling leaves them there.
 
-If you'd rather not use the installer, download `SL2-2.1.0-Windows.zip`, unzip it anywhere and run `SL2.exe`.
+If you'd rather not use the installer, download `SL2-2.2.0-Windows.zip`, unzip it anywhere and run `SL2.exe`.
 
-## What's new in 2.1
+## What's new in 2.2
 
-- **Songs that move.** Phrases now vary every 4 and 8 bars, parts enter and leave on the grid, and filters sweep. Later drops change, and the last one can lift the key. A second melody answers the lead, the hooks are stronger, and the chords are richer.
-- **Section tools.** Duplicate a section, make it longer or shorter, move it, remove it, take a part out of it, or get a new take of just that section.
-- **Song tools.** "More like this" and "something different", A/B comparison, genre search with favourites, opening song files, MP3 export, and feel controls (fills, hi-hats, ghost notes, build-ups, FX, variation).
-- **25 new club and bass-music synths and 4 heavier drums.**
-- **Effects on any part:** drive, chorus, phaser, flanger, trance gate, OTT, synced echo, stutter and more.
-- **Master options:** loudness, width, tone, glue and tape.
-- **New genres:** Dubstep, and Euphoric UK Techno (modelled on Scuba - NE1BUTU).
+- **A real Windows program.** SL2 opens in its own window: no browser and no console. Exports open a normal **Save as** dialog and then show the file in Explorer, and the window remembers its size and position. `sl2-cli.exe` is there for the command line (`sl2-cli make "dark techno, long"`).
+- **More professional production:**
+  - **Clean, loud masters:** a soft clipper and a true-peak limiter (nothing over -1 dBTP once the song is encoded to MP3 or streamed).
+  - **Mix buses:** parallel compression on the drums, the sub kept mono with its harmonics added so the bass reads on phones, and the chords and pads dipping at the lead's frequency while the lead plays.
+  - **Kicks tuned to the song's key**, and four alternating takes of every drum hit, so no two hits in a row are identical. Softer hits are darker.
+  - **Reverb and delay that follow the music:** they duck under the dry part, get wetter in breakdowns and tighter in drops, and throw an echo into each drop.
+  - **A mix check after every render** (in INFO): true peak, loudness, dynamics, clipping, DC offset, mono compatibility, and whether the lead is buried.
+  - **24-bit WAV export** for mastering elsewhere.
+
+## Also in 2.1
+
+Songs that move (phrase variation, sweeps, evolving drops, call and response), section tools, "more like this", A/B compare, 25 club and bass-music synths, effects on every part, master options, and the Dubstep and Euphoric UK Techno genres.

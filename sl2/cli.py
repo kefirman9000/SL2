@@ -1,6 +1,8 @@
 """SL2 from the command line (also the entry point of the Windows app).
 
-    sl2                       open the app in your browser
+    sl2                       open the app (its own window in the Windows program; your browser otherwise)
+    sl2 --window              open the app in its own window (needs pywebview)
+    sl2 --browser             open the app in your browser
     sl2 --no-browser          just start the server
     sl2 make "dark deep dubstep, long"   write a song from a description (no UI)
 """
@@ -40,6 +42,19 @@ def main(argv=None):
         print('  ' + '\n  '.join(meta['insights']))
         print('saved to', os.path.join(store.HOME, meta['id']))
         return 0
+    if '--selftest' in args:
+        from . import desktop
+        return desktop.run(selftest=args[args.index('--selftest') + 1])
+    if '--window' in args or (default_window() and not {'--browser', '--no-browser'} & set(args)):
+        from . import desktop
+        return desktop.run()
     from .server import run
     run(open_browser='--no-browser' not in args)
     return 0
+
+
+def default_window():
+    """The installed Windows program (SL2.exe) opens its own window; sl2-cli.exe and `python sl2.py` use the browser."""
+    if not getattr(sys, 'frozen', False):
+        return False
+    return not os.path.basename(sys.executable).lower().startswith('sl2-cli')

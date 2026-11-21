@@ -112,16 +112,19 @@ def _mixdown(sid, song, meta, progress=None):
     paths, infos = R.render_stems(song, STEMS, progress=prog)
     if progress:
         progress(0.88, 'mixing and mastering')
-    mx = R.mix_stems(paths, song, meta.get('mix'))
+    from . import mixcheck
+    info, keep = {}, {}
+    mx = R.mix_stems(paths, song, meta.get('mix'), info, keep)
     g = G.load(song.genre)
     m, rep = R.master(mx, g, float(song.settings.get('brightness') or 0), (meta.get('mix') or {}).get('_master'))
     R.write_wav(os.path.join(_dir(sid), 'mix.wav'), m)
     meta['master'] = rep
+    meta['mixcheck'] = mixcheck.check(m, rep, info, keep)
     meta['autogain'] = infos
     meta['duration'] = round(m.shape[1] / R.SR, 2)
     meta['peaks'] = R.peaks(m)
     meta['section_db'] = R.section_levels(m, song)
-    meta['insights'] = insights(song, meta)
+    meta['insights'] = insights(song, meta) + [mixcheck.summary(meta['mixcheck'])]
     meta['rev'] = meta.get('rev', 0) + 1
     save_meta(sid, meta)
     if progress:
@@ -279,6 +282,20 @@ def import_song(text, progress=None):
     if progress:
         progress(0.03, 'opening the song file')
     return _finish(song, progress=progress, note='opened from a file')
+
+
+def export_wav24(sid):
+    """The master again at 24 bits, for mastering or mixing elsewhere (the player's mix.wav is 16-bit)."""
+    song = load_song(sid)
+    meta = load_meta(sid)
+    dst = os.path.join(_dir(sid), 'mix24.wav')
+    if os.path.exists(dst) and os.path.getmtime(dst) >= os.path.getmtime(os.path.join(_dir(sid), 'mix.wav')):
+        return dst
+    paths, _ = R.render_stems(song, STEMS)
+    mx = R.mix_stems(paths, song, meta.get('mix'))
+    m, _ = R.master(mx, G.load(song.genre), float(song.settings.get('brightness') or 0), (meta.get('mix') or {}).get('_master'))
+    R.write_wav(dst, m, bits=24)
+    return dst
 
 
 def export_mp3(sid):
