@@ -1,0 +1,15 @@
+{
+ "swing": 0.5, "swing_unit": 16, "loudness": -10, "space": "plate", "brightness": 0.0,
+ "scales": {"minor": 3, "dorian": 1},
+ "harmony": {"loop": 4, "bars_per_chord": 1, "start": [0], "color": 0.3, "allow_dim": false, "static": false,
+   "moves": {"0": {"5": 3, "3": 3, "6": 2, "2": 1, "4": 1}, "1": {"4": 3, "6": 1}, "2": {"6": 3, "5": 2, "3": 2},
+             "3": {"6": 2, "4": 2, "0": 2, "5": 1}, "4": {"0": 4, "5": 2}, "5": {"2": 2, "6": 3, "3": 2, "4": 1},
+             "6": {"0": 3, "2": 2, "5": 1}}},
+ "sidechain": {"depth": 0.0, "release": 0.45},
+ "drum_flags": {"fills": true, "hat_rolls": false, "build_roll": "snare", "humanize": 0.25},
+ "bass": {"style": "pulse8", "octave": 1},
+ "chords": {"rhythm": "hold", "length": 0.9, "strum": 0.0, "octave_lo": 52, "octave_hi": 76},
+ "lead": {"style": "hook", "octave": 5, "density": 0.55, "break_skeleton": true,
+   "rhythms": ["x..x..x.x.......x..x..x...x.....", "x.x...x...x.x...x.x...x.x.......", "x...x..x..x.....x...x..x..x.x...", "x..x..x...x..x..x..x..x.x.......", "x.......x..x..x.x.......x...x..."]},
+ "arp": {"pattern": "updown", "rate": 16, "octaves": 2, "gate": 0.6}
+}

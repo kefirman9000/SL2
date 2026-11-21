@@ -1,0 +1,115 @@
+{
+ "extends": "_club",
+ "name": "Melodic Techno",
+ "desc": "Cinematic techno: arpeggiated plucks, huge pads, a soaring supersaw lead in the drops.",
+ "keywords": [
+  "melodic techno",
+  "afterlife",
+  "progressive",
+  "emotional",
+  "cinematic"
+ ],
+ "bpm": [
+  122,
+  126
+ ],
+ "space": "hall",
+ "fingerprint": {
+  "tone": [
+   -1.0,
+   0.0,
+   -4.0,
+   -7.0,
+   -8.0,
+   -9.0,
+   -10.0,
+   -12.0,
+   -16.0
+  ],
+  "width": 0.45,
+  "lufs": -8.0,
+  "pump_db": 6.0
+ },
+ "harmony": {
+  "bars_per_chord": 2,
+  "color": 0.4
+ },
+ "bass": {
+  "style": "rolling",
+  "octave": 1
+ },
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_techno",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "clap",
+   "role": "clap",
+   "inst": "clap_909",
+   "min": 0.55,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_909",
+   "min": 0.25,
+   "max": 1.01
+  },
+  {
+   "id": "ohat",
+   "role": "ohat",
+   "inst": "ohat_909",
+   "min": 0.7,
+   "max": 1.01
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_synth",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "pad",
+   "role": "pad",
+   "inst": "pad_warm",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.5,
+   "sc": 0.8
+  },
+  {
+   "id": "arp",
+   "role": "arp",
+   "inst": "pluck",
+   "min": 0.3,
+   "max": 1.01,
+   "rev": 0.35,
+   "dly": 0.35,
+   "sc": 0.6
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "supersaw",
+   "min": 0.85,
+   "max": 1.01,
+   "rev": 0.45,
+   "dly": 0.25,
+   "sc": 0.5
+  },
+  {
+   "id": "fx",
+   "role": "fx",
+   "inst": "fx",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35
+  }
+ ]
+}

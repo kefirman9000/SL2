@@ -1,0 +1,201 @@
+{
+ "extends": "_halftime",
+ "name": "Memphis Phonk",
+ "group": "Bass & Trap",
+ "refs": "DJ Smokey - theme for a shadow goblin",
+ "fingerprint": {
+  "tone": [
+   0.0,
+   -9.3,
+   -16.0,
+   -18.3,
+   -19.7,
+   -22.6,
+   -22.7,
+   -23.3,
+   -29.8
+  ],
+  "width": 0.21,
+  "lufs": -8.5,
+  "pump_db": 5.1,
+  "low_side_db": -14.8,
+  "bpm": 162.5,
+  "n": 1
+ },
+ "loudness": -8.5,
+ "desc": "Dark, lo-fi Memphis phonk: a heavy 808, a cowbell melody, eerie bells, steady 8th hats and a raw backbeat.",
+ "keywords": [
+  "phonk",
+  "memphis",
+  "memphis phonk",
+  "cowbell",
+  "drift phonk",
+  "dark",
+  "dj smokey",
+  "goblin"
+ ],
+ "bpm": [
+  150,
+  166
+ ],
+ "scales": {
+  "phrygian": 3,
+  "minor": 2,
+  "harmonic_minor": 1
+ },
+ "brightness": -0.85,
+ "space": "room",
+ "harmony": {
+  "static": true,
+  "loop": 2,
+  "bars_per_chord": 2
+ },
+ "forms": [
+  [
+   [
+    "intro",
+    8,
+    0.4
+   ],
+   [
+    "hook",
+    16,
+    0.85
+   ],
+   [
+    "verse",
+    16,
+    0.7
+   ],
+   [
+    "hook",
+    16,
+    0.9
+   ],
+   [
+    "break",
+    8,
+    0.4
+   ],
+   [
+    "hook",
+    16,
+    0.95
+   ],
+   [
+    "outro",
+    4,
+    0.35
+   ]
+  ]
+ ],
+ "drums": {
+  "low": {
+   "hat": "x.x.x.x.x.x.x.x."
+  },
+  "mid": {
+   "kick": "X.....x...X.....",
+   "snare": "....X.......X...",
+   "hat": "x.x.x.x.x.x.x.x."
+  },
+  "high": {
+   "kick": "X.....x...X..x..",
+   "snare": "....X.......X...",
+   "clap": "....X.......X...",
+   "hat": "x.x.x.x.x.x.x.x.",
+   "ohat": "......x.......x."
+  }
+ },
+ "drum_flags": {
+  "hat_rolls": false,
+  "fills": false,
+  "build_roll": null,
+  "humanize": 0.1
+ },
+ "bass": {
+  "style": "808",
+  "octave": 1
+ },
+ "lead": {
+  "octave": 5,
+  "density": 0.65,
+  "break_skeleton": true,
+  "rhythms": [
+   "x..x..x...x.x...x..x..x...x.x...",
+   "x.x.x..x..x.x...x.x.x..x..x.x...",
+   "x..x..x.x..x..x.x..x..x.x..x..x."
+  ]
+ },
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_trap",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "snare",
+   "role": "snare",
+   "inst": "snare_lofi",
+   "min": 0.45,
+   "max": 1.01,
+   "level": 1
+  },
+  {
+   "id": "clap",
+   "role": "clap",
+   "inst": "clap_909",
+   "min": 0.85,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_lofi",
+   "min": 0.2,
+   "max": 1.01
+  },
+  {
+   "id": "ohat",
+   "role": "ohat",
+   "inst": "ohat_909",
+   "min": 0.85,
+   "max": 1.01
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_808",
+   "min": 0.4,
+   "max": 1.01,
+   "level": 1
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "cowbell_mel",
+   "min": 0.6,
+   "max": 1.01
+  },
+  {
+   "id": "pad",
+   "role": "pad",
+   "inst": "strings",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.5,
+   "level": -4
+  },
+  {
+   "id": "bells",
+   "role": "arp",
+   "inst": "bell",
+   "min": 0.85,
+   "max": 1.01,
+   "rev": 0.5,
+   "dly": 0.3,
+   "level": -6
+  }
+ ]
+}

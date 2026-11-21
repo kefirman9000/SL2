@@ -1,0 +1,14 @@
+{
+ "extends": "_base", "group": "Drum & Bass", "bpm": [170, 176], "loudness": -9, "space": "hall",
+ "sidechain": {"depth": 0.35, "release": 0.3},
+ "forms": [
+  [["intro", 16, 0.35], ["build", 8, 0.55], ["drop", 32, 0.9], ["break", 16, 0.4], ["build", 8, 0.6], ["drop", 32, 0.95], ["outro", 16, 0.35]]
+ ],
+ "drums": {
+  "low":  {"hat": "x.x.x.x.x.x.x.x.", "ride": "x...x...x...x..."},
+  "mid":  {"kick": "X.........X.....", "snare": "....X.......X...", "hat": "x.g.x.g.x.g.x.g.", "shaker": "gogogogogogogogo"},
+  "high": {"kick": "X.........X..x..X.........X.....", "snare": "....X..g....X.g.....X..g....X...", "hat": "xgxgxgxgxgxgxgxg", "ride": "x...x...x...x...", "shaker": "gogogogogogogogo"}
+ },
+ "bass": {"style": "sub_long", "octave": 1},
+ "harmony": {"loop": 4, "bars_per_chord": 2, "start": [0], "color": 0.5}
+}

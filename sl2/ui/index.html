@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>SL2</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000'/%3E%3Cpath d='M5 22 L10 12 L14 19 L18 8 L22 17 L27 10' stroke='%2339ff14' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/ui/skin.css">
+</head>
+<body>
+<div id="desk">
+
+  <!-- ============ column 1: player, mixer, playlist (the classic stack) ============ -->
+  <div class="col stack">
+    <section class="win" id="wPlayer">
+      <div class="tb"><span class="grip"></span><span class="ttl">SL2</span><span class="grip"></span><button class="tbb" title="Shade">▁</button></div>
+      <div class="body player">
+        <div class="lcdrow">
+          <div class="lcd vis"><div class="lcdside">S<br>L<br>2</div><canvas id="vis" width="200" height="64"></canvas><div id="clock" class="clock">0:00</div></div>
+          <div class="info">
+            <div class="lcd marquee"><span id="marq">SL2 - STUDIO LAB 2 *** DESCRIBE A TRACK IN THE COMPOSER *** </span></div>
+            <div class="row small">
+              <span class="lcd box" id="bpmBox">---</span><span class="lbl">bpm</span>
+              <span class="lcd box wide" id="keyBox">---</span><span class="lbl">key</span>
+              <span class="flex"></span>
+              <span class="ind" id="indGenre">genre</span>
+            </div>
+            <div class="row small">
+              <input type="range" id="vol" class="sl vol" min="0" max="100" value="85" title="Volume">
+              <input type="range" id="bal" class="sl bal" min="-100" max="100" value="0" title="Balance">
+              <span class="flex"></span>
+              <button class="tog on" id="togMix" title="Show the mixer">MIX</button>
+              <button class="tog on" id="togPl" title="Show the playlist">PL</button>
+            </div>
+          </div>
+        </div>
+        <div class="seekwrap"><input type="range" id="seek" class="sl seek" min="0" max="1000" value="0" title="Position"><div id="secmarks"></div></div>
+        <div class="row transport">
+          <button class="tp" id="bPrev" title="Previous version (undo)">⏮</button>
+          <button class="tp" id="bPlay" title="Play">▶</button>
+          <button class="tp" id="bPause" title="Pause">⏸</button>
+          <button class="tp" id="bStop" title="Stop">⏹</button>
+          <button class="tp" id="bNext" title="New take: same settings, next seed">⏭</button>
+          <button class="tp ej" id="bEject" title="Open a song file (.sl2.json) or a reference track">⏏</button>
+          <span class="flex"></span>
+          <button class="tog" id="bShuffle" title="Surprise me: random genre">SHUFFLE</button>
+          <button class="tog" id="bRepeat" title="Loop the current section">↻</button>
+          <span class="badge" title="SL2">⚡</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="win" id="wMixer">
+      <div class="tb"><span class="grip"></span><span class="ttl">SL2 MIXER</span><span class="grip"></span><button class="tbb" title="Shade">▁</button></div>
+      <div class="body mixer">
+        <div class="row small">
+          <button class="tog on" id="mixOn" title="Mixer on (off = the mix as written)">ON</button>
+          <button class="tog on" id="mixAuto" title="Auto-gain: each part is set to its role's level before your fader moves">AUTO</button>
+          <div class="curve"><canvas id="curve" width="300" height="24"></canvas></div>
+          <button class="btn" id="mixPresets" title="Mixer presets">PRESETS</button>
+        </div>
+        <div class="faders" id="faders"></div>
+      </div>
+    </section>
+
+    <section class="win" id="wPlaylist">
+      <div class="tb"><span class="grip"></span><span class="ttl">SL2 PLAYLIST</span><span class="grip"></span><button class="tbb" title="Shade">▁</button></div>
+      <div class="body playlist">
+        <div class="list" id="plist"></div>
+        <div class="row small plbar">
+          <button class="btn" id="plAdd" title="Compose a new song">ADD</button>
+          <button class="btn" id="plRem" title="Delete the selected song">REM</button>
+          <button class="btn" id="plSel" title="Star / un-star the selected song">SEL</button>
+          <button class="btn" id="plMisc" title="Export: WAV, stems, MIDI, song file">MISC</button>
+          <span class="lcd time" id="plTime">0:00/0:00</span>
+          <button class="btn" id="plOpts" title="Version history of this song">LIST<br>OPTS</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ column 2: composer, editor, info ============ -->
+  <div class="col work">
+    <section class="win" id="wComposer">
+      <div class="tb"><span class="grip"></span><span class="ttl">SL2 COMPOSER</span><span class="grip"></span><button class="tbb" title="Shade">▁</button></div>
+      <div class="body composer">
+        <div class="row">
+          <input id="prompt" class="lcdin" placeholder="describe a track... e.g. dark deep dubstep in F minor, long" autocomplete="off">
+          <button class="btn big go" id="bCompose" title="Write and render the song">COMPOSE</button>
+        </div>
+        <div class="lcd said" id="said">TYPE A DESCRIPTION, OR PICK A GENRE BELOW</div>
+        <div class="grid2">
+          <div>
+            <div class="lab">GENRE</div>
+            <div class="genres" id="genres"></div>
+          </div>
+          <div class="knobs">
+            <div class="lab">ENERGY <b id="energyV">60</b></div>
+            <input type="range" id="energy" class="sl hz" min="20" max="100" value="60">
+            <div class="lab">LENGTH</div>
+            <div class="seg" id="length"><button data-v="short">SHORT</button><button data-v="normal" class="on">NORMAL</button><button data-v="long">LONG</button></div>
+            <div class="row small">
+              <div><div class="lab">BPM</div><input id="bpm" class="lcdin sm" placeholder="auto"></div>
+              <div><div class="lab">KEY</div><input id="key" class="lcdin sm" placeholder="auto"></div>
+              <div><div class="lab">SEED</div><input id="seed" class="lcdin sm" value="1"></div>
+            </div>
+            <div class="drop" id="drop" title="Drop an MP3 / WAV / FLAC here: SL2 measures it and picks the closest genre, tempo and key">
+              DROP A REFERENCE TRACK<br><span>tempo · key · drums · tone → closest genre</span>
+            </div>
+          </div>
+        </div>
+        <div class="progress" id="progWrap"><div class="bar" id="progBar"></div><span id="progMsg"></span></div>
+      </div>
+    </section>
+
+    <section class="win grow" id="wEditor">
+      <div class="tb"><span class="grip"></span><span class="ttl">SL2 EDITOR</span><span class="grip"></span><button class="tbb" title="Shade">▁</button></div>
+      <div class="body editor">
+        <div class="row small">
+          <span class="lab">SECTIONS</span><span class="flex"></span>
+          <button class="btn" id="rrHarm" title="New chords (locked melodies are kept, and the chords are chosen to fit them)">NEW CHORDS</button>
+          <button class="btn" id="rrForm" title="New arrangement">NEW FORM</button>
+          <button class="btn" id="rrAll" title="Everything new except locked parts">NEW TAKE</button>
+        </div>
+        <div class="timeline" id="timeline"></div>
+        <div class="row small">
+          <span class="lab">PART</span>
+          <select id="trackSel" class="lcdsel"></select>
+          <span class="lab">SOUND</span>
+          <select id="soundSel" class="lcdsel"></select>
+          <button class="btn" id="bLock" title="Lock: keep these notes when re-rolling">🔒 LOCK</button>
+          <button class="btn" id="bReroll" title="Re-write just this part">🎲 RE-ROLL</button>
+          <span class="flex"></span>
+          <button class="btn" id="zoomOut">−</button><button class="btn" id="zoomIn">+</button>
+          <button class="btn go" id="bApply" title="Render your note edits" disabled>APPLY EDITS</button>
+        </div>
+        <div class="roll"><canvas id="roll" height="260"></canvas></div>
+        <div class="hint">Piano roll: click empty space to add a note (1/16 grid) · click a note to remove it · shift+drag to scroll</div>
+      </div>
+    </section>
+
+    <section class="win" id="wInfo">
+      <div class="tb"><span class="grip"></span><span class="ttl">SL2 INFO</span><span class="grip"></span><button class="tbb" title="Shade">▁</button></div>
+      <div class="body">
+        <div class="lcd insights" id="insights">NO SONG LOADED</div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="menu" id="menu"></div>
+<div class="toast" id="toast"></div>
+<audio id="audio" preload="auto" crossorigin="anonymous"></audio>
+<input type="file" id="fileIn" hidden accept=".json,.wav,.mp3,.flac,.ogg,.m4a,.aiff,.aif,.wma">
+<script>window.SL2 = {token: '__SL2_TOKEN__', version: '__SL2_VERSION__'};</script>
+<script src="/ui/app.js"></script>
+</body>
+</html>

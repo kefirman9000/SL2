@@ -1,0 +1,94 @@
+{
+ "extends": "_club",
+ "name": "Acid House",
+ "desc": "Squelchy resonant 303-style lines over a raw 909, nothing else in the way.",
+ "keywords": [
+  "acid",
+  "acid house",
+  "303",
+  "squelch",
+  "rave",
+  "acid techno"
+ ],
+ "bpm": [
+  122,
+  128
+ ],
+ "harmony": {
+  "static": true,
+  "loop": 2,
+  "bars_per_chord": 4
+ },
+ "fingerprint": {
+  "tone": [
+   -2.0,
+   0.0,
+   -3.0,
+   -6.0,
+   -6.0,
+   -7.0,
+   -9.0,
+   -11.0,
+   -15.0
+  ],
+  "width": 0.2,
+  "lufs": -9.0,
+  "pump_db": 3.0
+ },
+ "bass": {
+  "style": "acid",
+  "octave": 1
+ },
+ "chords": {
+  "rhythm": "X.....X.........",
+  "length": 0.3
+ },
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_909",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "clap",
+   "role": "clap",
+   "inst": "clap_909",
+   "min": 0.5,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_909",
+   "min": 0.2,
+   "max": 1.01
+  },
+  {
+   "id": "ohat",
+   "role": "ohat",
+   "inst": "ohat_909",
+   "min": 0.65,
+   "max": 1.01
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_acid",
+   "min": 0.3,
+   "max": 1.01,
+   "dly": 0.15,
+   "rev": 0.1,
+   "level": 1
+  },
+  {
+   "id": "fx",
+   "role": "fx",
+   "inst": "fx",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "extends": "_club",
+ "name": "Classic House",
+ "desc": "Chicago/NY house: 909 groove, bouncy organ bass, offbeat organ stabs, a warm pad.",
+ "keywords": [
+  "house",
+  "chicago",
+  "classic house",
+  "club",
+  "old school house",
+  "90s house"
+ ],
+ "bpm": [
+  120,
+  126
+ ],
+ "fingerprint": {
+  "tone": [
+   -2.0,
+   0.0,
+   -4.0,
+   -7.0,
+   -8.0,
+   -9.0,
+   -11.0,
+   -12.0,
+   -16.0
+  ],
+  "width": 0.3,
+  "lufs": -8.0,
+  "pump_db": 6.0
+ },
+ "bass": {
+  "style": "offbeat",
+  "octave": 1
+ },
+ "chords": {
+  "rhythm": "X..X..X...X..X..",
+  "length": 0.35
+ },
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_909",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "clap",
+   "role": "clap",
+   "inst": "clap_909",
+   "min": 0.5,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_909",
+   "min": 0.2,
+   "max": 1.01
+  },
+  {
+   "id": "ohat",
+   "role": "ohat",
+   "inst": "ohat_909",
+   "min": 0.75,
+   "max": 1.01
+  },
+  {
+   "id": "shaker",
+   "role": "shaker",
+   "inst": "shaker",
+   "min": 0.55,
+   "max": 1.01
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_organ",
+   "min": 0.45,
+   "max": 1.01
+  },
+  {
+   "id": "chords",
+   "role": "chords",
+   "inst": "stab_organ",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.2,
+   "sc": 1.0
+  },
+  {
+   "id": "pad",
+   "role": "pad",
+   "inst": "pad_warm",
+   "min": 0.0,
+   "max": 0.6,
+   "rev": 0.4,
+   "sc": 0.6
+  },
+  {
+   "id": "fx",
+   "role": "fx",
+   "inst": "fx",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35
+  }
+ ]
+}

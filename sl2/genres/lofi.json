@@ -1,0 +1,107 @@
+{
+ "extends": "_chill",
+ "name": "Lo-fi Hip Hop",
+ "refs": "tomcbumpz - braincells",
+ "fingerprint": {
+  "tone": [
+   -49.9,
+   -10.3,
+   0.0,
+   -4.3,
+   -13.1,
+   -19.7,
+   -32.0,
+   -56.6,
+   -70.4
+  ],
+  "width": 0.42,
+  "lufs": -13.2,
+  "pump_db": 1.9,
+  "low_side_db": -21.2,
+  "bpm": 82.1,
+  "n": 1
+ },
+ "loudness": -13.0,
+ "desc": "Dusty, very dark swung beats at ~82: felt piano 7ths, a soft round bass, no sub, wide and warm, vinyl hiss.",
+ "keywords": [
+  "lofi",
+  "lo-fi",
+  "lo fi",
+  "chillhop",
+  "study",
+  "jazzy",
+  "chill beats",
+  "tomcbumpz",
+  "dusty"
+ ],
+ "vinyl": true,
+ "bpm": [
+  78,
+  86
+ ],
+ "brightness": -0.8,
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_soft",
+   "min": 0.3,
+   "max": 1.01
+  },
+  {
+   "id": "snare",
+   "role": "snare",
+   "inst": "snare_lofi",
+   "min": 0.45,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_lofi",
+   "min": 0.2,
+   "max": 1.01
+  },
+  {
+   "id": "rim",
+   "role": "rim",
+   "inst": "rim",
+   "min": 0.8,
+   "max": 1.01
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_sub",
+   "min": 0.4,
+   "max": 1.01,
+   "level": -2
+  },
+  {
+   "id": "chords",
+   "role": "chords",
+   "inst": "keys_lofi",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.3,
+   "width": 1.0
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "mallet",
+   "min": 0.62,
+   "max": 1.01,
+   "rev": 0.35,
+   "dly": 0.25
+  },
+  {
+   "id": "pad",
+   "role": "pad",
+   "inst": "pad_air",
+   "min": 0.0,
+   "max": 0.5,
+   "rev": 0.5
+  }
+ ]
+}

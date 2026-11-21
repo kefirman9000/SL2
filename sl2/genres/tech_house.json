@@ -1,0 +1,182 @@
+{
+ "extends": "_club",
+ "name": "Tech House",
+ "refs": "Girl Unit - Wut (Claude VonStroke remix)",
+ "fingerprint": {
+  "tone": [
+   0.0,
+   -3.4,
+   -8.2,
+   -12.7,
+   -8.7,
+   -11.7,
+   -14.7,
+   -14.1,
+   -19.7
+  ],
+  "width": 0.21,
+  "lufs": -9.1,
+  "pump_db": 7.7,
+  "low_side_db": -20.3,
+  "bpm": 126.0,
+  "n": 1
+ },
+ "loudness": -9.0,
+ "desc": "Bouncy, bass-led tech house: a fat rubbery bass riff, crisp swung percussion, playful stabs, long DJ sections.",
+ "keywords": [
+  "tech house",
+  "tech-house",
+  "dirtybird",
+  "bouncy",
+  "groovy",
+  "bass house",
+  "vonstroke"
+ ],
+ "bpm": [
+  124,
+  127
+ ],
+ "swing": 0.55,
+ "harmony": {
+  "static": true,
+  "loop": 2,
+  "bars_per_chord": 4
+ },
+ "sidechain": {
+  "depth": 0.55,
+  "release": 0.4
+ },
+ "forms": [
+  [
+   [
+    "intro",
+    16,
+    0.45
+   ],
+   [
+    "groove",
+    32,
+    0.7
+   ],
+   [
+    "break",
+    16,
+    0.35
+   ],
+   [
+    "build",
+    8,
+    0.6
+   ],
+   [
+    "drop",
+    32,
+    0.92
+   ],
+   [
+    "outro",
+    16,
+    0.45
+   ]
+  ]
+ ],
+ "drums": {
+  "low": {
+   "kick": "X...X...X...X...",
+   "hat": "..x...x...x...x."
+  },
+  "mid": {
+   "kick": "X...X...X...X...",
+   "clap": "....X.......X...",
+   "hat": "..x.g.x.g.x.g.x.",
+   "perc": ".......x......x."
+  },
+  "high": {
+   "kick": "X...X...X...X...",
+   "clap": "....X.......X...",
+   "hat": "gxxggxxggxxggxxg",
+   "ohat": "..x...x...x...x.",
+   "perc": "...x...x..x...x.",
+   "shaker": "g.o.g.o.g.o.g.o."
+  }
+ },
+ "bass": {
+  "style": "garage",
+  "octave": 1
+ },
+ "chords": {
+  "rhythm": "......X.......X.",
+  "length": 0.2
+ },
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_909",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "clap",
+   "role": "clap",
+   "inst": "clap_big",
+   "min": 0.5,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_909",
+   "min": 0.2,
+   "max": 1.01
+  },
+  {
+   "id": "ohat",
+   "role": "ohat",
+   "inst": "ohat_909",
+   "min": 0.75,
+   "max": 1.01
+  },
+  {
+   "id": "perc",
+   "role": "perc",
+   "inst": "perc_conga",
+   "min": 0.55,
+   "max": 1.01,
+   "pan": 0.3
+  },
+  {
+   "id": "shaker",
+   "role": "shaker",
+   "inst": "shaker",
+   "min": 0.45,
+   "max": 1.01,
+   "pan": -0.2
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_fm",
+   "min": 0.4,
+   "max": 1.01,
+   "level": 1
+  },
+  {
+   "id": "chords",
+   "role": "chords",
+   "inst": "stab_chord",
+   "min": 0.6,
+   "max": 1.01,
+   "rev": 0.3,
+   "dly": 0.3
+  },
+  {
+   "id": "fx",
+   "role": "fx",
+   "inst": "fx",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35
+  }
+ ]
+}

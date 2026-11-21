@@ -1,0 +1,159 @@
+{
+ "extends": "_chill",
+ "name": "Ambient",
+ "desc": "Slow, floating pads, soft bells and a deep sub. Little or no drums.",
+ "keywords": [
+  "ambient",
+  "atmospheric",
+  "drone",
+  "meditation",
+  "sleep",
+  "floating",
+  "calm",
+  "relax"
+ ],
+ "bpm": [
+  68,
+  86
+ ],
+ "space": "hall",
+ "fingerprint": {
+  "tone": [
+   -6.0,
+   -2.0,
+   0.0,
+   -3.0,
+   -6.0,
+   -9.0,
+   -13.0,
+   -18.0,
+   -24.0
+  ],
+  "width": 0.6,
+  "lufs": -16.0,
+  "pump_db": 0.5
+ },
+ "loudness": -16,
+ "brightness": -0.2,
+ "swing": 0.5,
+ "harmony": {
+  "bars_per_chord": 2,
+  "color": 0.8
+ },
+ "forms": [
+  [
+   [
+    "intro",
+    8,
+    0.2
+   ],
+   [
+    "A",
+    16,
+    0.45
+   ],
+   [
+    "B",
+    16,
+    0.6
+   ],
+   [
+    "A",
+    16,
+    0.5
+   ],
+   [
+    "outro",
+    8,
+    0.2
+   ]
+  ]
+ ],
+ "drums": {
+  "low": {},
+  "mid": {
+   "hat": "....x.......x..."
+  },
+  "high": {
+   "kick": "X...............",
+   "hat": "..x...x...x...x."
+  }
+ },
+ "bass": {
+  "style": "hold",
+  "octave": 1
+ },
+ "chords": {
+  "rhythm": "hold",
+  "length": 1.0
+ },
+ "arp": {
+  "pattern": "random",
+  "rate": 8,
+  "octaves": 2,
+  "gate": 0.9
+ },
+ "lead": {
+  "density": 0.25
+ },
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_soft",
+   "min": 0.55,
+   "max": 1.01,
+   "level": -4
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_lofi",
+   "min": 0.45,
+   "max": 1.01,
+   "level": -4
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_sub",
+   "min": 0.3,
+   "max": 1.01,
+   "level": -2
+  },
+  {
+   "id": "chords",
+   "role": "chords",
+   "inst": "pad_air",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.6
+  },
+  {
+   "id": "pad",
+   "role": "pad",
+   "inst": "pad_warm",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.6
+  },
+  {
+   "id": "arp",
+   "role": "arp",
+   "inst": "mallet",
+   "min": 0.35,
+   "max": 1.01,
+   "rev": 0.6,
+   "dly": 0.4
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "bell",
+   "min": 0.5,
+   "max": 1.01,
+   "rev": 0.6,
+   "dly": 0.35
+  }
+ ]
+}

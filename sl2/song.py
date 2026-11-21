@@ -23,6 +23,7 @@ class Note:
     length: float        # beats
     pitch: int           # MIDI note (a float is allowed for quarter tones)
     velocity: float = 0.8  # 0..1
+    p: dict = field(default_factory=dict)   # sound parameters for this note (wobble rate, 808 glide, fx kind ...)
 
 
 @dataclass
@@ -89,7 +90,7 @@ class Song:
         for p in self.track(track_id).placements:
             s0 = self.sections[p.section].start_bar * bpb + p.offset_beats
             for n in self.clips[p.clip].notes:
-                out.append(Note(s0 + n.beat, n.length, n.pitch, n.velocity))
+                out.append(Note(s0 + n.beat, n.length, n.pitch, n.velocity, dict(n.p)))
         return sorted(out, key=lambda n: (n.beat, n.pitch))
 
     # ---- save / load

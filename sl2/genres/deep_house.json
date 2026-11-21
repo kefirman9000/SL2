@@ -1,0 +1,212 @@
+{
+ "extends": "_club",
+ "name": "Melodic Deep House",
+ "refs": "Nora En Pure (5 tracks)",
+ "fingerprint": {
+  "tone": [
+   -0.6,
+   -0.9,
+   -6.2,
+   -6.3,
+   -5.7,
+   -9.5,
+   -14.5,
+   -11.8,
+   -16.1
+  ],
+  "width": 0.4,
+  "lufs": -6.6,
+  "pump_db": 6.1,
+  "low_side_db": -18.0,
+  "bpm": 122.0,
+  "n": 4
+ },
+ "loudness": -7.0,
+ "desc": "Sun-washed, wide deep house at 122: piano chords, a breathy flute or pluck melody, a rolling bass and a gentle pump.",
+ "keywords": [
+  "deep house",
+  "melodic house",
+  "nora en pure",
+  "summer",
+  "sunny",
+  "piano house",
+  "beach",
+  "indie dance"
+ ],
+ "bpm": [
+  120,
+  124
+ ],
+ "scales": {
+  "major": 2,
+  "minor": 2,
+  "dorian": 1
+ },
+ "brightness": 0.0,
+ "space": "hall",
+ "sidechain": {
+  "depth": 0.5,
+  "release": 0.45
+ },
+ "harmony": {
+  "color": 0.6,
+  "bars_per_chord": 2,
+  "start": [
+   0,
+   5
+  ]
+ },
+ "forms": [
+  [
+   [
+    "intro",
+    16,
+    0.42
+   ],
+   [
+    "groove",
+    16,
+    0.6
+   ],
+   [
+    "build",
+    8,
+    0.55
+   ],
+   [
+    "drop",
+    32,
+    0.85
+   ],
+   [
+    "break",
+    24,
+    0.35
+   ],
+   [
+    "build",
+    8,
+    0.6
+   ],
+   [
+    "drop",
+    32,
+    0.95
+   ],
+   [
+    "outro",
+    16,
+    0.4
+   ]
+  ]
+ ],
+ "bass": {
+  "style": "deep",
+  "octave": 1
+ },
+ "chords": {
+  "rhythm": "X.....X...X.....",
+  "length": 1.1
+ },
+ "lead": {
+  "octave": 5,
+  "density": 0.5,
+  "rhythms": [
+   "x..x..x...x.....x.......x.......",
+   "x.....x...x.x...x...............",
+   "x..x..x..x..x...x...x...x.......",
+   "....x..x..x.....x...x..........."
+  ]
+ },
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_909",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "clap",
+   "role": "clap",
+   "inst": "clap_909",
+   "min": 0.5,
+   "max": 1.01,
+   "level": -2
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_909",
+   "min": 0.2,
+   "max": 1.01
+  },
+  {
+   "id": "ohat",
+   "role": "ohat",
+   "inst": "ohat_909",
+   "min": 0.6,
+   "max": 1.01
+  },
+  {
+   "id": "shaker",
+   "role": "shaker",
+   "inst": "shaker",
+   "min": 0.45,
+   "max": 1.01
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_pluck",
+   "min": 0.45,
+   "max": 1.01
+  },
+  {
+   "id": "chords",
+   "role": "chords",
+   "inst": "piano",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.4,
+   "sc": 0.7
+  },
+  {
+   "id": "pad",
+   "role": "pad",
+   "inst": "strings",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.5,
+   "sc": 0.7
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "flute",
+   "min": 0.6,
+   "max": 1.01,
+   "rev": 0.45,
+   "dly": 0.3
+  },
+  {
+   "id": "arp",
+   "role": "arp",
+   "inst": "pluck",
+   "min": 0.8,
+   "max": 1.01,
+   "rev": 0.35,
+   "dly": 0.3,
+   "sc": 0.6,
+   "level": -3
+  },
+  {
+   "id": "fx",
+   "role": "fx",
+   "inst": "fx",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35
+  }
+ ]
+}

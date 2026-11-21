@@ -1,0 +1,184 @@
+{
+ "extends": "_base",
+ "name": "Synthwave",
+ "group": "Chill & Retro",
+ "desc": "80s night drive: gated snare, pulsing saw bass, square arps and a big saw lead.",
+ "keywords": [
+  "synthwave",
+  "retrowave",
+  "outrun",
+  "80s",
+  "retro",
+  "night drive",
+  "cyberpunk"
+ ],
+ "bpm": [
+  96,
+  118
+ ],
+ "space": "hall",
+ "loudness": -10,
+ "fingerprint": {
+  "tone": [
+   -4.0,
+   -1.0,
+   -2.0,
+   -5.0,
+   -6.0,
+   -7.0,
+   -9.0,
+   -12.0,
+   -17.0
+  ],
+  "width": 0.4,
+  "lufs": -10.0,
+  "pump_db": 3.0
+ },
+ "scales": {
+  "minor": 3,
+  "major": 1
+ },
+ "sidechain": {
+  "depth": 0.3,
+  "release": 0.4
+ },
+ "harmony": {
+  "bars_per_chord": 2
+ },
+ "forms": [
+  [
+   [
+    "intro",
+    8,
+    0.35
+   ],
+   [
+    "verse",
+    16,
+    0.55
+   ],
+   [
+    "chorus",
+    16,
+    0.85
+   ],
+   [
+    "verse",
+    16,
+    0.6
+   ],
+   [
+    "chorus",
+    16,
+    0.9
+   ],
+   [
+    "bridge",
+    8,
+    0.45
+   ],
+   [
+    "chorus",
+    16,
+    0.95
+   ],
+   [
+    "outro",
+    8,
+    0.3
+   ]
+  ]
+ ],
+ "drums": {
+  "low": {
+   "kick": "X.......X.......",
+   "hat": "x.x.x.x.x.x.x.x."
+  },
+  "mid": {
+   "kick": "X.......X.......",
+   "snare": "....X.......X...",
+   "hat": "x.x.x.x.x.x.x.x."
+  },
+  "high": {
+   "kick": "X.......X.x.....",
+   "snare": "....X.......X...",
+   "hat": "xgxgxgxgxgxgxgxg",
+   "ohat": "..............x."
+  }
+ },
+ "bass": {
+  "style": "pulse8",
+  "octave": 1
+ },
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_808",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "snare",
+   "role": "snare",
+   "inst": "snare_gated",
+   "min": 0.45,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_808",
+   "min": 0.2,
+   "max": 1.01
+  },
+  {
+   "id": "ohat",
+   "role": "ohat",
+   "inst": "ohat_909",
+   "min": 0.8,
+   "max": 1.01
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_synth",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "chords",
+   "role": "chords",
+   "inst": "pad_warm",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.4
+  },
+  {
+   "id": "arp",
+   "role": "arp",
+   "inst": "arp_square",
+   "min": 0.45,
+   "max": 1.01,
+   "rev": 0.3,
+   "dly": 0.4
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "lead_saw",
+   "min": 0.8,
+   "max": 1.01,
+   "rev": 0.4,
+   "dly": 0.3
+  },
+  {
+   "id": "fx",
+   "role": "fx",
+   "inst": "fx",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35
+  }
+ ]
+}

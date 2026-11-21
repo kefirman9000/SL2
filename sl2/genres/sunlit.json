@@ -1,0 +1,218 @@
+{
+ "extends": "_base",
+ "name": "Sunlit Electronica",
+ "group": "Chill & Retro",
+ "refs": "Tycho (7 tracks)",
+ "fingerprint": {
+  "tone": [
+   -3.4,
+   -0.3,
+   -5.0,
+   -6.7,
+   -9.0,
+   -11.6,
+   -15.8,
+   -20.0,
+   -24.9
+  ],
+  "width": 0.33,
+  "lufs": -8.8,
+  "pump_db": 2.6,
+  "low_side_db": -23.1,
+  "bpm": 121.0,
+  "n": 6
+ },
+ "loudness": -8.8,
+ "desc": "Warm, hazy instrumental electronica: a live-feeling kit, clean guitars with long delays, analog pads, a round bass pushing 8ths.",
+ "keywords": [
+  "tycho",
+  "sunlit",
+  "chillwave",
+  "downtempo",
+  "electronica",
+  "instrumental",
+  "hazy",
+  "warm",
+  "summer",
+  "guitar"
+ ],
+ "bpm": [
+  112,
+  126
+ ],
+ "scales": {
+  "major": 3,
+  "dorian": 1,
+  "minor": 1
+ },
+ "space": "hall",
+ "brightness": -0.35,
+ "sidechain": {
+  "depth": 0.2,
+  "release": 0.5
+ },
+ "harmony": {
+  "color": 0.75,
+  "bars_per_chord": 2,
+  "loop": 4,
+  "start": [
+   0,
+   5,
+   3
+  ]
+ },
+ "forms": [
+  [
+   [
+    "intro",
+    16,
+    0.3
+   ],
+   [
+    "groove",
+    16,
+    0.6
+   ],
+   [
+    "drop",
+    16,
+    0.85
+   ],
+   [
+    "break",
+    8,
+    0.35
+   ],
+   [
+    "groove",
+    16,
+    0.65
+   ],
+   [
+    "drop",
+    16,
+    0.9
+   ],
+   [
+    "outro",
+    8,
+    0.3
+   ]
+  ]
+ ],
+ "drums": {
+  "low": {
+   "hat": "x.x.x.x.x.x.x.x."
+  },
+  "mid": {
+   "kick": "X......x..X.....",
+   "snare": "....X.......X...",
+   "hat": "x.xgx.x.x.xgx.x."
+  },
+  "high": {
+   "kick": "X......x..X..x..",
+   "snare": "....X.......X..g",
+   "hat": "x.xgx.xgx.xgx.xg",
+   "ohat": "..............x.",
+   "shaker": "g.o.g.o.g.o.g.o."
+  }
+ },
+ "drum_flags": {
+  "fills": true,
+  "build_roll": null,
+  "humanize": 0.5
+ },
+ "bass": {
+  "style": "pulse8",
+  "octave": 1
+ },
+ "arp": {
+  "pattern": "updown",
+  "rate": 8,
+  "octaves": 2,
+  "gate": 0.8
+ },
+ "lead": {
+  "octave": 5,
+  "density": 0.35,
+  "rhythms": [
+   "x.......x.......x...x...........",
+   "x.....x...x.....x...............",
+   "x...x...x.......x.......x.......",
+   "x.....x.....x...x..............."
+  ]
+ },
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_soft",
+   "min": 0.5,
+   "max": 1.01
+  },
+  {
+   "id": "snare",
+   "role": "snare",
+   "inst": "snare_lofi",
+   "min": 0.5,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_lofi",
+   "min": 0.25,
+   "max": 1.01
+  },
+  {
+   "id": "ohat",
+   "role": "ohat",
+   "inst": "ohat_909",
+   "min": 0.8,
+   "max": 1.01,
+   "level": -3
+  },
+  {
+   "id": "shaker",
+   "role": "shaker",
+   "inst": "shaker",
+   "min": 0.8,
+   "max": 1.01
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_guitar",
+   "min": 0.5,
+   "max": 1.01
+  },
+  {
+   "id": "chords",
+   "role": "chords",
+   "inst": "pad_warm",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.45,
+   "sc": 0.8
+  },
+  {
+   "id": "gtr",
+   "role": "arp",
+   "inst": "guitar_space",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.5,
+   "dly": 0.55
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "lead_saw",
+   "min": 0.75,
+   "max": 1.01,
+   "rev": 0.45,
+   "dly": 0.4,
+   "level": -3
+  }
+ ]
+}

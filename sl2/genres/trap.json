@@ -1,0 +1,195 @@
+{
+ "extends": "_halftime",
+ "name": "Hard Trap",
+ "refs": "Waka Flocka Flame - Grove St. Party (instrumental)",
+ "fingerprint": {
+  "tone": [
+   0.0,
+   -4.9,
+   -11.0,
+   -13.4,
+   -10.9,
+   -13.1,
+   -14.1,
+   -12.0,
+   -17.1
+  ],
+  "width": 0.13,
+  "lufs": -9.9,
+  "pump_db": 14.9,
+  "low_side_db": -34.0,
+  "bpm": 140.0,
+  "n": 1
+ },
+ "loudness": -9.5,
+ "desc": "Hard, loud trap at 140: booming 808s that own the mix, snare rolls, rattling hats, brass and string stabs.",
+ "keywords": [
+  "trap",
+  "hard trap",
+  "hip hop",
+  "hip-hop",
+  "rap",
+  "808",
+  "waka",
+  "brass",
+  "beat"
+ ],
+ "scales": {
+  "minor": 2,
+  "harmonic_minor": 2,
+  "phrygian": 1
+ },
+ "drum_flags": {
+  "hat_rolls": true,
+  "fills": false,
+  "build_roll": "snare",
+  "humanize": 0.1
+ },
+ "bass": {
+  "style": "808",
+  "octave": 1
+ },
+ "sidechain": {
+  "depth": 0.2,
+  "release": 0.3
+ },
+ "chords": {
+  "rhythm": "X.....X...X.....",
+  "length": 0.5
+ },
+ "forms": [
+  [
+   [
+    "intro",
+    8,
+    0.35
+   ],
+   [
+    "hook",
+    16,
+    0.9
+   ],
+   [
+    "verse",
+    16,
+    0.7
+   ],
+   [
+    "hook",
+    16,
+    0.95
+   ],
+   [
+    "bridge",
+    8,
+    0.45
+   ],
+   [
+    "hook",
+    16,
+    1.0
+   ],
+   [
+    "outro",
+    8,
+    0.3
+   ]
+  ]
+ ],
+ "drums": {
+  "low": {
+   "hat": "x.x.x.x.x.x.x.x."
+  },
+  "mid": {
+   "kick": "X......X..X.....",
+   "snare": "........X.......",
+   "hat": "x.x.x.x.x.x.x.x."
+  },
+  "high": {
+   "kick": "X......X..X...x.X.....X...X.....",
+   "snare": "........X...............X.......",
+   "clap": "........X...............X.......",
+   "hat": "x.x.x.x.x.x.x.x.",
+   "ohat": "..............x."
+  }
+ },
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_trap",
+   "min": 0.45,
+   "max": 1.01
+  },
+  {
+   "id": "snare",
+   "role": "snare",
+   "inst": "snare_trap",
+   "min": 0.45,
+   "max": 1.01
+  },
+  {
+   "id": "clap",
+   "role": "clap",
+   "inst": "clap_big",
+   "min": 0.85,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_trap",
+   "min": 0.2,
+   "max": 1.01
+  },
+  {
+   "id": "ohat",
+   "role": "ohat",
+   "inst": "ohat_909",
+   "min": 0.85,
+   "max": 1.01
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_808",
+   "min": 0.45,
+   "max": 1.01,
+   "level": 1
+  },
+  {
+   "id": "chords",
+   "role": "chords",
+   "inst": "horns",
+   "min": 0.65,
+   "max": 1.01,
+   "rev": 0.3,
+   "level": -2
+  },
+  {
+   "id": "pad",
+   "role": "pad",
+   "inst": "strings",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.4
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "bell",
+   "min": 0.3,
+   "max": 0.8,
+   "rev": 0.35,
+   "dly": 0.2
+  },
+  {
+   "id": "fx",
+   "role": "fx",
+   "inst": "fx",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35
+  }
+ ]
+}

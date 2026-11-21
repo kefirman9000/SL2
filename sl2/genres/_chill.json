@@ -1,0 +1,19 @@
+{
+ "extends": "_base", "group": "Chill & Retro", "bpm": [78, 90], "loudness": -13, "space": "room",
+ "swing": 0.58, "swing_unit": 16, "brightness": -0.35,
+ "scales": {"dorian": 2, "minor": 2, "major": 1},
+ "harmony": {"loop": 4, "bars_per_chord": 1, "start": [0, 3], "color": 0.9},
+ "forms": [
+  [["intro", 4, 0.3], ["A", 16, 0.6], ["B", 16, 0.7], ["break", 8, 0.4], ["A", 16, 0.65], ["outro", 4, 0.3]]
+ ],
+ "drums": {
+  "low":  {"kick": "X.........X.....", "hat": "x.x.x.x.x.x.x.x."},
+  "mid":  {"kick": "X......x..X.....", "snare": "....X.......X...", "hat": "x.xgx.x.x.xgx.x."},
+  "high": {"kick": "X......x..X..x..", "snare": "....X.......X..g", "hat": "x.xgx.xgx.xgx.xg", "rim": "..........x....."}
+ },
+ "drum_flags": {"fills": false, "hat_rolls": false, "build_roll": null, "humanize": 0.6},
+ "bass": {"style": "walk", "octave": 1},
+ "chords": {"rhythm": "hold", "length": 0.95, "strum": 0.03, "octave_lo": 50, "octave_hi": 74},
+ "lead": {"style": "hook", "octave": 5, "density": 0.4, "break_skeleton": false,
+   "rhythms": ["x.....x...x.....x.......x.......", "x..x......x.....x...x...........", "....x..x..x.....x.......x..x...."]}
+}

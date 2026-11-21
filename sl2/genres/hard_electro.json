@@ -1,0 +1,192 @@
+{
+ "extends": "_club",
+ "name": "Hard Electro",
+ "refs": "JFK - Whiplash (Bad Habit Boys mix)",
+ "fingerprint": {
+  "tone": [
+   -0.4,
+   0.0,
+   -2.2,
+   -4.4,
+   -7.9,
+   -7.3,
+   -6.8,
+   -10.3,
+   -17.6
+  ],
+  "width": 0.3,
+  "lufs": -8.6,
+  "pump_db": 1.1,
+  "low_side_db": -12.5,
+  "bpm": 141.6,
+  "n": 1
+ },
+ "loudness": -8.6,
+ "desc": "Relentless 140 electro: a distorted kick, screeching hoover riffs, mid-heavy and raw, almost no pump.",
+ "keywords": [
+  "hard electro",
+  "electro",
+  "hard dance",
+  "rave",
+  "hoover",
+  "hardstyle",
+  "whiplash"
+ ],
+ "bpm": [
+  138,
+  144
+ ],
+ "brightness": 0.05,
+ "scales": {
+  "minor": 2,
+  "phrygian": 2,
+  "harmonic_minor": 1
+ },
+ "harmony": {
+  "static": true,
+  "loop": 2,
+  "bars_per_chord": 2
+ },
+ "sidechain": {
+  "depth": 0.15,
+  "release": 0.3
+ },
+ "forms": [
+  [
+   [
+    "intro",
+    8,
+    0.45
+   ],
+   [
+    "groove",
+    16,
+    0.7
+   ],
+   [
+    "build",
+    8,
+    0.6
+   ],
+   [
+    "drop",
+    16,
+    0.92
+   ],
+   [
+    "break",
+    8,
+    0.35
+   ],
+   [
+    "build",
+    8,
+    0.65
+   ],
+   [
+    "drop",
+    24,
+    1.0
+   ],
+   [
+    "outro",
+    8,
+    0.45
+   ]
+  ]
+ ],
+ "drums": {
+  "low": {
+   "kick": "X...X...X...X...",
+   "hat": "..x...x...x...x."
+  },
+  "mid": {
+   "kick": "X...X...X...X...",
+   "clap": "....X.......X...",
+   "hat": "..x...x...x...x."
+  },
+  "high": {
+   "kick": "X...X...X...X...",
+   "clap": "....X.......X...",
+   "hat": "xxxxxxxxxxxxxxxx",
+   "ohat": "..x...x...x...x."
+  }
+ },
+ "bass": {
+  "style": "offbeat",
+  "octave": 1
+ },
+ "lead": {
+  "octave": 4,
+  "density": 0.7,
+  "rhythms": [
+   "x.x.x..x.x.x..x.x.x.x..x.x.x..x.",
+   "xx.x.xx.x.xx.x..xx.x.xx.x.xx.x..",
+   "x..x..x.x..x..x.x..x..x.x..x..x."
+  ]
+ },
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_techno",
+   "min": 0.4,
+   "max": 1.01,
+   "level": 1
+  },
+  {
+   "id": "clap",
+   "role": "clap",
+   "inst": "clap_big",
+   "min": 0.5,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_909",
+   "min": 0.2,
+   "max": 1.01
+  },
+  {
+   "id": "ohat",
+   "role": "ohat",
+   "inst": "ohat_909",
+   "min": 0.7,
+   "max": 1.01
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_synth",
+   "min": 0.45,
+   "max": 1.01
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "hoover",
+   "min": 0.65,
+   "max": 1.01,
+   "rev": 0.15,
+   "level": -2
+  },
+  {
+   "id": "chords",
+   "role": "chords",
+   "inst": "stab_chord",
+   "min": 0.85,
+   "max": 1.01,
+   "rev": 0.2,
+   "level": -4
+  },
+  {
+   "id": "fx",
+   "role": "fx",
+   "inst": "fx",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35
+  }
+ ]
+}

@@ -1,0 +1,250 @@
+{
+ "extends": "_breaks",
+ "name": "Liquid DnB",
+ "refs": "Netsky (6 tracks)",
+ "fingerprint": {
+  "tone": [
+   -1.8,
+   -0.4,
+   -4.1,
+   -7.9,
+   -6.9,
+   -8.7,
+   -10.4,
+   -8.8,
+   -13.4
+  ],
+  "width": 0.2,
+  "lufs": -6.9,
+  "pump_db": 3.6,
+  "low_side_db": -27.0,
+  "bpm": 175.1,
+  "n": 6
+ },
+ "loudness": -6.9,
+ "desc": "Bright, soulful drum & bass: long bass-free intros, rolling sub, Rhodes and piano 9ths, airy pads, a bell or piano hook.",
+ "keywords": [
+  "liquid",
+  "liquid dnb",
+  "liquid funk",
+  "soulful dnb",
+  "netsky",
+  "smooth dnb"
+ ],
+ "bpm": [
+  172,
+  176
+ ],
+ "scales": {
+  "major": 2,
+  "dorian": 2,
+  "minor": 1
+ },
+ "harmony": {
+  "color": 0.9,
+  "bars_per_chord": 2,
+  "start": [
+   0,
+   5,
+   3
+  ]
+ },
+ "brightness": 0.15,
+ "sidechain": {
+  "depth": 0.35,
+  "release": 0.3
+ },
+ "forms": [
+  [
+   [
+    "intro",
+    24,
+    0.3
+   ],
+   [
+    "build",
+    8,
+    0.6
+   ],
+   [
+    "drop",
+    48,
+    0.9
+   ],
+   [
+    "break",
+    24,
+    0.4
+   ],
+   [
+    "build",
+    8,
+    0.65
+   ],
+   [
+    "drop",
+    48,
+    0.95
+   ],
+   [
+    "outro",
+    16,
+    0.35
+   ]
+  ],
+  [
+   [
+    "intro",
+    32,
+    0.32
+   ],
+   [
+    "drop",
+    48,
+    0.9
+   ],
+   [
+    "break",
+    32,
+    0.4
+   ],
+   [
+    "build",
+    8,
+    0.7
+   ],
+   [
+    "drop",
+    48,
+    0.95
+   ],
+   [
+    "outro",
+    16,
+    0.3
+   ]
+  ]
+ ],
+ "drums": {
+  "low": {
+   "hat": "x.x.x.x.x.x.x.x.",
+   "ride": "x...x...x...x..."
+  },
+  "mid": {
+   "kick": "X.........X.....",
+   "snare": "....X.......X...",
+   "hat": "x.g.x.g.x.g.x.g.",
+   "shaker": "gogogogogogogogo"
+  },
+  "high": {
+   "kick": "X.........X..x..X.........X.....",
+   "snare": "....X..g....X.g.....X..g....X...",
+   "hat": "xgxgxgxgxgxgxgxg",
+   "ride": "x...x...x...x...",
+   "shaker": "gogogogogogogogo"
+  }
+ },
+ "bass": {
+  "style": "sub_long",
+  "octave": 1
+ },
+ "lead": {
+  "octave": 5,
+  "density": 0.5,
+  "rhythms": [
+   "x..x..x...x.....x..x..x.x.......",
+   "x.x...x...x.x...x...x...........",
+   "..x..x..x...x...x.......x..x....",
+   "x.......x..x..x.x...x...x......."
+  ]
+ },
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_dnb",
+   "min": 0.45,
+   "max": 1.01
+  },
+  {
+   "id": "snare",
+   "role": "snare",
+   "inst": "snare_dnb",
+   "min": 0.45,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_909",
+   "min": 0.2,
+   "max": 1.01,
+   "level": -2
+  },
+  {
+   "id": "ride",
+   "role": "ride",
+   "inst": "ride",
+   "min": 0.8,
+   "max": 1.01
+  },
+  {
+   "id": "shaker",
+   "role": "shaker",
+   "inst": "shaker",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_sub",
+   "min": 0.5,
+   "max": 1.01
+  },
+  {
+   "id": "chords",
+   "role": "chords",
+   "inst": "keys_epiano",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35,
+   "sc": 0.5
+  },
+  {
+   "id": "pad",
+   "role": "pad",
+   "inst": "pad_air",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.55,
+   "sc": 0.5
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "piano",
+   "min": 0.6,
+   "max": 1.01,
+   "rev": 0.4,
+   "dly": 0.2
+  },
+  {
+   "id": "arp",
+   "role": "arp",
+   "inst": "bell",
+   "min": 0.85,
+   "max": 1.01,
+   "rev": 0.4,
+   "dly": 0.3
+  },
+  {
+   "id": "fx",
+   "role": "fx",
+   "inst": "fx",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35
+  }
+ ]
+}

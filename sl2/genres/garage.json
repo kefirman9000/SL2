@@ -1,0 +1,134 @@
+{
+ "extends": "_club",
+ "name": "UK Garage",
+ "desc": "Shuffled 2-step drums, a skippy FM bass, chopped chord stabs and organ.",
+ "keywords": [
+  "garage",
+  "uk garage",
+  "2-step",
+  "2 step",
+  "ukg",
+  "speed garage"
+ ],
+ "bpm": [
+  130,
+  134
+ ],
+ "swing": 0.6,
+ "fingerprint": {
+  "tone": [
+   -2.0,
+   0.0,
+   -4.0,
+   -7.0,
+   -7.5,
+   -8.5,
+   -10.0,
+   -11.0,
+   -14.0
+  ],
+  "width": 0.3,
+  "lufs": -8.5,
+  "pump_db": 4.0
+ },
+ "bass": {
+  "style": "garage",
+  "octave": 1
+ },
+ "chords": {
+  "rhythm": "X..X......X..X..",
+  "length": 0.3
+ },
+ "harmony": {
+  "color": 0.8
+ },
+ "drums": {
+  "low": {
+   "kick": "X.........X.....",
+   "hat": "..x...x...x...x."
+  },
+  "mid": {
+   "kick": "X.......x.X.....",
+   "snare": "....X.......X...",
+   "hat": "..x.g.x...x.g.x.",
+   "shaker": "gogogogogogogogo"
+  },
+  "high": {
+   "kick": "X.......x.X.....X.........X..x..",
+   "snare": "....X.......X...",
+   "hat": "..x.g.x.g.x.g.xg",
+   "shaker": "gogogogogogogogo",
+   "rim": ".......x.....x.."
+  }
+ },
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_909",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "snare",
+   "role": "snare",
+   "inst": "snare_909",
+   "min": 0.5,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_909",
+   "min": 0.2,
+   "max": 1.01
+  },
+  {
+   "id": "rim",
+   "role": "rim",
+   "inst": "rim",
+   "min": 0.8,
+   "max": 1.01
+  },
+  {
+   "id": "shaker",
+   "role": "shaker",
+   "inst": "shaker",
+   "min": 0.5,
+   "max": 1.01
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_fm",
+   "min": 0.45,
+   "max": 1.01
+  },
+  {
+   "id": "chords",
+   "role": "chords",
+   "inst": "stab_organ",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.3,
+   "sc": 0.6
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "keys_epiano",
+   "min": 0.8,
+   "max": 1.01,
+   "rev": 0.3,
+   "dly": 0.3
+  },
+  {
+   "id": "fx",
+   "role": "fx",
+   "inst": "fx",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35
+  }
+ ]
+}

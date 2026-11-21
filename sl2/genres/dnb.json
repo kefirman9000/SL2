@@ -1,0 +1,146 @@
+{
+ "extends": "_breaks",
+ "name": "Neuro DnB",
+ "desc": "Dark, tight drum & bass: a growling reese bass, menacing pads, sharp snares.",
+ "keywords": [
+  "drum and bass",
+  "drum & bass",
+  "dnb",
+  "d&b",
+  "neuro",
+  "neurofunk",
+  "jump up",
+  "dark dnb"
+ ],
+ "scales": {
+  "minor": 3,
+  "phrygian": 2
+ },
+ "brightness": -0.05,
+ "bass": {
+  "style": "reese",
+  "octave": 1
+ },
+ "harmony": {
+  "color": 0.1,
+  "bars_per_chord": 2
+ },
+ "fingerprint": {
+  "tone": [
+   -1.0,
+   0.0,
+   -3.5,
+   -7.0,
+   -8.0,
+   -8.5,
+   -9.0,
+   -11.0,
+   -16.0
+  ],
+  "width": 0.2,
+  "lufs": -6.5,
+  "pump_db": 4.0
+ },
+ "forms": [
+  [
+   [
+    "intro",
+    16,
+    0.35
+   ],
+   [
+    "build",
+    8,
+    0.6
+   ],
+   [
+    "drop",
+    32,
+    0.92
+   ],
+   [
+    "break",
+    16,
+    0.4
+   ],
+   [
+    "build",
+    8,
+    0.65
+   ],
+   [
+    "drop",
+    32,
+    0.97
+   ],
+   [
+    "outro",
+    16,
+    0.35
+   ]
+  ]
+ ],
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_dnb",
+   "min": 0.45,
+   "max": 1.01
+  },
+  {
+   "id": "snare",
+   "role": "snare",
+   "inst": "snare_dnb",
+   "min": 0.45,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_909",
+   "min": 0.2,
+   "max": 1.01
+  },
+  {
+   "id": "ride",
+   "role": "ride",
+   "inst": "ride",
+   "min": 0.85,
+   "max": 1.01
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_reese",
+   "min": 0.5,
+   "max": 1.01
+  },
+  {
+   "id": "pad",
+   "role": "pad",
+   "inst": "strings",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.5
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "hoover",
+   "min": 0.9,
+   "max": 1.01,
+   "rev": 0.3,
+   "dly": 0.2,
+   "level": -3
+  },
+  {
+   "id": "fx",
+   "role": "fx",
+   "inst": "fx",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35
+  }
+ ]
+}

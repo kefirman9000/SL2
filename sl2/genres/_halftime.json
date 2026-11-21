@@ -1,0 +1,13 @@
+{
+ "extends": "_base", "group": "Bass & Trap", "bpm": [140, 150], "loudness": -8.5, "space": "plate",
+ "sidechain": {"depth": 0.45, "release": 0.35},
+ "forms": [
+  [["intro", 16, 0.3], ["build", 8, 0.6], ["drop", 16, 0.95], ["break", 16, 0.35], ["build", 8, 0.65], ["drop", 16, 1.0], ["outro", 8, 0.3]]
+ ],
+ "drums": {
+  "low":  {"hat": "x.x.x.x.x.x.x.x."},
+  "mid":  {"kick": "X.........X.....", "snare": "........X.......", "hat": "x.x.x.x.x.x.x.x."},
+  "high": {"kick": "X.....X...X.....X.........X..x..", "snare": "........X...............X.......", "hat": "x.xgx.x.x.xgx.x.", "perc": "...........x...."}
+ },
+ "harmony": {"loop": 4, "bars_per_chord": 1, "start": [0], "color": 0.25}
+}

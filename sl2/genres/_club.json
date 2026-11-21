@@ -1,0 +1,73 @@
+{
+ "extends": "_base",
+ "group": "House & Techno",
+ "loudness": -9,
+ "sidechain": {
+  "depth": 0.55,
+  "release": 0.45
+ },
+ "forms": [
+  [
+   [
+    "intro",
+    16,
+    0.42
+   ],
+   [
+    "build",
+    8,
+    0.55
+   ],
+   [
+    "drop",
+    16,
+    0.85
+   ],
+   [
+    "break",
+    16,
+    0.4
+   ],
+   [
+    "build",
+    8,
+    0.6
+   ],
+   [
+    "drop",
+    16,
+    0.95
+   ],
+   [
+    "outro",
+    16,
+    0.42
+   ]
+  ]
+ ],
+ "drums": {
+  "low": {
+   "kick": "X...X...X...X...",
+   "hat": "..x...x...x...x."
+  },
+  "mid": {
+   "kick": "X...X...X...X...",
+   "clap": "....X.......X...",
+   "hat": "..x...x...x...x.",
+   "shaker": "g.o.g.o.g.o.g.o."
+  },
+  "high": {
+   "kick": "X...X...X...X...",
+   "clap": "....X.......X...",
+   "hat": "gxgxgxgxgxgxgxgx",
+   "ohat": "..x...x...x...x.",
+   "shaker": "g.o.g.o.g.o.g.o."
+  }
+ },
+ "drum_flags": {
+  "fills": true,
+  "hat_rolls": false,
+  "build_roll": "clap",
+  "humanize": 0.2
+ }
+}

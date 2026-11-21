@@ -1,0 +1,349 @@
+{
+ "extends": "_base",
+ "name": "Spooky Surf",
+ "group": "Band",
+ "refs": "Jack Marshall - Theme from The Munsters",
+ "fingerprint": {
+  "tone": [
+   -18.7,
+   0.0,
+   -5.0,
+   -10.1,
+   -4.6,
+   -5.6,
+   -4.6,
+   -11.8,
+   -17.4
+  ],
+  "width": 0.54,
+  "lufs": -14.2,
+  "pump_db": 1.4,
+  "low_side_db": -5.6,
+  "bpm": 154.1,
+  "n": 1
+ },
+ "loudness": -12.0,
+ "desc": "60s monster-TV surf band at ~154: a creeping chromatic riff on baritone guitar and bass, dripping spring-reverb lead, combo organ, horn stabs.",
+ "keywords": [
+  "surf",
+  "surf rock",
+  "spooky",
+  "monster",
+  "munsters",
+  "60s",
+  "halloween",
+  "twang",
+  "spring reverb",
+  "garage rock"
+ ],
+ "bpm": [
+  146,
+  160
+ ],
+ "scales": {
+  "minor": 2,
+  "harmonic_minor": 2
+ },
+ "space": "room",
+ "brightness": 0.1,
+ "swing": 0.5,
+ "sidechain": {
+  "depth": 0.0
+ },
+ "harmony": {
+  "loop": 4,
+  "bars_per_chord": 2,
+  "start": [
+   0
+  ],
+  "color": 0.0
+ },
+ "forms": [
+  [
+   [
+    "intro",
+    4,
+    0.5
+   ],
+   [
+    "verse",
+    16,
+    0.75
+   ],
+   [
+    "chorus",
+    16,
+    0.9
+   ],
+   [
+    "organ break",
+    8,
+    0.6
+   ],
+   [
+    "verse",
+    16,
+    0.8
+   ],
+   [
+    "chorus",
+    16,
+    0.95
+   ],
+   [
+    "outro",
+    4,
+    0.85
+   ]
+  ]
+ ],
+ "drums": {
+  "low": {
+   "kick": "X.......X.......",
+   "snare": "....X.......X...",
+   "hat": "x.x.x.x.x.x.x.x."
+  },
+  "mid": {
+   "kick": "X.......X.x.....",
+   "snare": "....X.......X...",
+   "hat": "x.x.x.x.x.x.x.x."
+  },
+  "high": {
+   "kick": "X.......X.x.....",
+   "snare": "....X.......X..x",
+   "ride": "x.x.x.x.x.x.x.x.",
+   "hat": "..x...x...x...x."
+  }
+ },
+ "drum_flags": {
+  "fills": true,
+  "build_roll": null,
+  "humanize": 0.55
+ },
+ "bass": {
+  "style": "pulse8",
+  "octave": 1
+ },
+ "chords": {
+  "rhythm": "X...X...X...X...",
+  "length": 0.6,
+  "octave_lo": 55,
+  "octave_hi": 79
+ },
+ "lead": {
+  "octave": 5,
+  "density": 0.55,
+  "break_skeleton": false,
+  "rhythms": [
+   "x..x..x.x.......x..x..x.x.......",
+   "x.x.x...x.x.x...x.......x.......",
+   "x...x...x..x..x.x...x...........",
+   "x..x..x...x..x..x..x..x........."
+  ]
+ },
+ "riff": {
+  "octave": 2,
+  "patterns": [
+   [
+    [
+     0,
+     0,
+     2
+    ],
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     4,
+     0,
+     2
+    ],
+    [
+     6,
+     -1,
+     2
+    ],
+    [
+     8,
+     0,
+     2
+    ],
+    [
+     10,
+     3,
+     2
+    ],
+    [
+     12,
+     5,
+     2
+    ],
+    [
+     14,
+     6,
+     2
+    ]
+   ],
+   [
+    [
+     0,
+     0,
+     3
+    ],
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     4,
+     0,
+     2
+    ],
+    [
+     6,
+     -1,
+     2
+    ],
+    [
+     8,
+     0,
+     2
+    ],
+    [
+     10,
+     7,
+     2
+    ],
+    [
+     12,
+     6,
+     2
+    ],
+    [
+     14,
+     5,
+     2
+    ]
+   ],
+   [
+    [
+     0,
+     0,
+     2
+    ],
+    [
+     2,
+     0,
+     2
+    ],
+    [
+     4,
+     1,
+     2
+    ],
+    [
+     6,
+     1,
+     2
+    ],
+    [
+     8,
+     0,
+     2
+    ],
+    [
+     10,
+     -1,
+     2
+    ],
+    [
+     12,
+     0,
+     4
+    ]
+   ]
+  ]
+ },
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_acoustic",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "snare",
+   "role": "snare",
+   "inst": "snare_surf",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_surf",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "ride",
+   "role": "ride",
+   "inst": "ride",
+   "min": 0.9,
+   "max": 1.01
+  },
+  {
+   "id": "riff",
+   "role": "riff",
+   "inst": "baritone",
+   "min": 0.5,
+   "max": 1.01,
+   "pan": -0.35,
+   "rev": 0.2
+  },
+  {
+   "id": "bass",
+   "role": "riff",
+   "inst": "bass_guitar",
+   "min": 0.5,
+   "max": 1.01,
+   "octave": 1,
+   "pan": 0.0
+  },
+  {
+   "id": "organ",
+   "role": "chords",
+   "inst": "combo_organ",
+   "min": 0.55,
+   "max": 1.01,
+   "pan": 0.4,
+   "rev": 0.15,
+   "not_in": [
+    "intro"
+   ]
+  },
+  {
+   "id": "horns",
+   "role": "chords",
+   "inst": "horns",
+   "min": 0.88,
+   "max": 1.01,
+   "pan": -0.2,
+   "level": -3,
+   "voice": "stabs"
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "surf_guitar",
+   "min": 0.7,
+   "max": 1.01,
+   "pan": 0.25,
+   "rev": 0.25
+  }
+ ]
+}

@@ -1,0 +1,188 @@
+{
+ "extends": "_club",
+ "name": "Trance",
+ "refs": "Joop - The Future",
+ "fingerprint": {
+  "tone": [
+   0.0,
+   -0.1,
+   -6.0,
+   -10.0,
+   -12.7,
+   -8.9,
+   -12.3,
+   -14.6,
+   -18.9
+  ],
+  "width": 0.23,
+  "lufs": -8.3,
+  "pump_db": 7.6,
+  "low_side_db": -18.4,
+  "bpm": 138.0,
+  "n": 1
+ },
+ "loudness": -8.3,
+ "desc": "Driving 138 trance: rolling offbeat bass, gated supersaws, a long breakdown into a huge anthem lead.",
+ "keywords": [
+  "trance",
+  "uplifting",
+  "euphoric",
+  "anthem",
+  "vocal trance",
+  "progressive trance",
+  "joop"
+ ],
+ "bpm": [
+  136,
+  140
+ ],
+ "space": "hall",
+ "brightness": 0.1,
+ "harmony": {
+  "bars_per_chord": 2,
+  "start": [
+   0,
+   5
+  ]
+ },
+ "bass": {
+  "style": "gallop",
+  "octave": 1
+ },
+ "chords": {
+  "rhythm": "xxxxxxxxxxxxxxxx",
+  "length": 0.18
+ },
+ "sidechain": {
+  "depth": 0.6,
+  "release": 0.4
+ },
+ "forms": [
+  [
+   [
+    "intro",
+    16,
+    0.42
+   ],
+   [
+    "groove",
+    16,
+    0.65
+   ],
+   [
+    "build",
+    8,
+    0.6
+   ],
+   [
+    "drop",
+    32,
+    0.88
+   ],
+   [
+    "break",
+    32,
+    0.35
+   ],
+   [
+    "build",
+    16,
+    0.7
+   ],
+   [
+    "drop",
+    32,
+    1.0
+   ],
+   [
+    "outro",
+    16,
+    0.4
+   ]
+  ]
+ ],
+ "tracks": [
+  {
+   "id": "kick",
+   "role": "kick",
+   "inst": "kick_909",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "clap",
+   "role": "clap",
+   "inst": "clap_909",
+   "min": 0.5,
+   "max": 1.01
+  },
+  {
+   "id": "hat",
+   "role": "hat",
+   "inst": "hat_909",
+   "min": 0.2,
+   "max": 1.01
+  },
+  {
+   "id": "ohat",
+   "role": "ohat",
+   "inst": "ohat_909",
+   "min": 0.6,
+   "max": 1.01
+  },
+  {
+   "id": "bass",
+   "role": "bass",
+   "inst": "bass_synth",
+   "min": 0.4,
+   "max": 1.01
+  },
+  {
+   "id": "chords",
+   "role": "chords",
+   "inst": "supersaw",
+   "min": 0.6,
+   "max": 1.01,
+   "rev": 0.35,
+   "sc": 1.0,
+   "level": -3
+  },
+  {
+   "id": "pad",
+   "role": "pad",
+   "inst": "pad_warm",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.5,
+   "sc": 0.7
+  },
+  {
+   "id": "arp",
+   "role": "arp",
+   "inst": "pluck",
+   "min": 0.35,
+   "max": 1.01,
+   "rev": 0.3,
+   "dly": 0.3,
+   "sc": 0.7
+  },
+  {
+   "id": "lead",
+   "role": "lead",
+   "inst": "supersaw",
+   "min": 0.8,
+   "max": 1.01,
+   "rev": 0.45,
+   "dly": 0.2,
+   "sc": 0.4
+  },
+  {
+   "id": "fx",
+   "role": "fx",
+   "inst": "fx",
+   "min": 0.0,
+   "max": 1.01,
+   "rev": 0.35
+  }
+ ]
+}
